@@ -2,10 +2,10 @@
 
 | | |
 |---|---|
-| Reviewed | The Spike 2 report, status "Proposed model for team review — not final", as shared with the Mission 4 lead on 2026-10-23. The report itself is not in the repository; quotes below are from it |
-| Reviewed against | The Spike 2 charter (`Spike 2 Capability Definition and Metadata Model.docx`, 2026-10-16); the Mission 4 charter; the Spikes 1-3 research ([MISSION4_SPIKES_1_TO_3_RESEARCH.md](../../MISSION4_SPIKES_1_TO_3_RESEARCH.md)) and its 60-record snapshot; the POC's schema 0.1 as revised on 2026-10-23 ([manifest-spec.md](../manifest-spec.md)); the boundary review ([mission-boundaries.md](../mission-boundaries.md)) |
+| Reviewed | The Spike 2 report, status "Proposed model for team review — not final", as shared with the Mission 4 team on 2026-10-23. The report itself is not in the repository; quotes below are from it |
+| Reviewed against | The Spike 2 charter (`docs/charter/Spike 2 Capability Definition and Metadata Model.docx`, 2026-10-16); the Mission 4 charter; the Spikes 1-3 research ([spikes-1-3-research.md](../spikes-1-3-research.md)) and its 60-record snapshot; the POC's schema 0.1 as revised on 2026-10-23 ([manifest-spec.md](../manifest-spec.md)); the boundary review ([mission-boundaries.md](../mission-boundaries.md)) |
 | Date | 2026-10-23 |
-| Status | A review, not a decision. It recommends; the Spike 2 owner and the Mission 4 lead decide |
+| Status | A review, not a decision. It recommends; Spike 2 and the Mission 4 team decide |
 | Handling | Derived from documents marked "Confidential – Authorized Use Only". Handle it the same way |
 
 Labels: **[Report]** the Spike 2 report; **[Spike 2]** the spike charter; **[Charter §n]** the Mission
@@ -31,7 +31,7 @@ It needs revision before it can guide v0.1, for four reasons:
 
 1. **It does not do the spike's first task.** Spike 2 asks to "review representative AI
    capabilities and their existing metadata" [Spike 2]. The report reviews format specifications,
-   not capabilities, and gives no measurements. This is the concern the lead raised: designing the
+   not capabilities, and gives no measurements. This is the concern the team raised: designing the
    model from documents rather than from evidence.
 2. **Its required set would block almost every real capability.** Requiring at least one supported
    use case for a published manifest fails 59 of 60 sampled records, because only 1 states use
@@ -51,7 +51,7 @@ It needs revision before it can guide v0.1, for four reasons:
 
 Several of its open questions are already answered by measurement: the draft-versus-published
 distinction, the unknown and not-applicable states, and how much of each field exists. §6 maps the
-report's fields onto the POC revision; §7 lists the decisions the lead needs to take.
+report's fields onto the POC revision; §7 lists the decisions the team needs to take.
 
 ## 2. Coverage of the Spike 2 charter
 
@@ -85,7 +85,7 @@ report's fields onto the POC revision; §7 lists the decisions the lead needs to
 
 ### 4.1 The model is not derived from capabilities
 
-The report's evidence is format documentation. Spike 2's first task, the lead's direction
+The report's evidence is format documentation. Spike 2's first task, the team.s direction
 (2026-10-22), and the charter's "subject to Phase 0 validation" all ask for evidence from real
 capabilities. Without it the report cannot say how often a field exists, who would supply it, or
 whether requiring it blocks registration.
@@ -267,7 +267,7 @@ PyPI package metadata, Claude Code plugin manifests, the Docker MCP catalog, Git
 | Provenance | Only for evaluation evidence | `provenance[]` per value | Add (§4.6) |
 | Draft versus published | Open question | Completeness levels; `--require-level` | Map "published" onto a level |
 
-## 7. Decisions for the lead, and questions for the author
+## 7. Decisions for the Mission 4 team, and questions for the author
 
 Decisions:
 1. **Requiredness.** Adopt "few mandatory fields, plus levels" (the POC, measured on 60 records),

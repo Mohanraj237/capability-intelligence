@@ -1,5 +1,5 @@
 # Pre-registered journeys, needs, relevance criteria, and sampling rule for the Spikes 1-3
-# research (MISSION4_SPIKES_1_TO_3_RESEARCH.md). Written on 2026-10-22, before any candidate
+# research (docs/spikes-1-3-research.md). Written on 2026-10-22, before any candidate
 # capability was snapshotted or judged. The needs refine the use cases that iteration 1 of the
 # journey pilot pre-registered (pilot/journeys.yaml: browser, code-hosting, search, documents),
 # so that each one can be judged against a stated criterion. They are not changed afterwards;

@@ -1,6 +1,6 @@
 # Spikes 1-3 research: evidence and proof of concept
 
-Supporting evidence for [MISSION4_SPIKES_1_TO_3_RESEARCH.md](../../MISSION4_SPIKES_1_TO_3_RESEARCH.md).
+Supporting evidence for [spikes-1-3-research.md](../../docs/spikes-1-3-research.md).
 Handle it like its sources: the Mission 4 documents are marked "Confidential – Authorized Use
 Only". The capability metadata here is public, but the analysis is Mission 4's.
 

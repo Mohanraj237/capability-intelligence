@@ -5,8 +5,8 @@
 | Date | 2026-10-22; addendum 2026-10-23 (§16) |
 | Scope | Spike 1 (standards and ecosystem), Spike 2 (capability definition and metadata model), Spike 3 (identifiers, lifecycle, and versioning), as chartered on 2026-10-16 |
 | Method | Journeys first: four journeys and four concrete needs written down before sampling; 60 real capability records in seven packaging formats, plus 36 A2A Agent Cards; one crosswalk per format; the journeys scored against judged relevance and identity |
-| Evidence | [`research/spikes-1-3/`](research/spikes-1-3/): pre-registration, snapshot, scripts, judgments, and generated [results](research/spikes-1-3/results.md). Reproduce offline with `node research/spikes-1-3/analyze.js` |
-| Status | Research findings and proposals. **Nothing in this document is a decision.** Every proposal is labelled and needs the owner named in §12. On 2026-10-23, at the Mission 4 lead's direction, the proposals of §11 and §13.1 were applied to the unpublished schema 0.1 draft as POC proposals; §16 records how, and what they produced on the same records. Sections 1-15 describe the schema as it stood on 2026-10-22 |
+| Evidence | [`research/spikes-1-3/`](../research/spikes-1-3/): pre-registration, snapshot, scripts, judgments, and generated [results](../research/spikes-1-3/results.md). Reproduce offline with `node research/spikes-1-3/analyze.js` |
+| Status | Research findings and proposals. **Nothing in this document is a decision.** Every proposal is labelled and needs the owner named in §12. On 2026-10-23, at the Mission 4 team's direction, the proposals of §11 and §13.1 were applied to the unpublished schema 0.1 draft as POC proposals; §16 records how, and what they produced on the same records. Sections 1-15 describe the schema as it stood on 2026-10-22 |
 | Handling | Derived from documents marked "Confidential – Authorized Use Only". Handle it the same way |
 
 ## How to read this document
@@ -16,8 +16,8 @@ Each statement carries a label that says where it comes from.
 | Label | Meaning |
 |---|---|
 | **[Charter §n]**, **[Spike n]** | Stated in the Mission 4 charter or a spike document (all dated 2026-10-16) |
-| **[Project]** | From an existing project artifact: the POC, the journey pilot (iteration 1), or `MISSION_UNDERSTANDING.md` |
-| **[Measured R§n]** | Measured by this research; the number is in [results.md](research/spikes-1-3/results.md) section n |
+| **[Project]** | From an existing project artifact: the POC, the journey pilot (iteration 1), or `mission-understanding.md` |
+| **[Measured R§n]** | Measured by this research; the number is in [results.md](../research/spikes-1-3/results.md) section n |
 | **[Observed]** | Seen directly in a source during this research (a snapshot file, an API response, a README), with its location |
 | **[External En]** | From official documentation or a specification, listed in §15 |
 | **[Inference]** | This report's interpretation of the evidence. Check it before relying on it |
@@ -56,7 +56,7 @@ purposive. §4.4 and §12.3 give the details.
 Mission 4 exists so that people and systems can discover, compare, and reuse AI capabilities from
 many sources using one consistent description [Charter TL;DR, §1]. The concern behind this
 research is that the work so far defined metadata without showing that the metadata delivers
-those outcomes [Project: lead review, 2026-10-22].
+those outcomes [Project: review, 2026-10-22].
 
 This research therefore started from what users try to do, not from fields:
 
@@ -148,7 +148,7 @@ None of these is stated in the spikes; each is read from how the tasks are frame
 | 1 | The listed standards cover the formats capabilities actually arrive in | Real capabilities also arrive as npm and PyPI packages, Claude Code plugins, Docker catalog entries, and GitHub Actions; a cross-protocol catalog standard (AI Catalog) has appeared since the charter (§8) |
 | 1 | A standard can be judged by reading its specification | Conformance in practice differs from the specification: 4 of 36 Agent Cards conform (§7.7) |
 | 2 | Requiredness can be settled in a field dictionary | What can be required depends on what sources supply; `lifecycleStatus` alone made 45 of 60 drafts invalid against the 2026-10-22 draft (§7.6) |
-| 2 | Consumer requirements are known | Consumer needs were taken from documents, not from journeys or from the missions [Project: `MISSION_UNDERSTANDING.md` A2] |
+| 2 | Consumer requirements are known | Consumer needs were taken from documents, not from journeys or from the missions [Project: `mission-understanding.md` A2] |
 | 3 | A capability has one identifier and one source | The same capability has two to four publications with different native names and versions (§7.3) |
 | 3 | Scenarios can be analysed hypothetically | Every scenario in the charter occurs in the sample, together with others the charter does not list (§10.1) |
 
@@ -196,7 +196,7 @@ The task proposed five candidate scenarios. Comparing candidates and deciding wh
 adapt, or build are one activity in practice, so they were merged into J3. Iteration 1's journey
 "register a capability with little effort" [Project: `pilot/journeys.yaml`] is not repeated as a
 journey; its measure (does a valid manifest result from native metadata?) is kept in §7.6. The
-journeys and their questions are in [needs.yaml](research/spikes-1-3/needs.yaml).
+journeys and their questions are in [needs.yaml](../research/spikes-1-3/needs.yaml).
 
 | | J1 Find before building | J2 Recognise duplicates and overlaps | J3 Compare and decide | J4 Enough information, and what to ask |
 |---|---|---|---|---|
@@ -245,7 +245,7 @@ The sampling rule was written before sampling [needs.yaml, "Sampling rule"]:
    name `agent-card.json`, as a separate conformance sample.
 7. **Background**: iteration 1's 12 randomly drawn capabilities, unchanged.
 
-Four deviations are recorded in the [README](research/spikes-1-3/README.md#deviations-from-the-pre-registered-rule).
+Four deviations are recorded in the [README](../research/spikes-1-3/README.md#deviations-from-the-pre-registered-rule).
 The two that matter: the npm vendor test was too broad and selected `@github/mcp-registry`, which
 is GitHub's SDK for the MCP Registry, not its MCP server (kept, judged not relevant). And GitHub's
 registry entry lay beyond the 30 pages the first script searched, so it was added afterwards as
@@ -268,7 +268,7 @@ the purposive record the rule calls for.
 The capability types covered are MCP servers, skills, plugins, agents (A2A), a workflow (GitHub
 Action), tools and libraries (npm, PyPI), and hosted services (registry entries with remote
 endpoints only). Every record, with its source URL and the step that selected it, is listed in
-[results.md §1](research/spikes-1-3/results.md#1-sample). The snapshot is in
+[results.md §1](../research/spikes-1-3/results.md#1-sample). The snapshot is in
 `research/spikes-1-3/samples/` (email addresses redacted).
 
 ### 4.3 The capabilities judged relevant
@@ -292,7 +292,7 @@ that are the same capability are grouped.
 | N4 | pdf-parse; the anthropics `pdf` skill; docling | npm (N4-34); skill (N4-35); PyPI (N4-43) |
 
 Records judged partial or undetermined, with the reason for each, are in
-[judgments.yaml](research/spikes-1-3/judgments.yaml). One record (`redfox-ai-search-mcp`) could not
+[judgments.yaml](../research/spikes-1-3/judgments.yaml). One record (`redfox-ai-search-mcp`) could not
 be judged at all: neither its metadata nor its README says what it searches.
 
 ### 4.4 Limitations of the sample
@@ -318,7 +318,7 @@ be judged at all: neither its metadata nor its README says what it searches.
 
 Each cell gives the native field and, in brackets, how many records of that format state it. A
 dash means that no field exists; "derived" means that the concept follows from the format or from
-context. The counts come from [results.md §3 and §4](research/spikes-1-3/results.md#3-metadata-availability-by-format)
+context. The counts come from [results.md §3 and §4](../research/spikes-1-3/results.md#3-metadata-availability-by-format)
 [Measured R§3, R§4]. The format definitions are cited in §8.
 
 | Concept | MCP Registry (14) | npm (14) | Agent Skill (11) | Claude Code plugin (7) | Docker catalog (8) | PyPI (5) | GitHub Action (1) | A2A Agent Card (36) |
@@ -637,7 +637,7 @@ evidence Spike 2's field dictionary needs [Measured R§8].
 ### 7.6 Schema 0.1 validity versus journey outcomes
 
 Each record was drafted into a schema-0.1 manifest by one mechanical mapping
-(`draftManifest` in [analyze.js](research/spikes-1-3/analyze.js)) and validated with the POC's
+(`draftManifest` in [analyze.js](../research/spikes-1-3/analyze.js)) and validated with the POC's
 validator [Measured R§9]. The schema is the 0.1 draft of 2026-10-22, kept as
 `research/spikes-1-3/reference/capability-0.1-2026-10-22.schema.json`; §16 repeats the test on
 the revised schema.
@@ -995,7 +995,7 @@ What this implies [Inference]:
 ## 11. Proposed starter metadata model with evidence and rationale
 
 **Status: a proposal for Spikes 2 and 3 to evaluate [Recommendation].** On 2026-10-23 it was
-applied to schema 0.1 at the Mission 4 lead's direction, in the form §16.1 describes, which
+applied to schema 0.1 at the Mission 4 team's direction, in the form §16.1 describes, which
 differs from this section in places; it remains a proposal. Field names here are illustrative.
 
 ### 11.1 Principles, each from evidence
@@ -1169,19 +1169,19 @@ level: assessable                            # adoptable needs setup, contact, a
 - **Native metadata is the starting point.** Owners will confirm derived values and supply
   owner-input facts if asked at the right moment (Mission 5's workflow). This was not tested.
 - **The judgments are reasonable.** The relevance criteria and identity judgment were applied
-  consistently by one person; see [judgments.yaml](research/spikes-1-3/judgments.yaml).
+  consistently by one person; see [judgments.yaml](../research/spikes-1-3/judgments.yaml).
 
 ### 12.4 Unresolved questions
 
 | # | Question | Who |
 |---|---|---|
-| U1 | Adopt completeness levels in place of a fixed mandatory set, before publishing 0.1? Applied to the draft on 2026-10-23 (§16); still to confirm | Mission 4 lead, with Mission 5 |
-| U2 | Replace `source` with `publications[]` and add `relations[]` in 0.1? On 2026-10-23, `publications[]` and `relations[]` were added beside `source`; whether to fold `source` into `publications` is open | Spike 3, Mission 4 lead |
+| U1 | Adopt completeness levels in place of a fixed mandatory set, before publishing 0.1? Applied to the draft on 2026-10-23 (§16); still to confirm | Mission 4 team, with Mission 5 |
+| U2 | Replace `source` with `publications[]` and add `relations[]` in 0.1? On 2026-10-23, `publications[]` and `relations[]` were added beside `source`; whether to fold `source` into `publications` is open | Spike 3, Mission 4 team |
 | U3 | Readable namespaced id or URN (possibly `urn:air`); who allocates namespaces? | Spike 3, with Missions 5 and 2 |
 | U4 | Is a configuration-only wrapper a publication or its own inventory entry? | Spike 2, with Mission 2 |
 | U5 | Which abilities vocabulary, if any (free text, A2A-style skills, OASF)? | Spike 2, with Missions 1 and 2 |
 | U6 | How are owner declarations of lifecycle constrained, and by whom? | Spike 3, with Mission 3 |
-| U7 | Should the manifest be published as an AI Catalog entry type, or only be projectable into one? | Spike 1, Mission 4 lead |
+| U7 | Should the manifest be published as an AI Catalog entry type, or only be projectable into one? | Spike 1, Mission 4 team |
 | U8 | What curation effort per capability is acceptable for the adoptable level? | Mission 4 with Mission 5 |
 | U9 | Do Missions 1 and 2 accept partial (levelled) records in their ingestion? | Missions 1 and 2 |
 | U10 | Is "declared none" for setup and limitations owner-asserted only, or verifiable? | Spike 2 |
@@ -1209,7 +1209,7 @@ deliverables.
 6. **Keep runtime primitives out of the manifest.** Reference native contracts; restate only
    cross-format facts. Evidence: §8.6.
 
-Status on 2026-10-23: recommendations 1-5 were applied to the 0.1 draft at the Mission 4 lead's
+Status on 2026-10-23: recommendations 1-5 were applied to the 0.1 draft at the Mission 4 team's
 direction, as POC proposals (§16.1); the revision keeps to recommendation 6. They remain
 recommendations for the spikes to confirm.
 
@@ -1281,24 +1281,24 @@ The evidence justifies additions to each spike, not changes of scope or ownershi
 
 | Source | Path |
 |---|---|
-| Mission 4 charter; Spike 1-4 documents (2026-10-16) | `Mission 4 AI Capability Intelligence & Standards.docx`; `Spike 1 ... .docx` to `Spike 4 ... .docx` |
-| Mission understanding (2026-10-22; updated 2026-10-23) | [MISSION_UNDERSTANDING.md](MISSION_UNDERSTANDING.md) |
-| POC report, rules, field dictionary, boundary review | [docs/poc-report.md](docs/poc-report.md), [docs/manifest-spec.md](docs/manifest-spec.md), [docs/field-dictionary/0.1.md](docs/field-dictionary/0.1.md), [docs/mission-boundaries.md](docs/mission-boundaries.md) |
-| Journey pilot, iteration 1 | [docs/journey-pilot.md](docs/journey-pilot.md), [pilot/](pilot/) |
-| Schema 0.1 | [schema/0.1/capability.schema.json](schema/0.1/capability.schema.json), revised 2026-10-23; the draft this report evaluated is `research/spikes-1-3/reference/capability-0.1-2026-10-22.schema.json` |
+| Mission 4 charter; Spike 1-4 documents (2026-10-16) | `docs/charter/Mission 4 AI Capability Intelligence & Standards.docx`; `docs/charter/Spike 1 ... .docx` to `docs/charter/Spike 4 ... .docx` |
+| Mission understanding (2026-10-22; updated 2026-10-23) | [mission-understanding.md](mission-understanding.md) |
+| POC report, rules, field dictionary, boundary review | [docs/poc-report.md](poc-report.md), [docs/manifest-spec.md](manifest-spec.md), [docs/field-dictionary/0.1.md](field-dictionary/0.1.md), [docs/mission-boundaries.md](mission-boundaries.md) |
+| Journey pilot, iteration 1 | [docs/journey-pilot.md](journey-pilot.md), [pilot/](../pilot/) |
+| Schema 0.1 | [schema/0.1/capability.schema.json](../schema/0.1/capability.schema.json), revised 2026-10-23; the draft this report evaluated is `research/spikes-1-3/reference/capability-0.1-2026-10-22.schema.json` |
 
 ### 15.2 Evidence produced by this research
 
 | File | Content |
 |---|---|
-| [research/spikes-1-3/README.md](research/spikes-1-3/README.md) | Reproduction steps, deviations, limitations |
-| [research/spikes-1-3/needs.yaml](research/spikes-1-3/needs.yaml) | Pre-registered journeys, questions, needs, sampling rule |
-| [research/spikes-1-3/judgments.yaml](research/spikes-1-3/judgments.yaml) | Relevance, identity groups, derivatives, rationale |
-| [research/spikes-1-3/results.md](research/spikes-1-3/results.md) | Generated results (cited as R§n) |
+| [research/spikes-1-3/README.md](../research/spikes-1-3/README.md) | Reproduction steps, deviations, limitations |
+| [research/spikes-1-3/needs.yaml](../research/spikes-1-3/needs.yaml) | Pre-registered journeys, questions, needs, sampling rule |
+| [research/spikes-1-3/judgments.yaml](../research/spikes-1-3/judgments.yaml) | Relevance, identity groups, derivatives, rationale |
+| [research/spikes-1-3/results.md](../research/spikes-1-3/results.md) | Generated results (cited as R§n) |
 | `research/spikes-1-3/samples/` | Snapshot: `index.json` (the sources' search results), `records/` (50 records), `supplementary.json` (documentation text, identity cases), `a2a-cards.json`, `renames.json` |
 | `research/spikes-1-3/*.js` | `fetch.js`, `fetch-supplementary.js`, `fetch-renames.js` (network); `crosswalk.js`, `analyze.js` (offline) |
 | `research/spikes-1-3/reference/` | The A2A v0.3.0 JSON Schema; since 2026-10-23 also the schema 0.1 draft of 2026-10-22 and the 9 manifests that were valid under it (`examples-2026-10-22/`), the baseline for §16 |
-| [test/research.test.js](test/research.test.js) | Since 2026-10-23: keeps `results.md` and `results.json` in sync with the snapshot, and checks the §7.6 and §16 numbers |
+| [test/research.test.js](../test/research.test.js) | Since 2026-10-23: keeps `results.md` and `results.json` in sync with the snapshot, and checks the §7.6 and §16 numbers |
 
 Verification on 2026-10-22: `node research/spikes-1-3/analyze.js` regenerated the results from
 the snapshot. `npm test` passed 157 of 157 tests (Node.js v22.23.2), which confirms that the
@@ -1350,14 +1350,14 @@ All retrieved on 2026-10-22.
 
 ## 16. Addendum: the proposals applied to schema 0.1 (2026-10-23)
 
-On 2026-10-23 the Mission 4 lead asked for the analysis to be carried into the code and documents
-[Project: lead, 2026-10-23]. The proposals of §11 and §13.1 were applied to the unpublished schema
-0.1 draft in place, following the lead's earlier decision to keep one schema version and to revise
+On 2026-10-23 the Mission 4 team asked for the analysis to be carried into the code and documents
+[Project: team request, 2026-10-23]. The proposals of §11 and §13.1 were applied to the unpublished schema
+0.1 draft in place, following the team.s earlier decision to keep one schema version and to revise
 0.1 while it is unpublished [Project: POC D20]. They are POC proposals for Spikes 2 and 3 to
 confirm, not spike conclusions. The draft that §7.6 evaluated, and the manifests that were valid
 under it, are kept in `research/spikes-1-3/reference/`. The rules are in
-[docs/manifest-spec.md](docs/manifest-spec.md) (tagged [R §n]); the decisions are POC D3, D4, D5,
-D8, D9, D11, and D23-D26 in [docs/poc-report.md](docs/poc-report.md).
+[docs/manifest-spec.md](manifest-spec.md) (tagged [R §n]); the decisions are POC D3, D4, D5,
+D8, D9, D11, and D23-D26 in [docs/poc-report.md](poc-report.md).
 
 ### 16.1 What was applied
 

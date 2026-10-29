@@ -2,8 +2,8 @@
 
 Date: 2026-10-19; revised 2026-10-20 after the review against the published mission boundaries
 ([mission-boundaries.md](mission-boundaries.md)), and on 2026-10-23 to apply the proposals of the
-[Spikes 1-3 research](../MISSION4_SPIKES_1_TO_3_RESEARCH.md). Sources: the Mission 4 charter and the Spike 1-4
-documents in the repository root (all last modified 2026-10-16), and the boundaries for Missions
+[Spikes 1-3 research](spikes-1-3-research.md). Sources: the Mission 4 charter and the Spike 1-4
+documents in [`charter/`](charter/) (all last modified 2026-10-16), and the boundaries for Missions
 1-5. This report is the Spike 4 research document: findings, decisions, traceability, verification
 results, limitations, and recommendations.
 
@@ -18,7 +18,7 @@ It also led to these changes:
 - The validation report has a contract schema.
 - A consumer-needs contract test covers what each mission needs.
 
-The schema additions were first drafted as a separate version 0.2. At the Mission 4 lead's request
+The schema additions were first drafted as a separate version 0.2. At the Mission 4 team's request
 they were folded into the unpublished **0.1** draft, so there is a single schema version.
 `schema-compat` confirmed the revision is additive (§7.2).
 
@@ -35,9 +35,9 @@ discovery and reuse journeys on 12 real capabilities drawn at random from public
 Its schema proposals were applied on 2026-10-23 (below); its recommended approach is the first
 item in §11.
 
-**Revision 2026-10-23: Spikes 1-3 research applied.** The [Spikes 1-3 research](../MISSION4_SPIKES_1_TO_3_RESEARCH.md)
+**Revision 2026-10-23: Spikes 1-3 research applied.** The [Spikes 1-3 research](spikes-1-3-research.md)
 ran four discovery and reuse journeys on 60 real capability records from seven sources. At the
-Mission 4 lead's direction, its proposals (report §11 and §13.1) were applied to the unpublished
+Mission 4 team's direction, its proposals (report §11 and §13.1) were applied to the unpublished
 0.1 draft in place, as POC proposals for Spikes 2 and 3 to confirm, not as spike conclusions:
 - **Requiredness.** Six fields are mandatory (`schemaVersion`, `id`, `name`, `capabilityType`,
   `source`, `riskTier`). `description`, `owner`, `lifecycleStatus`, and `lastUpdated` are optional,
@@ -188,10 +188,10 @@ reversible: the data rules are confined to the schema, and the code reads them f
 | D17 | Implementation stack | No existing code | Node.js 22 (ESM), Ajv 8, ajv-formats, yaml 2, semver; tests use `node:test` | Mission 4 team |
 | D18 | Second consumer or integration path | "Evaluated" (§8) | Independent Python implementation, plus the validation-report contract and exit codes as the contribution-workflow path | Mission 4 and consumers |
 | D19 | Exchange between teams | Boundaries: "define machine-readable contracts for exchanging information between teams"; Mission 2 owns the inventory | `export` produces a lossless exchange document under a contract schema; the projected `catalog` was removed | Missions 1-3 |
-| D20 | Schema evolution and compatibility | Boundaries: "evolve the schema", "validate schema ... compatibility" | One schema version: the boundary-review additions were first drafted as 0.2, then folded into the unpublished 0.1 draft (Mission 4 lead's decision, 2026-10-20). `schema-compat` (static classification plus corpus re-validation) confirmed the revision is additive. The research revision of 2026-10-23 was likewise made in place, at the lead's direction, and checked against the kept 2026-10-22 draft and its manifests (§7.2). Once published, versions are immutable | Spike 3 |
+| D20 | Schema evolution and compatibility | Boundaries: "evolve the schema", "validate schema ... compatibility" | One schema version: the boundary-review additions were first drafted as 0.2, then folded into the unpublished 0.1 draft (Mission 4 team's decision, 2026-10-20). `schema-compat` (static classification plus corpus re-validation) confirmed the revision is additive. The research revision of 2026-10-23 was likewise made in place, at the team.s direction, and checked against the kept 2026-10-22 draft and its manifests (§7.2). Once published, versions are immutable | Spike 3 |
 | D21 | Ownership of lifecycle expectations and risk vocabulary | Boundaries: Mission 3 defines lifecycle expectations and risk classifications | Mission 4 owns the fields and integrity rules; the transition table and tier names need Mission 3's confirmation | Mission 3 |
 | D22 | Capability types `framework`, `platform` | Mission 2 catalogues frameworks and platforms | Added to schema 0.1 | Mission 2, Spike 2 |
-| D23 | Completeness levels | Not specified; the pilot proposed levels (journey-pilot §4) | **Added 2026-10-23** (research §11.3): discoverable, assessable, adoptable, governed, in `x-completenessLevels`; reported for every manifest, enforced only with `--require-level` | Mission 4 lead, Mission 5, Spike 2 |
+| D23 | Completeness levels | Not specified; the pilot proposed levels (journey-pilot §4) | **Added 2026-10-23** (research §11.3): discoverable, assessable, adoptable, governed, in `x-completenessLevels`; reported for every manifest, enforced only with `--require-level` | Mission 4 team, Mission 5, Spike 2 |
 | D24 | Publications and relations | Several source references per capability (§5) | **Added 2026-10-23** (research §7.3, §10.1): `publications[]` beside `source`; `source.repositoryId`; `relations[]`; `DUPLICATE_PUBLICATION`, and `DUPLICATE_SOURCE` by repository id. `source` was kept as the primary reference rather than replaced, to keep the change small; whether to fold it into `publications` is open (research U2) | Spike 3 |
 | D25 | Provenance and value states | Not specified | **Added 2026-10-23** (research §9.4): `provenance[]` (native, linked, derived with a convention or heuristic basis, owner, curated); heuristic values, claimed relations, and prose license terms reported as unverified | Spike 2 |
 | D26 | License, runtime, setup, documentation, keywords | `techStack` and further potential fields (§4) | **Added 2026-10-23** (research §11.2): optional fields; `license` and `runtime` count towards the assessable level, `setup` towards the adoptable level | Spike 2 |

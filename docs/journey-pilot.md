@@ -149,7 +149,7 @@ Decisions needed:
    - a namespace rule for unscoped packages and skills;
    - several publication locations per capability (registry entry, package, repository).
 
-What was applied on 2026-10-23, as POC proposals at the Mission 4 lead's direction (details in
+What was applied on 2026-10-23, as POC proposals at the Mission 4 team's direction (details in
 [poc-report.md](poc-report.md), revision 2026-10-23):
 
 | Proposal | Status |

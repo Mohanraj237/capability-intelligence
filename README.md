@@ -18,18 +18,34 @@ and exchanged so that the other missions operate on consistent information. It c
 | Rules: identifiers, lifecycle, versioning, compatibility, risk, missing data, extensibility | [`docs/manifest-spec.md`](docs/manifest-spec.md) |
 | Boundary and scope review against Missions 1-5 | [`docs/mission-boundaries.md`](docs/mission-boundaries.md) |
 | Journey pilot: discovery and reuse journeys tested on a random sample of real capabilities | [`docs/journey-pilot.md`](docs/journey-pilot.md), [`pilot/`](pilot/) |
-| Spikes 1-3 research: four journeys on 60 real capability records in seven formats, the evidence behind the 2026-10-23 revision of 0.1 | [`MISSION4_SPIKES_1_TO_3_RESEARCH.md`](MISSION4_SPIKES_1_TO_3_RESEARCH.md), [`research/spikes-1-3/`](research/spikes-1-3/) |
+| Spikes 1-3 research: four journeys on 60 real capability records in seven formats, the evidence behind the 2026-10-23 revision of 0.1 | [`docs/spikes-1-3-research.md`](docs/spikes-1-3-research.md), [`research/spikes-1-3/`](research/spikes-1-3/) |
 | Validator, compatibility checkers, exchange export (CLI and library) | [`bin/`](bin/), [`src/`](src/) |
 | POC report: findings, decisions, traceability, verification, open questions | [`docs/poc-report.md`](docs/poc-report.md) |
 
 > Status: POC; schema 0.1 is an unpublished draft. Several rules are proposals made by this POC,
 > because the four spike documents define research questions but contain no findings yet. On
 > 2026-10-23 the draft was revised in place to apply the proposals of the Spikes 1-3 research,
-> at the Mission 4 lead's direction; those are proposals too. Each rule's provenance is tagged in
+> at the Mission 4 team's direction; those are proposals too. Each rule's provenance is tagged in
 > [`docs/manifest-spec.md`](docs/manifest-spec.md). Mission 4 owns
 > the structure and rules only. Inventory content, risk classifications, approvals,
 > recommendations, and the contribution workflow belong to the other missions
 > ([`docs/mission-boundaries.md`](docs/mission-boundaries.md)).
+
+## Documentation map
+
+| Document | Purpose |
+|---|---|
+| [`docs/manifest-spec.md`](docs/manifest-spec.md) | Normative rules for manifests, with provenance of each rule |
+| [`docs/field-dictionary/0.1.md`](docs/field-dictionary/0.1.md) | Field reference generated from the schema (do not edit by hand) |
+| [`docs/poc-report.md`](docs/poc-report.md) | Findings, decisions, traceability, verification, open questions |
+| [`docs/mission-boundaries.md`](docs/mission-boundaries.md) | Scope review against Missions 1-5 |
+| [`docs/mission-understanding.md`](docs/mission-understanding.md) | Reference for onboarding: why the mission exists, what it owns, open questions |
+| [`docs/questions-answered.md`](docs/questions-answered.md) | Plain-language answers on the problem, the solution, how it works, and what the POC shows |
+| [`docs/research-explained.md`](docs/research-explained.md) | Guided explanation of the Spikes 1-3 research for readers new to the topic |
+| [`docs/spikes-1-3-research.md`](docs/spikes-1-3-research.md) | The Spikes 1-3 research report |
+| [`docs/journey-pilot.md`](docs/journey-pilot.md) | Journey pilot interpretation |
+| [`docs/reviews/spike-2-report-review.md`](docs/reviews/spike-2-report-review.md) | Review of the Spike 2 report |
+| [`docs/charter/`](docs/charter/) | The Mission 4 charter and the Spike 1-4 documents (`.docx`; marked confidential) |
 
 ## Quick start
 
@@ -301,7 +317,7 @@ Analysed 96 distinct records (60 capabilities, 36 agent cards).
 Wrote research/spikes-1-3/results.md and results.json.
 ```
 
-The report is [`MISSION4_SPIKES_1_TO_3_RESEARCH.md`](MISSION4_SPIKES_1_TO_3_RESEARCH.md), and the
+The report is [`docs/spikes-1-3-research.md`](docs/spikes-1-3-research.md), and the
 reproduction notes are in [`research/spikes-1-3/README.md`](research/spikes-1-3/README.md).
 
 ## Writing a manifest
@@ -388,6 +404,7 @@ src/field-docs.js                         generates docs/field-dictionary/<versi
 src/format.js                             text output
 bin/capability-manifest.js                CLI
 examples/                                 valid, invalid, consistency, and compatibility manifests
+docs/                                     specification, field dictionary, reports, research; charter/ holds the .docx sources
 pilot/journeys.yaml                       journey pilot: journeys, questions, and discovery use cases
 pilot/sample.js, pilot/samples/           random sampler (network) and its snapshot of native metadata
 pilot/crosswalk.js                        native formats (SKILL.md, server.json, package.json) -> manifest concepts

@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Date | 2026-10-23 |
-| Answers | The Mission 4 lead's questions of 2026-10-23, in four groups: the problem, the solution, how it works, and what the proof of concept (POC) demonstrated |
+| Answers | The Mission 4 team's questions of 2026-10-23, in four groups: the problem, the solution, how it works, and what the proof of concept (POC) demonstrated |
 | Built from | The charter and spike documents; the POC (schema 0.1 as revised on 2026-10-23, validator, contracts, examples); the journey pilot (iteration 1); the Spikes 1-3 research (60 real capability records); the Spike 2 report review; external sources checked on 2026-10-23 (§E) |
 | Status | Explanations and evidence. **Nothing here is a decision.** Proposals stay proposals until their owners confirm them |
 | Handling | Derived from documents marked "Confidential – Authorized Use Only". Handle it the same way |
@@ -13,7 +13,7 @@ Labels used throughout:
 | Label | Meaning |
 |---|---|
 | **[Charter §n]** | The Mission 4 charter (2026-10-16) |
-| **[Research §n]** | [MISSION4_SPIKES_1_TO_3_RESEARCH.md](MISSION4_SPIKES_1_TO_3_RESEARCH.md): 60 real capability records in seven formats, plus 36 A2A Agent Cards, snapshot of 2026-10-22 |
+| **[Research §n]** | [spikes-1-3-research.md](spikes-1-3-research.md): 60 real capability records in seven formats, plus 36 A2A Agent Cards, snapshot of 2026-10-22 |
 | **[POC]** | The proof of concept in this repository |
 | **[Run today]** | A command run on 2026-10-23 while writing this document; its output is quoted |
 | **[External]** | An official page checked on 2026-10-23 (listed in §E) |
@@ -607,8 +607,7 @@ node bin/capability-manifest.js export examples/valid                       # su
 node bin/capability-manifest.js export examples/valid --out exchange.json   # writes the JSON document
 ```
 
-One was generated while writing this document, from the valid and invalid examples:
-`/private/tmp/claude-501/-Users-mohanrajsc-Documents-Projects-capability-intelligence/5eb7a9e1-6ada-4051-a2d9-4db8bd0c30f0/scratchpad/exchange.json`
+One was generated while writing this document, from the valid and invalid examples, as a temporary file
 (26.5 KB; 8 capabilities and 5 rejected inputs) [Run today]. The summary view from today's run:
 
 ```text
@@ -998,16 +997,16 @@ How to read this:
 
 | Source | Used for |
 |---|---|
-| `Mission 4 AI Capability Intelligence & Standards.docx` | Charter positions (§3, §6, §8, §9) |
-| [MISSION4_SPIKES_1_TO_3_RESEARCH.md](MISSION4_SPIKES_1_TO_3_RESEARCH.md), [research/spikes-1-3/](research/spikes-1-3/) | All measured results from 60 real records; standards comparison; experiments |
-| [docs/reviews/spike-2-report-review.md](docs/reviews/spike-2-report-review.md) | Use-case requiredness; MCP server runtime split; Hugging Face model cards |
-| [docs/field-dictionary/0.1.md](docs/field-dictionary/0.1.md), [schema/0.1/capability.schema.json](schema/0.1/capability.schema.json) | Field definitions, conditional rules, completeness levels |
-| [docs/manifest-spec.md](docs/manifest-spec.md) | The validation contract (§11), interoperability rules (§12), consumer guidance (§13) |
-| [docs/poc-report.md](docs/poc-report.md) | Decisions D1-D26, verification (§7), limitations (§9) |
-| [docs/mission-boundaries.md](docs/mission-boundaries.md) | Ownership; the Mission 5 integration point |
-| [pilot/results.md](pilot/results.md), [pilot/drafts/](pilot/drafts/) | The 12 pilot manifests |
-| [schema/contracts/exchange-document-0.1.schema.json](schema/contracts/exchange-document-0.1.schema.json) | The exchange document's structure |
-| [README.md](README.md) | Commands and examples |
+| `docs/charter/Mission 4 AI Capability Intelligence & Standards.docx` | Charter positions (§3, §6, §8, §9) |
+| [spikes-1-3-research.md](spikes-1-3-research.md), [research/spikes-1-3/](../research/spikes-1-3/) | All measured results from 60 real records; standards comparison; experiments |
+| [docs/reviews/spike-2-report-review.md](reviews/spike-2-report-review.md) | Use-case requiredness; MCP server runtime split; Hugging Face model cards |
+| [docs/field-dictionary/0.1.md](field-dictionary/0.1.md), [schema/0.1/capability.schema.json](../schema/0.1/capability.schema.json) | Field definitions, conditional rules, completeness levels |
+| [docs/manifest-spec.md](manifest-spec.md) | The validation contract (§11), interoperability rules (§12), consumer guidance (§13) |
+| [docs/poc-report.md](poc-report.md) | Decisions D1-D26, verification (§7), limitations (§9) |
+| [docs/mission-boundaries.md](mission-boundaries.md) | Ownership; the Mission 5 integration point |
+| [pilot/results.md](../pilot/results.md), [pilot/drafts/](../pilot/drafts/) | The 12 pilot manifests |
+| [schema/contracts/exchange-document-0.1.schema.json](../schema/contracts/exchange-document-0.1.schema.json) | The exchange document's structure |
+| [README.md](../README.md) | Commands and examples |
 
 ### External sources checked on 2026-10-23
 

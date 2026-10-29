@@ -21,11 +21,11 @@ Statements carry a label that says where they come from and how firm they are.
 | **[Charter §n]** | Stated in the Mission 4 charter, section n. If the charter calls the point "proposed" or "subject to Phase 0", that status is kept. |
 | **[Spike n]** | Stated in a spike document. The spike documents contain objectives, research areas, tasks, and deliverables only, with no findings. |
 | **[Boundaries]** | From the published "Boundaries for each team" (Missions 1-5). The original text is not in the repository; it is quoted and summarised in `docs/mission-boundaries.md`. |
-| **[Lead decision]** | A decision by the Mission 4 lead, with its date. |
+| **[Team decision]** | A decision by the Mission 4 team, with its date. |
 | **[POC proposal]** | Implemented by the proof of concept so that it can be evaluated. It is not confirmed. Decision rows D1-D26 are in `docs/poc-report.md` §3. |
 | **[Pilot evidence]** | Measured by the journey pilot, iteration 1: 12 public capabilities, 2026-10-22. |
 | **[Pilot proposal]** | Suggested by the journey pilot. Not decided; most were applied to the POC on 2026-10-23 as POC proposals (§14.4). |
-| **[Research §n]** | From the Spikes 1-3 research report (`MISSION4_SPIKES_1_TO_3_RESEARCH.md`), section n: four journeys measured on 60 public capability records in seven formats. Its proposals were applied to the 0.1 draft on 2026-10-23 as POC proposals. |
+| **[Research §n]** | From the Spikes 1-3 research report (`spikes-1-3-research.md`), section n: four journeys measured on 60 public capability records in seven formats. Its proposals were applied to the 0.1 draft on 2026-10-23 as POC proposals. |
 | **[Open]** | Unresolved. |
 | **[Observation]** | This document's own reading of the sources. It is not stated in any source; check it before relying on it. |
 
@@ -117,7 +117,7 @@ umbrella initiative's name or overall goal.
 - The Spikes 1-3 research ran four journeys on 60 public capability records in seven formats, plus
   36 A2A Agent Cards [Research §1]. Against the 0.1 draft of 2026-10-22, 12 of 60 drafted manifests
   were valid, 45 failing on `lifecycleStatus` [Research §7.6].
-- At the lead's direction, its proposals were applied to the unpublished 0.1 draft as POC
+- At the team.s direction, its proposals were applied to the unpublished 0.1 draft as POC
   proposals [POC proposal D3, D23-D26]:
   - six mandatory fields, and completeness levels reported by the validator;
   - publications, relations, and provenance per value;
@@ -220,18 +220,6 @@ The five missions, as far as they matter to Mission 4 [Boundaries, via `docs/mis
 | 3 | Trust | Owns risk classifications, assessment criteria, and lifecycle expectations (the Trust Framework) |
 | **4** | **AI Capability Intelligence & Standards** | **Owns the structure and rules: the common data model and interoperability** |
 | 5 | Contribution | Owns contributor engagement and the end-to-end submission process |
-
-**Timeline of the existing artifacts.** These are dates of work, not deadlines; no deadlines are
-documented (§16).
-
-| Date | Event |
-|---|---|
-| 2026-10-16 | Mission 4 charter and Spike 1-4 documents created |
-| 2026-10-19 | Proof of concept and POC report |
-| 2026-10-20 | Boundary review against Missions 1-5; the lead decides to keep a single schema version (§14.2) |
-| 2026-10-22 | Lead review: the scope is right, but discovery and reuse had not been proven. Journey pilot, iteration 1 |
-| 2026-10-22 | Spikes 1-3 research: four journeys on 60 public capability records in seven formats |
-| 2026-10-23 | The lead directs that the research analysis be applied; schema 0.1 is revised in place (§14.2) |
 
 ### 2.7 Technical context
 
@@ -727,7 +715,7 @@ Constraints are consolidated in §9 and edge cases in §10.
 | Proof of concept (`docs/poc-report.md`) | 2026-10-19, revised 2026-10-20, 2026-10-22, and 2026-10-23 | Yes; most "decisions" in it are proposals |
 | Boundary review (`docs/mission-boundaries.md`) | 2026-10-20; updated 2026-10-23 | Yes |
 | Journey pilot, iteration 1 (`docs/journey-pilot.md`, `pilot/`) | 2026-10-22 | Yes |
-| Spikes 1-3 research (`MISSION4_SPIKES_1_TO_3_RESEARCH.md`, `research/spikes-1-3/`) | 2026-10-22; addendum 2026-10-23 | Yes: findings and proposals for Spikes 1-3, not spike conclusions |
+| Spikes 1-3 research (`spikes-1-3-research.md`, `research/spikes-1-3/`) | 2026-10-22; addendum 2026-10-23 | Yes: findings and proposals for Spikes 1-3, not spike conclusions |
 | Journey pilot, iteration 2 | Proposed, not started | n/a |
 
 **Caveats that apply to all the findings below:**
@@ -1248,7 +1236,7 @@ Phase 0 **must establish** [Charter §4, §7]:
 | A8 | Owners will maintain manifests, or accept generated drafts | Implicit in the charter [Observation] | Mission 5 workflow trials |
 | A9 | Node.js is acceptable as the reference stack | D17 | Mission 4 team decision; consumers' languages |
 | A10 | SemVer fits internal capabilities that declare `capabilityVersion` (optional since 2026-10-23) | D11 | Survey of internal versioning practice |
-| A11 | The spikes are Phase 0's vehicle | [Observation] | Confirmation by the Mission 4 lead |
+| A11 | The spikes are Phase 0's vehicle | [Observation] | Confirmation by the Mission 4 team |
 
 ---
 
@@ -1423,8 +1411,8 @@ specification.
 
 | Artifact | Path | What it is | Status |
 |---|---|---|---|
-| Mission 4 charter | `Mission 4 AI Capability Intelligence & Standards.docx` | Goal, scope, proposed solution, acceptance criteria | 2026-10-16; confidential |
-| Spike 1-4 documents | `Spike 1 ... .docx` to `Spike 4 ... .docx` | Objectives, research areas, tasks, deliverables | 2026-10-16; no findings |
+| Mission 4 charter | `docs/charter/Mission 4 AI Capability Intelligence & Standards.docx` | Goal, scope, proposed solution, acceptance criteria | 2026-10-16; confidential |
+| Spike 1-4 documents | `docs/charter/Spike 1 ... .docx` to `docs/charter/Spike 4 ... .docx` | Objectives, research areas, tasks, deliverables | 2026-10-16; no findings |
 | Manifest schema 0.1 | `schema/0.1/capability.schema.json` | 6 mandatory fields, 12 conditional rules, 4 completeness levels, 10 capability types, `x-` extensions (10 mandatory and 10 rules until 2026-10-22) | Unpublished draft (POC), revised 2026-10-23 |
 | Inter-team contracts | `schema/contracts/` | Validation report, exchange document | POC; revised in place 2026-10-23 |
 | Field dictionary | `docs/field-dictionary/0.1.md` | Generated from the schema | Current with the schema |
@@ -1432,7 +1420,7 @@ specification.
 | POC report | `docs/poc-report.md` | Findings, decision table D1-D26, traceability, verification, open questions | 2026-10-19; revised 2026-10-20, 2026-10-22, and 2026-10-23 |
 | Boundary review | `docs/mission-boundaries.md` | Scope check against Missions 1-5 | 2026-10-20; updated 2026-10-23 |
 | Journey pilot | `docs/journey-pilot.md`; `pilot/` (journeys, sampler, snapshot, crosswalk, analysis, drafts, results) | Iteration 1 | 2026-10-22; most proposals applied 2026-10-23 |
-| Spikes 1-3 research | `MISSION4_SPIKES_1_TO_3_RESEARCH.md`; `research/spikes-1-3/` (pre-registered needs, snapshot, crosswalk for seven formats, judgments, analysis, results; `reference/` keeps the 2026-10-22 draft and its manifests) | Findings and proposals for Spikes 1-3 | 2026-10-22; addendum 2026-10-23 |
+| Spikes 1-3 research | `spikes-1-3-research.md`; `research/spikes-1-3/` (pre-registered needs, snapshot, crosswalk for seven formats, judgments, analysis, results; `reference/` keeps the 2026-10-22 draft and its manifests) | Findings and proposals for Spikes 1-3 | 2026-10-22; addendum 2026-10-23 |
 | Validator, checkers, CLI | `src/`, `bin/capability-manifest.js` | `validate`, `compat`, `export`, `schema-compat`, `docs`; completeness levels and `--require-level` since 2026-10-23 | POC |
 | Examples | `examples/` | 8 valid (6 types; 5 internal, 3 external; 2 of them real public capabilities), 5 invalid, 1 consistency, 2 compatibility | POC |
 | Tests | `test/` | 206 tests in 39 suites (157 in 33 until 2026-10-22) | POC |
@@ -1671,7 +1659,7 @@ are proposed measures; no targets have been set.
 |---|---|---|---|---|---|---|
 | Q1 | Which fields are mandatory, conditional, and optional? | Defines validity for every manifest and consumer | 10 charter candidates; the POC makes 6 mandatory since 2026-10-23 (all 10 before); availability measured on 12 (pilot) and 60 (research) records | Internal availability; confirmed consumer needs | Arbitrary friction, or unreliable fields | Spike 2, with pilot iteration 2 |
 | Q2 | How do requirements vary by capability type? | Must be decided in Phase 0 [Charter §4] | One type-specific rule (`mcp_server`) | Per-type field analysis | Either over-general or over-specific rules | Spike 2 |
-| Q3 | One requiredness level, or completeness levels? | Changes the validation contract | Levels applied provisionally on 2026-10-23 (D23); 58 of 60 research drafts valid | Consumers' tolerance for partial records; Mission 5's fit | The provisional levels harden by default | Mission 4 lead decision, with Mission 5 |
+| Q3 | One requiredness level, or completeness levels? | Changes the validation contract | Levels applied provisionally on 2026-10-23 (D23); 58 of 60 research drafts valid | Consumers' tolerance for partial records; Mission 5's fit | The provisional levels harden by default | Mission 4 team decision, with Mission 5 |
 | Q4 | How are missing, unknown, and inapplicable values represented? | Phase 0 item [Charter §4] | POC: omit, `[]`, no `null`, `unassessed`; provenance and reported states since 2026-10-23 | Whether consumers need to tell unknown from not applicable | Consumers infer values | Spike 2 |
 | Q5 | Are prompts, commands, hooks, and resources components or types? | Granularity, and therefore ids | Charter allows either; POC embeds them | Real bundles | Inconsistent manifests | Spike 2 |
 | Q6 | Add license, keywords, documentation link, required configuration? | Common in native metadata; the adoption journey needs the license | Pilot F11; added as optional fields on 2026-10-23 (D26) | Internal availability | Adoption journey stays incomplete | Spike 2 confirmation |
@@ -1693,7 +1681,7 @@ are proposed measures; no targets have been set.
 |---|---|---|---|---|---|---|
 | Q13 | Are the lifecycle values and transitions right, including reinstatement? | Integrity of the lifecycle; Mission 3's expectations | POC table D9 | Mission 3's expectations | Conflicting rules | Spike 3, with Mission 3 |
 | Q14 | Versioning for non-SemVer capabilities, and the syntax of dependency version constraints? | Compatibility checks | POC SemVer, lenient below 1.0.0; native versions per publication since 2026-10-23 | Internal and vendor practice | Version checks skipped or wrong | Spike 3 |
-| Q15 | How is schema 0.1 published: immutable `$id`, deprecation window, migration notes? | Consumers need stable contracts | POC rules; placeholder `$id` | Hosting location; consumers' upgrade cadence | Unstable contract | Spike 3; Mission 4 lead |
+| Q15 | How is schema 0.1 published: immutable `$id`, deprecation window, migration notes? | Consumers need stable contracts | POC rules; placeholder `$id` | Hosting location; consumers' upgrade cadence | Unstable contract | Spike 3; Mission 4 team |
 
 **Risk and trust**
 
@@ -1708,14 +1696,14 @@ are proposed measures; no targets have been set.
 |---|---|---|---|---|---|---|
 | Q18 | Reuse, adapt, or define, per standard; and reference, embed, or generate? | CR15 | Options in §8.1 | Spike 1 comparison | Reinvention, or protocol coupling | Spike 1 |
 | Q19 | Are JSON Schema 2020-12 and YAML confirmed? | Phase 0 item [Charter §3] | Exercised in the POC; F3 divergences | Spike 1 and 4 assessment | Format churn later | Spikes 1 and 4 |
-| Q20 | Must other implementations follow a normative YAML profile and pass a conformance suite? | F3 shows divergent verdicts | POC rules §12 | Consumers' languages and tools | Same file, different verdicts | Spike 4; Mission 4 lead |
+| Q20 | Must other implementations follow a normative YAML profile and pass a conformance suite? | F3 shows divergent verdicts | POC rules §12 | Consumers' languages and tools | Same file, different verdicts | Spike 4; Mission 4 team |
 
 **Consumers and integration**
 
 | ID | Question | Why it matters | Known now | Missing evidence | If unresolved | Next step |
 |---|---|---|---|---|---|---|
-| Q21 | Does "without capability-specific field mappings" apply to producer-side crosswalks as well as consumers? | Defines success (CR2) | The POC reads it as consumer-side; the pilot uses crosswalks | Lead's interpretation | Disputed acceptance | Mission 4 lead |
-| Q22 | What counts as an "evaluated" second consumer, and which real consumer integrates first? | CR16 | POC: Python implementation plus the report contract | Acceptance expectations | Final acceptance is unclear | Mission 4 lead, with Missions 1 and 5 |
+| Q21 | Does "without capability-specific field mappings" apply to producer-side crosswalks as well as consumers? | Defines success (CR2) | The POC reads it as consumer-side; the pilot uses crosswalks | Team.s interpretation | Disputed acceptance | Mission 4 team |
+| Q22 | What counts as an "evaluated" second consumer, and which real consumer integrates first? | CR16 | POC: Python implementation plus the report contract | Acceptance expectations | Final acceptance is unclear | Mission 4 team, with Missions 1 and 5 |
 | Q23 | Which fields do Missions 1, 2, 3, and 5 actually need, and does the exchange document fit their ingestion? | A2 | Derived from the published scopes | Confirmation by the missions | Bespoke transformations reappear | Each mission |
 
 **Validation semantics**
@@ -1729,21 +1717,21 @@ are proposed measures; no targets have been set.
 
 | ID | Question | Why it matters | Known now | Missing evidence | If unresolved | Next step |
 |---|---|---|---|---|---|---|
-| Q26 | What is Phase 0: its scope, timeline, and exit criteria; and who accepts v0.1? | Many items are "subject to Phase 0" | Only charter mentions | Plan and sign-off authority | Proposals harden by default | Mission 4 lead |
-| Q27 | Are journeys the acceptance tests? Whose journeys, and which targets for the pilot's measures? | Shapes what counts as evidence | Recommendation 1 in the POC report; lead direction (§14.2) | Agreed journeys and targets | Endless refinement, or premature acceptance | Mission 4 lead, with Missions 1 and 2 |
+| Q26 | What is Phase 0: its scope, timeline, and exit criteria; and who accepts v0.1? | Many items are "subject to Phase 0" | Only charter mentions | Plan and sign-off authority | Proposals harden by default | Mission 4 team |
+| Q27 | Are journeys the acceptance tests? Whose journeys, and which targets for the pilot's measures? | Shapes what counts as evidence | Recommendation 1 in the POC report; team direction (§14.2) | Agreed journeys and targets | Endless refinement, or premature acceptance | Mission 4 team, with Missions 1 and 2 |
 | Q28 | Is the Node.js implementation the long-term stack, or one reference among several? | Consumers' integration | D17 | Consumers' languages | Fragmented tooling | Mission 4 team |
 | Q29 | When do the standard's artifacts get version control and CI? | Reproducibility; enforcing `schema-compat` | Neither exists | n/a | Unreviewable schema changes | Mission 4 team |
-| Q30 | What is the umbrella initiative's goal, and what is the internal baseline (current formats, mappings, consumers)? | Grounds the problem and its priorities | Not in the sources | Programme documents | Requirements rest on inference | Mission 4 lead |
+| Q30 | What is the umbrella initiative's goal, and what is the internal baseline (current formats, mappings, consumers)? | Grounds the problem and its priorities | Not in the sources | Programme documents | Requirements rest on inference | Mission 4 team |
 
 ### 14.2 Decisions already made
 
 | Decision | By, and when | Evidence |
 |---|---|---|
 | The charter's firm positions: CR1-CR21 in §9.1, including the separate lifecycle, risk, and approval axes; unassessed never low; a URL is not an id; distinct version kinds; a metadata contract, not a runtime protocol; the boundaries | Charter (2026-10-16); Boundaries | Charter §1-§10; `docs/mission-boundaries.md` |
-| Keep a **single schema version**. The boundary-review fields, first drafted as 0.2, were folded into the unpublished 0.1 draft | [Lead decision], 2026-10-20 | `docs/poc-report.md` revision note and D20; `docs/mission-boundaries.md` §6 |
-| Revise 0.1 in place while it is unpublished; create a new version directory only once 0.1 is published | [Lead decision], 2026-10-20 | README, "Changing the schema" |
-| Direction to prove discovery and reuse on real, sampled capabilities rather than only refine metadata definitions. The lead's assessment was that the mission and spikes are well scoped, but that too much effort had gone into defining metadata without proving those scenarios | [Lead decision], 2026-10-22 (review feedback; not written into the repository documents, which record its result: the journey pilot) | `docs/journey-pilot.md` §1; `docs/poc-report.md` revision note of 2026-10-22 |
-| Apply the Spikes 1-3 research analysis to the code and documents: revise the unpublished 0.1 draft in place with its proposals, as POC proposals | [Lead decision], 2026-10-23 (request to update the codebase and documents with the research analysis) | `docs/poc-report.md` revision note of 2026-10-23; research report §16. The decision is to apply the proposals for evaluation; their content is not confirmed (§14.3) |
+| Keep a **single schema version**. The boundary-review fields, first drafted as 0.2, were folded into the unpublished 0.1 draft | [Team decision], 2026-10-20 | `docs/poc-report.md` revision note and D20; `docs/mission-boundaries.md` §6 |
+| Revise 0.1 in place while it is unpublished; create a new version directory only once 0.1 is published | [Team decision], 2026-10-20 | README, "Changing the schema" |
+| Direction to prove discovery and reuse on real, sampled capabilities rather than only refine metadata definitions. The review.s assessment was that the mission and spikes are well scoped, but that too much effort had gone into defining metadata without proving those scenarios | [Team decision], 2026-10-22 (review feedback; not written into the repository documents, which record its result: the journey pilot) | `docs/journey-pilot.md` §1; `docs/poc-report.md` revision note of 2026-10-22 |
+| Apply the Spikes 1-3 research analysis to the code and documents: revise the unpublished 0.1 draft in place with its proposals, as POC proposals | [Team decision], 2026-10-23 (request to update the codebase and documents with the research analysis) | `docs/poc-report.md` revision note of 2026-10-23; research report §16. The decision is to apply the proposals for evaluation; their content is not confirmed (§14.3) |
 
 Whether journeys formally become the acceptance tests is **not** decided. It is the first of the
 POC report's recommendations (Q27).
@@ -1774,10 +1762,10 @@ Every row is a reversible proposal awaiting the named confirmer. Full detail is 
 | D17 | Implementation stack | Node.js 22, Ajv, yaml, semver | Mission 4 team |
 | D18 | Second consumer or integration path | Python implementation; validation-report contract | Mission 4 and consumers |
 | D19 | Exchange between teams | `export` to an exchange document; `catalog` removed | Missions 1-3 |
-| D20 | Schema evolution | Single version; `schema-compat` (the single version is a lead decision, §14.2) | Spike 3 |
+| D20 | Schema evolution | Single version; `schema-compat` (the single version is a team decision, §14.2) | Spike 3 |
 | D21 | Lifecycle and risk-vocabulary ownership | Mission 4 owns the fields; Mission 3 the expectations and vocabulary | Mission 3 |
 | D22 | `framework`, `platform` types | Added | Mission 2; Spike 2 |
-| D23 | Completeness levels | discoverable, assessable, adoptable, governed; reported, enforced only on request (2026-10-23) | Mission 4 lead, Mission 5; Spike 2 |
+| D23 | Completeness levels | discoverable, assessable, adoptable, governed; reported, enforced only on request (2026-10-23) | Mission 4 team, Mission 5; Spike 2 |
 | D24 | Publications and relations | `publications[]` beside `source`; repository id; `relations[]` (2026-10-23) | Spike 3 |
 | D25 | Provenance and value states | `provenance[]`; unconfirmed, conflicting, and claimed values reported (2026-10-23) | Spike 2 |
 | D26 | License, runtime, setup, documentation, keywords | Optional fields (2026-10-23) | Spike 2 |
@@ -1836,17 +1824,16 @@ unless the evidence column shows a measured result.
 
 ### 16.1 Known milestones and commitments
 
-**The sources contain no dates or deadlines for any milestone.** The dates in §2.6 are dates of
-completed work.
+**The sources set no dates or deadlines for any milestone.**
 
-| Milestone or commitment | Source | Date | Status on 2026-10-22 |
-|---|---|---|---|
-| Phase 0 confirms the format, the fields, missing-data rules, and versioning | Charter §3, §4, §7 | Not stated | Not done: the spikes have no findings |
-| Spike 1-4 research documents | Spikes 1-4 | Not stated | Not submitted; the POC report presents itself as Spike 4's |
-| Manifest v0.1 accepted against the charter's §10 criteria | Charter §10 | Not stated | The POC self-assesses each criterion as "met" in POC terms; no formal acceptance is recorded |
-| First-cycle deliverable: Manifest v0.1 applied to five capabilities | Boundaries | Not stated | Met with fictional content; real capabilities pending from Mission 2 |
-| Second consumer or integration path evaluated before final acceptance | Charter §8 | Not stated | Evaluated in POC terms (D18); no real integration |
-| Publish schema 0.1 with an immutable `$id` | POC report §11 (recommendation) | Not a documented commitment | Not done |
+| Milestone or commitment | Source | Status |
+|---|---|---|
+| Phase 0 confirms the format, the fields, missing-data rules, and versioning | Charter §3, §4, §7 | Not done: the spikes have no findings |
+| Spike 1-4 research documents | Spikes 1-4 | Not submitted; the POC report presents itself as Spike 4's |
+| Manifest v0.1 accepted against the charter's §10 criteria | Charter §10 | The POC self-assesses each criterion as "met" in POC terms; no formal acceptance is recorded |
+| First-cycle deliverable: Manifest v0.1 applied to five capabilities | Boundaries | Met with fictional content; real capabilities pending from Mission 2 |
+| Second consumer or integration path evaluated before final acceptance | Charter §8 | Evaluated in POC terms (D18); no real integration |
+| Publish schema 0.1 with an immutable `$id` | POC report §11 (recommendation) | Not done |
 
 Changes on 2026-10-23: the 0.1 draft was revised in place (D23-D26); the Spikes 1-3 research report
 exists as input to Spikes 1-3, but is not a spike document; and the first-cycle examples now include
@@ -1997,13 +1984,13 @@ All paths are relative to the project root and were verified on 2026-10-22; the 
 
 | Source | Path | Contributes | Supports sections |
 |---|---|---|---|
-| Mission 4 charter | `Mission 4 AI Capability Intelligence & Standards.docx` | Goal, scope, capability definition, proposed solution, metadata candidates, identifiers, risk and lifecycle semantics, versioning, interoperability, boundaries, acceptance criteria | All, especially §1, §3, §9, §17 |
-| Spike 1 | `Spike 1 Existing Standards & Ecosystem Research.docx` | Standards research questions and deliverables | §7, §13.2 |
-| Spike 2 | `Spike 2 Capability Definition and Metadata Model.docx` | Definition and metadata-model questions | §5, §13.3 |
-| Spike 3 | `Spike 3 Identifiers, Lifecycle & Versioning.docx` | Identifier, lifecycle, and versioning questions | §8.3-§8.5, §13.4 |
-| Spike 4 | `Spike 4 Validation and Proof of Concept.docx` | Validation and POC questions | §6.2, §13.5 |
+| Mission 4 charter | `docs/charter/Mission 4 AI Capability Intelligence & Standards.docx` | Goal, scope, capability definition, proposed solution, metadata candidates, identifiers, risk and lifecycle semantics, versioning, interoperability, boundaries, acceptance criteria | All, especially §1, §3, §9, §17 |
+| Spike 1 | `docs/charter/Spike 1 Existing Standards & Ecosystem Research.docx` | Standards research questions and deliverables | §7, §13.2 |
+| Spike 2 | `docs/charter/Spike 2 Capability Definition and Metadata Model.docx` | Definition and metadata-model questions | §5, §13.3 |
+| Spike 3 | `docs/charter/Spike 3 Identifiers, Lifecycle & Versioning.docx` | Identifier, lifecycle, and versioning questions | §8.3-§8.5, §13.4 |
+| Spike 4 | `docs/charter/Spike 4 Validation and Proof of Concept.docx` | Validation and POC questions | §6.2, §13.5 |
 | POC report | `docs/poc-report.md` | Decision table D1-D26, traceability, verification results, limitations, open questions, recommendations | §6.2, §12, §14.3, §15, §16.2 |
-| Spikes 1-3 research | `MISSION4_SPIKES_1_TO_3_RESEARCH.md`; `research/spikes-1-3/results.md` | Journeys on 60 public records, metadata comparison matrix, identity and lifecycle evidence, starter model, the revision's results | §1, §6.1, §6.5, §6.6, §7.1, §8.2, §8.4, §10, §12-§16 |
+| Spikes 1-3 research | `spikes-1-3-research.md`; `research/spikes-1-3/results.md` | Journeys on 60 public records, metadata comparison matrix, identity and lifecycle evidence, starter model, the revision's results | §1, §6.1, §6.5, §6.6, §7.1, §8.2, §8.4, §10, §12-§16 |
 | Research harness | `research/spikes-1-3/` (README, `needs.yaml`, `judgments.yaml`, crosswalk, analysis, `reference/`) | Pre-registration, snapshot, scoring rules, and the kept 2026-10-22 draft with its manifests | §6.6, §12 |
 | Rules and conventions | `docs/manifest-spec.md` | Provenance-tagged rules for identifiers, lifecycle, versioning, risk, validation, interoperability | §4, §8, §10 |
 | Field dictionary | `docs/field-dictionary/0.1.md` | Every field, requirement level, and conditional rule (generated from the schema) | §4, §9 |
@@ -2037,7 +2024,7 @@ All paths are relative to the project root and were verified on 2026-10-22; the 
 2. This document's §1, §3, and §4.
 3. `docs/mission-boundaries.md`.
 4. `docs/journey-pilot.md`, then `pilot/results.md`.
-5. `MISSION4_SPIKES_1_TO_3_RESEARCH.md` §1 and §16, then `research/spikes-1-3/results.md` as needed.
+5. `spikes-1-3-research.md` §1 and §16, then `research/spikes-1-3/results.md` as needed.
 6. `docs/poc-report.md` §3 (decisions) and §9-§11.
 7. `docs/manifest-spec.md` and `docs/field-dictionary/0.1.md` as references.
 8. The spike documents, before working on a spike.

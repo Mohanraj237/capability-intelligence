@@ -2,8 +2,8 @@
 
 This document states the rules that the proof of concept implements for **schema 0.1**, an
 unpublished draft. It includes the metadata that the published mission boundaries ask for, and,
-since 2026-10-23, the proposals of the [Spikes 1-3 research](../MISSION4_SPIKES_1_TO_3_RESEARCH.md),
-which the Mission 4 lead asked to apply to the draft in place.
+since 2026-10-23, the proposals of the [Spikes 1-3 research](spikes-1-3-research.md),
+which the Mission 4 team asked to apply to the draft in place.
 Field-level definitions are in the generated [field dictionary](field-dictionary/0.1.md). The
 machine-readable contracts are [`schema/0.1/capability.schema.json`](../schema/0.1/capability.schema.json)
 and the inter-team contracts in [`schema/contracts/`](../schema/contracts/). The division of
@@ -18,7 +18,7 @@ Every rule is tagged with its provenance:
   spike. The four spike documents are charters without findings, so no rule here is a spike
   conclusion.
 - **[R §n]**: proposed by the Spikes 1-3 research report, section n, from measurements on 60 real
-  capability records, and applied to the 0.1 draft on 2026-10-23 at the Mission 4 lead's
+  capability records, and applied to the 0.1 draft on 2026-10-23 at the Mission 4 team's
   direction. It is still a proposal that the owning spike must confirm.
 
 ## 1. Principles

@@ -124,7 +124,7 @@ Scope additions:
    - `maturity`, `intendedAudience`, `platformCompatibility`, and `costInformation`;
    - the capability types `framework` and `platform`.
 
-   They were first drafted as a separate version 0.2. At the Mission 4 lead's request they were then
+   They were first drafted as a separate version 0.2. At the Mission 4 team's request they were then
    folded into 0.1, which is unpublished, so that there is one schema version.
 2. **`schema-compat`**: classifies the changes between two schema versions or drafts (breaking,
    additive, relaxation, annotation). It enforces the version-bump rule and confirms the result
@@ -138,7 +138,7 @@ Scope additions:
    hypothetical next version.
 6. **The consumer-needs contract test** described in §5.
 
-Changes made on 2026-10-23, applying the Spikes 1-3 research at the Mission 4 lead's direction
+Changes made on 2026-10-23, applying the Spikes 1-3 research at the Mission 4 team's direction
 (details in [poc-report.md](poc-report.md)). Each is a POC proposal for the owning spike:
 
 1. **Requiredness follows availability.** Six mandatory fields; `description`, `owner`,
