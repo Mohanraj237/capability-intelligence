@@ -1,0 +1,141 @@
+{
+  "ref": "N2-13",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "@github/mcp-registry",
+  "selection": "purposive",
+  "note": "vendor publication: GitHub's MCP server",
+  "sourceUrl": "https://www.npmjs.com/package/@github/mcp-registry",
+  "native": {
+    "packageJson": {
+      "name": "@github/mcp-registry",
+      "version": "0.1.7",
+      "description": "TypeScript SDK for the MCP Registry API — includes types, a ready-to-use client, and deterministic fingerprint computation for enterprise allowlist enforcement.",
+      "keywords": [
+        "mcp",
+        "registry",
+        "types",
+        "typescript",
+        "openapi",
+        "fingerprint",
+        "sha256",
+        "enterprise",
+        "allowlist"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/mcp",
+      "repository": {
+        "url": "git+https://github.com/github/mcp-registry.git",
+        "type": "git"
+      },
+      "bugs": {
+        "url": "https://github.com/github/mcp-registry/issues"
+      },
+      "maintainers": [
+        {
+          "name": "manuelpuyol",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "jonrohan",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "primer-css",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "gracepark",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "jibrangarcia",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "arelia",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "tylerthedev",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "smockle",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "simurai",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "khiga8",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "srt32",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "githubbot",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "jfuchs",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "andrialexandrou",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "joycezhu",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "bteng22",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "dustin.savery",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "ncalteen",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "alaingoga",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "andreiig",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "node": ">=20.19.0"
+      },
+      "dependencies": {
+        "zod": "~4.3.6"
+      }
+    },
+    "registry": {
+      "modified": "2026-10-15T16:20:51.440Z",
+      "latestPublished": "2026-09-07T13:05:53.181Z",
+      "created": "2026-04-01T11:39:33.821Z",
+      "versionCount": 6,
+      "distTags": {
+        "latest": "0.1.7"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "github/mcp-registry",
+      "found": false
+    }
+  }
+}

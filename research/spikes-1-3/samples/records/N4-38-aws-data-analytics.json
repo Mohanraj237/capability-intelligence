@@ -1,0 +1,132 @@
+{
+  "ref": "N4-38",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "aws-data-analytics",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 10 result(s)",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "aws-data-analytics",
+      "description": "Data lake, analytics, and ETL workflows with S3 Tables, AWS Glue, and Athena.",
+      "author": {
+        "name": "Amazon Web Services"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/aws/agent-toolkit-for-aws.git",
+        "path": "plugins/aws-data-analytics",
+        "ref": "main",
+        "sha": "0d6167ad2e6dfb858098c4162fe74d04c975532f"
+      },
+      "homepage": "https://github.com/aws/agent-toolkit-for-aws"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "aws/agent-toolkit-for-aws",
+    "ref": "0d6167ad2e6dfb858098c4162fe74d04c975532f",
+    "base": "plugins/aws-data-analytics",
+    "pluginJson": {
+      "author": {
+        "name": "Amazon Web Services"
+      },
+      "description": "Data lake, analytics, search, ETL, and orchestration workflows with S3 Tables, AWS Glue, Athena, Amazon Redshift, Amazon OpenSearch Service, and Amazon MWAA. Covers managed Iceberg tables on S3 Tables, ingestion from JDBC databases (Oracle, SQL Server, PostgreSQL, MySQL, RDS), Amazon Redshift, Snowflake, BigQuery, and DynamoDB, AWS Glue Data Catalog inventory and asset discovery, federated Athena queries, vector storage and semantic search on Amazon S3 Vectors, Amazon OpenSearch Service and Serverless (migration from Solr/Elasticsearch, provisioning, vector/semantic/hybrid search, log analytics, trace analytics), and Amazon MWAA Provisioned and MWAA Serverless (authoring, testing, and debugging DAGs and workflows, and Airflow version upgrades for provisioned environments).",
+      "homepage": "https://github.com/aws/agent-toolkit-for-aws",
+      "keywords": [
+        "aws",
+        "amazon",
+        "amazon-web-services",
+        "iam",
+        "analytics",
+        "data-lake",
+        "lakehouse",
+        "athena",
+        "glue",
+        "aws-glue",
+        "data-catalog",
+        "s3",
+        "s3-tables",
+        "s3-vectors",
+        "iceberg",
+        "apache-iceberg",
+        "etl",
+        "redshift",
+        "redshift-serverless",
+        "data-warehouse",
+        "snowflake",
+        "bigquery",
+        "rds",
+        "dynamodb",
+        "jdbc",
+        "secrets-manager",
+        "vector-search",
+        "semantic-search",
+        "rag",
+        "embeddings",
+        "vector-database",
+        "aurora",
+        "opensearch",
+        "opensearch-serverless",
+        "amazon-opensearch-service",
+        "elasticsearch",
+        "solr",
+        "hybrid-search",
+        "k-nn",
+        "log-analytics",
+        "trace-analytics",
+        "mwaa",
+        "mwaa-serverless",
+        "amazon-mwaa",
+        "airflow",
+        "apache-airflow",
+        "workflow-orchestration"
+      ],
+      "license": "Apache-2.0",
+      "name": "aws-data-analytics",
+      "repository": "https://github.com/aws/agent-toolkit-for-aws",
+      "version": "1.3.0"
+    },
+    "mcpJson": {
+      "mcpServers": {
+        "aws-mcp": {
+          "command": "uvx",
+          "args": [
+            "mcp-proxy-for-aws-cli==1.7.0",
+            "https://aws-mcp.us-east-1.api.aws/mcp",
+            "--skip-auth",
+            "--metadata",
+            "INSTALL_SOURCE=agent-toolkit-data-analytics"
+          ]
+        }
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "aws/agent-toolkit-for-aws",
+      "found": true,
+      "id": 1219009070,
+      "fullName": "aws/agent-toolkit-for-aws",
+      "renamedOrMoved": false,
+      "description": "Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2026-04-23T12:44:08Z",
+      "pushedAt": "2026-10-22T15:47:24Z",
+      "homepage": null
+    }
+  }
+}

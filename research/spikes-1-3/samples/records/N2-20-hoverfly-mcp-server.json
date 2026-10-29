@@ -1,0 +1,76 @@
+{
+  "ref": "N2-20",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "docker-catalog",
+  "format": "docker-mcp-catalog",
+  "name": "hoverfly-mcp-server",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 12 result(s)",
+  "sourceUrl": "https://github.com/docker/mcp-registry/blob/main/servers/hoverfly-mcp-server/server.yaml",
+  "native": {
+    "serverYaml": {
+      "name": "hoverfly-mcp-server",
+      "image": "kapish88/hoverfly-mcp-server",
+      "type": "server",
+      "meta": {
+        "category": "productivity",
+        "tags": [
+          "ai",
+          "service-virtualization",
+          "http-mocking",
+          "devtools"
+        ]
+      },
+      "about": {
+        "title": "Hoverfly",
+        "icon": "https://raw.githubusercontent.com/kapishmalik/hoverfly-mcp-server/main/HoverflyMCPServerDocker.png",
+        "description": "A Model Context Protocol (MCP) server that exposes Hoverfly as a programmable tool for AI assistants like Cursor, Claude, GitHub Copilot, and others supporting MCP. It enables dynamic mocking of third-party APIs to unblock development, automate testing, and simulate unavailable services during integration."
+      },
+      "source": {
+        "project": "https://github.com/kapishmalik/hoverfly-mcp-server",
+        "commit": "34e9607ed71f1b78d1fd6788e32332912bac709a"
+      },
+      "run": {
+        "volumes": [
+          "{{hoverfly-mcp-server.data}}:/opt/hoverfly-mcp/simulation-data"
+        ]
+      },
+      "config": {
+        "description": "The MCP server is allowed to access this path for storing simulation files",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "string",
+              "default": "$HOME/data"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      }
+    },
+    "tools": null
+  },
+  "linked": {
+    "repository": {
+      "requested": "kapishmalik/hoverfly-mcp-server",
+      "found": true,
+      "id": 1005605424,
+      "fullName": "kapishmalik/hoverfly-mcp-server",
+      "renamedOrMoved": false,
+      "description": "Hoverfly MCP Server is a Spring Boot app that exposes Hoverfly via the Model Context Protocol (MCP), enabling AI assistants like Cursor or Copilot to manage mock APIs automatically. It helps simulate unavailable APIs with simple JSON, supporting full mock lifecycle control.",
+      "license": "NOASSERTION",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2025-06-20T13:53:43Z",
+      "pushedAt": "2025-07-25T15:34:59Z",
+      "homepage": null
+    }
+  }
+}

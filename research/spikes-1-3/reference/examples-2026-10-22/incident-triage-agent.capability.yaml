@@ -1,0 +1,36 @@
+# Internal agent, still experimental and not yet risk-assessed. Its A2A interface references the
+# Agent Card instead of re-describing it. One dependency is catalogued outside this example set,
+# so the validator reports that reference as unverified rather than as passed or failed.
+schemaVersion: "0.1"
+id: ai-platform/incident-triage-agent
+name: Incident Triage Agent
+description: >-
+  Triages production alerts: correlates the alert with recent deployments, logs,
+  and metrics, retrieves the relevant runbook, and proposes a severity and a
+  first-response plan for the on-call engineer to confirm.
+capabilityType: agent
+capabilityVersion: "0.4.0"
+source:
+  type: repository
+  url: https://github.com/example-org/incident-triage-agent
+owner:
+  name: AI Platform Engineering
+  contact: ai-platform@example.com
+  affiliation: internal
+lifecycleStatus: experimental
+riskTier: unassessed
+lastUpdated: "2026-10-15"
+supportedUseCases:
+  - title: Propose a severity and first response for a new production alert
+  - title: Summarize related deployments, logs, and metrics for an alert
+interfaces:
+  - type: a2a
+    contractRef: https://agents.example.com/incident-triage/.well-known/agent-card.json
+    description: Exposed as an A2A agent; its skills and authentication are described by the Agent Card.
+dependencies:
+  - id: sre/runbook-search
+  - id: acme/observability-mcp-server
+  - id: sre/on-call-roster
+limitations:
+  - Proposes actions only; it never executes remediation steps.
+  - Handles English-language alerts and runbooks only.

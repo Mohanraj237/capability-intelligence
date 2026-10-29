@@ -1,0 +1,101 @@
+{
+  "ref": "N1-49",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "mcp-server-json",
+  "crossListingOf": "browser-use",
+  "format": "mcp-server-json",
+  "name": "com.browser-use/browser-use",
+  "selection": "cross-listing",
+  "note": "mcp-name marker in browser-use",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=com.browser-use%2Fbrowser-use&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "com.browser-use/browser-use",
+      "description": "Browser agents and stealth cloud browsers for AI: run web tasks, fill forms, extract data.",
+      "repository": {
+        "url": "https://github.com/browser-use/browser-use",
+        "source": "github"
+      },
+      "version": "0.13.11",
+      "websiteUrl": "https://browser-use.com",
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "browser-use",
+          "version": "0.13.11",
+          "runtimeHint": "uvx",
+          "transport": {
+            "type": "stdio"
+          },
+          "packageArguments": [
+            {
+              "value": "--cli-mcp",
+              "type": "positional"
+            }
+          ]
+        }
+      ],
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://api.browser-use.com/v3/mcp",
+          "headers": [
+            {
+              "description": "Browser Use Cloud API key from https://cloud.browser-use.com/settings",
+              "isRequired": true,
+              "isSecret": true,
+              "name": "X-Browser-Use-API-Key"
+            }
+          ]
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-10-21T01:14:03.751662Z",
+      "publishedAt": "2026-10-21T01:14:03.751662Z",
+      "updatedAt": "2026-10-21T01:14:03.751662Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "browser-use/browser-use",
+      "found": true,
+      "id": 881458615,
+      "fullName": "browser-use/browser-use",
+      "renamedOrMoved": false,
+      "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "ai-agents",
+        "ai-tools",
+        "browser-agent",
+        "browser-automation",
+        "browser-use",
+        "cdp",
+        "cloud-browser",
+        "computer-use",
+        "headless-browser",
+        "llm",
+        "mcp",
+        "playwright",
+        "python",
+        "remote-browser",
+        "stealth-browser",
+        "web-automation",
+        "web-scraping"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2024-10-31T16:00:56Z",
+      "pushedAt": "2026-10-20T06:00:24Z",
+      "homepage": "https://browser-use.com"
+    }
+  }
+}

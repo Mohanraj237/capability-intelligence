@@ -1,0 +1,9 @@
+# INVALID: the mandatory fields 'source' and 'riskTier' are missing.
+# A missing riskTier is an error; it is never defaulted to low risk. The manifest also omits owner
+# and lastUpdated, which is allowed: neither is mandatory (the completeness levels ask for an owner).
+schemaVersion: "0.1"
+id: ai-platform/doc-summarizer
+name: Document Summarizer
+description: Summarizes long internal documents into structured executive briefs.
+capabilityType: skill
+lifecycleStatus: experimental

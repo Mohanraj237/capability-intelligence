@@ -1,0 +1,39 @@
+# Draft manifest drafted automatically from https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "anthropics/doc-coauthoring"
+name: "doc-coauthoring"
+description: "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks."
+capabilityType: "skill"
+source:
+  type: "repository"
+  url: "https://github.com/anthropics/skills"
+  path: "skills/doc-coauthoring"
+owner:
+  name: "anthropics"
+  contact: "https://github.com/anthropics/skills/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2025-12-04"
+interfaces:
+  - type: "agent_skill"
+    contractRef: "https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md"
+documentation: "https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md"
+x-provenance:
+  extractedFrom: "https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md"
+  format: "agent-skill"
+  native:
+    - "name"
+    - "description"
+  derived:
+    - "id"
+    - "capabilityType"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "lastUpdated"
+    - "interfaces"
+    - "documentation"
+  default:
+    - "riskTier"

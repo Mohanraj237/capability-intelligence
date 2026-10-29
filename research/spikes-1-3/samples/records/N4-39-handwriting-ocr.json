@@ -1,0 +1,62 @@
+{
+  "ref": "N4-39",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "docker-catalog",
+  "format": "docker-mcp-catalog",
+  "name": "handwriting-ocr",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 4 result(s)",
+  "sourceUrl": "https://github.com/docker/mcp-registry/blob/main/servers/handwriting-ocr/server.yaml",
+  "native": {
+    "serverYaml": {
+      "name": "handwriting-ocr",
+      "image": "mcp/handwriting-ocr",
+      "type": "server",
+      "meta": {
+        "category": "devops",
+        "tags": [
+          "handwriting-ocr",
+          "devops"
+        ]
+      },
+      "about": {
+        "title": "Handwriting OCR",
+        "icon": "https://avatars.githubusercontent.com/u/202432073?s=200&v=4"
+      },
+      "source": {
+        "project": "https://github.com/Handwriting-OCR/handwriting-ocr-mcp-server",
+        "commit": "1b81cd90103265eac82d4a441fe669e6c7ccf03a"
+      },
+      "config": {
+        "secrets": [
+          {
+            "name": "handwriting-ocr.api_token",
+            "env": "API_TOKEN",
+            "example": "your-api-token"
+          }
+        ]
+      }
+    },
+    "tools": null
+  },
+  "linked": {
+    "repository": {
+      "requested": "Handwriting-OCR/handwriting-ocr-mcp-server",
+      "found": true,
+      "id": 945085805,
+      "fullName": "Handwriting-OCR/handwriting-ocr-mcp-server",
+      "renamedOrMoved": false,
+      "description": "Model Context Protocol (MCP) Server for Handwriting OCR ",
+      "license": null,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2025-03-08T16:18:18Z",
+      "pushedAt": "2026-07-22T17:12:11Z",
+      "homepage": null
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "ai-capability-manifest",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mission 4 POC: AI Capability Manifest v0.1 schema, validator, compatibility checker, and reference consumer.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "capability-manifest": "bin/capability-manifest.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "validate": "node bin/capability-manifest.js validate",
+    "compat": "node bin/capability-manifest.js compat",
+    "export": "node bin/capability-manifest.js export",
+    "schema-compat": "node bin/capability-manifest.js schema-compat",
+    "docs": "node bin/capability-manifest.js docs --out-dir docs/field-dictionary",
+    "pilot": "node pilot/analyze.js",
+    "pilot:sample": "node pilot/sample.js",
+    "research": "node research/spikes-1-3/analyze.js"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "semver": "7.8.5",
+    "yaml": "2.9.1"
+  }
+}

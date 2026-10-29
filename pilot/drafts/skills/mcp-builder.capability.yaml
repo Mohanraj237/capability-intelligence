@@ -1,0 +1,42 @@
+# Draft manifest drafted automatically from https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "anthropics/mcp-builder"
+name: "mcp-builder"
+description: "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+capabilityType: "skill"
+source:
+  type: "repository"
+  url: "https://github.com/anthropics/skills"
+  path: "skills/mcp-builder"
+owner:
+  name: "anthropics"
+  contact: "https://github.com/anthropics/skills/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2025-12-01"
+interfaces:
+  - type: "agent_skill"
+    contractRef: "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md"
+license:
+  text: "Complete terms in LICENSE.txt"
+documentation: "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md"
+x-provenance:
+  extractedFrom: "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md"
+  format: "agent-skill"
+  native:
+    - "name"
+    - "description"
+    - "license"
+  derived:
+    - "id"
+    - "capabilityType"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "lastUpdated"
+    - "interfaces"
+    - "documentation"
+  default:
+    - "riskTier"

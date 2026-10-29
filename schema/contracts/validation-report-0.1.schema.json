@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.com/ai-capability-manifest/contracts/validation-report-0.1.schema.json",
+  "title": "Manifest Validation Report",
+  "description": "Output of `capability-manifest validate --format json`. Contract between the Mission 4 validator and automation that acts on its results, such as the validation step of the contribution workflow (Mission 5). Exit code 0 means no errors, 1 means validation errors, 2 means a usage or I/O error. A valid manifest is not an approved one, and each result reports the completeness level the manifest reaches. Finding codes are listed in docs/manifest-spec.md; new codes may be added in later report format versions.",
+  "type": "object",
+  "required": ["reportFormatVersion", "tool", "toolVersion", "supportedSchemaVersions", "summary", "results", "notice"],
+  "properties": {
+    "reportFormatVersion": { "const": "0.1", "description": "Version of this report format." },
+    "tool": { "const": "capability-manifest", "description": "Name of the producing tool." },
+    "toolVersion": { "type": "string", "minLength": 1, "description": "Version of the producing tool." },
+    "supportedSchemaVersions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/schemaVersion" },
+      "description": "Manifest schema versions the validator supports."
+    },
+    "summary": {
+      "type": "object",
+      "required": ["manifests", "valid", "invalid", "errors", "warnings", "unverified"],
+      "properties": {
+        "manifests": { "$ref": "#/$defs/count", "description": "Number of manifests validated together." },
+        "valid": { "$ref": "#/$defs/count", "description": "Manifests without errors." },
+        "invalid": { "$ref": "#/$defs/count", "description": "Manifests with at least one error." },
+        "errors": { "$ref": "#/$defs/count", "description": "Total error findings." },
+        "warnings": { "$ref": "#/$defs/count", "description": "Total warning findings." },
+        "unverified": { "$ref": "#/$defs/count", "description": "Total unverified checks." }
+      },
+      "additionalProperties": false
+    },
+    "results": { "type": "array", "items": { "$ref": "#/$defs/result" }, "description": "One result per manifest file." },
+    "notice": { "type": "string", "minLength": 1, "description": "What structural validity does not establish." }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "count": { "type": "integer", "minimum": 0 },
+    "schemaVersion": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$" },
+    "checkStatus": { "enum": ["passed", "failed", "warning", "unverified", "skipped"] },
+    "result": {
+      "type": "object",
+      "required": ["file", "validatedAgainst", "valid", "checks", "counts", "findings"],
+      "properties": {
+        "file": { "type": "string", "minLength": 1, "description": "Path of the manifest file as given to the validator." },
+        "id": { "description": "id as declared in the manifest, which may itself be invalid; absent if not declared." },
+        "capabilityType": { "description": "capabilityType as declared in the manifest, which may itself be invalid; absent if not declared." },
+        "schemaVersion": { "description": "schemaVersion as declared in the manifest, which may be malformed; absent if not declared." },
+        "validatedAgainst": {
+          "anyOf": [{ "$ref": "#/$defs/schemaVersion" }, { "type": "null" }],
+          "description": "Schema version actually applied; null when the manifest could not be validated against any schema."
+        },
+        "valid": { "type": "boolean", "description": "True when the manifest has no error findings." },
+        "checks": {
+          "type": "object",
+          "required": ["structure", "identity", "references", "metadata", "risk", "source"],
+          "properties": {
+            "structure": { "$ref": "#/$defs/checkStatus" },
+            "identity": { "$ref": "#/$defs/checkStatus" },
+            "references": { "$ref": "#/$defs/checkStatus" },
+            "metadata": { "$ref": "#/$defs/checkStatus" },
+            "risk": { "$ref": "#/$defs/checkStatus" },
+            "source": { "$ref": "#/$defs/checkStatus" }
+          },
+          "additionalProperties": false,
+          "description": "Status per check: the worst severity among its findings; skipped when Stage 2 did not run."
+        },
+        "completeness": {
+          "anyOf": [{ "$ref": "#/$defs/completeness" }, { "type": "null" }],
+          "description": "Completeness level reached by a structurally valid manifest, with the facts each higher level still needs; null when the manifest failed structural validation."
+        },
+        "counts": {
+          "type": "object",
+          "required": ["errors", "warnings", "unverified"],
+          "properties": {
+            "errors": { "$ref": "#/$defs/count" },
+            "warnings": { "$ref": "#/$defs/count" },
+            "unverified": { "$ref": "#/$defs/count" }
+          },
+          "additionalProperties": false
+        },
+        "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } }
+      },
+      "additionalProperties": false
+    },
+    "finding": {
+      "type": "object",
+      "required": ["severity", "stage", "check", "code", "path", "message"],
+      "properties": {
+        "severity": { "enum": ["error", "warning", "unverified"], "description": "error: violates the contract; warning: valid but likely wrong; unverified: could not be confirmed." },
+        "stage": { "enum": ["structural", "consistency", "completeness"] },
+        "check": { "enum": ["structure", "identity", "references", "metadata", "risk", "source"] },
+        "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$", "description": "Stable machine-readable finding code." },
+        "path": { "type": "string", "pattern": "^(/.*)?$", "description": "JSON Pointer (RFC 6901) into the manifest; empty for the whole document." },
+        "line": { "type": "integer", "minimum": 1, "description": "Line in the source file, when known." },
+        "column": { "type": "integer", "minimum": 1, "description": "Column in the source file, when known." },
+        "message": { "type": "string", "minLength": 1, "description": "What is wrong or unconfirmed." },
+        "hint": { "type": "string", "description": "How to fix it, or what to do next." },
+        "related": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Ids of the other manifests involved, for findings about shared sources or publications."
+        }
+      },
+      "additionalProperties": false
+    },
+    "completeness": {
+      "type": "object",
+      "required": ["level", "unmet"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "pattern": "^[a-z][a-z_]*$",
+          "description": "Highest level reached: a level defined by the manifest schema's x-completenessLevels, or 'none' when not even the first level is reached."
+        },
+        "unmet": {
+          "type": "object",
+          "additionalProperties": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "description": "For every level the schema defines, in order, the facts of that level that the manifest does not state; an empty list means the level's own facts are stated."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "ref": "N3-27",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "hostinger",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 41 result(s)",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "hostinger",
+      "displayName": "Hostinger",
+      "description": "Deploy, manage and monitor your Hostinger services directly from Claude Code. The plugin connects Claude to Hostinger's remote MCP server, so you can ship sites and apps, manage domains and DNS, run WordPress and operate VPS servers without leaving your coding environment. There's nothing to install on your machine: no Node.js, no npm, no local server. Key features include one-prompt deployments for static sites, Node.js apps (built on Hostinger), full WordPress site imports, and WordPress plugins and themes, plus static and PHP sites on the Agency Plan. Beyond deployments, Claude can search and register domains, edit DNS records and snapshots, check build logs, and manage mailboxes, online stores, email marketing contacts, subscriptions and orders. It can also control VPS firewalls, snapshots and monitoring. Sign in through your browser (OAuth) on first use, or set a `HOSTINGER_API_TOKEN` from hPanel. How to use: there are no commands to memorize. Describe what you want and Claude picks the right tool or deployment skill. Try \"deploy my static site to Hostinger\", \"deploy this Next.js app to example.com\", \"create an A record pointing example.com to 1.2.3.4\", or \"show VPS metrics for the last 24 hours.\"",
+      "author": {
+        "name": "Hostinger"
+      },
+      "category": "deployment",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/hostinger/claude-plugin.git",
+        "sha": "569880c60681a7068b3ca8ca84e2fe7ab6cfa7ff"
+      },
+      "homepage": "https://www.hostinger.com"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "hostinger/claude-plugin",
+    "ref": "569880c60681a7068b3ca8ca84e2fe7ab6cfa7ff",
+    "base": "",
+    "pluginJson": {
+      "name": "hostinger",
+      "description": "Deploy, manage and monitor Hostinger services — Websites, Domains & DNS, Ecommerce, Email, Email Marketing, WordPress, Subscriptions & Payments, and VPS. Runs as a remote MCP server with browser (OAuth) sign-in — nothing to install locally.",
+      "version": "1.2.0",
+      "author": {
+        "name": "Hostinger",
+        "url": "https://www.hostinger.com"
+      },
+      "homepage": "https://developers.hostinger.com",
+      "repository": "https://github.com/hostinger/claude-plugin",
+      "license": "MIT"
+    },
+    "mcpJson": {
+      "mcpServers": {
+        "hostinger": {
+          "type": "http",
+          "url": "https://mcp.hostinger.com"
+        }
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "hostinger/claude-plugin",
+      "found": true,
+      "id": 1257044030,
+      "fullName": "hostinger/claude-plugin",
+      "renamedOrMoved": false,
+      "description": "Used in order to publish Hostinger Claude Plugin",
+      "license": null,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "libraries"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-06-02T10:07:04Z",
+      "pushedAt": "2026-10-22T06:18:27Z",
+      "homepage": null
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "ref": "N3-28",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "forge-skills",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 41 result(s)",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "forge-skills",
+      "description": "Forge-focused skills and MCP configuration for Atlassian Forge: scaffold and deploy apps (forge create, templates, dev spaces), build Teamwork Graph connectors for Rovo Search/Rovo Chat, pre-deploy review, systematic debugging, plus Forge docs and Atlassian Design System lookups via MCP.",
+      "author": {
+        "name": "Atlassian"
+      },
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/atlassian/forge-skills.git",
+        "sha": "4f04ae02879435f23808a4798da28f75d3ab74c3"
+      },
+      "homepage": "https://developer.atlassian.com/platform/forge/"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "atlassian/forge-skills",
+    "ref": "4f04ae02879435f23808a4798da28f75d3ab74c3",
+    "base": "",
+    "pluginJson": {
+      "name": "forge-skills",
+      "version": "0.1.0",
+      "description": "Forge app builder skill bundle with Forge MCP configuration for Atlassian Forge workflows.",
+      "author": {
+        "name": "Atlassian Labs"
+      },
+      "skills": "./skills/",
+      "mcpServers": "./.mcp.json"
+    },
+    "mcpJson": {
+      "mcpServers": {
+        "forge": {
+          "type": "http",
+          "url": "https://mcp.atlassian.com/v1/forge/mcp"
+        },
+        "ads-mcp": {
+          "url": "https://mcp.atlassian.com/v1/ads/public/mcp"
+        }
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "atlassian/forge-skills",
+      "found": true,
+      "id": 1210995403,
+      "fullName": "atlassian/forge-skills",
+      "renamedOrMoved": false,
+      "description": "The Forge Skills Plugin bundles several Forge-focused skills plus MCP-backed tooling so your agent can scaffold apps, review them before deploy, debug production issues, and stay current on Forge APIs and the Atlassian Design System.",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code-plugin",
+        "claude-code-skills",
+        "gemini-cli-extension",
+        "mcp"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-04-15T01:04:23Z",
+      "pushedAt": "2026-10-20T23:01:12Z",
+      "homepage": "https://developer.atlassian.com"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+# Internal plugin bundle. Runbook Search is independently adoptable, so it has its own manifest
+# and is referenced in components; the prompt, command, and hook are not, so they are described
+# inline as embeddedComponents. The bundle is deprecated, so deprecation details are required.
+# It declares no interfaces, so it is valid but reaches no completeness level ('none').
+schemaVersion: "0.1"
+id: sre/sre-toolkit
+name: SRE Toolkit
+description: >-
+  Plugin bundle for coding agents that packages SRE workflows: a postmortem
+  prompt template, an incident triage command, a pre-deploy safety hook, and
+  the Runbook Search tool.
+capabilityType: plugin
+capabilityVersion: "3.2.0"
+source:
+  type: repository
+  url: https://github.com/example-org/ai-capabilities
+  path: plugins/sre-toolkit
+owner:
+  name: Site Reliability Engineering
+  contact: sre-tools@example.com
+  affiliation: internal
+lifecycleStatus: deprecated
+deprecation:
+  reason: Teams now adopt Runbook Search and the Incident Triage Agent directly; the bundle is no longer maintained.
+  sunsetDate: "2027-03-31"
+riskTier: unassessed
+lastUpdated: "2026-10-05"
+components:
+  - id: sre/runbook-search
+embeddedComponents:
+  - name: postmortem-template
+    type: prompt
+    description: Prompt template that drafts a blameless postmortem from an incident timeline.
+  - name: triage
+    type: command
+    description: Slash command that gathers alert context and opens a triage checklist.
+  - name: pre-deploy-check
+    type: hook
+    description: Hook that blocks deploys while a SEV-1 incident is open.
+supportedUseCases:
+  - title: Equip a coding agent with standard SRE workflows

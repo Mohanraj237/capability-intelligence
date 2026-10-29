@@ -1,0 +1,102 @@
+{
+  "ref": "N2-50",
+  "retrievedAt": "2026-10-22T16:33:24.485Z",
+  "need": "N2",
+  "source": "mcp-registry",
+  "format": "mcp-server-json",
+  "name": "io.github.github/github-mcp-server",
+  "selection": "purposive",
+  "note": "vendor publication: GitHub's MCP server; rank 12080 of 29152 results for search=github (page 121 of 292)",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.github%2Fgithub-mcp-server&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.github/github-mcp-server",
+      "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+      "title": "GitHub",
+      "repository": {
+        "url": "https://github.com/github/github-mcp-server",
+        "source": "github"
+      },
+      "version": "2.0.3",
+      "packages": [
+        {
+          "registryType": "oci",
+          "identifier": "ghcr.io/github/github-mcp-server:2.0.3",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeArguments": [
+            {
+              "description": "Publish the OAuth callback port to loopback so the in-container login callback is reachable",
+              "value": "127.0.0.1:8085:8085",
+              "type": "named",
+              "name": "-p"
+            },
+            {
+              "description": "Fixed OAuth callback port, matching the published port above",
+              "value": "GITHUB_OAUTH_CALLBACK_PORT=8085",
+              "type": "named",
+              "name": "-e"
+            },
+            {
+              "description": "Optional GitHub Personal Access Token. Omit to log in with OAuth on first use.",
+              "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+              "variables": {
+                "token": {
+                  "format": "string",
+                  "isSecret": true
+                }
+              },
+              "type": "named",
+              "name": "-e"
+            }
+          ]
+        }
+      ],
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://api.githubcopilot.com/mcp/",
+          "headers": [
+            {
+              "description": "Authorization header with authentication token (PAT or App token)",
+              "isSecret": true,
+              "name": "Authorization"
+            }
+          ]
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-10-21T09:53:50.501608Z",
+      "publishedAt": "2026-10-21T09:53:50.501608Z",
+      "updatedAt": "2026-10-21T09:53:50.501608Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "github/github-mcp-server",
+      "found": true,
+      "id": 942771284,
+      "fullName": "github/github-mcp-server",
+      "renamedOrMoved": false,
+      "description": "GitHub's official MCP Server",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "github",
+        "mcp",
+        "mcp-server"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-03-04T16:42:04Z",
+      "pushedAt": "2026-10-22T16:27:10Z",
+      "homepage": null
+    }
+  }
+}

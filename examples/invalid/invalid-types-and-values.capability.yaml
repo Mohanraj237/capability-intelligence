@@ -1,0 +1,19 @@
+# INVALID: wrong types, values outside the allowed sets, and malformed formats.
+schemaVersion: 0.1                 # unquoted, so YAML reads the number 0.1, not the string "0.1"
+id: https://github.com/example-org/ai-capabilities/tree/main/skills/translator   # a URL is a source, not an id
+name: Translator
+description: Translates product documentation between English, German, and Japanese.
+capabilityType: mcp-server         # hyphen instead of underscore
+capabilityVersion: v1.2            # not Semantic Versioning
+source:
+  type: repository
+  url: https://github.com/example-org/ai-capabilities
+  path: skills/translator
+owner:
+  name: Localization Platform
+  contact: null                    # null instead of a value
+  affiliation: internal
+lifecycleStatus: production        # not a lifecycle state
+riskTier: unassessed
+lastUpdated: 19/10/2026            # not an ISO 8601 date
+supportedUseCases: Translate product documentation   # must be a list of use cases

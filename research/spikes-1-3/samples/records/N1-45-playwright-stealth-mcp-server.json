@@ -1,0 +1,85 @@
+{
+  "ref": "N1-45",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "npm-package",
+  "crossListingOf": "com.pulsemcp/playwright-stealth",
+  "format": "npm-package",
+  "name": "playwright-stealth-mcp-server",
+  "selection": "cross-listing",
+  "note": "package declared by com.pulsemcp/playwright-stealth",
+  "sourceUrl": "https://www.npmjs.com/package/playwright-stealth-mcp-server",
+  "native": {
+    "packageJson": {
+      "name": "playwright-stealth-mcp-server",
+      "version": "0.2.3",
+      "description": "Local implementation of Playwright Stealth MCP server",
+      "keywords": [
+        "mcp",
+        "modelcontextprotocol",
+        "playwright",
+        "stealth",
+        "browser",
+        "automation"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/pulsemcp/mcp-servers/tree/main/experimental/playwright-stealth",
+      "repository": {
+        "url": "git+https://github.com/pulsemcp/mcp-servers.git",
+        "type": "git",
+        "directory": "experimental/playwright-stealth/local"
+      },
+      "bugs": {
+        "url": "https://github.com/pulsemcp/mcp-servers/issues"
+      },
+      "author": {
+        "name": "PulseMCP"
+      },
+      "maintainers": [
+        {
+          "name": "tadasant",
+          "email": "<redacted-email>"
+        }
+      ],
+      "bin": {
+        "playwright-stealth-mcp-server": "build/index.js"
+      },
+      "dependencies": {
+        "zod": "^3.25.76",
+        "playwright": "^1.49.1",
+        "playwright-extra": "^4.3.6",
+        "@modelcontextprotocol/sdk": "^1.29.0",
+        "puppeteer-extra-plugin-stealth": "^2.11.2"
+      },
+      "mcpName": "com.pulsemcp/playwright-stealth"
+    },
+    "registry": {
+      "modified": "2026-06-14T17:29:43.856Z",
+      "latestPublished": "2026-06-14T17:29:43.647Z",
+      "created": "2026-01-03T16:11:11.355Z",
+      "versionCount": 14,
+      "distTags": {
+        "latest": "0.2.3"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "pulsemcp/mcp-servers",
+      "found": true,
+      "id": 982277834,
+      "fullName": "pulsemcp/mcp-servers",
+      "renamedOrMoved": false,
+      "description": "MCP (Model Context Protocol) Servers authored and maintained by the PulseMCP team. We build reliable servers thoughtfully designed specifically for MCP Client-powered workflows.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2025-05-12T16:30:10Z",
+      "pushedAt": "2026-10-09T17:32:15Z",
+      "homepage": null
+    }
+  }
+}

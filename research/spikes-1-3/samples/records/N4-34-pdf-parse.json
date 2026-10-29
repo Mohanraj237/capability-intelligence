@@ -1,0 +1,115 @@
+{
+  "ref": "N4-34",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "pdf-parse",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 20 result(s)",
+  "sourceUrl": "https://www.npmjs.com/package/pdf-parse",
+  "native": {
+    "packageJson": {
+      "name": "pdf-parse",
+      "version": "2.4.5",
+      "description": "Pure TypeScript, cross-platform module for extracting text, images, and tabular data from PDFs. Run directly in your browser or in Node!",
+      "keywords": [
+        "pdf",
+        "pdf-parser",
+        "pdf-parse",
+        "pdf.js",
+        "pdfjs",
+        "pdfjs-dist",
+        "pdf2text",
+        "pdf2json",
+        "pdf2image",
+        "pdf2pic",
+        "pdf-to-text",
+        "pdf-to-image",
+        "pdf-viewer",
+        "pdf-table",
+        "pdf-tools",
+        "pdf-utils",
+        "pdf-screenshot",
+        "pdf-thumbnail"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://mehmet-kozan.github.io/pdf-parse/",
+      "repository": {
+        "url": "git+https://github.com/mehmet-kozan/pdf-parse.git",
+        "type": "git"
+      },
+      "bugs": {
+        "url": "https://github.com/mehmet-kozan/pdf-parse/issues"
+      },
+      "author": {
+        "name": "Mehmet Kozan"
+      },
+      "maintainers": [
+        {
+          "name": "mehmet.kozan",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "node": ">=20.16.0 <21 || >=22.3.0"
+      },
+      "bin": {
+        "pdf-parse": "bin/cli.mjs"
+      },
+      "dependencies": {
+        "pdfjs-dist": "5.4.296",
+        "@napi-rs/canvas": "0.1.80"
+      }
+    },
+    "registry": {
+      "modified": "2025-10-29T23:17:38.597Z",
+      "latestPublished": "2025-10-20T17:35:03.325Z",
+      "created": "2018-01-07T09:25:31.378Z",
+      "versionCount": 53,
+      "distTags": {
+        "beta": "2.4.4-beta.1",
+        "latest": "2.4.5",
+        "minor": "1.1.4"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "mehmet-kozan/pdf-parse",
+      "found": true,
+      "id": 1052760396,
+      "fullName": "mehmet-kozan/pdf-parse",
+      "renamedOrMoved": false,
+      "description": "Pure TypeScript, cross-platform module for extracting text, images, and tabular data from PDFs. Run 🤗 directly in your browser or in Node.js",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "pdf",
+        "pdf-parse",
+        "pdf-parser",
+        "pdf-screenshot",
+        "pdf-table",
+        "pdf-thumbnail",
+        "pdf-to-image",
+        "pdf-to-text",
+        "pdf-tools",
+        "pdf-utils",
+        "pdf-viewer",
+        "pdf2image",
+        "pdf2json",
+        "pdf2pic",
+        "pdf2text",
+        "pdfjs",
+        "pdfjs-dist",
+        "turkey"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-09-08T14:06:57Z",
+      "pushedAt": "2026-05-04T07:18:47Z",
+      "homepage": "https://mehmet-kozan.github.io/pdf-parse/"
+    }
+  }
+}

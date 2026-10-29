@@ -1,0 +1,49 @@
+# Draft manifest drafted automatically from https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.bluwork%2Fkontra-mcp&version=latest
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "io.github.bluwork/kontra-mcp"
+name: "io.github.bluwork/kontra-mcp"
+description: "The Tenth Man Protocol — structured contrarian analysis for decision-makers via MCP"
+capabilityType: "mcp_server"
+capabilityVersion: "0.1.2"
+source:
+  type: "registry"
+  registry: "mcp-registry"
+  identifier: "io.github.bluwork/kontra-mcp"
+  url: "https://github.com/bluwork/kontra-mcp"
+owner:
+  name: "bluwork"
+  contact: "https://github.com/bluwork/kontra-mcp/issues"
+  affiliation: "external"
+lifecycleStatus: "active"
+riskTier: "unassessed"
+lastUpdated: "2026-03-04"
+interfaces:
+  - type: "mcp"
+    description: "Transports: stdio via npm package kontra-mcp."
+platformCompatibility:
+  - "node"
+setup:
+  - name: "KONTRA_DEFAULT_MODE"
+  - name: "KONTRA_LOG_LEVEL"
+x-provenance:
+  extractedFrom: "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.bluwork%2Fkontra-mcp&version=latest"
+  format: "mcp-server-json"
+  native:
+    - "id"
+    - "name"
+    - "description"
+    - "capabilityVersion"
+    - "source"
+    - "lifecycleStatus"
+    - "lastUpdated"
+    - "interfaces"
+    - "configuration"
+  derived:
+    - "capabilityType"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "platformCompatibility"
+  default:
+    - "riskTier"

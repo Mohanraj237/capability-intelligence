@@ -1,0 +1,59 @@
+{
+  "ref": "N3-30",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "docker-catalog",
+  "format": "docker-mcp-catalog",
+  "name": "duckduckgo",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 36 result(s)",
+  "sourceUrl": "https://github.com/docker/mcp-registry/blob/main/servers/duckduckgo/server.yaml",
+  "native": {
+    "serverYaml": {
+      "name": "duckduckgo",
+      "image": "mcp/duckduckgo",
+      "type": "server",
+      "meta": {
+        "category": "devops",
+        "tags": [
+          "duckduckgo",
+          "devops"
+        ]
+      },
+      "about": {
+        "title": "Private Web Search",
+        "icon": "https://avatars.githubusercontent.com/u/182288589?s=200&v=4",
+        "description": "Community-maintained server for DuckDuckGo search. Not published by or affiliated with DuckDuckGo."
+      },
+      "source": {
+        "project": "https://github.com/nickclyde/duckduckgo-mcp-server",
+        "commit": "8992977d65a086995c82826ceead42e890aa17c1"
+      },
+      "run": {
+        "allowHosts": [
+          "html.duckduckgo.com:443"
+        ]
+      }
+    },
+    "tools": null
+  },
+  "linked": {
+    "repository": {
+      "requested": "nickclyde/duckduckgo-mcp-server",
+      "found": true,
+      "id": 937346388,
+      "fullName": "nickclyde/duckduckgo-mcp-server",
+      "renamedOrMoved": false,
+      "description": "A Model Context Protocol (MCP) server that provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2025-02-22T21:19:19Z",
+      "pushedAt": "2026-09-04T18:31:25Z",
+      "homepage": null
+    }
+  }
+}

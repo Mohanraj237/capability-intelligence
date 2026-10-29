@@ -1,0 +1,54 @@
+# Draft manifest drafted automatically from https://www.npmjs.com/package/@usejunior/provider-gmail
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "usejunior/provider-gmail"
+name: "@usejunior/provider-gmail"
+description: "Gmail API email provider for email-agent-mcp"
+capabilityType: "tool"
+capabilityVersion: "0.3.5"
+source:
+  type: "registry"
+  registry: "npm"
+  identifier: "@usejunior/provider-gmail"
+  url: "https://www.npmjs.com/package/@usejunior/provider-gmail"
+owner:
+  name: "stevenobiajulu"
+  contact: "https://github.com/UseJunior/email-agent-mcp/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2026-10-18"
+interfaces:
+  - type: "library"
+platformCompatibility:
+  - "node"
+license:
+  expression: "Apache-2.0"
+documentation: "https://github.com/UseJunior/email-agent-mcp#readme"
+keywords:
+  - "email"
+  - "gmail"
+  - "google"
+  - "oauth"
+  - "ai-agent"
+x-provenance:
+  extractedFrom: "https://www.npmjs.com/package/@usejunior/provider-gmail"
+  format: "npm-package"
+  native:
+    - "id"
+    - "name"
+    - "description"
+    - "capabilityVersion"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "lastUpdated"
+    - "platformCompatibility"
+    - "license"
+    - "keywords"
+    - "documentation"
+  derived:
+    - "capabilityType"
+    - "affiliation"
+    - "interfaces"
+  default:
+    - "riskTier"

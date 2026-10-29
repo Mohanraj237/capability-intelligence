@@ -1,0 +1,58 @@
+{
+  "format": "npm-package",
+  "name": "@chantezy/mcp-product-design",
+  "sourceUrl": "https://www.npmjs.com/package/@chantezy/mcp-product-design",
+  "native": {
+    "packageJson": {
+      "name": "@chantezy/mcp-product-design",
+      "version": "0.1.15",
+      "description": "Product design skills MCP server - structured design workflow tools for AI agents",
+      "keywords": [
+        "mcp",
+        "product-design",
+        "ui-design",
+        "ux-design",
+        "skills",
+        "ai-agent",
+        "model-context-protocol"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/chantezy/product-skills#readme",
+      "repository": {
+        "url": "git+https://github.com/chantezy/product-skills.git",
+        "type": "git",
+        "directory": "mcp-server"
+      },
+      "bugs": {
+        "url": "https://github.com/chantezy/product-skills/issues"
+      },
+      "author": {
+        "name": "chantezy"
+      },
+      "maintainers": [
+        {
+          "name": "chantezy",
+          "email": "<redacted-email>"
+        }
+      ],
+      "bin": {
+        "mcp-product-design": "dist/index.js"
+      },
+      "dependencies": {
+        "zod": "^3.24.0",
+        "js-yaml": "^4.1.0",
+        "@modelcontextprotocol/sdk": "^1.22.0"
+      }
+    },
+    "registry": {
+      "lastPublished": "2026-10-10T12:28:32.826Z",
+      "links": {
+        "homepage": "https://github.com/chantezy/product-skills#readme",
+        "repository": "git+https://github.com/chantezy/product-skills.git",
+        "bugs": "https://github.com/chantezy/product-skills/issues",
+        "npm": "https://www.npmjs.com/package/@chantezy/mcp-product-design"
+      },
+      "searchOffset": 1212
+    }
+  }
+}

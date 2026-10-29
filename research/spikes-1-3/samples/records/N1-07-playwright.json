@@ -1,0 +1,68 @@
+{
+  "ref": "N1-07",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "playwright",
+  "selection": "purposive",
+  "note": "vendor publication: Microsoft's Playwright MCP server",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "playwright",
+      "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "category": "testing",
+      "source": "./external_plugins/playwright",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/playwright"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "anthropics/claude-plugins-official",
+    "ref": "main",
+    "base": "external_plugins/playwright",
+    "pluginJson": {
+      "name": "playwright",
+      "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "author": {
+        "name": "Microsoft"
+      }
+    },
+    "mcpJson": {
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest"
+        ]
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "anthropics/claude-plugins-official",
+      "found": true,
+      "id": 1100776768,
+      "fullName": "anthropics/claude-plugins-official",
+      "renamedOrMoved": false,
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "claude-code",
+        "mcp",
+        "skills"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-11-20T18:36:20Z",
+      "pushedAt": "2026-10-22T07:41:13Z",
+      "homepage": "https://code.claude.com/docs/en/plugins"
+    }
+  }
+}

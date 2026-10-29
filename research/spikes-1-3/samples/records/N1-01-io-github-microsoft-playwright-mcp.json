@@ -1,0 +1,62 @@
+{
+  "ref": "N1-01",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "mcp-registry",
+  "format": "mcp-server-json",
+  "name": "io.github.microsoft/playwright-mcp",
+  "selection": "purposive",
+  "note": "vendor publication: Microsoft's Playwright MCP server",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.microsoft%2Fplaywright-mcp&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.microsoft/playwright-mcp",
+      "description": "Playwright Tools for MCP",
+      "repository": {
+        "url": "https://github.com/microsoft/playwright-mcp",
+        "source": "github"
+      },
+      "version": "0.0.82",
+      "packages": [
+        {
+          "registryType": "npm",
+          "identifier": "@playwright/mcp",
+          "version": "0.0.82",
+          "transport": {
+            "type": "stdio"
+          }
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-09-18T23:41:20.46032Z",
+      "publishedAt": "2026-09-18T23:41:20.46032Z",
+      "updatedAt": "2026-09-18T23:41:20.46032Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "microsoft/playwright-mcp",
+      "found": true,
+      "id": 952688112,
+      "fullName": "microsoft/playwright-mcp",
+      "renamedOrMoved": false,
+      "description": "Playwright MCP server",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "mcp",
+        "playwright"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-03-21T17:48:36Z",
+      "pushedAt": "2026-10-22T00:03:07Z",
+      "homepage": "https://www.npmjs.com/package/@playwright/mcp"
+    }
+  }
+}

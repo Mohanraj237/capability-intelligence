@@ -1,0 +1,67 @@
+# INCOMPATIBLE revision of examples/valid/sql-review.capability.yaml (1.3.0 -> 1.4.0):
+# - removes the CLI interface and the data-access-policy use case: breaking changes, so a
+#   MAJOR bump (2.0.0) is required, but only the MINOR version was bumped;
+# - moves lifecycleStatus from active back to experimental, which the proposed lifecycle
+#   transition rules do not allow.
+#   node bin/capability-manifest.js compat examples/valid/sql-review.capability.yaml examples/compatibility/sql-review.1.4.0-breaking.capability.yaml
+schemaVersion: "0.1"
+id: ai-platform/sql-review
+name: SQL Review
+description: >-
+  Reviews SQL changes in pull requests for performance anti-patterns and
+  explains each finding with a suggested fix.
+capabilityType: skill
+capabilityVersion: "1.4.0"
+source:
+  type: repository
+  url: https://github.com/example-org/ai-capabilities
+  path: skills/sql-review
+owner:
+  name: AI Platform Engineering
+  contact: ai-platform@example.com
+  affiliation: internal
+license:
+  expression: LicenseRef-Example-Internal
+  scope: capability
+lifecycleStatus: experimental
+maturity: production
+riskTier: low
+assessmentReference:
+  id: RA-2026-0142
+  url: https://grc.example.com/assessments/RA-2026-0142
+  assessedOn: "2026-08-14"
+lastUpdated: "2026-10-19"
+supportedUseCases:
+  - title: Review SQL in pull requests for performance anti-patterns
+    description: Flags full-table scans, unbounded queries on partitioned tables, and N+1 query patterns.
+intendedAudience:
+  - backend engineers
+  - database reviewers
+interfaces:
+  - type: agent_skill
+    contractRef: https://github.com/example-org/ai-capabilities/blob/main/skills/sql-review/SKILL.md
+    description: Packaged as an Agent Skill (SKILL.md with instructions and reference files).
+    inputs:
+      - name: sql-change
+        mediaType: text/x-diff
+        description: Unified diff or SQL file content to review.
+    outputs:
+      - name: review-findings
+        mediaType: text/markdown
+        description: Findings with severity, location, and a suggested fix.
+runtime:
+  - kind: agent_host
+    detail: Coding agents that load Agent Skills.
+  - kind: local_process
+    detail: The sql-review CLI.
+setup: []
+platformCompatibility:
+  - github-actions
+  - vs-code
+dependencies: []
+limitations:
+  - Supports the PostgreSQL and MySQL dialects only.
+  - Static analysis only; queries are never executed.
+costInformation:
+  model: included
+  details: Covered by the existing agent platform license; no per-use charge.

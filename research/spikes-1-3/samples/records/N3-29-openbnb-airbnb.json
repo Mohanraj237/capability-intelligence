@@ -1,0 +1,54 @@
+{
+  "ref": "N3-29",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "docker-catalog",
+  "format": "docker-mcp-catalog",
+  "name": "openbnb-airbnb",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 36 result(s)",
+  "sourceUrl": "https://github.com/docker/mcp-registry/blob/main/servers/openbnb-airbnb/server.yaml",
+  "native": {
+    "serverYaml": {
+      "name": "openbnb-airbnb",
+      "image": "mcp/openbnb-airbnb",
+      "type": "server",
+      "meta": {
+        "category": "search",
+        "tags": [
+          "airbnb",
+          "openbnb"
+        ]
+      },
+      "about": {
+        "title": "Airbnb Search",
+        "description": "MCP Server for searching Airbnb and get listing details.",
+        "icon": "https://avatars.githubusercontent.com/u/202564951?v=4"
+      },
+      "source": {
+        "project": "https://github.com/openbnb-org/mcp-server-airbnb",
+        "commit": "4e3ffe9daab7eb17d5709fd955a12243fc8dc848"
+      }
+    },
+    "tools": null
+  },
+  "linked": {
+    "repository": {
+      "requested": "openbnb-org/mcp-server-airbnb",
+      "found": true,
+      "id": 945678498,
+      "fullName": "openbnb-org/mcp-server-airbnb",
+      "renamedOrMoved": false,
+      "description": "Search Airbnb using your AI Agent",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2025-03-10T00:20:50Z",
+      "pushedAt": "2026-08-06T05:21:57Z",
+      "homepage": "https://openbnb.ai/"
+    }
+  }
+}

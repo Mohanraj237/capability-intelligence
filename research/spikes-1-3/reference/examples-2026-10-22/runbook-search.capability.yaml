@@ -1,0 +1,42 @@
+# Internal tool distributed through a package registry (so capabilityVersion is required), and an
+# independently adoptable component of the sre-toolkit bundle (linked through parent).
+schemaVersion: "0.1"
+id: sre/runbook-search
+name: Runbook Search
+description: >-
+  Semantic search over the SRE runbook library. Returns the runbook sections most
+  relevant to an alert, service, or symptom, with links to the source pages.
+capabilityType: tool
+capabilityVersion: "2.1.0"
+source:
+  type: registry
+  registry: npm
+  identifier: "@example-org/runbook-search"
+owner:
+  name: Site Reliability Engineering
+  contact: sre-tools@example.com
+  affiliation: internal
+lifecycleStatus: active
+riskTier: medium
+assessmentReference:
+  id: RA-2026-0097
+  assessedOn: "2026-06-03"
+lastUpdated: "2026-10-01"
+parent:
+  id: sre/sre-toolkit
+supportedUseCases:
+  - title: Find the runbook for an alert or symptom
+interfaces:
+  - type: openapi
+    contractRef: https://runbooks.example.com/api/openapi.json
+    inputs:
+      - name: query
+        mediaType: application/json
+    outputs:
+      - name: runbook-matches
+        mediaType: application/json
+  - type: library
+    description: JavaScript client published as @example-org/runbook-search.
+dependencies: []
+limitations:
+  - Indexes the SRE wiki only; team-specific wikis are not included.

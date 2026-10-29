@@ -1,0 +1,44 @@
+# Internal framework (capabilityType 'framework', which covers the frameworks the capability
+# landscape catalogues), distributed through a package registry, so capabilityVersion is required.
+# Uses the optional maturity, intendedAudience, platformCompatibility, and costInformation fields.
+schemaVersion: "0.1"
+id: ai-platform/agent-eval-framework
+name: Agent Evaluation Framework
+description: >-
+  Python framework for writing repeatable evaluations of agents and skills:
+  test cases, graders, and regression reports that run in CI.
+capabilityType: framework
+capabilityVersion: "0.9.0"
+source:
+  type: registry
+  registry: pypi
+  identifier: example-agent-eval
+owner:
+  name: AI Platform Engineering
+  contact: ai-platform@example.com
+  affiliation: internal
+lifecycleStatus: active
+maturity: pilot
+riskTier: unassessed
+lastUpdated: "2026-10-19"
+supportedUseCases:
+  - title: Run regression evaluations for an agent in CI
+  - title: Compare two prompt or model versions on the same test set
+intendedAudience:
+  - agent developers
+  - ML engineers
+interfaces:
+  - type: library
+    description: Python package with a pytest plugin.
+  - type: cli
+    description: "`agent-eval run` executes an evaluation suite and writes a report."
+platformCompatibility:
+  - linux
+  - macos
+  - github-actions
+dependencies: []
+limitations:
+  - Graders that call a model incur that model's usage costs.
+costInformation:
+  model: free
+  details: Internal package with no license cost; model usage by graders is billed to the running team.

@@ -1,0 +1,78 @@
+{
+  "ref": "N4-37",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "informatica-for-claude-platform",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 10 result(s)",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "informatica-for-claude-platform",
+      "description": "Governed catalog discovery for Informatica Intelligent Data Management Cloud (CDGC): find tables, columns, files, glossary terms and policies across the enterprise catalog, check ownership, certification, sensitivity and applicable policy, and get safe-usage guidance grounded in catalog metadata before querying any data. Requires an Informatica IDMC tenant and the Informatica Catalog Discovery connector.",
+      "author": {
+        "name": "Informatica"
+      },
+      "category": "database",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/forcedotcom/informatica-claude-plugins.git",
+        "path": "informatica-for-claude-platform",
+        "ref": "main",
+        "sha": "554d02e0f7f2adafeaeeedbde04435b7bd310a47"
+      },
+      "homepage": "https://github.com/forcedotcom/informatica-claude-plugins/tree/main/informatica-for-claude-platform"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "forcedotcom/informatica-claude-plugins",
+    "ref": "554d02e0f7f2adafeaeeedbde04435b7bd310a47",
+    "base": "informatica-for-claude-platform",
+    "pluginJson": {
+      "name": "informatica-for-claude-platform",
+      "version": "1.0.0",
+      "description": "Informatica plugin for Claude Platform (Claude Code & Claude CoWork) — governed catalog discovery, data Q&A, powered by Informatica's Data catalog and Governance to understand and evaluate enterprise data assets without bypassing governance. Discover, Explore, Enrich, Govern and Manage Data Assets across the entire enterprise estate through natural language",
+      "author": {
+        "name": "informatica"
+      }
+    },
+    "mcpJson": {
+      "mcpServers": {
+        "informatica-catalog-discovery": {
+          "type": "http",
+          "url": ""
+        },
+        "informatica-data-exploration": {
+          "type": "http",
+          "url": ""
+        }
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "forcedotcom/informatica-claude-plugins",
+      "found": true,
+      "id": 1353222093,
+      "fullName": "forcedotcom/informatica-claude-plugins",
+      "renamedOrMoved": false,
+      "description": "Open source repository of Informatica claude plugins",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2026-09-01T06:36:42Z",
+      "pushedAt": "2026-09-15T17:51:30Z",
+      "homepage": null
+    }
+  }
+}

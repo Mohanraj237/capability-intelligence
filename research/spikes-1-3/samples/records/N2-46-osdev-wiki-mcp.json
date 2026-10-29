@@ -1,0 +1,82 @@
+{
+  "ref": "N2-46",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "pypi-package",
+  "crossListingOf": "io.github.0xmortuex/osdev-wiki-mcp",
+  "format": "pypi-package",
+  "name": "osdev-wiki-mcp",
+  "selection": "cross-listing",
+  "note": "package declared by io.github.0xmortuex/osdev-wiki-mcp",
+  "sourceUrl": "https://pypi.org/project/osdev-wiki-mcp/",
+  "native": {
+    "info": {
+      "name": "osdev-wiki-mcp",
+      "version": "0.1.0",
+      "summary": "MCP server giving AI agents offline, searchable access to the OSDev wiki (wiki.osdev.org) - full-text search, sections, links.",
+      "keywords": "ai-agent, kernel, mcp, operating-system, osdev, search, wiki",
+      "license": "MIT",
+      "license_expression": null,
+      "classifiers": [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Topic :: Software Development :: Documentation",
+        "Topic :: System :: Operating System Kernels"
+      ],
+      "project_urls": {
+        "Homepage": "https://github.com/0xmortuex/osdev-wiki-mcp"
+      },
+      "home_page": null,
+      "author": "0xmortuex",
+      "author_email": null,
+      "maintainer": null,
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "mcp>=2.0.0",
+        "zstandard>=0.22",
+        "anyio; extra == \"test\"",
+        "pytest>=7; extra == \"test\""
+      ],
+      "yanked": false,
+      "descriptionCharacters": 6173,
+      "description": "# osdev-wiki-mcp\n\n**The OSDev wiki, offline and searchable, for your AI agent.**\n\n<!-- mcp-name: io.github.0xmortuex/osdev-wiki-mcp -->\n\n[wiki.osdev.org](https://wiki.osdev.org) is the reference for hobby operating-system\ndevelopment. It covers descriptor tables, paging, interrupt controllers, timers, ACPI,\ndisk controllers, bootloaders and toolchains. Agents writing kernel code tend to\nreconstruct these details from memory and get bit layouts wrong. They also can't\nbrowse the wiki themselves, because it sits behind a bot challenge.\n\nosdev-wiki-mcp downloads the wiki's public archive once, indexes it locally with\nSQLite full-text search, and gives the agent tools to search it, read a page or just\none section of it, and follow links.\n\n## What it looks like\n\nThis is real output, from the 2025-12-30 dump:\n\n```\n> wiki_search(\"PIT\", limit=3)\n1. Programmable Interval Timer *\n   The Programmable Interval Timer ([PIT]) chip (Intel 8253/8254) basically consists of an oscillator…\n2. PC Speaker\n   …When the [PIT] interrupts you, you need to program [PIT] timer 2 so that…\n3. APIC Timer\n   …Real Time Clock, TimeStamp Counter, [PIT] or even polling CMOS registers. In this tutorial…\n\n> wiki_page(\"IDT\", section=\"Gate Descriptor\", max_chars=900)\n# Interrupt Descriptor Table\nhttps://wiki.osdev.org/Interrupt_Descriptor_Table · last edited 2025-06-05 · categories: X86 CPU, Interrupts\n('IDT' redirects to 'Interrupt Descriptor Table'; 'Gate Descriptor' appears 2 times; showing\nsection 4 under 'Structure on IA-32'. Also: section 8 under 'Structure on x86-64')\n\n### Gate Descriptor\n\nEach entry in the table has a complex structure:\n\nGate Descriptor (32-bit):\n63..48 | 47 | 46..45 | 44 | 43..40 | 39..32\nOffset 31..16 | P | DPL 1..0 | 0 | Gate Type 3..0 | Reserved\n31..16 | 15..0\nSegment Selector 15..0 | Offset 15..0\n\n- Offset: A 32-bit value, split in two parts. It represents the address of the entry point ...\n[... section truncated]\n\n[Cut at max_chars=900; the full text is 1567 chars. Call again with max_chars=1767 to read the rest.]\n```\n\nNotice what the output does for the agent:\n\n- **Abbreviations work.** \"PIT\" and \"IDT\" are wiki redirects, and redirects are indexed\n  as aliases of their target, so an abbreviation finds the right page first.\n- **Bit-layout tables stay readable.** The wiki draws descriptor and page-table layouts\n  as HTML tables. These are rendered as one row per line, with bit ranges shown as\n  `63..48`.\n- **Ambiguity is reported.** When a heading appears twice on a page, the agent is told\n  where the other copy is.\n- **Truncation explains itself.** A cut-off result says exactly what to call next.\n\n## Install\n\n```bash\npip install osdev-wiki-mcp\nosdev-wiki-mcp --update          # one-time: download (~5 MB) and index (~15 s)\nclaude mcp add osdev-wiki -- osdev-wiki-mcp\n```\n\nYou can skip `--update`. The agent can call `wiki_update` itself: every other tool\ntells it to when there's no index yet.\n\nThe index (about 18 MB) lives in `%LOCALAPPDATA%\\osdev-wiki-mcp` on Windows,\n`~/Library/Application Support/osdev-wiki-mcp` on macOS, and\n`$XDG_DATA_HOME/osdev-wiki-mcp` (or `~/.local/share/osdev-wiki-mcp`) elsewhere. Set\n`OSDEV_WIKI_DIR` to put it somewhere else. Python 3.10+ is required, with SQLite\nFTS5. python.org builds, uv-managed builds and most distro builds include FTS5, and\nthe server tells you if yours doesn't.\n\n## Tools\n\n| Tool | What it does |\n|------|--------------|\n| `wiki_search` | Ranked full-text search with match snippets. Titles and redirect names count most, and an exact title match is marked `*`. |\n| `wiki_sections` | A page's outline: numbered headings with their sizes. |\n| `wiki_page` | A page as plain text, or one section (by number or heading) including its subsections. Code blocks are kept verbatim and redirects are followed. |\n| `wiki_links` | What a page links to (flagging links to pages that don't exist) and what links to it, including links made through a redirect. |\n| `wiki_update` | Fetch the newest dump and rebuild the index. It does nothing if the index is already current. |\n| `wiki_status` | Shows the source dump, page counts, the index's age and its location. |\n\n## Where the content comes from, and its license\n\nwiki.osdev.org can't be crawled: its API sits behind a Cloudflare bot challenge.\nInstead, `wiki_update` finds the newest\n[WikiTeam](https://wiki.archiveteam.org/index.php/WikiTeam) dump of the wiki on\narchive.org (items named `wiki-wiki.osdev.org-YYYYMMDD`). It downloads that dump's\nhistory file, checks the MD5 against archive.org's manifest, and keeps the latest\nrevision of each article. The dumps are periodic, so the index can be a few months\nbehind the live wiki. `wiki_status` shows which dump you have.\n\n**This package contains no wiki content.** It downloads the public dump to your\nmachine and indexes it locally. On licensing, the wiki's own\n[OSDev Wiki:Copyrights](https://wiki.osdev.org/OSDev_Wiki:Copyrights) page says content\nadded since June 6, 2011 is released under CC0. Its\n[OSDev Wiki:License](https://wiki.osdev.org/OSDev_Wiki:License) page says *\"the contents\nof this wiki is of mixed licensing\"*, because older material predates that policy. All\ncontent belongs to the OSDev wiki and its contributors. Results link back to the page\non wiki.osdev.org.\n\n(Note that [osdev0/wiki](https://github.com/osdev0/wiki) on GitHub is a separate,\nunrelated wiki project, not a mirror of wiki.osdev.org.)\n\n## Tests\n\n```bash\npip install -e \".[test]\" \"ruff==0.16.0\" \"mypy==2.3.0\"\nruff check src tests && mypy --strict src\npytest tests\n```\n\nThe unit tests use a small fixture in the dump's real format, under\n`tests/fixtures/mini-wiki.xml`. It includes a page whose history is split across\nseveral `<page>` elements, which is how WikiTeam dumps store long histories. A\nranking test runs against the real wiki when `OSDEV_WIKI_REAL_DIR` points at a built\nindex. It checks 14 questions an OS developer actually asks (\"PIT\", \"GDT tutorial\",\n\"page fault error code\", \"how to enter long mode\", "
+    },
+    "registry": {
+      "releaseCount": 1,
+      "latestUploadedAt": "2026-10-11T12:15:12.132176Z"
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "0xmortuex/osdev-wiki-mcp",
+      "found": true,
+      "id": 1410157980,
+      "fullName": "0xmortuex/osdev-wiki-mcp",
+      "renamedOrMoved": false,
+      "description": "MCP server that gives AI agents the OSDev wiki offline: full-text search, pages by section, links - indexed locally from the public wiki dump.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "ai-agent",
+        "kernel",
+        "mcp",
+        "mcp-server",
+        "operating-system",
+        "osdev",
+        "wiki"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-10-08T10:42:40Z",
+      "pushedAt": "2026-10-11T12:07:55Z",
+      "homepage": null
+    }
+  }
+}

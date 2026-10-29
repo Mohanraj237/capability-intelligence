@@ -1,0 +1,142 @@
+# Discovery and reuse journeys used to test the metadata model against real capabilities
+# (journey pilot, iteration 1; see docs/journey-pilot.md).
+#
+# Each question lists the metadata concepts that can answer it; any one of them is enough.
+# need: required = the journey cannot be completed without the answer; helpful = it improves
+# the decision. governance: true marks questions that only the governance process (Mission 3)
+# can answer. The concepts are defined by the crosswalk in pilot/crosswalk.js.
+#
+# The use cases were written down before the sample was drawn, and were not changed afterwards.
+
+journeys:
+  - id: discover
+    title: Find a capability for a need
+    who: An engineer or business user with a problem to solve
+    questions:
+      - id: what-is-it
+        ask: What is it called?
+        concepts: [name]
+        need: required
+      - id: what-it-does
+        ask: What does it do?
+        concepts: [description]
+        need: required
+      - id: fits-use-case
+        ask: Is it meant for my use case?
+        concepts: [supportedUseCases, keywords]
+        need: required
+      - id: what-kind
+        ask: What kind of capability is it?
+        concepts: [capabilityType]
+        need: required
+      - id: who-for
+        ask: Who is it intended for?
+        concepts: [intendedAudience]
+        need: helpful
+      - id: how-mature
+        ask: Is it proven in real use?
+        concepts: [maturity]
+        need: helpful
+
+  - id: adopt
+    title: Decide whether it can be reused here
+    who: The team that wants to adopt a capability it found
+    questions:
+      - id: how-to-get
+        ask: Where do I get it?
+        concepts: [source]
+        need: required
+      - id: how-to-integrate
+        ask: How does my system use it?
+        concepts: [interfaces]
+        need: required
+      - id: which-version
+        ask: Which version is current?
+        concepts: [capabilityVersion]
+        need: required
+      - id: is-maintained
+        ask: Is it still maintained?
+        concepts: [lifecycleStatus, lastUpdated]
+        need: required
+      - id: may-we-use-it
+        ask: May we use it, and under what terms?
+        concepts: [license]
+        need: required
+      - id: who-maintains-it
+        ask: Who maintains it?
+        concepts: [owner]
+        need: required
+      - id: how-to-reach-them
+        ask: How do I reach the maintainers?
+        concepts: [ownerContact]
+        need: required
+      - id: risk-assessed
+        ask: Has it been risk-assessed, and with what result?
+        concepts: [riskTier, assessmentReference]
+        need: required
+        governance: true
+      - id: setup-needed
+        ask: What configuration or credentials does it need?
+        concepts: [configuration]
+        need: helpful
+      - id: runs-here
+        ask: Does it run on our platforms?
+        concepts: [platformCompatibility]
+        need: helpful
+      - id: known-limits
+        ask: What are its known limitations?
+        concepts: [limitations]
+        need: helpful
+      - id: what-it-costs
+        ask: What does it cost to use?
+        concepts: [costInformation]
+        need: helpful
+      - id: how-to-learn
+        ask: Where is its documentation?
+        concepts: [documentation]
+        need: helpful
+
+  - id: avoid-duplication
+    title: Check whether something similar exists before building
+    who: A team about to build a new capability
+    questions:
+      - id: same-capability
+        ask: Is this the same capability under another name or source?
+        concepts: [id]
+        need: required
+      - id: similar-purpose
+        ask: Does something serve a similar purpose?
+        concepts: [supportedUseCases, keywords]
+        need: required
+      - id: internal-or-external
+        ask: Is it built internally or by an external party?
+        concepts: [affiliation]
+        need: helpful
+
+  - id: contribute
+    title: Register a capability with little effort
+    who: A capability owner publishing what they built
+    questions:
+      - id: auto-drafted
+        ask: Can a valid manifest be drafted from the metadata I already maintain?
+        concepts: [draftValid]
+        need: required
+
+# Needs that the discovery journey is tested against: a capability matches when one of the terms
+# occurs as a whole word in its name, description, keywords, or use cases.
+useCases:
+  - id: documents
+    need: Create or fill in PDF, Word, or spreadsheet documents
+    terms: [pdf, docx, word, document, spreadsheet, xlsx, excel]
+  - id: code-hosting
+    need: Let an agent read and update GitHub issues and pull requests
+    terms: [github, issue, pull request, repository]
+  - id: database
+    need: Query a database in natural language
+    terms: [sql, database, postgres, query]
+  - id: browser
+    need: Automate or test a web application in a browser
+    terms: [browser, web, playwright, scrape, testing]
+  - id: search
+    need: Search the web for current information
+    terms: [search, web search]

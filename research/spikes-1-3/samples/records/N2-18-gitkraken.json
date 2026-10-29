@@ -1,0 +1,66 @@
+{
+  "ref": "N2-18",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "gitkraken",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 13 result(s)",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "gitkraken",
+      "description": "Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
+      "author": {
+        "name": "GitKraken"
+      },
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/gitkraken/claude-plugin.git",
+        "sha": "f7a53b2cd138c22eccb977b9d93494ea6d423d12"
+      },
+      "homepage": "https://www.gitkraken.com"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "gitkraken/claude-plugin",
+    "ref": "f7a53b2cd138c22eccb977b9d93494ea6d423d12",
+    "base": "",
+    "pluginJson": {
+      "name": "gitkraken",
+      "description": "This plugin gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Ask the agent a question about your work, and it answers from what's actually in your history and your trackers, not what it can guess from the open file.\n\nWorks with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
+      "version": "1.0.0",
+      "author": {
+        "name": "GitKraken"
+      },
+      "mcpServers": "./mcp.json"
+    },
+    "mcpJson": null
+  },
+  "linked": {
+    "repository": {
+      "requested": "gitkraken/claude-plugin",
+      "found": true,
+      "id": 1215559733,
+      "fullName": "gitkraken/claude-plugin",
+      "renamedOrMoved": false,
+      "description": null,
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2026-04-20T03:18:07Z",
+      "pushedAt": "2026-07-31T19:51:49Z",
+      "homepage": null
+    }
+  }
+}

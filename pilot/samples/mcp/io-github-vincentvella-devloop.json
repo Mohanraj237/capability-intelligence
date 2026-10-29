@@ -1,0 +1,37 @@
+{
+  "format": "mcp-server-json",
+  "name": "io.github.vincentvella/devloop",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.vincentvella%2Fdevloop&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.vincentvella/devloop",
+      "description": "Browser + dev-server logs on one correlated timeline, for Claude Code and AI agents.",
+      "title": "Devloop",
+      "repository": {
+        "url": "https://github.com/vincentvella/devloop",
+        "source": "github"
+      },
+      "version": "0.11.2",
+      "websiteUrl": "https://devloop.build",
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "devloop-mcp",
+          "version": "0.11.2",
+          "transport": {
+            "type": "stdio"
+          }
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-10-20T05:11:37.665809Z",
+      "publishedAt": "2026-10-20T05:11:37.665809Z",
+      "updatedAt": "2026-10-20T05:11:37.665809Z",
+      "isLatest": true
+    }
+  }
+}

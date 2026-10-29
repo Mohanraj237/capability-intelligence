@@ -1,0 +1,81 @@
+{
+  "format": "npm-package",
+  "name": "cdp-toolkit",
+  "sourceUrl": "https://www.npmjs.com/package/cdp-toolkit",
+  "native": {
+    "packageJson": {
+      "name": "cdp-toolkit",
+      "version": "3.0.2",
+      "description": "A lightweight chrome-devtools-mcp alternative: an MCP server + CLI that drives the tabs you name, one target per call over one direct WebSocket, with a bounded timeout on every call, so a stuck page can't wedge your agent or force a /mcp restart. Chrome o",
+      "keywords": [
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "chrome-devtools-mcp",
+        "chrome-devtools-mcp-alternative",
+        "chrome-devtools-protocol",
+        "cdp",
+        "browser-automation",
+        "web-automation",
+        "headless-chrome",
+        "chrome-automation",
+        "firefox",
+        "firefox-automation",
+        "headless-firefox",
+        "webdriver-bidi",
+        "bidi",
+        "network-mocking",
+        "api-mocking",
+        "claude-code",
+        "claude",
+        "cursor",
+        "windsurf",
+        "ai-agent",
+        "llm-tools",
+        "puppeteer-alternative",
+        "devtools",
+        "bun"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/sblattj/cdp-toolkit#readme",
+      "repository": {
+        "url": "git+https://github.com/sblattj/cdp-toolkit.git",
+        "type": "git"
+      },
+      "bugs": {
+        "url": "https://github.com/sblattj/cdp-toolkit/issues"
+      },
+      "author": {
+        "url": "https://github.com/sblattj",
+        "name": "Stephen Blatt"
+      },
+      "maintainers": [
+        {
+          "name": "sblattj",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "bun": ">=1.1.0",
+        "node": ">=22.0.0"
+      },
+      "bin": {
+        "cdp": "dist/cli.js",
+        "cdp-toolkit": "dist/mcp.js"
+      },
+      "dependencies": {
+        "@modelcontextprotocol/server": "^2.0.0"
+      }
+    },
+    "registry": {
+      "lastPublished": "2026-10-03T19:26:09.285Z",
+      "links": {
+        "homepage": "https://github.com/sblattj/cdp-toolkit#readme",
+        "repository": "git+https://github.com/sblattj/cdp-toolkit.git",
+        "bugs": "https://github.com/sblattj/cdp-toolkit/issues",
+        "npm": "https://www.npmjs.com/package/cdp-toolkit"
+      },
+      "searchOffset": 640
+    }
+  }
+}

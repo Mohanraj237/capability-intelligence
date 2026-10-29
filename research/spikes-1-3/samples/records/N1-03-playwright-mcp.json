@@ -1,0 +1,95 @@
+{
+  "ref": "N1-03",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "@playwright/mcp",
+  "selection": "purposive",
+  "note": "vendor publication: Microsoft's Playwright MCP server",
+  "sourceUrl": "https://www.npmjs.com/package/@playwright/mcp",
+  "native": {
+    "packageJson": {
+      "name": "@playwright/mcp",
+      "version": "0.0.83",
+      "description": "Playwright Tools for MCP",
+      "license": "Apache-2.0",
+      "homepage": "https://playwright.dev",
+      "repository": {
+        "url": "git+https://github.com/microsoft/playwright-mcp.git",
+        "type": "git"
+      },
+      "bugs": {
+        "url": "https://github.com/microsoft/playwright-mcp/issues"
+      },
+      "author": {
+        "name": "Microsoft Corporation"
+      },
+      "maintainers": [
+        {
+          "name": "pavelfeldman",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "yurys",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "dgozman-ms",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "microsoft-oss-releases",
+          "email": "<redacted-email>"
+        },
+        {
+          "name": "microsoft1es",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "node": ">=18"
+      },
+      "bin": {
+        "playwright-mcp": "cli.js"
+      },
+      "dependencies": {
+        "playwright": "1.64.0-alpha-1790635538000",
+        "playwright-core": "1.64.0-alpha-1790635538000"
+      },
+      "mcpName": "io.github.microsoft/playwright-mcp"
+    },
+    "registry": {
+      "modified": "2026-09-28T23:19:13.951Z",
+      "latestPublished": "2026-09-28T23:19:13.609Z",
+      "created": "2025-03-13T00:36:23.518Z",
+      "versionCount": 436,
+      "distTags": {
+        "next": "0.0.79-alpha-1787869812000",
+        "latest": "0.0.83"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "microsoft/playwright-mcp",
+      "found": true,
+      "id": 952688112,
+      "fullName": "microsoft/playwright-mcp",
+      "renamedOrMoved": false,
+      "description": "Playwright MCP server",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "mcp",
+        "playwright"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-03-21T17:48:36Z",
+      "pushedAt": "2026-10-22T00:03:07Z",
+      "homepage": "https://www.npmjs.com/package/@playwright/mcp"
+    }
+  }
+}

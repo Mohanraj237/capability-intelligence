@@ -1,0 +1,42 @@
+# Draft manifest drafted automatically from https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "anthropics/pdf"
+name: "pdf"
+description: "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill."
+capabilityType: "skill"
+source:
+  type: "repository"
+  url: "https://github.com/anthropics/skills"
+  path: "skills/pdf"
+owner:
+  name: "anthropics"
+  contact: "https://github.com/anthropics/skills/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2026-02-04"
+interfaces:
+  - type: "agent_skill"
+    contractRef: "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md"
+license:
+  text: "Proprietary. LICENSE.txt has complete terms"
+documentation: "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md"
+x-provenance:
+  extractedFrom: "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md"
+  format: "agent-skill"
+  native:
+    - "name"
+    - "description"
+    - "license"
+  derived:
+    - "id"
+    - "capabilityType"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "lastUpdated"
+    - "interfaces"
+    - "documentation"
+  default:
+    - "riskTier"

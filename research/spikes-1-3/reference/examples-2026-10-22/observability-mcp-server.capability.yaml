@@ -1,0 +1,29 @@
+# External, vendor-hosted MCP server without accessible source code (source.type: provider).
+# The vendor does not publish a version, so capabilityVersion is omitted ("not provided").
+# The vendor and its domains are fictional (.example is a reserved top-level domain).
+schemaVersion: "0.1"
+id: acme/observability-mcp-server
+name: Acme Observability MCP Server
+description: >-
+  Vendor-hosted MCP server that lets agents query logs, metrics, and traces
+  stored in Acme Observability through read-only tools.
+capabilityType: mcp_server
+source:
+  type: provider
+  url: https://docs.acme-observability.example/mcp
+owner:
+  name: Acme Observability Inc.
+  contact: https://support.acme-observability.example
+  affiliation: external
+lifecycleStatus: active
+riskTier: unassessed
+lastUpdated: "2026-09-30"
+supportedUseCases:
+  - title: Query logs and metrics during an incident investigation
+interfaces:
+  - type: mcp
+    specVersion: "2025-06-18"
+    description: Remote MCP server; tools are discovered at runtime through tools/list.
+limitations:
+  - Read-only; tools cannot change alerting or retention settings.
+  - Source code is not available; behaviour is known from vendor documentation only.

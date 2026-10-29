@@ -1,0 +1,87 @@
+{
+  "ref": "N4-33",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "react-pdf",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 20 result(s)",
+  "sourceUrl": "https://www.npmjs.com/package/react-pdf",
+  "native": {
+    "packageJson": {
+      "name": "react-pdf",
+      "version": "11.0.0",
+      "description": "Display PDFs in your React app as easily as if they were images.",
+      "keywords": [
+        "pdf",
+        "pdf-viewer",
+        "react"
+      ],
+      "license": "MIT",
+      "repository": {
+        "url": "git+https://github.com/wojtekmaj/react-pdf.git",
+        "type": "git",
+        "directory": "packages/react-pdf"
+      },
+      "author": {
+        "name": "Wojciech Maj",
+        "email": "<redacted-email>"
+      },
+      "maintainers": [
+        {
+          "name": "wojtekmaj",
+          "email": "<redacted-email>"
+        }
+      ],
+      "dependencies": {
+        "clsx": "^2.0.0",
+        "dequal": "^2.0.3",
+        "warning": "^4.0.0",
+        "es-toolkit": "^1.52.0",
+        "merge-refs": "^2.0.0",
+        "pdfjs-dist": "6.3.289",
+        "tiny-invariant": "^1.0.0",
+        "make-event-props": "^2.0.0",
+        "make-cancellable-promise": "^2.0.0"
+      },
+      "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "@types/react": "^19.0.0"
+      }
+    },
+    "registry": {
+      "modified": "2026-09-10T16:47:26.597Z",
+      "latestPublished": "2026-09-10T16:47:26.194Z",
+      "created": "2014-09-30T21:52:21.133Z",
+      "versionCount": 157,
+      "distTags": {
+        "latest": "11.0.0"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "wojtekmaj/react-pdf",
+      "found": true,
+      "id": 64670477,
+      "fullName": "wojtekmaj/react-pdf",
+      "renamedOrMoved": false,
+      "description": "Display PDFs in your React app as easily as if they were images.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "pdf",
+        "pdf-viewer",
+        "react"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2016-08-01T13:46:02Z",
+      "pushedAt": "2026-10-21T12:13:45Z",
+      "homepage": "https://projects.wojtekmaj.pl/react-pdf"
+    }
+  }
+}

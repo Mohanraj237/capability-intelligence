@@ -1,0 +1,20 @@
+# INVALID for this validator: schemaVersion "2.0" is well formed but not supported
+# (supported: 0.1). The validator stops with an explicit error instead of applying the
+# 0.1 rules to a document written for a different contract, so 'rankingProfile' (a field
+# of a hypothetical future schema) is not reported as unknown.
+schemaVersion: "2.0"
+id: ai-platform/code-search
+name: Code Search
+description: Semantic code search across internal repositories with ownership-aware ranking.
+capabilityType: service
+source:
+  type: provider
+  url: https://code-search.example.com
+owner:
+  name: Developer Productivity
+  contact: devprod@example.com
+  affiliation: internal
+lifecycleStatus: active
+riskTier: unassessed
+lastUpdated: "2026-10-18"
+rankingProfile: ownership-aware

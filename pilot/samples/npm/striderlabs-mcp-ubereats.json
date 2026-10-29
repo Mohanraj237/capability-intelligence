@@ -1,0 +1,60 @@
+{
+  "format": "npm-package",
+  "name": "@striderlabs/mcp-ubereats",
+  "sourceUrl": "https://www.npmjs.com/package/@striderlabs/mcp-ubereats",
+  "native": {
+    "packageJson": {
+      "name": "@striderlabs/mcp-ubereats",
+      "version": "0.2.1",
+      "description": "MCP server for Uber Eats - let AI agents order food delivery",
+      "keywords": [
+        "mcp",
+        "ubereats",
+        "uber-eats",
+        "food-delivery",
+        "ai-agent",
+        "strider",
+        "model-context-protocol",
+        "agent",
+        "automation"
+      ],
+      "license": "MIT",
+      "homepage": "https://striderlabs.ai",
+      "repository": {
+        "url": "git+https://github.com/markswendsen-code/mcp-ubereats.git",
+        "type": "git"
+      },
+      "bugs": {
+        "url": "https://github.com/markswendsen-code/mcp-ubereats/issues"
+      },
+      "author": {
+        "name": "Strider Labs",
+        "email": "<redacted-email>"
+      },
+      "maintainers": [
+        {
+          "name": "markswendsen",
+          "email": "<redacted-email>"
+        }
+      ],
+      "bin": {
+        "striderlabs-mcp-ubereats": "dist/index.js"
+      },
+      "dependencies": {
+        "patchright": "^1.58.2",
+        "@cfworker/json-schema": "^4.1.1",
+        "@modelcontextprotocol/server": "2.0.0-alpha.2"
+      }
+    },
+    "registry": {
+      "lastPublished": "2026-06-17T04:54:22.582Z",
+      "links": {
+        "homepage": "https://striderlabs.ai",
+        "repository": "git+https://github.com/markswendsen-code/mcp-ubereats.git",
+        "bugs": "https://github.com/markswendsen-code/mcp-ubereats/issues",
+        "npm": "https://www.npmjs.com/package/@striderlabs/mcp-ubereats"
+      },
+      "searchOffset": 3699
+    }
+  }
+}

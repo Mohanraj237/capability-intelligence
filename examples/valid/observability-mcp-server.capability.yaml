@@ -1,0 +1,48 @@
+# External, vendor-hosted MCP server without accessible source code (source.type: provider).
+# The vendor does not publish a version, so capabilityVersion is omitted and the hosted endpoint is
+# recorded as 'unversioned'. Its terms are prose, not an SPDX expression, so the validator reports
+# them as needing review. It reaches 'adoptable'; only a risk assessment is missing.
+# The vendor and its domains are fictional (.example is a reserved top-level domain).
+schemaVersion: "0.1"
+id: acme/observability-mcp-server
+name: Acme Observability MCP Server
+description: >-
+  Vendor-hosted MCP server that lets agents query logs, metrics, and traces
+  stored in Acme Observability through read-only tools.
+capabilityType: mcp_server
+source:
+  type: provider
+  url: https://docs.acme-observability.example/mcp
+publications:
+  - kind: hosted_endpoint
+    locator: https://mcp.acme-observability.example/mcp
+    versionScheme: unversioned
+    status: active
+owner:
+  name: Acme Observability Inc.
+  contact: https://support.acme-observability.example
+  affiliation: external
+license:
+  text: Acme Observability subscription terms of service.
+  url: https://acme-observability.example/terms
+lifecycleStatus: active
+riskTier: unassessed
+lastUpdated: "2026-09-30"
+supportedUseCases:
+  - title: Query logs and metrics during an incident investigation
+interfaces:
+  - type: mcp
+    specVersion: "2025-06-18"
+    transport: streamable-http
+    description: Remote MCP server; tools are discovered at runtime through tools/list.
+runtime:
+  - kind: hosted_service
+    detail: Hosted by the vendor.
+setup:
+  - name: ACME_API_KEY
+    description: API key created in the Acme Observability console.
+    secret: true
+    required: true
+limitations:
+  - Read-only; tools cannot change alerting or retention settings.
+  - Source code is not available; behaviour is known from vendor documentation only.

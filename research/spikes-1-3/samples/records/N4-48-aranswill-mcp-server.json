@@ -1,0 +1,48 @@
+{
+  "ref": "N4-48",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "npm-package",
+  "crossListingOf": "io.github.amranswill/pdfapi-mcp-server",
+  "format": "npm-package",
+  "name": "@aranswill/mcp-server",
+  "selection": "cross-listing",
+  "note": "package declared by io.github.amranswill/pdfapi-mcp-server",
+  "sourceUrl": "https://www.npmjs.com/package/@aranswill/mcp-server",
+  "native": {
+    "packageJson": {
+      "name": "@aranswill/mcp-server",
+      "version": "1.0.2",
+      "description": "MCP server that exposes the PDF Generation API (generate PDFs, list templates, check usage) to AI agents.",
+      "license": "MIT",
+      "maintainers": [
+        {
+          "name": "aranswill",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "node": ">=18"
+      },
+      "bin": {
+        "pdfapi-mcp": "dist/index.js"
+      },
+      "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.29.0"
+      },
+      "mcpName": "io.github.amranswill/pdfapi-mcp-server"
+    },
+    "registry": {
+      "modified": "2026-07-10T01:25:34.815Z",
+      "latestPublished": "2026-07-10T01:25:34.712Z",
+      "created": "2026-07-10T01:18:13.870Z",
+      "versionCount": 3,
+      "distTags": {
+        "latest": "1.0.2"
+      }
+    }
+  },
+  "linked": {
+    "repository": null
+  }
+}

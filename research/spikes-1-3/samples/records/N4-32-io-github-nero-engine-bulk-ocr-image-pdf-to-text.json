@@ -1,0 +1,45 @@
+{
+  "ref": "N4-32",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "mcp-registry",
+  "format": "mcp-server-json",
+  "name": "io.github.Nero-Engine/bulk-ocr-image-pdf-to-text",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 98 result(s)",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Nero-Engine%2Fbulk-ocr-image-pdf-to-text&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.Nero-Engine/bulk-ocr-image-pdf-to-text",
+      "description": "OCR every image and scanned PDF linked in an Apify dataset, CSV, Excel or Google Sheet, keeping...",
+      "title": "Bulk OCR: Image & Scanned PDF to Text from CSV or Google Sheet",
+      "version": "0.1.0",
+      "websiteUrl": "https://apify.com/nerolabs/bulk-ocr-image-pdf-to-text",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://mcp.apify.com/?tools=nerolabs/bulk-ocr-image-pdf-to-text",
+          "headers": [
+            {
+              "description": "Your Apify API token, sent as 'Bearer <token>'. Runs are billed per event to your Apify account.",
+              "isRequired": true,
+              "isSecret": true,
+              "name": "Authorization"
+            }
+          ]
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-09-30T21:53:31.199033Z",
+      "publishedAt": "2026-09-30T21:53:31.199033Z",
+      "updatedAt": "2026-09-30T21:53:31.199033Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": null
+  }
+}

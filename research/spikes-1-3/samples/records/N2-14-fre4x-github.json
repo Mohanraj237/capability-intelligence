@@ -1,0 +1,45 @@
+{
+  "ref": "N2-14",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "@fre4x/github",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 20 result(s)",
+  "sourceUrl": "https://www.npmjs.com/package/@fre4x/github",
+  "native": {
+    "packageJson": {
+      "name": "@fre4x/github",
+      "version": "1.1.28",
+      "description": "GitHub MCP server",
+      "maintainers": [
+        {
+          "name": "fritzprix",
+          "email": "<redacted-email>"
+        }
+      ],
+      "bin": {
+        "github": "dist/index.js"
+      },
+      "dependencies": {
+        "zod": "^4.3.6",
+        "@octokit/rest": "^21.0.2",
+        "@modelcontextprotocol/sdk": "^1.27.1"
+      }
+    },
+    "registry": {
+      "modified": "2026-10-21T08:26:08.560Z",
+      "latestPublished": "2026-10-21T08:26:08.164Z",
+      "created": "2026-03-01T10:48:09.030Z",
+      "versionCount": 49,
+      "distTags": {
+        "beta": "1.1.0-beta.6",
+        "latest": "1.1.28"
+      }
+    }
+  },
+  "linked": {
+    "repository": null
+  }
+}

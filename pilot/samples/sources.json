@@ -1,0 +1,97 @@
+{
+  "retrievedAt": "2026-10-22T12:03:48.993Z",
+  "seed": 20261022,
+  "perSource": 4,
+  "pools": {
+    "skills": {
+      "description": "Skills in github.com/anthropics/skills",
+      "endpoint": "https://github.com/anthropics/skills/tree/main/skills",
+      "size": 19
+    },
+    "npm": {
+      "description": "npm packages with the keyword ai-agent, in npm search order (first 5,000)",
+      "endpoint": "https://registry.npmjs.org/-/v1/search?text=keywords:ai-agent",
+      "size": 5000,
+      "total": 13147
+    },
+    "mcp": {
+      "description": "Official MCP Registry, latest version of every active server",
+      "endpoint": "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&version=latest",
+      "size": 47633
+    }
+  },
+  "capabilities": [
+    {
+      "format": "agent-skill",
+      "name": "mcp-builder",
+      "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md",
+      "file": "skills/mcp-builder.json"
+    },
+    {
+      "format": "agent-skill",
+      "name": "canvas-design",
+      "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md",
+      "file": "skills/canvas-design.json"
+    },
+    {
+      "format": "agent-skill",
+      "name": "pdf",
+      "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md",
+      "file": "skills/pdf.json"
+    },
+    {
+      "format": "agent-skill",
+      "name": "doc-coauthoring",
+      "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md",
+      "file": "skills/doc-coauthoring.json"
+    },
+    {
+      "format": "npm-package",
+      "name": "cdp-toolkit",
+      "sourceUrl": "https://www.npmjs.com/package/cdp-toolkit",
+      "file": "npm/cdp-toolkit.json"
+    },
+    {
+      "format": "npm-package",
+      "name": "@usejunior/provider-gmail",
+      "sourceUrl": "https://www.npmjs.com/package/@usejunior/provider-gmail",
+      "file": "npm/usejunior-provider-gmail.json"
+    },
+    {
+      "format": "npm-package",
+      "name": "@chantezy/mcp-product-design",
+      "sourceUrl": "https://www.npmjs.com/package/@chantezy/mcp-product-design",
+      "file": "npm/chantezy-mcp-product-design.json"
+    },
+    {
+      "format": "npm-package",
+      "name": "@striderlabs/mcp-ubereats",
+      "sourceUrl": "https://www.npmjs.com/package/@striderlabs/mcp-ubereats",
+      "file": "npm/striderlabs-mcp-ubereats.json"
+    },
+    {
+      "format": "mcp-server-json",
+      "name": "today.theclarity/clarity-today",
+      "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=today.theclarity%2Fclarity-today&version=latest",
+      "file": "mcp/today-theclarity-clarity-today.json"
+    },
+    {
+      "format": "mcp-server-json",
+      "name": "io.github.SidneyBissoli/sih-br-mcp",
+      "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.SidneyBissoli%2Fsih-br-mcp&version=latest",
+      "file": "mcp/io-github-sidneybissoli-sih-br-mcp.json"
+    },
+    {
+      "format": "mcp-server-json",
+      "name": "io.github.vincentvella/devloop",
+      "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.vincentvella%2Fdevloop&version=latest",
+      "file": "mcp/io-github-vincentvella-devloop.json"
+    },
+    {
+      "format": "mcp-server-json",
+      "name": "io.github.bluwork/kontra-mcp",
+      "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.bluwork%2Fkontra-mcp&version=latest",
+      "file": "mcp/io-github-bluwork-kontra-mcp.json"
+    }
+  ]
+}

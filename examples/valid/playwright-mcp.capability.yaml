@@ -1,0 +1,117 @@
+# Real external capability: Microsoft's Playwright MCP server, described from the four public
+# publications that the Spikes 1-3 research sampled on 2026-10-22 (research/spikes-1-3/samples:
+# N1-01 MCP Registry entry, N1-03 npm package, N1-09 Docker MCP catalog build, N1-07 Claude Code
+# plugin). Every value is taken from that snapshot; provenance says where from, and the name is
+# the only curated value. The id is assigned under the publisher's namespace: it is not derived
+# from a registry name or a URL, so it does not change if the repository moves.
+# The publications state different versions at the same time (0.0.82, 0.0.83, a commit pin,
+# 'latest'), so the validator reports PUBLICATION_VERSIONS_DIFFER. No source states the setup or
+# the limitations, so the manifest reaches 'assessable', not 'adoptable'.
+schemaVersion: "0.1"
+id: microsoft/playwright-mcp
+name: Playwright MCP
+description: >-
+  Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact
+  with web pages, take screenshots, fill forms, click elements, and perform automated browser
+  testing workflows.
+capabilityType: mcp_server
+source:
+  type: repository
+  url: https://github.com/microsoft/playwright-mcp
+  repositoryId: "952688112"
+publications:
+  - kind: registry_entry
+    locator: io.github.microsoft/playwright-mcp
+    nativeVersion: "0.0.82"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-09-18"
+    verifiedBy: MCP Registry namespace io.github.microsoft (GitHub account microsoft).
+  - kind: package
+    locator: pkg:npm/%40playwright/mcp
+    nativeName: "@playwright/mcp"
+    nativeVersion: "0.0.83"
+    versionScheme: semver
+    updatedAt: "2026-09-28"
+    verifiedBy: The package's mcpName points back to io.github.microsoft/playwright-mcp.
+  - kind: container_image
+    locator: docker.io/mcp/playwright
+    nativeVersion: "2d446f9e1b79886103c79406b81cc5408364487a"
+    versionScheme: commit
+    verifiedBy: Docker MCP catalog entry 'playwright', built from github.com/microsoft/playwright-mcp at this commit.
+  - kind: marketplace_entry
+    locator: playwright@claude-plugins-official
+    nativeVersion: latest
+    versionScheme: floating
+    verifiedBy: The plugin only configures the server (its .mcp.json runs npx @playwright/mcp@latest).
+owner:
+  name: Microsoft Corporation
+  contact: https://github.com/microsoft/playwright-mcp/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  scope: capability
+documentation: https://playwright.dev
+keywords:
+  - playwright
+  - devops
+  - testing
+riskTier: unassessed
+lastUpdated: "2026-10-22"
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: Local MCP server started by the MCP client; its tools are discovered at runtime through tools/list.
+runtime:
+  - kind: local_process
+    detail: Node.js >=18, started with npx @playwright/mcp.
+  - kind: container
+    detail: docker.io/mcp/playwright
+  - kind: agent_host
+    detail: Claude Code, through the plugin playwright@claude-plugins-official.
+provenance:
+  - field: /name
+    method: curated
+    source: Chosen from the native names 'Playwright Tools for MCP' (registry, npm) and 'Playwright' (Docker catalog, plugin).
+    observedAt: "2026-10-22"
+  - field: /description
+    method: native
+    source: Claude Code plugin marketplace entry; the registry and npm say only 'Playwright Tools for MCP'.
+    observedAt: "2026-10-22"
+  - field: /capabilityType
+    method: derived
+    basis: convention
+    source: Published in the MCP Registry (server.json format).
+    observedAt: "2026-10-22"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API for microsoft/playwright-mcp.
+    observedAt: "2026-10-22"
+  - field: /owner/name
+    method: native
+    source: npm package.json author.
+    observedAt: "2026-10-22"
+  - field: /owner/contact
+    method: native
+    source: npm package.json bugs.url.
+    observedAt: "2026-10-22"
+  - field: /license
+    method: native
+    source: npm package.json license; GitHub detects the same license for the repository.
+    observedAt: "2026-10-22"
+  - field: /documentation
+    method: native
+    source: npm package.json homepage.
+    observedAt: "2026-10-22"
+  - field: /keywords
+    method: native
+    source: Docker MCP catalog meta.tags and the plugin marketplace category.
+    observedAt: "2026-10-22"
+  - field: /interfaces/0/transport
+    method: native
+    source: server.json packages[0].transport.
+    observedAt: "2026-10-22"
+  - field: /runtime/0/detail
+    method: native
+    source: npm package.json engines; the registry entry's package type (npm).
+    observedAt: "2026-10-22"

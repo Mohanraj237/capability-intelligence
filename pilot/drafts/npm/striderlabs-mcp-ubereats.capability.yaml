@@ -1,0 +1,57 @@
+# Draft manifest drafted automatically from https://www.npmjs.com/package/@striderlabs/mcp-ubereats
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "striderlabs/mcp-ubereats"
+name: "@striderlabs/mcp-ubereats"
+description: "MCP server for Uber Eats - let AI agents order food delivery"
+capabilityType: "mcp_server"
+capabilityVersion: "0.2.1"
+source:
+  type: "registry"
+  registry: "npm"
+  identifier: "@striderlabs/mcp-ubereats"
+  url: "https://www.npmjs.com/package/@striderlabs/mcp-ubereats"
+owner:
+  name: "Strider Labs"
+  contact: "https://github.com/markswendsen-code/mcp-ubereats/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2026-06-17"
+interfaces:
+  - type: "library"
+  - type: "cli"
+  - type: "mcp"
+license:
+  expression: "MIT"
+documentation: "https://striderlabs.ai"
+keywords:
+  - "mcp"
+  - "ubereats"
+  - "uber-eats"
+  - "food-delivery"
+  - "ai-agent"
+  - "strider"
+  - "model-context-protocol"
+  - "agent"
+  - "automation"
+x-provenance:
+  extractedFrom: "https://www.npmjs.com/package/@striderlabs/mcp-ubereats"
+  format: "npm-package"
+  native:
+    - "id"
+    - "name"
+    - "description"
+    - "capabilityVersion"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "lastUpdated"
+    - "license"
+    - "keywords"
+    - "documentation"
+  derived:
+    - "capabilityType"
+    - "affiliation"
+    - "interfaces"
+  default:
+    - "riskTier"

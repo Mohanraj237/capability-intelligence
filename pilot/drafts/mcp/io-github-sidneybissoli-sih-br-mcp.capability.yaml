@@ -1,0 +1,51 @@
+# Draft manifest drafted automatically from https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.SidneyBissoli%2Fsih-br-mcp&version=latest
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "io.github.sidneybissoli/sih-br-mcp"
+name: "DATASUS SIH/SUS — Brazil Hospital Admissions (AIH) MCP"
+description: "DATASUS SIH/SUS hospital admissions in Brazil (AIH, 1992-2025): ICD-10 causes, ICSAP, rates."
+capabilityType: "mcp_server"
+capabilityVersion: "1.8.0"
+source:
+  type: "registry"
+  registry: "mcp-registry"
+  identifier: "io.github.SidneyBissoli/sih-br-mcp"
+  url: "https://github.com/SidneyBissoli/sih-br-mcp"
+owner:
+  name: "SidneyBissoli"
+  contact: "https://github.com/SidneyBissoli/sih-br-mcp/issues"
+  affiliation: "external"
+lifecycleStatus: "active"
+riskTier: "unassessed"
+lastUpdated: "2026-10-16"
+interfaces:
+  - type: "mcp"
+    description: "Transports: stdio via npm package sih-br-mcp; streamable-http at https://sih.sidneybissoli.com/mcp."
+platformCompatibility:
+  - "node"
+documentation: "https://sih.sidneybissoli.com"
+setup:
+  - name: "SIH_CACHE_DIR"
+  - name: "SIH_CUBES_BASE_URL"
+x-provenance:
+  extractedFrom: "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.SidneyBissoli%2Fsih-br-mcp&version=latest"
+  format: "mcp-server-json"
+  native:
+    - "name"
+    - "description"
+    - "capabilityVersion"
+    - "source"
+    - "lifecycleStatus"
+    - "lastUpdated"
+    - "interfaces"
+    - "documentation"
+    - "configuration"
+  derived:
+    - "id"
+    - "capabilityType"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "platformCompatibility"
+  default:
+    - "riskTier"

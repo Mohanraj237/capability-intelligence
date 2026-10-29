@@ -1,0 +1,47 @@
+{
+  "ref": "N4-35",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "agent-skills",
+  "format": "agent-skill",
+  "name": "pdf",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 18 result(s)",
+  "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md",
+  "native": {
+    "frontmatter": {
+      "name": "pdf",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "license": "Proprietary. LICENSE.txt has complete terms"
+    },
+    "parseError": null,
+    "bodyCharacters": 8035,
+    "repository": "https://github.com/anthropics/skills",
+    "path": "skills/pdf",
+    "licenseFiles": [
+      "skills/pdf/LICENSE.txt"
+    ],
+    "lastCommitDate": "2026-02-04T02:09:36Z"
+  },
+  "linked": {
+    "repository": {
+      "requested": "anthropics/skills",
+      "found": true,
+      "id": 1061953414,
+      "fullName": "anthropics/skills",
+      "renamedOrMoved": false,
+      "description": "Public repository for Agent Skills",
+      "license": null,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "agent-skills"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-09-22T15:53:31Z",
+      "pushedAt": "2026-10-09T18:45:52Z",
+      "homepage": null
+    }
+  }
+}

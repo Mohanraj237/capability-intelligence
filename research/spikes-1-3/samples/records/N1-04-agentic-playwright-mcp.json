@@ -1,0 +1,91 @@
+{
+  "ref": "N1-04",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "agentic-playwright-mcp",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 20 result(s)",
+  "sourceUrl": "https://www.npmjs.com/package/agentic-playwright-mcp",
+  "native": {
+    "packageJson": {
+      "name": "agentic-playwright-mcp",
+      "version": "1.2.2",
+      "description": "Fork of official Playwright MCP with multi-agent tab isolation via targetId",
+      "keywords": [
+        "mcp",
+        "playwright",
+        "browser",
+        "automation",
+        "multi-agent",
+        "tab-isolation",
+        "cdp"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/TechyAditya/agentic-playwright-mcp#readme",
+      "repository": {
+        "url": "git+https://github.com/TechyAditya/agentic-playwright-mcp.git",
+        "type": "git"
+      },
+      "bugs": {
+        "url": "https://github.com/TechyAditya/agentic-playwright-mcp/issues"
+      },
+      "author": {
+        "name": "Playwright MCP contributors"
+      },
+      "maintainers": [
+        {
+          "name": "techyaditya",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "node": ">=18.0.0"
+      },
+      "bin": {
+        "apmcp": "dist/cli.js",
+        "apmcp-daemon": "dist/daemon/cli.js",
+        "agentic-playwright-mcp": "dist/cli.js",
+        "agentic-playwright-mcp-daemon": "dist/daemon/cli.js"
+      },
+      "dependencies": {
+        "ws": "^8.19.0",
+        "glob": "^13.0.1",
+        "adm-zip": "^0.6.1",
+        "commander": "^12.1.0",
+        "playwright-core": "^1.59.1",
+        "playwright-checkpoint": "^0.3.0",
+        "@modelcontextprotocol/sdk": "^1.0.4"
+      }
+    },
+    "registry": {
+      "modified": "2026-09-28T05:11:44.936Z",
+      "latestPublished": "2026-09-28T05:11:44.567Z",
+      "created": "2026-09-26T08:14:56.785Z",
+      "versionCount": 6,
+      "distTags": {
+        "latest": "1.2.2"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "TechyAditya/agentic-playwright-mcp",
+      "found": true,
+      "id": 1388811257,
+      "fullName": "TechyAditya/agentic-playwright-mcp",
+      "renamedOrMoved": false,
+      "description": "Multi-agent Playwright MCP with target-based tab isolation and shared browser sessions",
+      "license": "NOASSERTION",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [],
+      "defaultBranch": "main",
+      "createdAt": "2026-09-26T07:48:28Z",
+      "pushedAt": "2026-09-28T05:10:02Z",
+      "homepage": null
+    }
+  }
+}

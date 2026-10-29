@@ -1,0 +1,16 @@
+{
+  "format": "agent-skill",
+  "name": "canvas-design",
+  "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md",
+  "native": {
+    "frontmatter": {
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "license": "Complete terms in LICENSE.txt"
+    },
+    "bodyCharacters": 11568,
+    "repository": "https://github.com/anthropics/skills",
+    "path": "skills/canvas-design",
+    "lastCommitDate": "2025-12-01T18:05:36Z"
+  }
+}

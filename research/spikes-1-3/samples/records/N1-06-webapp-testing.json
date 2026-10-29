@@ -1,0 +1,47 @@
+{
+  "ref": "N1-06",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "agent-skills",
+  "format": "agent-skill",
+  "name": "webapp-testing",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 17 result(s)",
+  "sourceUrl": "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md",
+  "native": {
+    "frontmatter": {
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "license": "Complete terms in LICENSE.txt"
+    },
+    "parseError": null,
+    "bodyCharacters": 3861,
+    "repository": "https://github.com/anthropics/skills",
+    "path": "skills/webapp-testing",
+    "licenseFiles": [
+      "skills/webapp-testing/LICENSE.txt"
+    ],
+    "lastCommitDate": "2025-12-01T18:05:36Z"
+  },
+  "linked": {
+    "repository": {
+      "requested": "anthropics/skills",
+      "found": true,
+      "id": 1061953414,
+      "fullName": "anthropics/skills",
+      "renamedOrMoved": false,
+      "description": "Public repository for Agent Skills",
+      "license": null,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "agent-skills"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-09-22T15:53:31Z",
+      "pushedAt": "2026-10-09T18:45:52Z",
+      "homepage": null
+    }
+  }
+}

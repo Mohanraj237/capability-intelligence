@@ -1,0 +1,85 @@
+{
+  "ref": "N1-10",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N1",
+  "source": "docker-catalog",
+  "format": "docker-mcp-catalog",
+  "name": "browserbase",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 5 result(s)",
+  "sourceUrl": "https://github.com/docker/mcp-registry/blob/main/servers/browserbase/server.yaml",
+  "native": {
+    "serverYaml": {
+      "name": "browserbase",
+      "image": "mcp/browserbase",
+      "type": "server",
+      "meta": {
+        "category": "devops",
+        "tags": [
+          "browserbase",
+          "browser-automation",
+          "web-scraping",
+          "devops"
+        ]
+      },
+      "about": {
+        "title": "Browserbase",
+        "description": "Allow LLMs to control a browser with Browserbase and Stagehand for AI-powered web automation, intelligent data extraction, and screenshot capture.",
+        "icon": "https://avatars.githubusercontent.com/u/158221360?s=200&v=4"
+      },
+      "source": {
+        "project": "https://github.com/browserbase/mcp-server-browserbase",
+        "commit": "1e196b3d3c4dc70944e0d19038dd9eb3608b207a",
+        "dockerfile": "Dockerfile"
+      },
+      "config": {
+        "description": "Configure Browserbase API credentials for browser automation",
+        "secrets": [
+          {
+            "name": "browserbase.browserbase_api_key",
+            "env": "BROWSERBASE_API_KEY",
+            "example": "YOUR_BROWSERBASE_API_KEY_HERE"
+          },
+          {
+            "name": "browserbase.browserbase_project_id",
+            "env": "BROWSERBASE_PROJECT_ID",
+            "example": "YOUR_BROWSERBASE_PROJECT_ID_HERE"
+          },
+          {
+            "name": "browserbase.gemini_api_key",
+            "env": "GEMINI_API_KEY",
+            "example": "YOUR_GEMINI_API_KEY_HERE"
+          }
+        ]
+      }
+    },
+    "tools": null
+  },
+  "linked": {
+    "repository": {
+      "requested": "browserbase/mcp-server-browserbase",
+      "found": true,
+      "id": 899184149,
+      "fullName": "browserbase/mcp-server-browserbase",
+      "renamedOrMoved": false,
+      "description": "Allow LLMs to control a browser with Browserbase and Stagehand",
+      "license": "Apache-2.0",
+      "archived": true,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "ai",
+        "browser",
+        "chrome",
+        "chromium",
+        "mcp",
+        "playwright",
+        "puppeteer"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2024-12-05T19:20:40Z",
+      "pushedAt": "2026-07-20T21:48:14Z",
+      "homepage": "https://stagehand.dev"
+    }
+  }
+}

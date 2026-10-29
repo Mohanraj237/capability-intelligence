@@ -1,0 +1,55 @@
+# Draft manifest drafted automatically from https://www.npmjs.com/package/@chantezy/mcp-product-design
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "chantezy/mcp-product-design"
+name: "@chantezy/mcp-product-design"
+description: "Product design skills MCP server - structured design workflow tools for AI agents"
+capabilityType: "mcp_server"
+capabilityVersion: "0.1.15"
+source:
+  type: "registry"
+  registry: "npm"
+  identifier: "@chantezy/mcp-product-design"
+  url: "https://www.npmjs.com/package/@chantezy/mcp-product-design"
+owner:
+  name: "chantezy"
+  contact: "https://github.com/chantezy/product-skills/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2026-10-10"
+interfaces:
+  - type: "library"
+  - type: "cli"
+  - type: "mcp"
+license:
+  expression: "MIT"
+documentation: "https://github.com/chantezy/product-skills#readme"
+keywords:
+  - "mcp"
+  - "product-design"
+  - "ui-design"
+  - "ux-design"
+  - "skills"
+  - "ai-agent"
+  - "model-context-protocol"
+x-provenance:
+  extractedFrom: "https://www.npmjs.com/package/@chantezy/mcp-product-design"
+  format: "npm-package"
+  native:
+    - "id"
+    - "name"
+    - "description"
+    - "capabilityVersion"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "lastUpdated"
+    - "license"
+    - "keywords"
+    - "documentation"
+  derived:
+    - "capabilityType"
+    - "affiliation"
+    - "interfaces"
+  default:
+    - "riskTier"

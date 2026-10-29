@@ -1,0 +1,23 @@
+# INVALID: demonstrates the extensibility policy.
+# - 'lifecyleStatus' is a misspelling of 'lifecycleStatus': it is an unknown field.
+# - 'tags' is what native formats (npm, the Docker catalog) call 'keywords': it is rejected, with a
+#   hint to use 'keywords'.
+# - 'x-costCenter' is an extension field ('x-' prefix): accepted and ignored by core consumers.
+schemaVersion: "0.1"
+id: ai-platform/test-generator
+name: Unit Test Generator
+description: Generates unit tests for changed functions and explains which branches remain uncovered.
+capabilityType: skill
+source:
+  type: repository
+  url: https://github.com/example-org/ai-capabilities
+  path: skills/test-generator
+owner:
+  name: AI Platform Engineering
+  contact: ai-platform@example.com
+  affiliation: internal
+lifecyleStatus: active
+riskTier: unassessed
+lastUpdated: "2026-10-11"
+tags: [testing, quality]
+x-costCenter: CC-4410

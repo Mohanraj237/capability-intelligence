@@ -1,0 +1,80 @@
+{
+  "ref": "N3-24",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "npm",
+  "format": "npm-package",
+  "name": "redfox-ai-search-mcp",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 20 result(s)",
+  "sourceUrl": "https://www.npmjs.com/package/redfox-ai-search-mcp",
+  "native": {
+    "packageJson": {
+      "name": "redfox-ai-search-mcp",
+      "version": "0.4.10",
+      "description": "RedFoxHub AI Search MCP server",
+      "keywords": [
+        "mcp",
+        "redfox",
+        "ai",
+        "model-context-protocol"
+      ],
+      "license": "MIT",
+      "homepage": "https://redfox.hk",
+      "repository": {
+        "url": "git+https://github.com/redfox-data/redfox-mcp.git",
+        "type": "git",
+        "directory": "npm/redfox-ai-search-mcp"
+      },
+      "bugs": {
+        "url": "https://github.com/redfox-data/redfox-mcp/issues"
+      },
+      "maintainers": [
+        {
+          "name": "redfox-data",
+          "email": "<redacted-email>"
+        }
+      ],
+      "engines": {
+        "node": ">=14"
+      },
+      "bin": {
+        "redfox-ai-search-mcp": "cli.js"
+      }
+    },
+    "registry": {
+      "modified": "2026-10-19T10:00:00.753Z",
+      "latestPublished": "2026-10-19T10:00:00.321Z",
+      "created": "2026-09-10T10:44:32.528Z",
+      "versionCount": 9,
+      "distTags": {
+        "latest": "0.4.10"
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "redfox-data/redfox-mcp",
+      "found": true,
+      "id": 1337856386,
+      "fullName": "redfox-data/redfox-mcp",
+      "renamedOrMoved": false,
+      "description": " MCP server for RedFoxHub — 40 ready-to-use tools for Douyin, Xiaohongshu, WeChat, Bilibili, Toutiao & TikTok data, plus AI search (Kimi/Doubao/DeepSeek) and AI image/video generation. Works with dsh, Claude Code, Cursor and any MCP client.",
+      "license": null,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "mcp",
+        "mcp-server",
+        "mcp-tools",
+        "redfox",
+        "redfox-data"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-08-18T01:28:07Z",
+      "pushedAt": "2026-10-22T08:37:16Z",
+      "homepage": "https://pypi.org/project/redfox-mcp/"
+    }
+  }
+}

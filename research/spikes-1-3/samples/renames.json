@@ -1,0 +1,893 @@
+{
+  "retrievedAt": "2026-10-22T17:40:34.452Z",
+  "references": 49,
+  "moved": 1,
+  "results": [
+    {
+      "requested": "microsoft/playwright-mcp",
+      "status": 200,
+      "id": 952688112,
+      "fullName": "microsoft/playwright-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-01",
+          "field": "server.repository.url"
+        },
+        {
+          "ref": "N1-03",
+          "field": "packageJson.repository.url"
+        },
+        {
+          "ref": "N1-03",
+          "field": "packageJson.bugs.url"
+        },
+        {
+          "ref": "N1-09",
+          "field": "serverYaml.source.project"
+        },
+        {
+          "ref": "family:playwright:io.github.microsoft/playwright-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "pulsemcp/mcp-servers",
+      "status": 200,
+      "id": 982277834,
+      "fullName": "pulsemcp/mcp-servers",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-02",
+          "field": "server.repository.url"
+        },
+        {
+          "ref": "N1-45",
+          "field": "packageJson.homepage"
+        },
+        {
+          "ref": "N1-45",
+          "field": "packageJson.repository.url"
+        },
+        {
+          "ref": "N1-45",
+          "field": "packageJson.bugs.url"
+        },
+        {
+          "ref": "family:playwright:com.pulsemcp/playwright-stealth",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "TechyAditya/agentic-playwright-mcp",
+      "status": 200,
+      "id": 1388811257,
+      "fullName": "TechyAditya/agentic-playwright-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-04",
+          "field": "packageJson.homepage"
+        },
+        {
+          "ref": "N1-04",
+          "field": "packageJson.repository.url"
+        },
+        {
+          "ref": "N1-04",
+          "field": "packageJson.bugs.url"
+        }
+      ]
+    },
+    {
+      "requested": "github/awesome-copilot",
+      "status": 200,
+      "id": 1000362065,
+      "fullName": "github/awesome-copilot",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-05",
+          "field": "repository"
+        },
+        {
+          "ref": "N2-15",
+          "field": "repository"
+        },
+        {
+          "ref": "N2-16",
+          "field": "repository"
+        },
+        {
+          "ref": "N3-25",
+          "field": "repository"
+        },
+        {
+          "ref": "N4-36",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "anthropics/skills",
+      "status": 200,
+      "id": 1061953414,
+      "fullName": "anthropics/skills",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-06",
+          "field": "repository"
+        },
+        {
+          "ref": "N4-35",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "anthropics/claude-plugins-public",
+      "status": 200,
+      "id": 1100776768,
+      "fullName": "anthropics/claude-plugins-official",
+      "renamedOrMoved": true,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-07",
+          "field": "marketplaceEntry.homepage"
+        },
+        {
+          "ref": "N2-17",
+          "field": "marketplaceEntry.homepage"
+        }
+      ]
+    },
+    {
+      "requested": "hostinger/claude-plugin",
+      "status": 200,
+      "id": 1257044030,
+      "fullName": "hostinger/claude-plugin",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-08",
+          "field": "marketplaceEntry.source.url"
+        },
+        {
+          "ref": "N1-08",
+          "field": "pluginJson.repository"
+        },
+        {
+          "ref": "N3-27",
+          "field": "marketplaceEntry.source.url"
+        },
+        {
+          "ref": "N3-27",
+          "field": "pluginJson.repository"
+        }
+      ]
+    },
+    {
+      "requested": "browserbase/mcp-server-browserbase",
+      "status": 200,
+      "id": 899184149,
+      "fullName": "browserbase/mcp-server-browserbase",
+      "renamedOrMoved": false,
+      "archived": true,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-10",
+          "field": "serverYaml.source.project"
+        }
+      ]
+    },
+    {
+      "requested": "browser-use/browser-use",
+      "status": 200,
+      "id": 881458615,
+      "fullName": "browser-use/browser-use",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N1-41",
+          "field": "info.project_urls.Repository"
+        },
+        {
+          "ref": "N1-49",
+          "field": "server.repository.url"
+        }
+      ]
+    },
+    {
+      "requested": "0xmortuex/osdev-wiki-mcp",
+      "status": 200,
+      "id": 1410157980,
+      "fullName": "0xmortuex/osdev-wiki-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N2-11",
+          "field": "server.repository.url"
+        },
+        {
+          "ref": "N2-46",
+          "field": "info.project_urls.Homepage"
+        }
+      ]
+    },
+    {
+      "requested": "0xsl1m/cerebrus-pulse-mcp",
+      "status": 200,
+      "id": 1172591738,
+      "fullName": "0xsl1m/cerebrus-pulse-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N2-12",
+          "field": "server.repository.url"
+        },
+        {
+          "ref": "N2-47",
+          "field": "info.project_urls.Repository"
+        }
+      ]
+    },
+    {
+      "requested": "github/mcp-registry",
+      "status": 404,
+      "uses": [
+        {
+          "ref": "N2-13",
+          "field": "packageJson.repository.url"
+        },
+        {
+          "ref": "N2-13",
+          "field": "packageJson.bugs.url"
+        }
+      ]
+    },
+    {
+      "requested": "gitkraken/claude-plugin",
+      "status": 200,
+      "id": 1215559733,
+      "fullName": "gitkraken/claude-plugin",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N2-18",
+          "field": "marketplaceEntry.source.url"
+        }
+      ]
+    },
+    {
+      "requested": "github/github-mcp-server",
+      "status": 200,
+      "id": 942771284,
+      "fullName": "github/github-mcp-server",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N2-19",
+          "field": "serverYaml.source.project"
+        },
+        {
+          "ref": "N2-50",
+          "field": "server.repository.url"
+        }
+      ]
+    },
+    {
+      "requested": "kapishmalik/hoverfly-mcp-server",
+      "status": 200,
+      "id": 1005605424,
+      "fullName": "kapishmalik/hoverfly-mcp-server",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N2-20",
+          "field": "serverYaml.source.project"
+        }
+      ]
+    },
+    {
+      "requested": "chinaready/mcp",
+      "status": 200,
+      "id": 1415583898,
+      "fullName": "chinaready/mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-21",
+          "field": "server.repository.url"
+        }
+      ]
+    },
+    {
+      "requested": "redfox-data/redfox-mcp",
+      "status": 200,
+      "id": 1337856386,
+      "fullName": "redfox-data/redfox-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-24",
+          "field": "packageJson.repository.url"
+        },
+        {
+          "ref": "N3-24",
+          "field": "packageJson.bugs.url"
+        }
+      ]
+    },
+    {
+      "requested": "openai/skills",
+      "status": 200,
+      "id": 1103643573,
+      "fullName": "openai/skills",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-26",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "atlassian/forge-skills",
+      "status": 200,
+      "id": 1210995403,
+      "fullName": "atlassian/forge-skills",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-28",
+          "field": "marketplaceEntry.source.url"
+        }
+      ]
+    },
+    {
+      "requested": "openbnb-org/mcp-server-airbnb",
+      "status": 200,
+      "id": 945678498,
+      "fullName": "openbnb-org/mcp-server-airbnb",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-29",
+          "field": "serverYaml.source.project"
+        }
+      ]
+    },
+    {
+      "requested": "nickclyde/duckduckgo-mcp-server",
+      "status": 200,
+      "id": 937346388,
+      "fullName": "nickclyde/duckduckgo-mcp-server",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-30",
+          "field": "serverYaml.source.project"
+        }
+      ]
+    },
+    {
+      "requested": "tavily-ai/langchain-tavily",
+      "status": 200,
+      "id": 950113961,
+      "fullName": "tavily-ai/langchain-tavily",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N3-42",
+          "field": "info.project_urls.Homepage"
+        },
+        {
+          "ref": "N3-42",
+          "field": "info.project_urls.Repository"
+        }
+      ]
+    },
+    {
+      "requested": "amranswill/pdf-generation-api",
+      "status": 404,
+      "uses": [
+        {
+          "ref": "N4-31",
+          "field": "server.repository.url"
+        }
+      ]
+    },
+    {
+      "requested": "wojtekmaj/react-pdf",
+      "status": 200,
+      "id": 64670477,
+      "fullName": "wojtekmaj/react-pdf",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-33",
+          "field": "packageJson.repository.url"
+        }
+      ]
+    },
+    {
+      "requested": "mehmet-kozan/pdf-parse",
+      "status": 200,
+      "id": 1052760396,
+      "fullName": "mehmet-kozan/pdf-parse",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-34",
+          "field": "packageJson.repository.url"
+        },
+        {
+          "ref": "N4-34",
+          "field": "packageJson.bugs.url"
+        }
+      ]
+    },
+    {
+      "requested": "forcedotcom/informatica-claude-plugins",
+      "status": 200,
+      "id": 1353222093,
+      "fullName": "forcedotcom/informatica-claude-plugins",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-37",
+          "field": "marketplaceEntry.source.url"
+        },
+        {
+          "ref": "N4-37",
+          "field": "marketplaceEntry.homepage"
+        }
+      ]
+    },
+    {
+      "requested": "aws/agent-toolkit-for-aws",
+      "status": 200,
+      "id": 1219009070,
+      "fullName": "aws/agent-toolkit-for-aws",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-38",
+          "field": "marketplaceEntry.source.url"
+        },
+        {
+          "ref": "N4-38",
+          "field": "marketplaceEntry.homepage"
+        },
+        {
+          "ref": "N4-38",
+          "field": "pluginJson.homepage"
+        },
+        {
+          "ref": "N4-38",
+          "field": "pluginJson.repository"
+        }
+      ]
+    },
+    {
+      "requested": "Handwriting-OCR/handwriting-ocr-mcp-server",
+      "status": 200,
+      "id": 945085805,
+      "fullName": "Handwriting-OCR/handwriting-ocr-mcp-server",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-39",
+          "field": "serverYaml.source.project"
+        }
+      ]
+    },
+    {
+      "requested": "ref-tools/ref-tools-mcp",
+      "status": 200,
+      "id": 971047356,
+      "fullName": "ref-tools/ref-tools-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-40",
+          "field": "serverYaml.source.project"
+        }
+      ]
+    },
+    {
+      "requested": "docling-project/docling",
+      "status": 200,
+      "id": 826168160,
+      "fullName": "docling-project/docling",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "N4-43",
+          "field": "info.project_urls.homepage"
+        },
+        {
+          "ref": "N4-43",
+          "field": "info.project_urls.repository"
+        }
+      ]
+    },
+    {
+      "requested": "clauxel/playwright-selector-guard-mcp",
+      "status": 200,
+      "id": 1243845143,
+      "fullName": "clauxel/playwright-selector-guard-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:com.clauxel.playwrightselectorguard/playwrightselectorguard-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "hmamut39/playwrightgen",
+      "status": 200,
+      "id": 1355381546,
+      "fullName": "hmamut39/playwrightgen",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:com.playwrightgen/playwrightgen",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "dinesh-nalla-se/playwright-mcp",
+      "status": 200,
+      "id": 1098095408,
+      "fullName": "dinesh-nalla-se/playwright-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": true,
+      "parent": "microsoft/playwright-mcp",
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.dinesh-nalla-se/playwright-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "feder-cr/invisible_playwright_mcp",
+      "status": 200,
+      "id": 1396688303,
+      "fullName": "feder-cr/invisible_playwright_mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.feder-cr/invisible-playwright-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "hubertgajewski/playwright-report-mcp",
+      "status": 200,
+      "id": 1190935334,
+      "fullName": "hubertgajewski/playwright-report-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.hubertgajewski/playwright-report-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "sadri-dridi/named-mcp-utilities",
+      "status": 200,
+      "id": 1359030167,
+      "fullName": "sadri-dridi/named-mcp-utilities",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.sadri-dridi/playwright-url-ok",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "vola-trebla/playwright-network-chaos-mcp",
+      "status": 200,
+      "id": 1240366070,
+      "fullName": "vola-trebla/playwright-network-chaos-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.vola-trebla/playwright-network-chaos-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "vola-trebla/playwright-spatial-layout-mcp",
+      "status": 200,
+      "id": 1240350117,
+      "fullName": "vola-trebla/playwright-spatial-layout-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.vola-trebla/playwright-spatial-layout-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "vola-trebla/playwright-trace-decoder-mcp",
+      "status": 200,
+      "id": 1240156586,
+      "fullName": "vola-trebla/playwright-trace-decoder-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:playwright:io.github.vola-trebla/playwright-trace-decoder-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "Seey215/tavily-mcp",
+      "status": 200,
+      "id": 1015900446,
+      "fullName": "Seey215/tavily-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": true,
+      "parent": "tavily-ai/tavily-mcp",
+      "uses": [
+        {
+          "ref": "family:tavily:io.github.Seey215/tavily-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "paychex/tavily-mcp-server",
+      "status": 404,
+      "uses": [
+        {
+          "ref": "family:tavily:io.github.Swathi-MuraliSrinivasan/tavily-mcp-server",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "pipeworx-io/mcp-tavily",
+      "status": 200,
+      "id": 1258743236,
+      "fullName": "pipeworx-io/mcp-tavily",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:tavily:io.github.pipeworx-io/tavily",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "tavily-ai/tavily-mcp",
+      "status": 200,
+      "id": 923109265,
+      "fullName": "tavily-ai/tavily-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:tavily:io.github.tavily-ai/tavily-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "arjunkmrm/brave-search-mcp-server",
+      "status": 404,
+      "uses": [
+        {
+          "ref": "family:brave-search:ai.smithery/arjunkmrm-brave-search-mcp-server",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "brave/brave-search-mcp-server",
+      "status": 200,
+      "id": 1001041900,
+      "fullName": "brave/brave-search-mcp-server",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:brave-search:ai.smithery/brave",
+          "field": "repository"
+        },
+        {
+          "ref": "family:brave-search:io.github.brave/brave-search-mcp-server",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "WeAreBraveLabs/domain-checker-mcp",
+      "status": 200,
+      "id": 1139749214,
+      "fullName": "WeAreBraveLabs/domain-checker-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:brave-search:io.github.WeAreBraveLabs/domain-checker-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "mrfentmen/premium-mcps",
+      "status": 404,
+      "uses": [
+        {
+          "ref": "family:brave-search:io.github.mrfentmen/brave-mcp",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "pipeworx-io/mcp-brave-search",
+      "status": 200,
+      "id": 1236013459,
+      "fullName": "pipeworx-io/mcp-brave-search",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "uses": [
+        {
+          "ref": "family:brave-search:io.github.pipeworx-io/brave-search",
+          "field": "repository"
+        }
+      ]
+    },
+    {
+      "requested": "triuzzi/brave-devtools-mcp",
+      "status": 200,
+      "id": 1206906989,
+      "fullName": "triuzzi/brave-devtools-mcp",
+      "renamedOrMoved": false,
+      "archived": false,
+      "fork": true,
+      "parent": "ChromeDevTools/chrome-devtools-mcp",
+      "uses": [
+        {
+          "ref": "family:brave-search:io.github.triuzzi/brave-mcp",
+          "field": "repository"
+        }
+      ]
+    }
+  ]
+}

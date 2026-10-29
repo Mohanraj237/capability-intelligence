@@ -1,0 +1,77 @@
+{
+  "ref": "N2-12",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "mcp-registry",
+  "format": "mcp-server-json",
+  "name": "io.github.0xsl1m/cerebrus-pulse-mcp",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 98 result(s)",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.0xsl1m%2Fcerebrus-pulse-mcp&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.0xsl1m/cerebrus-pulse-mcp",
+      "description": "Real-time Hyperliquid perps intelligence: TA, funding, OI, liquidations. Pay-per-call via x402.",
+      "title": "Cerebrus Pulse MCP",
+      "repository": {
+        "url": "https://github.com/0xsl1m/cerebrus-pulse-mcp",
+        "source": "github"
+      },
+      "version": "0.5.1",
+      "packages": [
+        {
+          "registryType": "pypi",
+          "identifier": "cerebrus-pulse-mcp",
+          "version": "0.5.1",
+          "transport": {
+            "type": "stdio"
+          }
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-08-28T20:54:29.580778Z",
+      "publishedAt": "2026-08-28T20:54:29.580778Z",
+      "updatedAt": "2026-08-28T20:54:29.580778Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "0xsl1m/cerebrus-pulse-mcp",
+      "found": true,
+      "id": 1172591738,
+      "fullName": "0xsl1m/cerebrus-pulse-mcp",
+      "renamedOrMoved": false,
+      "description": "MCP server for real-time crypto intelligence — 15 tools for technical analysis, liquidation heatmaps, market stress, funding rates across 50+ Hyperliquid perpetuals. CLI + MCP. x402 micropayments.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "ai-agents",
+        "base-chain",
+        "claude-desktop",
+        "crypto",
+        "cursor",
+        "defi",
+        "hyperliquid",
+        "mcp",
+        "mcp-server",
+        "micropayments",
+        "python",
+        "technical-analysis",
+        "trading",
+        "usdc",
+        "windsurf",
+        "x402"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-03-04T13:38:29Z",
+      "pushedAt": "2026-09-26T00:57:12Z",
+      "homepage": "https://cerebruspulse.xyz"
+    }
+  }
+}

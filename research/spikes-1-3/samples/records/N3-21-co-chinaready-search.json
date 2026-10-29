@@ -1,0 +1,66 @@
+{
+  "ref": "N3-21",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "mcp-registry",
+  "format": "mcp-server-json",
+  "name": "co.chinaready/search",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 97 result(s)",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=co.chinaready%2Fsearch&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "co.chinaready/search",
+      "description": "Read-only search over chinaready.co — China market entry for Western software teams.",
+      "title": "Chinaready China Market-Entry Search",
+      "repository": {
+        "url": "https://github.com/chinaready/mcp",
+        "source": "github",
+        "id": "chinaready/mcp"
+      },
+      "version": "1.0.0",
+      "websiteUrl": "https://chinaready.co/docs/api/",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://mcp.chinaready.co/mcp"
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-10-13T04:46:33.710607Z",
+      "publishedAt": "2026-10-13T04:46:33.710607Z",
+      "updatedAt": "2026-10-13T04:46:33.710607Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "chinaready/mcp",
+      "found": true,
+      "id": 1415583898,
+      "fullName": "chinaready/mcp",
+      "renamedOrMoved": false,
+      "description": "Remote MCP server for chinaready.co — search China market-entry guides, browse topics, read articles. Streamable HTTP, no auth.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "china",
+        "claude-plugin",
+        "compliance",
+        "gemini-cli-extension",
+        "market-entry",
+        "mcp",
+        "mcp-server"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-10-12T12:39:33Z",
+      "pushedAt": "2026-10-22T13:12:25Z",
+      "homepage": null
+    }
+  }
+}

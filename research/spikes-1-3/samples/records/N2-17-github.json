@@ -1,0 +1,69 @@
+{
+  "ref": "N2-17",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "claude-plugins",
+  "format": "claude-plugin",
+  "name": "github",
+  "selection": "purposive",
+  "note": "vendor publication: GitHub's MCP server",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json",
+  "native": {
+    "marketplaceEntry": {
+      "name": "github",
+      "description": "Official GitHub MCP server for repository management. Create issues, manage pull requests, review code, search repositories, and interact with GitHub's full API directly from Claude Code.",
+      "category": "productivity",
+      "source": "./external_plugins/github",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/github"
+    },
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "owner": {
+        "name": "Anthropic",
+        "email": "<redacted-email>"
+      }
+    },
+    "repo": "anthropics/claude-plugins-official",
+    "ref": "main",
+    "base": "external_plugins/github",
+    "pluginJson": {
+      "name": "github",
+      "description": "Official GitHub MCP server for repository management. Create issues, manage pull requests, review code, search repositories, and interact with GitHub's full API directly from Claude Code.",
+      "author": {
+        "name": "GitHub"
+      }
+    },
+    "mcpJson": {
+      "github": {
+        "type": "http",
+        "url": "https://api.githubcopilot.com/mcp/",
+        "headers": {
+          "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+        }
+      }
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "anthropics/claude-plugins-official",
+      "found": true,
+      "id": 1100776768,
+      "fullName": "anthropics/claude-plugins-official",
+      "renamedOrMoved": false,
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "license": "Apache-2.0",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "claude-code",
+        "mcp",
+        "skills"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-11-20T18:36:20Z",
+      "pushedAt": "2026-10-22T07:41:13Z",
+      "homepage": "https://code.claude.com/docs/en/plugins"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# Internal skill, published from a monorepo that also contains sre-toolkit (same source.url,
+# different source.path). Assessed risk tier, so assessmentReference is present. It also uses the
+# optional maturity, intendedAudience, platformCompatibility, and costInformation fields.
+schemaVersion: "0.1"
+id: ai-platform/sql-review
+name: SQL Review
+description: >-
+  Reviews SQL changes in pull requests for performance anti-patterns and for
+  violations of the data-access policy, such as reading classified PII columns
+  without an approved purpose, and explains each finding with a suggested fix.
+capabilityType: skill
+capabilityVersion: "1.3.0"
+source:
+  type: repository
+  url: https://github.com/example-org/ai-capabilities
+  path: skills/sql-review
+owner:
+  name: AI Platform Engineering
+  contact: ai-platform@example.com
+  affiliation: internal
+lifecycleStatus: active
+maturity: production
+riskTier: low
+assessmentReference:
+  id: RA-2026-0142
+  url: https://grc.example.com/assessments/RA-2026-0142
+  assessedOn: "2026-08-14"
+lastUpdated: "2026-10-12"
+supportedUseCases:
+  - title: Review SQL in pull requests for performance anti-patterns
+    description: Flags full-table scans, unbounded queries on partitioned tables, and N+1 query patterns.
+  - title: Check queries against the data-access policy
+    description: Detects reads of classified PII columns and points to the approved access pattern.
+intendedAudience:
+  - backend engineers
+  - database reviewers
+interfaces:
+  - type: agent_skill
+    contractRef: https://github.com/example-org/ai-capabilities/blob/main/skills/sql-review/SKILL.md
+    description: Packaged as an Agent Skill (SKILL.md with instructions and reference files).
+    inputs:
+      - name: sql-change
+        mediaType: text/x-diff
+        description: Unified diff or SQL file content to review.
+    outputs:
+      - name: review-findings
+        mediaType: text/markdown
+        description: Findings with severity, location, and a suggested fix.
+  - type: cli
+    description: Runs the same checks locally with `sql-review check <file>`.
+platformCompatibility:
+  - github-actions
+  - vs-code
+dependencies: []
+limitations:
+  - Supports the PostgreSQL and MySQL dialects only.
+  - Static analysis only; queries are never executed.
+costInformation:
+  model: included
+  details: Covered by the existing agent platform license; no per-use charge.

@@ -1,0 +1,66 @@
+# COMPATIBLE revision of examples/valid/sql-review.capability.yaml (1.3.0 -> 1.4.0):
+# - adds an MCP interface and a use case: additive changes, so a MINOR bump is required (present);
+# - the repository was renamed, so source.url changed while the id did not: consumers that
+#   reference 'ai-platform/sql-review' are unaffected.
+#   node bin/capability-manifest.js compat examples/valid/sql-review.capability.yaml examples/compatibility/sql-review.1.4.0-compatible.capability.yaml
+schemaVersion: "0.1"
+id: ai-platform/sql-review
+name: SQL Review
+description: >-
+  Reviews SQL changes in pull requests for performance anti-patterns and for
+  violations of the data-access policy, such as reading classified PII columns
+  without an approved purpose, and explains each finding with a suggested fix.
+capabilityType: skill
+capabilityVersion: "1.4.0"
+source:
+  type: repository
+  url: https://github.com/example-org/ai-capability-catalog
+  path: skills/sql-review
+owner:
+  name: AI Platform Engineering
+  contact: ai-platform@example.com
+  affiliation: internal
+lifecycleStatus: active
+maturity: production
+riskTier: low
+assessmentReference:
+  id: RA-2026-0142
+  url: https://grc.example.com/assessments/RA-2026-0142
+  assessedOn: "2026-08-14"
+lastUpdated: "2026-10-19"
+supportedUseCases:
+  - title: Review SQL in pull requests for performance anti-patterns
+    description: Flags full-table scans, unbounded queries on partitioned tables, and N+1 query patterns.
+  - title: Check queries against the data-access policy
+    description: Detects reads of classified PII columns and points to the approved access pattern.
+  - title: Explain the query plan of a slow query
+intendedAudience:
+  - backend engineers
+  - database reviewers
+interfaces:
+  - type: agent_skill
+    contractRef: https://github.com/example-org/ai-capability-catalog/blob/main/skills/sql-review/SKILL.md
+    description: Packaged as an Agent Skill (SKILL.md with instructions and reference files).
+    inputs:
+      - name: sql-change
+        mediaType: text/x-diff
+        description: Unified diff or SQL file content to review.
+    outputs:
+      - name: review-findings
+        mediaType: text/markdown
+        description: Findings with severity, location, and a suggested fix.
+  - type: cli
+    description: Runs the same checks locally with `sql-review check <file>`.
+  - type: mcp
+    specVersion: "2025-06-18"
+    description: The same checks exposed as MCP tools for agents that do not load skills.
+platformCompatibility:
+  - github-actions
+  - vs-code
+dependencies: []
+limitations:
+  - Supports the PostgreSQL and MySQL dialects only.
+  - Static analysis only; queries are never executed.
+costInformation:
+  model: included
+  details: Covered by the existing agent platform license; no per-use charge.

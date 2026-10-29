@@ -1,0 +1,107 @@
+{
+  "ref": "N4-40",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "docker-catalog",
+  "format": "docker-mcp-catalog",
+  "name": "ref",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 4 result(s)",
+  "sourceUrl": "https://github.com/docker/mcp-registry/blob/main/servers/ref/server.yaml",
+  "native": {
+    "serverYaml": {
+      "name": "ref",
+      "image": "mcp/ref-tools-mcp",
+      "type": "server",
+      "meta": {
+        "category": "devops",
+        "tags": [
+          "devops",
+          "documentation"
+        ]
+      },
+      "about": {
+        "title": "Ref - Up-To-Date Docs",
+        "description": "Ref powerful search tool connets your coding tools with documentation context. It includes an up-to-date index of public documentation and it can ingest your private documentation (eg. GitHub repos, PDFs) as well.",
+        "icon": "https://avatars.githubusercontent.com/u/210568548?v=4"
+      },
+      "source": {
+        "project": "https://github.com/ref-tools/ref-tools-mcp",
+        "commit": "83970a35627785a0589ae2dbe5510b4a3dd04146"
+      },
+      "config": {
+        "description": "Configure the connection to Ref",
+        "secrets": [
+          {
+            "name": "ref.REF_API_KEY",
+            "env": "REF_API_KEY",
+            "example": "ref-abcdefghi123"
+          }
+        ]
+      }
+    },
+    "tools": [
+      {
+        "name": "ref_read_url",
+        "description": "A tool that fetches content from a URL and converts it to markdown for easy reading with Ref. \n\nThis is powerful when used in conjunction with the ref_search_documentation or ref_search_web tool that return urls of relevant content.",
+        "arguments": [
+          {
+            "name": "url",
+            "type": "string",
+            "desc": "The URL of the webpage to read."
+          }
+        ]
+      },
+      {
+        "name": "ref_search_documentation",
+        "description": "A powerful search tool to check technical documentation. Great for finding facts or code snippets. Can be used to search for public documentation on the web or github as well from private resources like repos and pdfs.",
+        "arguments": [
+          {
+            "name": "query",
+            "type": "string",
+            "desc": "Query to search for relevant documentation. This should be a full sentence or question."
+          },
+          {
+            "name": "keyWords",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "desc": "A list of keywords to use for the search like you would use for grep",
+            "optional": true
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "desc": "Defaults to 'all'. 'public' is used when the user is asking about a public API or library. 'private' is used when the user is asking about their own private repo or pdfs. 'web' is use only as a fallback when 'public' has failed.",
+            "optional": true
+          }
+        ]
+      }
+    ]
+  },
+  "linked": {
+    "repository": {
+      "requested": "ref-tools/ref-tools-mcp",
+      "found": true,
+      "id": 971047356,
+      "fullName": "ref-tools/ref-tools-mcp",
+      "renamedOrMoved": false,
+      "description": "Helping coding agents never make mistakes working with public or private libraries without wasting the context window.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "coding-agent",
+        "documentation-tool",
+        "mcp",
+        "mcp-server"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-04-22T23:56:07Z",
+      "pushedAt": "2026-10-01T22:21:11Z",
+      "homepage": "http://ref.tools"
+    }
+  }
+}

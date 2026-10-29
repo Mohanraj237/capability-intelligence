@@ -1,0 +1,51 @@
+{
+  "ref": "N2-15",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "agent-skills",
+  "format": "agent-skill",
+  "name": "centos-linux-triage",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 90 result(s)",
+  "sourceUrl": "https://github.com/github/awesome-copilot/blob/main/skills/centos-linux-triage/SKILL.md",
+  "native": {
+    "frontmatter": {
+      "name": "centos-linux-triage",
+      "description": "Triage and resolve CentOS issues using RHEL-compatible tooling, SELinux-aware practices, and firewalld."
+    },
+    "parseError": null,
+    "bodyCharacters": 957,
+    "repository": "https://github.com/github/awesome-copilot",
+    "path": "skills/centos-linux-triage",
+    "licenseFiles": [],
+    "lastCommitDate": "2026-02-24T03:39:33Z"
+  },
+  "linked": {
+    "repository": {
+      "requested": "github/awesome-copilot",
+      "found": true,
+      "id": 1000362065,
+      "fullName": "github/awesome-copilot",
+      "renamedOrMoved": false,
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "agent-skills",
+        "agents",
+        "ai",
+        "awesome",
+        "custom-agents",
+        "github-copilot",
+        "hacktoberfest",
+        "prompt-engineering"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2025-06-11T16:57:39Z",
+      "pushedAt": "2026-10-22T13:52:29Z",
+      "homepage": "https://awesome-copilot.github.com/"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.com/ai-capability-manifest/contracts/exchange-document-0.1.schema.json",
+  "title": "Capability Exchange Document",
+  "description": "A snapshot of validated capability manifests exchanged between teams, produced by `capability-manifest export`. Each manifest is carried unchanged and must validate against the manifest schema named by its own schemaVersion, so one document can mix schema versions. Mission 4 defines this structure; the inventory content it carries belongs to the capability and inventory owners (Mission 2). The document holds no rankings, approvals, or assessments.",
+  "type": "object",
+  "required": ["exchangeFormatVersion", "generator", "schemaVersions", "notice", "capabilities", "rejected"],
+  "properties": {
+    "exchangeFormatVersion": { "const": "0.1", "description": "Version of this exchange format." },
+    "generator": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false,
+      "description": "Tool that produced the document."
+    },
+    "schemaVersions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$" },
+      "description": "Manifest schema versions used by the capabilities in this document."
+    },
+    "notice": { "type": "string", "minLength": 1, "description": "What structural validity does not establish." },
+    "capabilities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/capability" },
+      "description": "Valid manifests, ordered by id."
+    },
+    "rejected": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rejected" },
+      "description": "Inputs that failed validation and were left out."
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+    "capability": {
+      "type": "object",
+      "required": ["manifest", "validation"],
+      "properties": {
+        "manifest": {
+          "type": "object",
+          "required": ["schemaVersion", "id"],
+          "description": "The manifest exactly as authored. Validate it against the manifest schema for its schemaVersion."
+        },
+        "validation": {
+          "type": "object",
+          "required": ["warnings", "unverified"],
+          "properties": {
+            "warnings": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/code" }, "description": "Warning codes raised for this manifest." },
+            "unverified": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/code" }, "description": "Checks that could not be confirmed, such as RISK_UNASSESSED." },
+            "completeness": { "type": "string", "pattern": "^[a-z][a-z_]*$", "description": "Completeness level the manifest reaches (see the manifest schema's x-completenessLevels), or 'none'. Consumers must expect partial records." }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "rejected": {
+      "type": "object",
+      "required": ["file", "id", "errorCount", "errorCodes"],
+      "properties": {
+        "file": { "type": "string", "minLength": 1, "description": "Input file that was rejected." },
+        "id": { "description": "id as declared in the rejected manifest, or null." },
+        "errorCount": { "type": "integer", "minimum": 1 },
+        "errorCodes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/code" } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

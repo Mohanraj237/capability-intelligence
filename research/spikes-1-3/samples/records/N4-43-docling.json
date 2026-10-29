@@ -1,0 +1,102 @@
+{
+  "ref": "N4-43",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N4",
+  "source": "pypi",
+  "format": "pypi-package",
+  "name": "docling",
+  "selection": "purposive",
+  "note": "framework integration named in needs.yaml",
+  "sourceUrl": "https://pypi.org/project/docling/",
+  "native": {
+    "info": {
+      "name": "docling",
+      "version": "2.142.0",
+      "summary": "SDK and CLI for parsing PDF, DOCX, HTML, and more, to a unified document representation for powering downstream workflows such as gen AI applications.",
+      "keywords": "convert, docling, document, docx, html, layout model, markdown, pdf, segmentation, table former, table structure",
+      "license": null,
+      "license_expression": "MIT",
+      "classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: Microsoft :: Windows",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence"
+      ],
+      "project_urls": {
+        "changelog": "https://github.com/docling-project/docling/blob/main/CHANGELOG.md",
+        "homepage": "https://github.com/docling-project/docling",
+        "issues": "https://github.com/docling-project/docling/issues",
+        "repository": "https://github.com/docling-project/docling"
+      },
+      "home_page": null,
+      "author": null,
+      "author_email": "Christoph Auer <<redacted-email>>, Michele Dolfi <<redacted-email>>, Maxim Lysak <<redacted-email>>, Nikos Livathinos <<redacted-email>>, Ahmed Nassar <<redacted-email>>, Panos Vagenas <<redacted-email>>, Peter Staar <<redacted-email>>",
+      "maintainer": null,
+      "requires_python": "<4.0,>=3.10",
+      "requires_dist": [
+        "docling-slim[standard]==2.142.0",
+        "docling-slim[format-audio]==2.142.0; extra == \"asr\"",
+        "docling-slim[feat-ocr-easyocr]==2.142.0; extra == \"easyocr\"",
+        "docling-slim[format-html-render]==2.142.0; extra == \"htmlrender\"",
+        "docling-slim[feat-ocr-mac]==2.142.0; extra == \"ocrmac\"",
+        "docling-slim[models-onnxruntime]==2.142.0; extra == \"onnxruntime\"",
+        "docling-slim[feat-ocr-rapidocr-onnx]==2.142.0; extra == \"rapidocr\"",
+        "docling-slim[models-remote]==2.142.0; extra == \"remote-serving\"",
+        "docling-slim[feat-ocr-tesserocr]==2.142.0; extra == \"tesserocr\"",
+        "docling-slim[models-vlm-inline]==2.142.0; extra == \"vlm\"",
+        "docling-slim[format-xml-xbrl]==2.142.0; extra == \"xbrl\""
+      ],
+      "yanked": false,
+      "descriptionCharacters": 8527,
+      "description": "<p align=\"center\">\n  <a href=\"https://github.com/docling-project/docling\">\n    <img loading=\"lazy\" alt=\"Docling\" src=\"https://github.com/docling-project/docling/raw/main/docs/assets/docling_processing.png\" width=\"100%\"/>\n  </a>\n</p>\n\n# Docling\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/17240\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/17240\" alt=\"DS4SD%2Fdocling | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n</p>\n\n[![arXiv](https://img.shields.io/badge/arXiv-2408.09869-b31b1b.svg)](https://arxiv.org/abs/2408.09869)\n[![Docs](https://img.shields.io/badge/docs-live-brightgreen)](https://docling-project.github.io/docling/)\n[![PyPI version](https://img.shields.io/pypi/v/docling)](https://pypi.org/project/docling/)\n[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/docling)](https://pypi.org/project/docling/)\n[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)\n[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)\n[![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)\n[![prek](https://img.shields.io/badge/prek-enabled-brightgreen)](https://pypi.org/project/prek/)\n[![License MIT](https://img.shields.io/github/license/docling-project/docling)](https://opensource.org/licenses/MIT)\n[![PyPI Downloads](https://static.pepy.tech/badge/docling/month)](https://pepy.tech/projects/docling)\n[![Docling Actor](https://apify.com/actor-badge?actor=vancura/docling&fpr=docling)](https://apify.com/vancura/docling)\n[![Chat with Dosu](https://dosu.dev/dosu-chat-badge.svg)](https://app.dosu.dev/097760a8-135e-4789-8234-90c8837d7f1c/ask?utm_source=github)\n[![Discord](https://img.shields.io/discord/1399788921306746971?color=6A7EC2&logo=discord&logoColor=ffffff)](https://docling.ai/discord)\n[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10101/badge)](https://www.bestpractices.dev/projects/10101)\n[![LF AI & Data](https://img.shields.io/badge/LF%20AI%20%26%20Data-003778?logo=linuxfoundation&logoColor=fff&color=0094ff&labelColor=003778)](https://lfaidata.foundation/projects/)\n\n## What is Docling ?\n\nDocling simplifies document processing by parsing diverse formats — including advanced PDF understanding — and providing seamless integrations with the generative AI ecosystem.\n\n## Features\n\n- 🗂️ Parsing of [multiple document formats][supported_formats] including PDF, DOCX, PPTX, XLSX, HTML, EPUB, Apple Pages, Numbers & Keynote, WAV, MP3, WebVTT, Box Notes, email formats (EML, MSG), images (PNG, TIFF, JPEG, ...), LaTeX, DocLang, plain text, and more\n- 📑 Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more\n- 🧬 A unified, expressive [DoclingDocument][docling_document] representation format\n- ↪️ Various [export formats][supported_formats] and options, including Markdown, HTML, WebVTT, DocLang, [DocTags](https://arxiv.org/abs/2503.11576) and lossless JSON\n- 📜 Support for several application-specific XML schemas including [DocLang](https://doclang.ai), [USPTO](https://www.uspto.gov/patents) patents, [JATS](https://jats.nlm.nih.gov/) articles, and [XBRL](https://www.xbrl.org/) financial reports.\n- 🔒 Local execution capabilities for sensitive data and air-gapped environments\n- 🤖 Plug-and-play [integrations][integrations] incl. LangChain, LlamaIndex, Crew AI & Haystack for agentic AI\n- 🔍 Extensive OCR support for scanned PDFs and images\n- 👓 Support for several Visual Language Models, such as ([GraniteDocling](https://huggingface.co/ibm-granite/granite-docling-258M))\n- 🎙️ Audio support with Automatic Speech Recognition (ASR) models\n- 🔌 Connect to any agent using the [MCP server](https://docling-project.github.io/docling/usage/mcp/)\n- 🌐 Run Docling as a service with the [API server](https://docling-project.github.io/docling/usage/api_server/) (docling-serve)\n- 💻 Simple and convenient CLI\n\n### What's new\n\n- 🎬 Parsing of video files (MP4, AVI, MOV, MKV, and WebM) with an ASR transcript and representative keyframes\n- 📄 Parsing of ODF (OpenDocument Format) files for text documents (`.odt`), spreadsheets (`.ods`), and presentations (`.odp`)\n- 💼 Parsing of XBRL (eXtensible Business Reporting Language) documents for financial reports\n- 📧 Parsing of email files (`.eml`, `.msg`)\n- 📚 Parsing of EPUB (Electronic Publication) files for e-books\n- 🍎 Parsing of Apple Pages (`.pages`) documents, Numbers (`.numbers`) spreadsheets and Keynote (`.key`) presentations\n- 📝 Parsing of plain-text files (`.txt`, `.text`) and Markdown supersets (`.qmd`, `.Rmd`)\n- 📊 Chart understanding (Barchart, Piechart, LinePlot): convert them into tables or code and add detailed descriptions\n\n### Coming soon\n\n- 📝 Metadata extraction, including title, authors, references & language\n- 📝 Complex chemistry understanding (Molecular structures)\n\n## Quickstart\n\n### 1. Install\n\n```bash\npip install docling\n```\n\n> **Note:** Python 3.9 support was dropped in docling version 2.70.0. Please use Python 3.10 or higher.\n\nWorks on macOS, Linux and Windows environments for both x86_64 and arm64 architectures.\n\nMore [detailed installation instructions](https://docling-project.github.io/docling/getting_started/installation/) are available in the docs.\n\n## 2. Convert a document (CLI)\n\n```bash\ndocling https://arxiv.org/pdf/2206.01062\n```\n\nThis generates a .md file in the current directory containing structured document content.\n\nYou can also use 🥚[GraniteDocling](https://huggingface.co/ibm-granite/granite-docling-258M) and other VLMs via Docling CLI:\n\n```bash\ndocling --pipeline vlm --vlm-model granite_docling https://arxiv.org/pdf/2206.01062\n```\n\n## 3. Python usage (recommended)\n\n```python\nfrom docl"
+    },
+    "registry": {
+      "releaseCount": 230,
+      "latestUploadedAt": "2026-10-22T14:31:09.466225Z"
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "docling-project/docling",
+      "found": true,
+      "id": 826168160,
+      "fullName": "docling-project/docling",
+      "renamedOrMoved": false,
+      "description": "Get your documents ready for gen AI",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "ai",
+        "convert",
+        "document-parser",
+        "document-parsing",
+        "documents",
+        "docx",
+        "html",
+        "markdown",
+        "pdf",
+        "pdf-converter",
+        "pdf-to-json",
+        "pdf-to-text",
+        "pptx",
+        "tables",
+        "xlsx"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2024-07-09T07:50:26Z",
+      "pushedAt": "2026-10-22T16:18:51Z",
+      "homepage": "https://docling-project.github.io/docling"
+    }
+  }
+}

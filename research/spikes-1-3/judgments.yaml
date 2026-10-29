@@ -1,0 +1,146 @@
+# Ground truth for the Spikes 1-3 journeys: relevance per need, identity groups, and derivative
+# links. Judged on 2026-10-22 from each capability's own documentation (samples/supplementary.json)
+# against the criteria in needs.yaml, before analyze.js was first run. One judge; see README
+# "Limitations". Records not listed for a need are judged not relevant to it. "undetermined" means
+# that neither the metadata nor the documentation says enough to judge.
+
+relevance:
+  N1: # drive a real browser interactively
+    relevant:
+      - N1-01 # Microsoft Playwright MCP (registry entry)
+      - N1-03 # @playwright/mcp (npm)
+      - N1-07 # Claude Code plugin that runs @playwright/mcp
+      - N1-09 # Docker catalog build of microsoft/playwright-mcp
+      - N1-02 # Playwright with a stealth mode (registry)
+      - N1-45 # the same server on npm
+      - N1-04 # independent fork of Playwright MCP with per-tab isolation
+      - N1-05 # webapp-testing skill (awesome-copilot): Playwright via MCP or Node.js
+      - N1-06 # webapp-testing skill (anthropics): Python Playwright scripts
+      - N1-10 # Browserbase cloud browser control (archived self-hostable server)
+      - N1-41 # browser-use (PyPI): browser agents that fill forms and click
+      - N1-49 # browser-use (registry): the same, plus a hosted endpoint
+      - B05   # cdp-toolkit: click, type, read the page, screenshots over CDP
+      - B11   # devloop: drives a browser plus dev-server logs
+    partial:
+      - N4-36 # latchshot-page-capture: screenshots or PDFs of a public page, no interaction
+    undetermined: []
+
+  N2: # read and update GitHub issues and pull requests
+    relevant:
+      - N2-50 # GitHub's MCP server (registry)
+      - N2-19 # GitHub's MCP server (Docker catalog)
+      - N2-17 # Claude Code plugin that connects to GitHub's hosted MCP endpoint
+      - N2-44 # claude-code-action: comments, reviews, labels, and code changes on PRs and issues
+    partial:
+      - N2-14 # @fre4x/github: reads issues and PRs, can only create issues
+      - N2-18 # GitKraken plugin: documented as read-only queries over issues and PRs
+      - A08   # GitHub release download analysis (read-only, not issues or PRs)
+      - A12   # the same agent card, second copy in the same repository
+    undetermined: []
+
+  N3: # live web search with citable result URLs
+    relevant:
+      - N3-30 # DuckDuckGo search MCP server (community): results with URLs
+      - N3-42 # langchain-tavily: Tavily Search API tool for LangChain
+    partial:
+      - N3-21 # search over a single site (chinaready.co), returns its URLs
+      - N3-23 # search over an Azure Cognitive Search index (closed corpus)
+      - N3-29 # Airbnb listing search (single site)
+      - N4-40 # Ref: documentation search (web and private documentation)
+      - N2-11 # OSDev wiki offline search (closed corpus)
+      - N2-46 # the same server on PyPI
+      - N1-10 # Browserbase: extraction from pages, no search
+      - N1-41 # browser-use: extracts data from pages, no search
+      - N1-49 # the same, registry entry
+      - B09   # Clarity Today: search over its own news stories
+      - A02   # Aptos Explorer: search one site
+      - A32   # NERO Chain docs search
+      - A33   # Polyglow content discovery (one site)
+      - A35   # personal assistant card listing a web-search skill, no endpoint
+    undetermined:
+      - N3-24 # redfox-ai-search-mcp: neither metadata nor README says what is searched
+
+  N4: # extract text and tables from PDF files
+    relevant:
+      - N4-34 # pdf-parse: text, images, and tables
+      - N4-35 # pdf skill (anthropics): reading and extracting text and tables
+      - N4-43 # docling: PDF parsing with table structure
+    partial:
+      - N4-32 # bulk OCR of scanned PDFs listed in a dataset, text only
+      - N4-39 # Handwriting OCR: PDFs to Markdown, no table handling stated
+    undetermined: []
+
+identity:
+  criterion: >-
+    Same capability: the entries deliver the same software or service from the same maintainer,
+    so that adopting either gives the same functions; they differ only in packaging, channel, or
+    hosting. A wrapper that adds nothing but configuration counts as the same capability. A
+    derivative that changes the software (a fork, a rewrite under the same name) does not.
+  groups:
+    - id: microsoft-playwright-mcp
+      members: [N1-01, N1-03, N1-09, N1-07]
+      basis: >-
+        The registry entry declares npm @playwright/mcp and the package's mcpName points back to
+        it; the Docker entry is built from microsoft/playwright-mcp; the plugin (plugin.json and
+        .mcp.json only) runs npx @playwright/mcp@latest.
+    - id: github-mcp-server
+      members: [N2-50, N2-19, N2-17]
+      basis: >-
+        The registry entry declares the image ghcr.io/github/github-mcp-server and the hosted
+        endpoint https://api.githubcopilot.com/mcp/; the Docker entry uses that image and
+        repository; the plugin (.mcp.json only) connects to the same endpoint.
+    - id: pulsemcp-playwright-stealth
+      members: [N1-02, N1-45]
+      basis: The registry entry declares the npm package; its mcpName points back.
+    - id: browser-use
+      members: [N1-41, N1-49]
+      basis: The registry entry declares the PyPI package, and the package description carries the mcp-name marker.
+    - id: osdev-wiki-mcp
+      members: [N2-11, N2-46]
+      basis: The registry entry declares the PyPI package.
+    - id: cerebrus-pulse-mcp
+      members: [N2-12, N2-47]
+      basis: The registry entry declares the PyPI package.
+    - id: pdfapi-mcp-server
+      members: [N4-31, N4-48]
+      basis: The registry entry declares the npm package; its mcpName points back.
+  derivatives:
+    - from: N1-04
+      relation: fork of (claimed)
+      to: microsoft-playwright-mcp
+      evidence: >-
+        README: "an independent fork of Playwright MCP. It is not a Microsoft package." npm
+        description: "Fork of official Playwright MCP". GitHub does not record the repository as a fork.
+    - from: N1-05
+      relation: same name and description, different capability
+      to: N1-06
+      evidence: >-
+        Identical front matter (name and description). The bodies differ: Node.js with the Playwright
+        MCP server versus Python scripts with a bundled helper; different files; Apache-2.0 file in
+        anthropics/skills, none in the copy (repository MIT).
+    - from: N1-10
+      relation: replaced by (stated in README)
+      to: Browserbase hosted MCP server (https://mcp.browserbase.com/mcp), not in the sample
+      evidence: 'README: "This repository is archived and no longer maintained." The Docker entry still lists it.'
+    - from: N1-07
+      relation: wraps (configuration only)
+      to: N1-03
+      evidence: .mcp.json runs npx @playwright/mcp@latest; no other components declared.
+    - from: N2-17
+      relation: wraps (configuration only)
+      to: github-mcp-server
+      evidence: .mcp.json connects to https://api.githubcopilot.com/mcp/ with a personal access token.
+
+rationale:
+  N1-08: Hostinger hosting and domain management; "browser" appears only for OAuth sign-in, and "search" for domain search.
+  N2-13: GitHub publishes it, but it is an SDK for the MCP Registry API, not a GitHub integration.
+  N2-15: Linux troubleshooting; matched "issues" in the generic sense.
+  N2-20: API mocking; mentions GitHub Copilot as a client.
+  N3-22: Generates a RabbitMQ, Elasticsearch, and MySQL stack; "search" is in "Elasticsearch".
+  N3-25: Vector database tuning (Qdrant); "search" means vector search.
+  N3-28: Atlassian Forge development skills.
+  N4-31: Generates PDFs from JSON; does not read them.
+  N4-33: Displays PDFs in React; does not extract.
+  N4-37: Informatica catalog discovery; mentions PDF files as catalogued assets.
+  N4-38: AWS data analytics workflows.
+  N4-40: For N4, indexes PDFs for search but does not state extraction.

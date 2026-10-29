@@ -1,0 +1,19 @@
+# INVALID: violates two conditional requirements.
+# - riskTier 'low' without assessmentReference (an assessed tier must cite its assessment).
+# - lifecycleStatus 'deprecated' without deprecation details.
+schemaVersion: "0.1"
+id: ai-platform/meeting-notes-agent
+name: Meeting Notes Agent
+description: Joins scheduled meetings as a listener and produces summaries with action items.
+capabilityType: agent
+capabilityVersion: "1.2.0"
+source:
+  type: repository
+  url: https://github.com/example-org/meeting-notes-agent
+owner:
+  name: Workplace AI
+  contact: workplace-ai@example.com
+  affiliation: internal
+lifecycleStatus: deprecated
+riskTier: low
+lastUpdated: "2026-10-02"

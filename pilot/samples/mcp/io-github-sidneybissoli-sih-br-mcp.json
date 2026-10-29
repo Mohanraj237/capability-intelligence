@@ -1,0 +1,91 @@
+{
+  "format": "mcp-server-json",
+  "name": "io.github.SidneyBissoli/sih-br-mcp",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.SidneyBissoli%2Fsih-br-mcp&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.SidneyBissoli/sih-br-mcp",
+      "description": "DATASUS SIH/SUS hospital admissions in Brazil (AIH, 1992-2025): ICD-10 causes, ICSAP, rates.",
+      "title": "DATASUS SIH/SUS — Brazil Hospital Admissions (AIH) MCP",
+      "repository": {
+        "url": "https://github.com/SidneyBissoli/sih-br-mcp",
+        "source": "github"
+      },
+      "version": "1.8.0",
+      "websiteUrl": "https://sih.sidneybissoli.com",
+      "icons": [
+        {
+          "src": "https://sih.sidneybissoli.com/icon.png",
+          "mimeType": "image/png",
+          "sizes": [
+            "512x512"
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "sih-br-mcp",
+          "version": "1.8.0",
+          "transport": {
+            "type": "stdio"
+          },
+          "environmentVariables": [
+            {
+              "description": "Folder for the local cache of cubes and population files downloaded from the public channel (default ~/.cache/sih-br-mcp/cubos).",
+              "name": "SIH_CACHE_DIR"
+            },
+            {
+              "description": "Alternative channel base URL (default https://data.sidneybissoli.com/sih/cubos/).",
+              "name": "SIH_CUBES_BASE_URL"
+            }
+          ]
+        }
+      ],
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://sih.sidneybissoli.com/mcp"
+        }
+      ],
+      "_meta": {
+        "io.modelcontextprotocol.registry/publisher-provided": {
+          "io.github.sidneybissoli/mcp-surface": {
+            "anonymous": {
+              "answers": {
+                "initialize": true,
+                "ping": true,
+                "prompts/list": false,
+                "resources/list": false,
+                "resources/templates/list": false,
+                "tools/call": true,
+                "tools/list": true
+              },
+              "call": {
+                "arguments": {},
+                "name": "list_cid_chapters"
+              },
+              "sha256": "7c0483c507734556e662d7b01f3c967b5149ef6979a42d9d63feb0b2bce8e922"
+            },
+            "declared": {
+              "lockedAt": "1.8.0",
+              "sha256": "35a18858723718647c3dc7226b213984fb1c56b4d14787f78319ad41d812d0a9"
+            },
+            "endpoint": "https://sih.sidneybissoli.com/mcp",
+            "form": "mcp-surface/1",
+            "spec": "https://github.com/SidneyBissoli/mcp-br-commons/blob/main/packages/mcp-surface/SPEC.md"
+          }
+        }
+      }
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-10-16T01:35:18.691061Z",
+      "publishedAt": "2026-10-16T01:35:18.691061Z",
+      "updatedAt": "2026-10-16T01:35:18.691061Z",
+      "isLatest": true
+    }
+  }
+}

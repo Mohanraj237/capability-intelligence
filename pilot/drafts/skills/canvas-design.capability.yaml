@@ -1,0 +1,42 @@
+# Draft manifest drafted automatically from https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "anthropics/canvas-design"
+name: "canvas-design"
+description: "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
+capabilityType: "skill"
+source:
+  type: "repository"
+  url: "https://github.com/anthropics/skills"
+  path: "skills/canvas-design"
+owner:
+  name: "anthropics"
+  contact: "https://github.com/anthropics/skills/issues"
+  affiliation: "external"
+riskTier: "unassessed"
+lastUpdated: "2025-12-01"
+interfaces:
+  - type: "agent_skill"
+    contractRef: "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md"
+license:
+  text: "Complete terms in LICENSE.txt"
+documentation: "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md"
+x-provenance:
+  extractedFrom: "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md"
+  format: "agent-skill"
+  native:
+    - "name"
+    - "description"
+    - "license"
+  derived:
+    - "id"
+    - "capabilityType"
+    - "source"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "lastUpdated"
+    - "interfaces"
+    - "documentation"
+  default:
+    - "riskTier"

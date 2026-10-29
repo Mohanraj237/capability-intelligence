@@ -1,0 +1,20 @@
+# Structurally valid on its own, but it reuses the id of examples/valid/sql-review.capability.yaml.
+# Validate it together with examples/valid to see the Stage 2 duplicate-identifier error:
+#   node bin/capability-manifest.js validate examples/valid examples/consistency
+schemaVersion: "0.1"
+id: ai-platform/sql-review
+name: SQL Review (analytics fork)
+description: Fork of the SQL Review skill with extra rules for the analytics data warehouse.
+capabilityType: skill
+capabilityVersion: "1.0.0"
+source:
+  type: repository
+  url: https://github.com/example-org/analytics-ai-tools
+  path: skills/sql-review
+owner:
+  name: Analytics Engineering
+  contact: analytics-eng@example.com
+  affiliation: internal
+lifecycleStatus: experimental
+riskTier: unassessed
+lastUpdated: "2026-10-17"

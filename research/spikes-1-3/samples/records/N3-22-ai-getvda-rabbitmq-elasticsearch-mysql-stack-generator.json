@@ -1,0 +1,36 @@
+{
+  "ref": "N3-22",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N3",
+  "source": "mcp-registry",
+  "format": "mcp-server-json",
+  "name": "ai.getvda/rabbitmq-elasticsearch-mysql-stack-generator",
+  "selection": "random",
+  "note": "drawn with seed 20261022 from 97 result(s)",
+  "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers?search=ai.getvda%2Frabbitmq-elasticsearch-mysql-stack-generator&version=latest",
+  "native": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+      "name": "ai.getvda/rabbitmq-elasticsearch-mysql-stack-generator",
+      "description": "RabbitMQ + Elasticsearch + MySQL Stack Generator",
+      "version": "1.0.0",
+      "websiteUrl": "https://rabbitmq-elasticsearch-mysql-stack-generator.getvda.ai",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://rabbitmq-elasticsearch-mysql-stack-generator.getvda.ai/mcp"
+        }
+      ]
+    },
+    "registry": {
+      "status": "active",
+      "statusChangedAt": "2026-09-03T11:40:25.762203Z",
+      "publishedAt": "2026-09-03T11:40:25.762203Z",
+      "updatedAt": "2026-09-03T11:40:25.762203Z",
+      "isLatest": true
+    }
+  },
+  "linked": {
+    "repository": null
+  }
+}

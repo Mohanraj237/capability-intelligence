@@ -1,0 +1,47 @@
+# Draft manifest drafted automatically from https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.vincentvella%2Fdevloop&version=latest
+# by pilot/analyze.js (npm run pilot). Each value is native, derived, or default: see x-provenance.
+schemaVersion: "0.1"
+id: "io.github.vincentvella/devloop"
+name: "Devloop"
+description: "Browser + dev-server logs on one correlated timeline, for Claude Code and AI agents."
+capabilityType: "mcp_server"
+capabilityVersion: "0.11.2"
+source:
+  type: "registry"
+  registry: "mcp-registry"
+  identifier: "io.github.vincentvella/devloop"
+  url: "https://github.com/vincentvella/devloop"
+owner:
+  name: "vincentvella"
+  contact: "https://github.com/vincentvella/devloop/issues"
+  affiliation: "external"
+lifecycleStatus: "active"
+riskTier: "unassessed"
+lastUpdated: "2026-10-20"
+interfaces:
+  - type: "mcp"
+    description: "Transports: stdio via npm package devloop-mcp."
+platformCompatibility:
+  - "node"
+documentation: "https://devloop.build"
+x-provenance:
+  extractedFrom: "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.vincentvella%2Fdevloop&version=latest"
+  format: "mcp-server-json"
+  native:
+    - "id"
+    - "name"
+    - "description"
+    - "capabilityVersion"
+    - "source"
+    - "lifecycleStatus"
+    - "lastUpdated"
+    - "interfaces"
+    - "documentation"
+  derived:
+    - "capabilityType"
+    - "owner"
+    - "ownerContact"
+    - "affiliation"
+    - "platformCompatibility"
+  default:
+    - "riskTier"

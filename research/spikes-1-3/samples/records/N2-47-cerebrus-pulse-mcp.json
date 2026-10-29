@@ -1,0 +1,94 @@
+{
+  "ref": "N2-47",
+  "retrievedAt": "2026-10-22T16:23:54.905Z",
+  "need": "N2",
+  "source": "pypi-package",
+  "crossListingOf": "io.github.0xsl1m/cerebrus-pulse-mcp",
+  "format": "pypi-package",
+  "name": "cerebrus-pulse-mcp",
+  "selection": "cross-listing",
+  "note": "package declared by io.github.0xsl1m/cerebrus-pulse-mcp",
+  "sourceUrl": "https://pypi.org/project/cerebrus-pulse-mcp/",
+  "native": {
+    "info": {
+      "name": "cerebrus-pulse-mcp",
+      "version": "0.5.2",
+      "summary": "MCP server for Cerebrus Pulse — real-time crypto intelligence API for Hyperliquid perpetuals",
+      "keywords": "ai-agent, cerebrus-pulse, crypto, hyperliquid, mcp, micropayments, technical-analysis, trading, x402",
+      "license": null,
+      "license_expression": "MIT",
+      "classifiers": [
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Topic :: Office/Business :: Financial :: Investment",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence"
+      ],
+      "project_urls": {
+        "Documentation": "https://cerebruspulse.xyz/overview",
+        "Homepage": "https://cerebruspulse.xyz",
+        "Issues": "https://github.com/0xsl1m/cerebrus-pulse-mcp/issues",
+        "Repository": "https://github.com/0xsl1m/cerebrus-pulse-mcp"
+      },
+      "home_page": null,
+      "author": null,
+      "author_email": "0xsl1m <<redacted-email>>",
+      "maintainer": null,
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "eth-account>=0.13",
+        "httpx>=0.27.0",
+        "mcp<2,>=1.2",
+        "requests>=2.32",
+        "x402[evm]<3,>=2.20",
+        "jsonschema>=4; extra == \"test\"",
+        "pytest>=8; extra == \"test\"",
+        "pyyaml>=6; extra == \"test\""
+      ],
+      "yanked": false,
+      "descriptionCharacters": 6799,
+      "description": "# Cerebrus Pulse MCP\n\n<!-- Ownership marker for the MCP registry; must match server.json name. -->\nmcp-name: io.github.0xsl1m/cerebrus-pulse-mcp\n\n\n[![PyPI](https://img.shields.io/pypi/v/cerebrus-pulse-mcp)](https://pypi.org/project/cerebrus-pulse-mcp/)\n[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://pypi.org/project/cerebrus-pulse-mcp/)\n\nMCP server for [Cerebrus Pulse](https://cerebruspulse.xyz) — real-time crypto intelligence for AI agents. Provides 15 tools covering technical analysis, liquidation heatmaps, market stress, funding rates, and more across 50+ Hyperliquid perpetuals.\n\n## Tools\n\n| Tool | Description | Cost |\n|------|-------------|------|\n| `cerebrus_health` | Gateway health check | Free |\n| `cerebrus_list_coins` | List all available tickers (50+) | Free |\n| `cerebrus_pulse` | Multi-timeframe technicals (RSI, EMAs, BBands, VWAP, regime) | $0.025 |\n| `cerebrus_sentiment` | Aggregated market sentiment + fear/greed | $0.01 |\n| `cerebrus_funding` | Funding rate analysis with historical context | $0.01 |\n| `cerebrus_bundle` | Pulse + sentiment + funding combined | $0.05 |\n| `cerebrus_screener` | Scan all coins for top signals | $0.06 |\n| `cerebrus_oi` | Open interest delta, percentile, trend | $0.015 |\n| `cerebrus_spread` | Bid-ask spread + slippage estimates | $0.015 |\n| `cerebrus_correlation` | BTC-altcoin correlation matrix | $0.05 |\n| `cerebrus_stress` | Cross-chain arbitrage-derived market stress index | $0.02 |\n| `cerebrus_cex_dex` | CEX vs DEX price divergence | $0.02 |\n| `cerebrus_basis` | Chainlink oracle vs Hyperliquid basis | $0.02 |\n| `cerebrus_depeg` | USDC collateral health via Chainlink | $0.01 |\n| `cerebrus_liquidations` | Liquidation heatmap across 5 leverage tiers | $0.03 |\n\nPaid endpoints use [x402](https://x402.org/) micropayments (USDC on **Base** or **Solana**). Free tools work without any configuration.\n\nPrices are checked against the API's live x402 manifest\n(`https://api.cerebruspulse.xyz/.well-known/x402`) with\n`python scripts/check_prices.py --live`, which CI runs. The auto-pay payee pin\nis checked against a live 402 with `python scripts/check_payto.py --live`,\nwhich CI and the release workflow run.\n\n## Install\n\n### Claude Desktop / Cursor / Windsurf\n\nAdd to your MCP config (`claude_desktop_config.json`, `.cursor/mcp.json`, etc.):\n\n```json\n{\n  \"mcpServers\": {\n    \"cerebrus-pulse\": {\n      \"command\": \"uvx\",\n      \"args\": [\"cerebrus-pulse-mcp\"]\n    }\n  }\n}\n```\n\nTo enable automatic x402 payments for paid endpoints, add a wallet key. The\nx402 client ships with the package, so the same `uvx` command pays; there is no\nextra to install:\n\n```json\n{\n  \"mcpServers\": {\n    \"cerebrus-pulse\": {\n      \"command\": \"uvx\",\n      \"args\": [\"cerebrus-pulse-mcp\"],\n      \"env\": {\n        \"CEREBRUS_WALLET_KEY\": \"your-base-wallet-private-key\",\n        \"CEREBRUS_WALLET_KEY_SOLANA\": \"your-solana-wallet-private-key\"\n      }\n    }\n  }\n}\n```\n\nAutomatic payment currently covers **Base** only. `CEREBRUS_WALLET_KEY_SOLANA`\nis reserved for a future Solana signer — the API accepts Solana today, but you\nwould need to settle those payments yourself.\n\nUse a dedicated hot wallet that holds a few dollars of USDC on Base, never a\nmain wallet: the key sits in plain text in the MCP config.\n\nAuto-payment has spend limits, checked before anything is signed:\n\n- no single payment above `CEREBRUS_MAX_PAYMENT_USD` (default `0.10`; the\n  priciest tool costs $0.06);\n- no more than `CEREBRUS_MAX_SPEND_USD` in total while the server process runs\n  (default `1.00`; restart the server to reset it). The `--json` CLI starts a\n  new process on every call, so this budget cannot span CLI calls, and the CLI\n  does not auto-pay unless you opt in (see [CLI Usage](#cli-usage));\n- only USDC on Base, and only to an address in `CEREBRUS_ALLOWED_PAYTO`\n  (default: the published Cerebrus Pulse Base address), so a hijacked or\n  mistyped `CEREBRUS_BASE_URL` cannot redirect payments.\n\nA refused payment returns `\"status\": \"payment_blocked\"` with the reason; a\nmalformed limit disables auto-payment rather than lifting the limit.\n\nWithout a wallet key, paid tools still work as\ndiscovery: they return the exact price, network, and recipient so the calling\nagent can pay however it likes.\n\n### pip\n\n```bash\npip install cerebrus-pulse-mcp\n```\n\n## CLI Usage\n\nThe server includes a `--json` flag for direct CLI access without an MCP client:\n\n```bash\n# List all available CLI tools\ncerebrus-pulse-mcp --json\n\n# Free endpoints\ncerebrus-pulse-mcp --json health\ncerebrus-pulse-mcp --json list-coins\n\n# Paid endpoints (return the payment terms unless CLI auto-pay is on, below)\ncerebrus-pulse-mcp --json pulse BTC\ncerebrus-pulse-mcp --json funding ETH lookback_hours=48\ncerebrus-pulse-mcp --json screener top_n=10\ncerebrus-pulse-mcp --json liquidations SOL\n```\n\nArguments can be passed positionally (for coin) or as `key=value` pairs.\n\nThe CLI does not auto-pay by default, even with `CEREBRUS_WALLET_KEY` set.\nEvery call is a new process with a fresh `CEREBRUS_MAX_SPEND_USD` budget, so\nthe budget cannot stop a script that runs the CLI in a loop. Set\n`CEREBRUS_CLI_AUTOPAY=1` to let it pay anyway: each call may then sign one\npayment of up to `CEREBRUS_MAX_PAYMENT_USD`, and limiting how many calls run\nis up to your script.\n\n## Configuration\n\n| Environment Variable | Description | Required |\n|---------------------|-------------|----------|\n| `CEREBRUS_BASE_URL` | API base URL (default: `https://api.cerebruspulse.xyz`) | No |\n| `CEREBRUS_WALLET_KEY` | Base wallet private key for x402 auto-payment | No |\n| `CEREBRUS_MAX_PAYMENT_USD` | Largest single payment auto-pay may sign (default: `0.10`) | No |\n| `CEREBRUS_MAX_SPEND_USD` | Total auto-pay may sign per server process (default: `1.00`); does not span `--json` CLI calls | No |\n| `CEREBRUS_CLI_AUTOPAY` | Set to `1` to let the `--json` CLI auto-pay (default: off, because the budget resets on every CLI "
+    },
+    "registry": {
+      "releaseCount": 9,
+      "latestUploadedAt": "2026-09-26T00:57:58.645598Z"
+    }
+  },
+  "linked": {
+    "repository": {
+      "requested": "0xsl1m/cerebrus-pulse-mcp",
+      "found": true,
+      "id": 1172591738,
+      "fullName": "0xsl1m/cerebrus-pulse-mcp",
+      "renamedOrMoved": false,
+      "description": "MCP server for real-time crypto intelligence — 15 tools for technical analysis, liquidation heatmaps, market stress, funding rates across 50+ Hyperliquid perpetuals. CLI + MCP. x402 micropayments.",
+      "license": "MIT",
+      "archived": false,
+      "fork": false,
+      "parent": null,
+      "topics": [
+        "ai-agents",
+        "base-chain",
+        "claude-desktop",
+        "crypto",
+        "cursor",
+        "defi",
+        "hyperliquid",
+        "mcp",
+        "mcp-server",
+        "micropayments",
+        "python",
+        "technical-analysis",
+        "trading",
+        "usdc",
+        "windsurf",
+        "x402"
+      ],
+      "defaultBranch": "main",
+      "createdAt": "2026-03-04T13:38:29Z",
+      "pushedAt": "2026-09-26T00:57:12Z",
+      "homepage": "https://cerebruspulse.xyz"
+    }
+  }
+}
