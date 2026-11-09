@@ -1,0 +1,28 @@
+name: Translator
+description: Translates product documentation between English, German, and Japanese.
+draft: true
+source_file: examples/invalid/invalid-types-and-values.capability.yaml
+source_context: Intentionally invalid example with malformed types, identifier, version, lifecycle, contact, date, and supportedUseCases. Scalar use-case text is normalized to a list in this draft.
+abilities:
+  - translation
+inputs:
+  - name: Product Documentation
+    type: string
+    inferred: true
+    description: Product documentation to translate; document format is unspecified.
+  - name: Source Language
+    type: string
+    inferred: true
+    description: English, German, or Japanese; whether the caller supplies it or it is detected is unspecified.
+  - name: Target Language
+    type: string
+    inferred: true
+    description: Desired translation language among English, German, and Japanese.
+outputs:
+  - name: Translated Documentation
+    type: string
+    inferred: true
+    description: Product documentation translated into the target language.
+use_cases:
+  - Translate product documentation
+use_cases_basis: declared_scalar_normalized

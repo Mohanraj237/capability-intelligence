@@ -1,0 +1,21 @@
+name: Code Search
+description: Semantic code search across internal repositories with ownership-aware ranking.
+draft: true
+source_file: examples/invalid/unsupported-schema-version.capability.yaml
+source_context: Intentionally invalid example using unsupported schemaVersion 2.0; rankingProfile belongs to a hypothetical future schema. No interface contracts are declared.
+abilities:
+  - code-search
+  - ownership-aware-result-ranking
+inputs:
+  - name: Code Search Query
+    type: string
+    inferred: true
+    description: Semantic query describing code to find across internal repositories.
+outputs:
+  - name: Ranked Code Matches
+    type: array
+    inferred: true
+    description: Relevant code matches ranked with ownership awareness; match fields are unspecified.
+use_cases:
+  - Find relevant code across internal repositories using ownership-aware ranking
+use_cases_basis: inferred

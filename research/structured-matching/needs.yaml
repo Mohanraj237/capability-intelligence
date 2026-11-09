@@ -1,0 +1,117 @@
+# Authored before the first run of this experiment, after the ability drafts existed.
+# Relevance is judged from examples/ descriptions, use cases, and embedded components,
+# not from the matcher's output. This is single-reviewer, metadata-only ground truth.
+# IDs are ability-description filenames without ".ability.yaml", NOT capability IDs.
+needs:
+  - id: Q01
+    request: Review SQL changes and return review findings.
+    criterion: Reviews SQL changes, including the analytics fork; no execution or policy-specific checks required.
+    terms: [sql review, sql changes, review findings]
+    relevant: [sql-review, sql-review.1.4.0-compatible, sql-review.1.4.0-breaking, sql-review-analytics-fork]
+    partial: []
+    evidence: All four SQL Review records describe SQL review; the fork adds analytics warehouse rules.
+  - id: Q02
+    request: Translate product documentation between English, German, and Japanese.
+    criterion: Translates product documentation between the requested languages.
+    terms: [translate, translation, german, japanese]
+    relevant: [translator]
+    partial: []
+    evidence: Translator description explicitly names documentation translation and all three languages.
+  - id: Q03
+    request: Find relevant runbook sections for a production alert.
+    criterion: Locates relevant runbooks directly or through a declared component or dependency.
+    terms: [runbook, runbooks, alert]
+    relevant: [runbook-search, incident-triage-agent, sre-toolkit]
+    partial: []
+    evidence: Runbook Search returns sections, Incident Triage Agent retrieves runbooks, and SRE Toolkit includes Runbook Search.
+  - id: Q04
+    request: Let agents automate a browser, fill forms, and take screenshots.
+    criterion: Agent-accessible browser automation; the tab-isolation fork qualifies by its stated Playwright MCP lineage and automation scope.
+    terms: [browser, forms, screenshots]
+    relevant: [playwright-mcp, agentic-playwright-mcp]
+    partial: []
+    evidence: Playwright MCP explicitly describes these actions; agentic-playwright-mcp describes a Playwright MCP fork with tab isolation. Fork details are less certain.
+  - id: Q05
+    request: Run regression evaluations for agents and compare model versions.
+    criterion: Repeatable agent evaluations and prompt/model comparison on a test set.
+    terms: [regression, evaluation, graders, model versions]
+    relevant: [agent-eval-framework]
+    partial: []
+    evidence: Agent Evaluation Framework description and supportedUseCases state evaluations, graders, CI reports, and version comparison.
+  - id: Q06
+    request: Summarize meetings and extract action items.
+    criterion: Listens to meetings and produces summaries with action items.
+    terms: [meeting, meetings, action items]
+    relevant: [meeting-notes-agent]
+    partial: []
+    evidence: Meeting Notes Agent description explicitly states meeting listening, summaries, and action items.
+  - id: Q07
+    request: Summarize long internal documents into an executive brief.
+    criterion: Produces executive briefs from long internal documents.
+    terms: [internal documents, executive brief, executive briefs, document summarization]
+    relevant: [document-summarizer]
+    partial: []
+    evidence: Document Summarizer description explicitly states structured executive briefs.
+  - id: Q08
+    request: Generate unit tests for changed functions and explain uncovered branches.
+    criterion: Generates unit tests and explains remaining uncovered branches.
+    terms: [unit tests, unit test, changed functions, uncovered branches]
+    relevant: [unit-test-generator]
+    partial: []
+    evidence: Unit Test Generator description states both generated tests and branch explanations.
+  - id: Q09
+    request: Search code across internal repositories with ownership-aware ranking.
+    criterion: Searches repository code with ownership-aware ranking.
+    terms: [code search, internal repositories, ownership aware]
+    relevant: [code-search]
+    partial: []
+    evidence: Code Search description and rankingProfile state semantic code search with ownership awareness.
+  - id: Q10
+    request: Query stored logs, metrics, and traces through read-only tools.
+    criterion: Exposes read-only queries for all three observability data types.
+    terms: [logs, metrics, traces, read only]
+    relevant: [observability-mcp-server]
+    partial: [incident-triage-agent]
+    evidence: Observability server explicitly queries all three. Incident Triage Agent correlates logs and metrics for alerts but does not declare a general trace-query interface.
+  - id: Q11
+    request: Draft a blameless postmortem from an incident timeline.
+    criterion: Drafts postmortems from incident timelines.
+    terms: [postmortem, blameless, incident timeline]
+    relevant: [sre-toolkit]
+    partial: []
+    evidence: SRE Toolkit embedded postmortem-template explicitly states this behavior.
+  - id: Q12
+    request: Block deployments while a SEV-1 incident is open.
+    criterion: Blocks deployment during an open SEV-1 incident.
+    terms: [deploys, deployment, sev 1, pre deploy]
+    relevant: [sre-toolkit]
+    partial: []
+    evidence: SRE Toolkit embedded pre-deploy-check explicitly blocks deploys during an open SEV-1 incident.
+  - id: Q13
+    request: Explain the query plan of a slow SQL query.
+    criterion: Explicitly supports explaining a slow query plan, not just static SQL review.
+    terms: [query plan, slow query, sql]
+    relevant: [sql-review.1.4.0-compatible]
+    partial: [sql-review, sql-review.1.4.0-breaking, sql-review-analytics-fork]
+    evidence: Only compatible SQL Review 1.4.0 adds the query-plan use case. Other SQL Review records serve an adjacent review purpose.
+  - id: Q14
+    request: Search the live web for current information with citable URLs.
+    criterion: General live web search, not an internal runbook or repository search.
+    terms: [search, web, urls, current information]
+    relevant: []
+    partial: [runbook-search, code-search, incident-triage-agent, sre-toolkit]
+    evidence: No record declares general live web search. Runbook and code search are closed-corpus alternatives; the agent and toolkit include runbook lookup.
+  - id: Q15
+    request: Translate product documentation into Spanish.
+    criterion: Explicitly supports Spanish as a translation target.
+    terms: [translate, translation, documentation, spanish]
+    relevant: []
+    partial: [translator]
+    evidence: Translator supports English, German, and Japanese only in the stated scope; Spanish is not established.
+  - id: Q16
+    request: Automatically execute remediation for production incidents.
+    criterion: Executes remediation, rather than proposing response steps.
+    terms: [remediation, incident, incidents, execute]
+    relevant: []
+    partial: [incident-triage-agent, sre-toolkit]
+    evidence: Incident Triage Agent explicitly never executes remediation; SRE Toolkit offers adjacent workflows, not automated incident remediation.

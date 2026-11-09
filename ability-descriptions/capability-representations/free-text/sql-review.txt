@@ -1,0 +1,1 @@
+SQL Review reviews SQL changes in pull requests for performance anti-patterns and data-access-policy violations. It accepts a SQL diff or SQL file content and returns findings with severity, location, and suggested fixes. It supports PostgreSQL and MySQL through static analysis and never executes queries.

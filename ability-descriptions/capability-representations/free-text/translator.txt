@@ -1,0 +1,1 @@
+Translator translates product documentation between English, German, and Japanese. Its draft inputs are product documentation and source/target language context, and its output is translated documentation. Exact interface contracts are unspecified; the source metadata is an intentionally invalid example.

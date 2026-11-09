@@ -1,0 +1,26 @@
+name: Unit Test Generator
+description: Generates unit tests for changed functions and explains which branches remain uncovered.
+draft: true
+source_file: examples/invalid/unknown-field-and-extension.capability.yaml
+source_context: Intentionally invalid example with unknown lifecyleStatus and tags fields; x-costCenter is an accepted extension. Supported languages and test frameworks are unspecified.
+abilities:
+  - unit-test-generation
+  - uncovered-branch-explanation
+inputs:
+  - name: Changed Functions
+    type: string
+    inferred: true
+    description: Changed function source code or corresponding code changes; accepted formats are unspecified.
+outputs:
+  - name: Generated Unit Tests
+    type: string
+    inferred: true
+    description: Test source code for changed functions; language and test framework are unspecified.
+  - name: Uncovered Branch Explanation
+    type: string
+    inferred: true
+    description: Explanation of branches that remain uncovered; no execution-based coverage measurement is claimed.
+use_cases:
+  - Generate unit tests for changed functions
+  - Explain remaining branch-coverage gaps
+use_cases_basis: inferred

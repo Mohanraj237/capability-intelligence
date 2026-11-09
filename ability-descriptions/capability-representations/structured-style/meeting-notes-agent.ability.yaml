@@ -1,0 +1,29 @@
+name: Meeting Notes Agent
+description: Listens to scheduled meetings and produces summaries with action items.
+draft: true
+source_file: examples/invalid/conditional-requirement-violation.capability.yaml
+source_context: Intentionally invalid example, version 1.2.0, deprecated. Missing assessmentReference for low risk and missing deprecation details.
+abilities:
+  - meeting-summarization
+  - action-item-extraction
+inputs:
+  - name: Scheduled Meeting Context
+    type: object
+    inferred: true
+    description: Context identifying the scheduled meeting to join; scheduling interface is unspecified.
+  - name: Meeting Content
+    type: object
+    inferred: true
+    description: Discussion content consumed while listening; audio, transcript, or streaming representation is not specified.
+outputs:
+  - name: Meeting Summary
+    type: string
+    inferred: true
+    description: Summary of the meeting discussion.
+  - name: Action Items
+    type: array
+    inferred: true
+    description: Action items extracted from the meeting; item fields are unspecified.
+use_cases:
+  - Summarize scheduled meetings and capture follow-up action items
+use_cases_basis: inferred

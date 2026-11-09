@@ -1,0 +1,37 @@
+# Simplified local adaptation, not an OASF-valid record. See ../results.md.
+name: Agent Evaluation Framework
+description: Python framework for repeatable evaluations of agents and skills using test cases, graders, and CI regression reports.
+oasf_reference:
+  schema_version: "1.1.3"
+  source_ref: v1.1.3
+mapped_skills:
+  - taxonomy_path: ai_ml_engineering/model_evaluation
+    caption: Model and Agent Evaluation
+    mapping: Evaluation category; regression and version comparison remain explicit local abilities.
+custom_details:
+  source_draft: ability-descriptions/agent-eval-framework.ability.yaml
+  abilities: [agent-regression-evaluation, prompt-model-comparison, evaluation-report-generation]
+  inputs:
+    - name: Evaluation Test Cases
+      type: array
+      inferred: true
+      description: Test cases defining evaluation scenarios and expected outcomes.
+    - name: Grader Configuration
+      type: object
+      inferred: true
+      description: Graders and evaluation criteria for the suite.
+    - name: Evaluation Targets
+      type: array
+      inferred: true
+      description: Agents, skills, prompt versions, or model versions to evaluate or compare.
+  outputs:
+    - name: Evaluation Report
+      type: object
+      inferred: true
+      description: Evaluation outcomes and regression or version-comparison results; report format is unspecified.
+  use_cases:
+    - Run regression evaluations for an agent in CI
+    - Compare two prompt or model versions on the same test set
+  constraints:
+    model_grader_costs: Model-based graders incur model usage costs.
+  type_status: Proposed types; no formal input/output contracts are declared by the source.

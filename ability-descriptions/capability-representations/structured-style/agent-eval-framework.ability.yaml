@@ -1,0 +1,31 @@
+name: Agent Evaluation Framework
+description: Python framework for repeatable evaluations of agents and skills using test cases, graders, and CI regression reports.
+draft: true
+source_file: examples/valid/agent-eval-framework.capability.yaml
+source_context: Valid example, version 0.9.0, pilot maturity. Model-based graders incur model usage costs.
+abilities:
+  - agent-regression-evaluation
+  - prompt-model-comparison
+  - evaluation-report-generation
+inputs:
+  - name: Evaluation Test Cases
+    type: array
+    inferred: true
+    description: Test cases defining evaluation scenarios and expected outcomes.
+  - name: Grader Configuration
+    type: object
+    inferred: true
+    description: Graders and evaluation criteria for the suite.
+  - name: Evaluation Targets
+    type: array
+    inferred: true
+    description: Agents, skills, prompt versions, or model versions to evaluate or compare.
+outputs:
+  - name: Evaluation Report
+    type: object
+    inferred: true
+    description: Evaluation outcomes and regression or version-comparison results; report format is unspecified.
+use_cases:
+  - Run regression evaluations for an agent in CI
+  - Compare two prompt or model versions on the same test set
+use_cases_basis: declared

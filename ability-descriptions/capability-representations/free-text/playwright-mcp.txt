@@ -1,0 +1,1 @@
+Playwright MCP automates browser interactions such as clicking elements, filling forms, taking screenshots, and performing end-to-end browser testing. Its draft inputs are a web page target and requested browser action; its draft outputs are browser interaction results and screenshots. Exact tool contracts are discovered at runtime rather than specified in the metadata.

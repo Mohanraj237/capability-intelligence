@@ -1,0 +1,47 @@
+name: SRE Toolkit
+description: Plugin bundle containing a postmortem prompt, incident triage command, pre-deploy safety hook, and Runbook Search.
+draft: true
+source_file: examples/valid/sre-toolkit.capability.yaml
+source_context: Valid but deprecated example, version 3.2.0, sunset 2027-03-31. No bundle interfaces declared; inputs and outputs below describe separate components, not a single request.
+abilities:
+  - postmortem-drafting
+  - incident-triage-checklist
+  - pre-deploy-safety-check
+  - runbook-search
+inputs:
+  - name: Incident Timeline
+    type: array
+    inferred: true
+    description: Incident events used by the postmortem prompt.
+  - name: Alert Context
+    type: object
+    inferred: true
+    description: Alert details gathered by the triage command.
+  - name: Deployment Safety Context
+    type: object
+    inferred: true
+    description: Deployment context and whether a SEV-1 incident is open.
+  - name: Runbook Query
+    type: object
+    inferred: true
+    description: Query consumed by the independently adoptable Runbook Search component.
+outputs:
+  - name: Postmortem Draft
+    type: string
+    inferred: true
+    description: Draft blameless postmortem derived from the incident timeline.
+  - name: Triage Checklist
+    type: array
+    inferred: true
+    description: Incident triage checklist opened by the triage command.
+  - name: Deployment Safety Outcome
+    type: object
+    inferred: true
+    description: Conceptual outcome of the safety hook, which blocks deployment while a SEV-1 incident is open; no return contract is declared.
+  - name: Runbook Matches
+    type: object
+    inferred: true
+    description: Relevant runbook sections and source links returned by Runbook Search.
+use_cases:
+  - Equip a coding agent with standard SRE workflows
+use_cases_basis: declared

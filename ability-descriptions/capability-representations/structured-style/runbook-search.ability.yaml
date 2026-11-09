@@ -1,0 +1,22 @@
+name: Runbook Search
+description: Semantic search over SRE runbooks returning relevant sections with links to source pages.
+draft: true
+source_file: examples/valid/runbook-search.capability.yaml
+source_context: Valid example, version 2.1.0. Independently adoptable SRE Toolkit component; indexes the SRE wiki only.
+abilities:
+  - runbook-search
+inputs:
+  - name: query
+    type: object
+    media_type: application/json
+    inferred: false
+    description: Search query about an alert, service, or symptom; JSON structure must be confirmed against the referenced OpenAPI contract.
+outputs:
+  - name: runbook-matches
+    type: object
+    media_type: application/json
+    inferred: false
+    description: Relevant runbook sections with source links; object is a draft representation and the contract may define a different JSON shape.
+use_cases:
+  - Find the runbook for an alert or symptom
+use_cases_basis: declared

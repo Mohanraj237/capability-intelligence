@@ -1,0 +1,8 @@
+name: Playwright MCP
+description: Automates browser interactions, captures screenshots, and performs end-to-end browser testing.
+inputs:
+  - Web Page Target
+  - Browser Action
+outputs:
+  - Browser Interaction Result
+  - Screenshot

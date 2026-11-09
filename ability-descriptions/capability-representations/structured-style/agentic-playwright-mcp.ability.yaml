@@ -1,0 +1,25 @@
+name: agentic-playwright-mcp
+description: Fork of official Playwright MCP with multi-agent tab isolation via targetId.
+draft: true
+source_file: examples/valid/agentic-playwright-mcp.capability.yaml
+source_context: Valid example, version 1.2.2. Fork relationship is claimed, not verified; MCP and CLI contracts are unspecified.
+abilities:
+  - browser-automation
+  - multi-agent-tab-isolation
+inputs:
+  - name: Browser Action
+    type: object
+    inferred: true
+    description: Browser automation request; available actions and request schema are unspecified.
+  - name: Target ID
+    type: string
+    inferred: true
+    description: targetId identifying the browser tab to isolate; its exact representation is unspecified.
+outputs:
+  - name: Targeted Browser Action Result
+    type: object
+    inferred: true
+    description: Automation outcome for the targeted tab; result schema is unspecified.
+use_cases:
+  - Isolate browser tabs for multi-agent browser automation
+use_cases_basis: inferred

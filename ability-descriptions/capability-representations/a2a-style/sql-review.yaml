@@ -1,0 +1,6 @@
+name: SQL Review
+description: Reviews SQL changes for performance anti-patterns and data-access-policy violations and suggests fixes.
+inputs:
+  - SQL Diff or SQL File Content
+outputs:
+  - Review Findings

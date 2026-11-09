@@ -1,0 +1,35 @@
+name: SQL Review
+description: Reviews SQL changes for performance anti-patterns and data-access-policy violations, explaining findings with suggested fixes.
+draft: true
+source_file: examples/compatibility/sql-review.1.4.0-compatible.capability.yaml
+source_context: Compatible revision fixture, version 1.4.0, same capability ID as baseline. Adds MCP and query-plan explanation, preserves Agent Skill and CLI, and renames the source repository.
+abilities:
+  - sql-review
+  - sql-performance-analysis
+  - data-access-policy-check
+  - query-plan-explanation
+inputs:
+  - name: sql-change
+    type: string
+    media_type: text/x-diff
+    inferred: false
+    description: Unified diff or SQL file content to review through the Agent Skill; separate MCP schemas are not stated.
+  - name: Slow Query Context
+    type: object
+    inferred: true
+    description: Slow query and relevant query-plan context for the added explanation use case; exact inputs are unspecified and no query execution is implied.
+outputs:
+  - name: review-findings
+    type: string
+    media_type: text/markdown
+    inferred: false
+    description: Findings with severity, location, and a suggested fix.
+  - name: Query Plan Explanation
+    type: string
+    inferred: true
+    description: Explanation of a slow query's plan; no separate output contract or media type is declared.
+use_cases:
+  - Review SQL in pull requests for performance anti-patterns
+  - Check queries against the data-access policy
+  - Explain the query plan of a slow query
+use_cases_basis: declared

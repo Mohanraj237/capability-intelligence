@@ -1,0 +1,3198 @@
+{
+  "protocol": "local-structured-matching-v1",
+  "baseline_status": "new local baseline; no historical Phase 0 run",
+  "input_sha256": {
+    "ability-descriptions/agent-eval-framework.ability.yaml": "e36a1bd488612320394f13d067336c49a1585ac38285f73867ac1ef025b40575",
+    "ability-descriptions/agentic-playwright-mcp.ability.yaml": "dfbb257c42b18ec8860e3c774f3bd09d22e62c4c258fe2ac5db001f8787d0b8e",
+    "ability-descriptions/code-search.ability.yaml": "6c780b49e70fa38e5eddfb029ede1a260d01b5f8641918ffbccdfb3adc005073",
+    "ability-descriptions/document-summarizer.ability.yaml": "ce95602cce7d824823347c8810b415c4a15dd0f446aa5d6c4f5491e18c87a40c",
+    "ability-descriptions/incident-triage-agent.ability.yaml": "be31e309cef23d5972724a9e845389ab1dbe66da248c206fe53aafadcd156918",
+    "ability-descriptions/meeting-notes-agent.ability.yaml": "0f0ab72b2958d240bd9e8fb09bd9c3c80c61cb49fc279c1c3c52497cd98b21e0",
+    "ability-descriptions/observability-mcp-server.ability.yaml": "c84a9d39a7984ed5520384833ad1c9204e69113ef23ee490f62c7c21307cd44e",
+    "ability-descriptions/playwright-mcp.ability.yaml": "63e7778cb8823766e14923cb22bbae3f6f3bbd32902cd76ca062e7c74b06e652",
+    "ability-descriptions/runbook-search.ability.yaml": "9073b7fadeb34962c6a0cf98aaec2552887df4bf9a4321a4b0c755f78b1bf0b9",
+    "ability-descriptions/sql-review-analytics-fork.ability.yaml": "9f9623d46647f234f23b36f6e81cc94044ce10b91193925849c7f2a614c5e63d",
+    "ability-descriptions/sql-review.1.4.0-breaking.ability.yaml": "4c3d6e6df0cc918815dd830ffd54b582befe59146649e26e32f83e30ce5bd803",
+    "ability-descriptions/sql-review.1.4.0-compatible.ability.yaml": "4ced509ca9e530cbf7b0da597f2b9309766b2c7e9d742eaaecdeb1aa9687ab25",
+    "ability-descriptions/sql-review.ability.yaml": "d43dfb34a4b6e6da5f35dd3a89e7c5398d69f2b4fde7a09f1cf2d1fc2cb1dfbd",
+    "ability-descriptions/sre-toolkit.ability.yaml": "11817b63a7197d83a583e7f065d419d9bf0b4759e8334657a5c3157d47a2f8ca",
+    "ability-descriptions/translator.ability.yaml": "080fd5b858f0a58956a324d06cecc70150ce4729e9b34d93efdfe1bcddfed1ff",
+    "ability-descriptions/unit-test-generator.ability.yaml": "7b7c7897ceb78d51e39578c7bb0a7c169e536f6ccba25464e1471d9633bcf9c2",
+    "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml": "d00c0fc05dca62e4f188782d8ba32b808f1a19e38843c425a622abf03878414a",
+    "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml": "4fc24b97c609233049943c8180d46f83def7008f6165ae40a1f0cd85ed335735",
+    "examples/consistency/duplicate-id.capability.yaml": "15cd4d408ade5bf5d91ed271a4d1e977b9d697039d024f31d5dfc35c7cb2cc30",
+    "examples/invalid/conditional-requirement-violation.capability.yaml": "10d51dae9ff42068fb475bd95d25135e26f721e8be8994f993462ed55d6eafd1",
+    "examples/invalid/invalid-types-and-values.capability.yaml": "4ee6502a34c4b57ab3dec60f2da1c3904b6c23e036ff024044b7e03c8c5d6265",
+    "examples/invalid/missing-mandatory-field.capability.yaml": "fb2b703bfa6853a2a79be946369e0916ddb4ed6f2b205143108ce770ac0ceeda",
+    "examples/invalid/unknown-field-and-extension.capability.yaml": "0a59248ab6ea29ac1f561e702063c544a1d7125ecf2201e0dd0dc89b8b007c3f",
+    "examples/invalid/unsupported-schema-version.capability.yaml": "5f26124b7cd02dfc764adb73cfa220356ebb07db1e4655e0d7a89825babcc0f6",
+    "examples/valid/agent-eval-framework.capability.yaml": "c6aaa8d2aea9f6e768e5c962993e0629a92b74a0e4183b2621c7af4cf541df7a",
+    "examples/valid/agentic-playwright-mcp.capability.yaml": "2496d18c35971f90d3a552dc098b96497f6838cf4abe90cf0029e14efd290d69",
+    "examples/valid/incident-triage-agent.capability.yaml": "09fe63f1381853357a3cc79c7351a77b847b7a9c594c15126e3f1b4f3a04240a",
+    "examples/valid/observability-mcp-server.capability.yaml": "c5d88bd13c93d12b3f58bc8a099c58a1aba0d817d71f1faec075d6f463a30d35",
+    "examples/valid/playwright-mcp.capability.yaml": "4cb7bf6b214090810056af954f73cbf2ddb6e8eaf9b930d6e14fb8a0316f0eb4",
+    "examples/valid/runbook-search.capability.yaml": "08b47b01b59abf05184e424ee88c81214df1b53fd01e0a7495ba0569e96628b1",
+    "examples/valid/sql-review.capability.yaml": "c2348adfdd3a165b22474c1df0c0c40e33f93fdd6eaa7ed4f444fd39ea5bca9b",
+    "examples/valid/sre-toolkit.capability.yaml": "d475d98876d55e3eaed81146b2a1c78b343a65de976055a6653a7ea6bcfcf598",
+    "research/structured-matching/README.md": "873f76b738e075875913aa2c928de5bbd6ff55e709b3e96ef663df702c166b46",
+    "research/structured-matching/needs.yaml": "4ce80ff4f9a0e3ef55c2b39313165d3746d35d932e11d55c5821fc266d9525be",
+    "research/structured-matching/run.rb": "afaae13b4eb635375845186d7e6bc0e3f3f2750d64de05b09592671171da788c"
+  },
+  "candidate_count": 16,
+  "candidates": [
+    {
+      "id": "agent-eval-framework",
+      "name": "Agent Evaluation Framework",
+      "source_file": "examples/valid/agent-eval-framework.capability.yaml",
+      "draft_file": "ability-descriptions/agent-eval-framework.ability.yaml"
+    },
+    {
+      "id": "agentic-playwright-mcp",
+      "name": "agentic-playwright-mcp",
+      "source_file": "examples/valid/agentic-playwright-mcp.capability.yaml",
+      "draft_file": "ability-descriptions/agentic-playwright-mcp.ability.yaml"
+    },
+    {
+      "id": "code-search",
+      "name": "Code Search",
+      "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+      "draft_file": "ability-descriptions/code-search.ability.yaml"
+    },
+    {
+      "id": "document-summarizer",
+      "name": "Document Summarizer",
+      "source_file": "examples/invalid/missing-mandatory-field.capability.yaml",
+      "draft_file": "ability-descriptions/document-summarizer.ability.yaml"
+    },
+    {
+      "id": "incident-triage-agent",
+      "name": "Incident Triage Agent",
+      "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+      "draft_file": "ability-descriptions/incident-triage-agent.ability.yaml"
+    },
+    {
+      "id": "meeting-notes-agent",
+      "name": "Meeting Notes Agent",
+      "source_file": "examples/invalid/conditional-requirement-violation.capability.yaml",
+      "draft_file": "ability-descriptions/meeting-notes-agent.ability.yaml"
+    },
+    {
+      "id": "observability-mcp-server",
+      "name": "Acme Observability MCP Server",
+      "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+      "draft_file": "ability-descriptions/observability-mcp-server.ability.yaml"
+    },
+    {
+      "id": "playwright-mcp",
+      "name": "Playwright MCP",
+      "source_file": "examples/valid/playwright-mcp.capability.yaml",
+      "draft_file": "ability-descriptions/playwright-mcp.ability.yaml"
+    },
+    {
+      "id": "runbook-search",
+      "name": "Runbook Search",
+      "source_file": "examples/valid/runbook-search.capability.yaml",
+      "draft_file": "ability-descriptions/runbook-search.ability.yaml"
+    },
+    {
+      "id": "sql-review-analytics-fork",
+      "name": "SQL Review (analytics fork)",
+      "source_file": "examples/consistency/duplicate-id.capability.yaml",
+      "draft_file": "ability-descriptions/sql-review-analytics-fork.ability.yaml"
+    },
+    {
+      "id": "sql-review.1.4.0-breaking",
+      "name": "SQL Review",
+      "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+      "draft_file": "ability-descriptions/sql-review.1.4.0-breaking.ability.yaml"
+    },
+    {
+      "id": "sql-review.1.4.0-compatible",
+      "name": "SQL Review",
+      "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+      "draft_file": "ability-descriptions/sql-review.1.4.0-compatible.ability.yaml"
+    },
+    {
+      "id": "sql-review",
+      "name": "SQL Review",
+      "source_file": "examples/valid/sql-review.capability.yaml",
+      "draft_file": "ability-descriptions/sql-review.ability.yaml"
+    },
+    {
+      "id": "sre-toolkit",
+      "name": "SRE Toolkit",
+      "source_file": "examples/valid/sre-toolkit.capability.yaml",
+      "draft_file": "ability-descriptions/sre-toolkit.ability.yaml"
+    },
+    {
+      "id": "translator",
+      "name": "Translator",
+      "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+      "draft_file": "ability-descriptions/translator.ability.yaml"
+    },
+    {
+      "id": "unit-test-generator",
+      "name": "Unit Test Generator",
+      "source_file": "examples/invalid/unknown-field-and-extension.capability.yaml",
+      "draft_file": "ability-descriptions/unit-test-generator.ability.yaml"
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "retrieved": 31,
+      "relevant_retrieved": 19,
+      "partial_retrieved": 10,
+      "false_positives": 12,
+      "relevant_total": 19,
+      "precision": 0.6129032258064516,
+      "recall": 1.0,
+      "useful_precision": 0.9354838709677419,
+      "macro_precision": 0.734375,
+      "macro_recall": 1.0
+    },
+    "structured": {
+      "retrieved": 32,
+      "relevant_retrieved": 19,
+      "partial_retrieved": 11,
+      "false_positives": 13,
+      "relevant_total": 19,
+      "precision": 0.59375,
+      "recall": 1.0,
+      "useful_precision": 0.9375,
+      "macro_precision": 0.734375,
+      "macro_recall": 1.0
+    },
+    "augmented": {
+      "retrieved": 32,
+      "relevant_retrieved": 19,
+      "partial_retrieved": 11,
+      "false_positives": 13,
+      "relevant_total": 19,
+      "precision": 0.59375,
+      "recall": 1.0,
+      "useful_precision": 0.9375,
+      "macro_precision": 0.734375,
+      "macro_recall": 1.0
+    }
+  },
+  "requests": [
+    {
+      "id": "Q01",
+      "request": "Review SQL changes and return review findings.",
+      "criterion": "Reviews SQL changes, including the analytics fork; no execution or policy-specific checks required.",
+      "terms": [
+        "sql review",
+        "sql changes",
+        "review findings"
+      ],
+      "relevant": [
+        "sql-review",
+        "sql-review.1.4.0-compatible",
+        "sql-review.1.4.0-breaking",
+        "sql-review-analytics-fork"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "All four SQL Review records describe SQL review; the fork adds analytics warehouse rules.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 4,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review.1.4.0-breaking",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name"
+                ],
+                "sql changes": [
+                  "description"
+                ],
+                "review findings": [
+                  "interfaces/0/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review.1.4.0-compatible",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name"
+                ],
+                "sql changes": [
+                  "description"
+                ],
+                "review findings": [
+                  "interfaces/0/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review",
+              "name": "SQL Review",
+              "source_file": "examples/valid/sql-review.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name"
+                ],
+                "sql changes": [
+                  "description"
+                ],
+                "review findings": [
+                  "interfaces/0/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review-analytics-fork",
+              "name": "SQL Review (analytics fork)",
+              "source_file": "examples/consistency/duplicate-id.capability.yaml",
+              "score": 1,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name",
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 4,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review.1.4.0-breaking",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "sql changes": [
+                  "draft/description"
+                ],
+                "review findings": [
+                  "draft/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review.1.4.0-compatible",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "sql changes": [
+                  "draft/description"
+                ],
+                "review findings": [
+                  "draft/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review-analytics-fork",
+              "name": "SQL Review (analytics fork)",
+              "source_file": "examples/consistency/duplicate-id.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/outputs/0/description"
+                ],
+                "sql changes": [
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ],
+                "review findings": [
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review",
+              "name": "SQL Review",
+              "source_file": "examples/valid/sql-review.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "sql changes": [
+                  "draft/description"
+                ],
+                "review findings": [
+                  "draft/outputs/0/name"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 4,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review.1.4.0-breaking",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "sql changes": [
+                  "description",
+                  "draft/description"
+                ],
+                "review findings": [
+                  "interfaces/0/outputs/0/name",
+                  "draft/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review.1.4.0-compatible",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "sql changes": [
+                  "description",
+                  "draft/description"
+                ],
+                "review findings": [
+                  "interfaces/0/outputs/0/name",
+                  "draft/outputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "sql-review-analytics-fork",
+              "name": "SQL Review (analytics fork)",
+              "source_file": "examples/consistency/duplicate-id.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name",
+                  "description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/outputs/0/description"
+                ],
+                "sql changes": [
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ],
+                "review findings": [
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review",
+              "name": "SQL Review",
+              "source_file": "examples/valid/sql-review.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "sql review": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "sql changes": [
+                  "description",
+                  "draft/description"
+                ],
+                "review findings": [
+                  "interfaces/0/outputs/0/name",
+                  "draft/outputs/0/name"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q02",
+      "request": "Translate product documentation between English, German, and Japanese.",
+      "criterion": "Translates product documentation between the requested languages.",
+      "terms": [
+        "translate",
+        "translation",
+        "german",
+        "japanese"
+      ],
+      "relevant": [
+        "translator"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Translator description explicitly names documentation translation and all three languages.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "name": "Translator",
+              "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "translate": [
+                  "supportedUseCases"
+                ],
+                "german": [
+                  "description"
+                ],
+                "japanese": [
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "name": "Translator",
+              "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "translate": [
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "translation": [
+                  "draft/abilities/0",
+                  "draft/inputs/2/description"
+                ],
+                "german": [
+                  "draft/description",
+                  "draft/inputs/1/description",
+                  "draft/inputs/2/description"
+                ],
+                "japanese": [
+                  "draft/description",
+                  "draft/inputs/1/description",
+                  "draft/inputs/2/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "name": "Translator",
+              "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "translate": [
+                  "supportedUseCases",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "translation": [
+                  "draft/abilities/0",
+                  "draft/inputs/2/description"
+                ],
+                "german": [
+                  "description",
+                  "draft/description",
+                  "draft/inputs/1/description",
+                  "draft/inputs/2/description"
+                ],
+                "japanese": [
+                  "description",
+                  "draft/description",
+                  "draft/inputs/1/description",
+                  "draft/inputs/2/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q03",
+      "request": "Find relevant runbook sections for a production alert.",
+      "criterion": "Locates relevant runbooks directly or through a declared component or dependency.",
+      "terms": [
+        "runbook",
+        "runbooks",
+        "alert"
+      ],
+      "relevant": [
+        "runbook-search",
+        "incident-triage-agent",
+        "sre-toolkit"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Runbook Search returns sections, Incident Triage Agent retrieves runbooks, and SRE Toolkit includes Runbook Search.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 3,
+            "relevant_retrieved": 3,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 3,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 2,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "description"
+                ],
+                "alert": [
+                  "description",
+                  "supportedUseCases/0/title",
+                  "supportedUseCases/1/title"
+                ]
+              }
+            },
+            {
+              "id": "runbook-search",
+              "name": "Runbook Search",
+              "source_file": "examples/valid/runbook-search.capability.yaml",
+              "score": 2,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/outputs/0/name"
+                ],
+                "alert": [
+                  "description",
+                  "supportedUseCases/0/title"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 2,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "description"
+                ],
+                "alert": [
+                  "embeddedComponents/1/description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 3,
+            "relevant_retrieved": 3,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 3,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "draft/abilities/2",
+                  "draft/inputs/1/description"
+                ],
+                "runbooks": [
+                  "draft/description"
+                ],
+                "alert": [
+                  "draft/use_cases/0",
+                  "draft/use_cases/1",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/outputs/2/description"
+                ]
+              }
+            },
+            {
+              "id": "runbook-search",
+              "name": "Runbook Search",
+              "source_file": "examples/valid/runbook-search.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "runbooks": [
+                  "draft/description"
+                ],
+                "alert": [
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 2,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "draft/description",
+                  "draft/abilities/3",
+                  "draft/inputs/3/name",
+                  "draft/inputs/3/description",
+                  "draft/outputs/3/name",
+                  "draft/outputs/3/description"
+                ],
+                "alert": [
+                  "draft/inputs/1/name",
+                  "draft/inputs/1/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 3,
+            "relevant_retrieved": 3,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 3,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "description",
+                  "draft/abilities/2",
+                  "draft/inputs/1/description"
+                ],
+                "runbooks": [
+                  "draft/description"
+                ],
+                "alert": [
+                  "description",
+                  "supportedUseCases/0/title",
+                  "supportedUseCases/1/title",
+                  "draft/use_cases/0",
+                  "draft/use_cases/1",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/outputs/2/description"
+                ]
+              }
+            },
+            {
+              "id": "runbook-search",
+              "name": "Runbook Search",
+              "source_file": "examples/valid/runbook-search.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/outputs/0/name",
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "runbooks": [
+                  "draft/description"
+                ],
+                "alert": [
+                  "description",
+                  "supportedUseCases/0/title",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 2,
+              "label": "relevant",
+              "matched_terms": {
+                "runbook": [
+                  "description",
+                  "draft/description",
+                  "draft/abilities/3",
+                  "draft/inputs/3/name",
+                  "draft/inputs/3/description",
+                  "draft/outputs/3/name",
+                  "draft/outputs/3/description"
+                ],
+                "alert": [
+                  "embeddedComponents/1/description",
+                  "draft/inputs/1/name",
+                  "draft/inputs/1/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q04",
+      "request": "Let agents automate a browser, fill forms, and take screenshots.",
+      "criterion": "Agent-accessible browser automation; the tab-isolation fork qualifies by its stated Playwright MCP lineage and automation scope.",
+      "terms": [
+        "browser",
+        "forms",
+        "screenshots"
+      ],
+      "relevant": [
+        "playwright-mcp",
+        "agentic-playwright-mcp"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Playwright MCP explicitly describes these actions; agentic-playwright-mcp describes a Playwright MCP fork with tab isolation. Fork details are less certain.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 2,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "name": "Playwright MCP",
+              "source_file": "examples/valid/playwright-mcp.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "browser": [
+                  "description"
+                ],
+                "forms": [
+                  "description"
+                ],
+                "screenshots": [
+                  "description"
+                ]
+              }
+            },
+            {
+              "id": "agentic-playwright-mcp",
+              "name": "agentic-playwright-mcp",
+              "source_file": "examples/valid/agentic-playwright-mcp.capability.yaml",
+              "score": 1,
+              "label": "relevant",
+              "matched_terms": {
+                "browser": [
+                  "keywords/2"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 2,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "name": "Playwright MCP",
+              "source_file": "examples/valid/playwright-mcp.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "browser": [
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/3",
+                  "draft/use_cases/1",
+                  "draft/use_cases/3",
+                  "draft/inputs/1/name",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "forms": [
+                  "draft/use_cases/2"
+                ],
+                "screenshots": [
+                  "draft/description",
+                  "draft/use_cases/1"
+                ]
+              }
+            },
+            {
+              "id": "agentic-playwright-mcp",
+              "name": "agentic-playwright-mcp",
+              "source_file": "examples/valid/agentic-playwright-mcp.capability.yaml",
+              "score": 1,
+              "label": "relevant",
+              "matched_terms": {
+                "browser": [
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/description",
+                  "draft/outputs/0/name"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 2,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "name": "Playwright MCP",
+              "source_file": "examples/valid/playwright-mcp.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "browser": [
+                  "description",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/3",
+                  "draft/use_cases/1",
+                  "draft/use_cases/3",
+                  "draft/inputs/1/name",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "forms": [
+                  "description",
+                  "draft/use_cases/2"
+                ],
+                "screenshots": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/1"
+                ]
+              }
+            },
+            {
+              "id": "agentic-playwright-mcp",
+              "name": "agentic-playwright-mcp",
+              "source_file": "examples/valid/agentic-playwright-mcp.capability.yaml",
+              "score": 1,
+              "label": "relevant",
+              "matched_terms": {
+                "browser": [
+                  "keywords/2",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/description",
+                  "draft/outputs/0/name"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q05",
+      "request": "Run regression evaluations for agents and compare model versions.",
+      "criterion": "Repeatable agent evaluations and prompt/model comparison on a test set.",
+      "terms": [
+        "regression",
+        "evaluation",
+        "graders",
+        "model versions"
+      ],
+      "relevant": [
+        "agent-eval-framework"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Agent Evaluation Framework description and supportedUseCases state evaluations, graders, CI reports, and version comparison.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "agent-eval-framework",
+              "name": "Agent Evaluation Framework",
+              "source_file": "examples/valid/agent-eval-framework.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "regression": [
+                  "description",
+                  "supportedUseCases/0/title"
+                ],
+                "evaluation": [
+                  "name"
+                ],
+                "graders": [
+                  "description"
+                ],
+                "model versions": [
+                  "supportedUseCases/1/title"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "agent-eval-framework",
+              "name": "Agent Evaluation Framework",
+              "source_file": "examples/valid/agent-eval-framework.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "regression": [
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/outputs/0/description"
+                ],
+                "evaluation": [
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/abilities/2",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/description",
+                  "draft/inputs/2/name",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "graders": [
+                  "draft/description",
+                  "draft/inputs/1/description"
+                ],
+                "model versions": [
+                  "draft/use_cases/1",
+                  "draft/inputs/2/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "agent-eval-framework",
+              "name": "Agent Evaluation Framework",
+              "source_file": "examples/valid/agent-eval-framework.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "regression": [
+                  "description",
+                  "supportedUseCases/0/title",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/outputs/0/description"
+                ],
+                "evaluation": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/abilities/2",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/description",
+                  "draft/inputs/2/name",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "graders": [
+                  "description",
+                  "draft/description",
+                  "draft/inputs/1/description"
+                ],
+                "model versions": [
+                  "supportedUseCases/1/title",
+                  "draft/use_cases/1",
+                  "draft/inputs/2/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q06",
+      "request": "Summarize meetings and extract action items.",
+      "criterion": "Listens to meetings and produces summaries with action items.",
+      "terms": [
+        "meeting",
+        "meetings",
+        "action items"
+      ],
+      "relevant": [
+        "meeting-notes-agent"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Meeting Notes Agent description explicitly states meeting listening, summaries, and action items.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "meeting-notes-agent",
+              "name": "Meeting Notes Agent",
+              "source_file": "examples/invalid/conditional-requirement-violation.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "meeting": [
+                  "name"
+                ],
+                "meetings": [
+                  "description"
+                ],
+                "action items": [
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "meeting-notes-agent",
+              "name": "Meeting Notes Agent",
+              "source_file": "examples/invalid/conditional-requirement-violation.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "meeting": [
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/name",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description",
+                  "draft/outputs/1/description"
+                ],
+                "meetings": [
+                  "draft/description",
+                  "draft/use_cases/0"
+                ],
+                "action items": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/outputs/1/name",
+                  "draft/outputs/1/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "meeting-notes-agent",
+              "name": "Meeting Notes Agent",
+              "source_file": "examples/invalid/conditional-requirement-violation.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "meeting": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/name",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description",
+                  "draft/outputs/1/description"
+                ],
+                "meetings": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0"
+                ],
+                "action items": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/outputs/1/name",
+                  "draft/outputs/1/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q07",
+      "request": "Summarize long internal documents into an executive brief.",
+      "criterion": "Produces executive briefs from long internal documents.",
+      "terms": [
+        "internal documents",
+        "executive brief",
+        "executive briefs",
+        "document summarization"
+      ],
+      "relevant": [
+        "document-summarizer"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Document Summarizer description explicitly states structured executive briefs.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "document-summarizer",
+              "name": "Document Summarizer",
+              "source_file": "examples/invalid/missing-mandatory-field.capability.yaml",
+              "score": 2,
+              "label": "relevant",
+              "matched_terms": {
+                "internal documents": [
+                  "description"
+                ],
+                "executive briefs": [
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "document-summarizer",
+              "name": "Document Summarizer",
+              "source_file": "examples/invalid/missing-mandatory-field.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "internal documents": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ],
+                "executive brief": [
+                  "draft/abilities/1",
+                  "draft/outputs/0/name"
+                ],
+                "executive briefs": [
+                  "draft/description",
+                  "draft/use_cases/0"
+                ],
+                "document summarization": [
+                  "draft/abilities/0"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "document-summarizer",
+              "name": "Document Summarizer",
+              "source_file": "examples/invalid/missing-mandatory-field.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "internal documents": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ],
+                "executive brief": [
+                  "draft/abilities/1",
+                  "draft/outputs/0/name"
+                ],
+                "executive briefs": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0"
+                ],
+                "document summarization": [
+                  "draft/abilities/0"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q08",
+      "request": "Generate unit tests for changed functions and explain uncovered branches.",
+      "criterion": "Generates unit tests and explains remaining uncovered branches.",
+      "terms": [
+        "unit tests",
+        "unit test",
+        "changed functions",
+        "uncovered branches"
+      ],
+      "relevant": [
+        "unit-test-generator"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Unit Test Generator description states both generated tests and branch explanations.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "unit-test-generator",
+              "name": "Unit Test Generator",
+              "source_file": "examples/invalid/unknown-field-and-extension.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "unit tests": [
+                  "description"
+                ],
+                "unit test": [
+                  "name"
+                ],
+                "changed functions": [
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "unit-test-generator",
+              "name": "Unit Test Generator",
+              "source_file": "examples/invalid/unknown-field-and-extension.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "unit tests": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/outputs/0/name"
+                ],
+                "unit test": [
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "changed functions": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "unit-test-generator",
+              "name": "Unit Test Generator",
+              "source_file": "examples/invalid/unknown-field-and-extension.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "unit tests": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/outputs/0/name"
+                ],
+                "unit test": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0"
+                ],
+                "changed functions": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q09",
+      "request": "Search code across internal repositories with ownership-aware ranking.",
+      "criterion": "Searches repository code with ownership-aware ranking.",
+      "terms": [
+        "code search",
+        "internal repositories",
+        "ownership aware"
+      ],
+      "relevant": [
+        "code-search"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Code Search description and rankingProfile state semantic code search with ownership awareness.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "code-search",
+              "name": "Code Search",
+              "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "code search": [
+                  "name",
+                  "description"
+                ],
+                "internal repositories": [
+                  "description"
+                ],
+                "ownership aware": [
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "code-search",
+              "name": "Code Search",
+              "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "code search": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/name"
+                ],
+                "internal repositories": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "ownership aware": [
+                  "draft/description",
+                  "draft/abilities/1",
+                  "draft/use_cases/0"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "code-search",
+              "name": "Code Search",
+              "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "code search": [
+                  "name",
+                  "description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/name"
+                ],
+                "internal repositories": [
+                  "description",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "ownership aware": [
+                  "description",
+                  "draft/description",
+                  "draft/abilities/1",
+                  "draft/use_cases/0"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q10",
+      "request": "Query stored logs, metrics, and traces through read-only tools.",
+      "criterion": "Exposes read-only queries for all three observability data types.",
+      "terms": [
+        "logs",
+        "metrics",
+        "traces",
+        "read only"
+      ],
+      "relevant": [
+        "observability-mcp-server"
+      ],
+      "partial": [
+        "incident-triage-agent"
+      ],
+      "evidence": "Observability server explicitly queries all three. Incident Triage Agent correlates logs and metrics for alerts but does not declare a general trace-query interface.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.5
+          },
+          "ranking": [
+            {
+              "id": "observability-mcp-server",
+              "name": "Acme Observability MCP Server",
+              "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "logs": [
+                  "description",
+                  "supportedUseCases/0/title"
+                ],
+                "metrics": [
+                  "description",
+                  "supportedUseCases/0/title"
+                ],
+                "traces": [
+                  "description"
+                ],
+                "read only": [
+                  "description"
+                ]
+              }
+            },
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 2,
+              "label": "partial",
+              "matched_terms": {
+                "logs": [
+                  "description",
+                  "supportedUseCases/1/title"
+                ],
+                "metrics": [
+                  "description",
+                  "supportedUseCases/1/title"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.5
+          },
+          "ranking": [
+            {
+              "id": "observability-mcp-server",
+              "name": "Acme Observability MCP Server",
+              "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "logs": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/description"
+                ],
+                "metrics": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "traces": [
+                  "draft/description",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/description"
+                ],
+                "read only": [
+                  "draft/description",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 2,
+              "label": "partial",
+              "matched_terms": {
+                "logs": [
+                  "draft/description",
+                  "draft/use_cases/1",
+                  "draft/inputs/1/description",
+                  "draft/outputs/2/description"
+                ],
+                "metrics": [
+                  "draft/description",
+                  "draft/use_cases/1",
+                  "draft/inputs/1/description",
+                  "draft/outputs/2/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.5
+          },
+          "ranking": [
+            {
+              "id": "observability-mcp-server",
+              "name": "Acme Observability MCP Server",
+              "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "logs": [
+                  "description",
+                  "supportedUseCases/0/title",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/description"
+                ],
+                "metrics": [
+                  "description",
+                  "supportedUseCases/0/title",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "traces": [
+                  "description",
+                  "draft/description",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/description"
+                ],
+                "read only": [
+                  "description",
+                  "draft/description",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 2,
+              "label": "partial",
+              "matched_terms": {
+                "logs": [
+                  "description",
+                  "supportedUseCases/1/title",
+                  "draft/description",
+                  "draft/use_cases/1",
+                  "draft/inputs/1/description",
+                  "draft/outputs/2/description"
+                ],
+                "metrics": [
+                  "description",
+                  "supportedUseCases/1/title",
+                  "draft/description",
+                  "draft/use_cases/1",
+                  "draft/inputs/1/description",
+                  "draft/outputs/2/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q11",
+      "request": "Draft a blameless postmortem from an incident timeline.",
+      "criterion": "Drafts postmortems from incident timelines.",
+      "terms": [
+        "postmortem",
+        "blameless",
+        "incident timeline"
+      ],
+      "relevant": [
+        "sre-toolkit"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "SRE Toolkit embedded postmortem-template explicitly states this behavior.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "postmortem": [
+                  "description",
+                  "embeddedComponents/0/name",
+                  "embeddedComponents/0/description"
+                ],
+                "blameless": [
+                  "embeddedComponents/0/description"
+                ],
+                "incident timeline": [
+                  "embeddedComponents/0/description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "postmortem": [
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "blameless": [
+                  "draft/outputs/0/description"
+                ],
+                "incident timeline": [
+                  "draft/inputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "postmortem": [
+                  "description",
+                  "embeddedComponents/0/name",
+                  "embeddedComponents/0/description",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ],
+                "blameless": [
+                  "embeddedComponents/0/description",
+                  "draft/outputs/0/description"
+                ],
+                "incident timeline": [
+                  "embeddedComponents/0/description",
+                  "draft/inputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q12",
+      "request": "Block deployments while a SEV-1 incident is open.",
+      "criterion": "Blocks deployment during an open SEV-1 incident.",
+      "terms": [
+        "deploys",
+        "deployment",
+        "sev 1",
+        "pre deploy"
+      ],
+      "relevant": [
+        "sre-toolkit"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "SRE Toolkit embedded pre-deploy-check explicitly blocks deploys during an open SEV-1 incident.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "deploys": [
+                  "embeddedComponents/2/description"
+                ],
+                "sev 1": [
+                  "embeddedComponents/2/description"
+                ],
+                "pre deploy": [
+                  "description",
+                  "embeddedComponents/2/name"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "deployment": [
+                  "draft/inputs/2/name",
+                  "draft/inputs/2/description",
+                  "draft/outputs/2/name",
+                  "draft/outputs/2/description"
+                ],
+                "sev 1": [
+                  "draft/inputs/2/description",
+                  "draft/outputs/2/description"
+                ],
+                "pre deploy": [
+                  "draft/description",
+                  "draft/abilities/2"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 4,
+              "label": "relevant",
+              "matched_terms": {
+                "deploys": [
+                  "embeddedComponents/2/description"
+                ],
+                "deployment": [
+                  "draft/inputs/2/name",
+                  "draft/inputs/2/description",
+                  "draft/outputs/2/name",
+                  "draft/outputs/2/description"
+                ],
+                "sev 1": [
+                  "embeddedComponents/2/description",
+                  "draft/inputs/2/description",
+                  "draft/outputs/2/description"
+                ],
+                "pre deploy": [
+                  "description",
+                  "embeddedComponents/2/name",
+                  "draft/description",
+                  "draft/abilities/2"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q13",
+      "request": "Explain the query plan of a slow SQL query.",
+      "criterion": "Explicitly supports explaining a slow query plan, not just static SQL review.",
+      "terms": [
+        "query plan",
+        "slow query",
+        "sql"
+      ],
+      "relevant": [
+        "sql-review.1.4.0-compatible"
+      ],
+      "partial": [
+        "sql-review",
+        "sql-review.1.4.0-breaking",
+        "sql-review-analytics-fork"
+      ],
+      "evidence": "Only compatible SQL Review 1.4.0 adds the query-plan use case. Other SQL Review records serve an adjacent review purpose.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 3,
+            "false_positives": 3,
+            "relevant_total": 1,
+            "precision": 0.25,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.25
+          },
+          "ranking": [
+            {
+              "id": "sql-review.1.4.0-compatible",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "query plan": [
+                  "supportedUseCases/2/title"
+                ],
+                "slow query": [
+                  "supportedUseCases/2/title"
+                ],
+                "sql": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/inputs/0/name",
+                  "interfaces/0/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review.1.4.0-breaking",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/inputs/0/name",
+                  "interfaces/0/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review-analytics-fork",
+              "name": "SQL Review (analytics fork)",
+              "source_file": "examples/consistency/duplicate-id.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "name",
+                  "description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review",
+              "name": "SQL Review",
+              "source_file": "examples/valid/sql-review.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/inputs/0/name",
+                  "interfaces/0/inputs/0/description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 3,
+            "false_positives": 3,
+            "relevant_total": 1,
+            "precision": 0.25,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.25
+          },
+          "ranking": [
+            {
+              "id": "sql-review.1.4.0-compatible",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "query plan": [
+                  "draft/abilities/3",
+                  "draft/use_cases/2",
+                  "draft/inputs/1/description",
+                  "draft/outputs/1/name"
+                ],
+                "slow query": [
+                  "draft/use_cases/2",
+                  "draft/inputs/1/name",
+                  "draft/inputs/1/description",
+                  "draft/outputs/1/description"
+                ],
+                "sql": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review.1.4.0-breaking",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review-analytics-fork",
+              "name": "SQL Review (analytics fork)",
+              "source_file": "examples/consistency/duplicate-id.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review",
+              "name": "SQL Review",
+              "source_file": "examples/valid/sql-review.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 3,
+            "false_positives": 3,
+            "relevant_total": 1,
+            "precision": 0.25,
+            "recall": 1.0,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.25
+          },
+          "ranking": [
+            {
+              "id": "sql-review.1.4.0-compatible",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-compatible.capability.yaml",
+              "score": 3,
+              "label": "relevant",
+              "matched_terms": {
+                "query plan": [
+                  "supportedUseCases/2/title",
+                  "draft/abilities/3",
+                  "draft/use_cases/2",
+                  "draft/inputs/1/description",
+                  "draft/outputs/1/name"
+                ],
+                "slow query": [
+                  "supportedUseCases/2/title",
+                  "draft/use_cases/2",
+                  "draft/inputs/1/name",
+                  "draft/inputs/1/description",
+                  "draft/outputs/1/description"
+                ],
+                "sql": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/inputs/0/name",
+                  "interfaces/0/inputs/0/description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review.1.4.0-breaking",
+              "name": "SQL Review",
+              "source_file": "examples/compatibility/sql-review.1.4.0-breaking.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/inputs/0/name",
+                  "interfaces/0/inputs/0/description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review-analytics-fork",
+              "name": "SQL Review (analytics fork)",
+              "source_file": "examples/consistency/duplicate-id.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "name",
+                  "description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sql-review",
+              "name": "SQL Review",
+              "source_file": "examples/valid/sql-review.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "sql": [
+                  "name",
+                  "description",
+                  "supportedUseCases/0/title",
+                  "interfaces/0/inputs/0/name",
+                  "interfaces/0/inputs/0/description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q14",
+      "request": "Search the live web for current information with citable URLs.",
+      "criterion": "General live web search, not an internal runbook or repository search.",
+      "terms": [
+        "search",
+        "web",
+        "urls",
+        "current information"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+        "runbook-search",
+        "code-search",
+        "incident-triage-agent",
+        "sre-toolkit"
+      ],
+      "evidence": "No record declares general live web search. Runbook and code search are closed-corpus alternatives; the agent and toolkit include runbook lookup.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 4,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 3,
+            "false_positives": 4,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 0.75,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "code-search",
+              "name": "Code Search",
+              "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "name",
+                  "description"
+                ]
+              }
+            },
+            {
+              "id": "playwright-mcp",
+              "name": "Playwright MCP",
+              "source_file": "examples/valid/playwright-mcp.capability.yaml",
+              "score": 1,
+              "label": "not_relevant",
+              "matched_terms": {
+                "web": [
+                  "description"
+                ]
+              }
+            },
+            {
+              "id": "runbook-search",
+              "name": "Runbook Search",
+              "source_file": "examples/valid/runbook-search.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "name",
+                  "description"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 5,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 4,
+            "false_positives": 5,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 0.8,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "code-search",
+              "name": "Code Search",
+              "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "draft/abilities/2"
+                ]
+              }
+            },
+            {
+              "id": "playwright-mcp",
+              "name": "Playwright MCP",
+              "source_file": "examples/valid/playwright-mcp.capability.yaml",
+              "score": 1,
+              "label": "not_relevant",
+              "matched_terms": {
+                "web": [
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "runbook-search",
+              "name": "Runbook Search",
+              "source_file": "examples/valid/runbook-search.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "draft/description",
+                  "draft/abilities/3",
+                  "draft/inputs/3/description",
+                  "draft/outputs/3/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 5,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 4,
+            "false_positives": 5,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 0.8,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "code-search",
+              "name": "Code Search",
+              "source_file": "examples/invalid/unsupported-schema-version.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "name",
+                  "description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/name"
+                ]
+              }
+            },
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "draft/abilities/2"
+                ]
+              }
+            },
+            {
+              "id": "playwright-mcp",
+              "name": "Playwright MCP",
+              "source_file": "examples/valid/playwright-mcp.capability.yaml",
+              "score": 1,
+              "label": "not_relevant",
+              "matched_terms": {
+                "web": [
+                  "description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "runbook-search",
+              "name": "Runbook Search",
+              "source_file": "examples/valid/runbook-search.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "name",
+                  "description",
+                  "draft/name",
+                  "draft/description",
+                  "draft/abilities/0",
+                  "draft/inputs/0/description"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "search": [
+                  "description",
+                  "draft/description",
+                  "draft/abilities/3",
+                  "draft/inputs/3/description",
+                  "draft/outputs/3/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q15",
+      "request": "Translate product documentation into Spanish.",
+      "criterion": "Explicitly supports Spanish as a translation target.",
+      "terms": [
+        "translate",
+        "translation",
+        "documentation",
+        "spanish"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+        "translator"
+      ],
+      "evidence": "Translator supports English, German, and Japanese only in the stated scope; Spanish is not established.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "name": "Translator",
+              "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+              "score": 2,
+              "label": "partial",
+              "matched_terms": {
+                "translate": [
+                  "supportedUseCases"
+                ],
+                "documentation": [
+                  "description",
+                  "supportedUseCases"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "name": "Translator",
+              "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+              "score": 3,
+              "label": "partial",
+              "matched_terms": {
+                "translate": [
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "translation": [
+                  "draft/abilities/0",
+                  "draft/inputs/2/description"
+                ],
+                "documentation": [
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 1.0,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "name": "Translator",
+              "source_file": "examples/invalid/invalid-types-and-values.capability.yaml",
+              "score": 3,
+              "label": "partial",
+              "matched_terms": {
+                "translate": [
+                  "supportedUseCases",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/description"
+                ],
+                "translation": [
+                  "draft/abilities/0",
+                  "draft/inputs/2/description"
+                ],
+                "documentation": [
+                  "description",
+                  "supportedUseCases",
+                  "draft/description",
+                  "draft/use_cases/0",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/outputs/0/name",
+                  "draft/outputs/0/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q16",
+      "request": "Automatically execute remediation for production incidents.",
+      "criterion": "Executes remediation, rather than proposing response steps.",
+      "terms": [
+        "remediation",
+        "incident",
+        "incidents",
+        "execute"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+        "incident-triage-agent",
+        "sre-toolkit"
+      ],
+      "evidence": "Incident Triage Agent explicitly never executes remediation; SRE Toolkit offers adjacent workflows, not automated incident remediation.",
+      "variants": {
+        "baseline": {
+          "metrics": {
+            "retrieved": 3,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 2,
+            "false_positives": 3,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 0.6666666666666666,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "incident": [
+                  "name"
+                ]
+              }
+            },
+            {
+              "id": "observability-mcp-server",
+              "name": "Acme Observability MCP Server",
+              "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+              "score": 1,
+              "label": "not_relevant",
+              "matched_terms": {
+                "incident": [
+                  "supportedUseCases/0/title"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "incident": [
+                  "description",
+                  "embeddedComponents/0/description",
+                  "embeddedComponents/2/description"
+                ]
+              }
+            }
+          ]
+        },
+        "structured": {
+          "metrics": {
+            "retrieved": 3,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 2,
+            "false_positives": 3,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 0.6666666666666666,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 2,
+              "label": "partial",
+              "matched_terms": {
+                "remediation": [
+                  "draft/outputs/1/description"
+                ],
+                "incident": [
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/name",
+                  "draft/outputs/2/name"
+                ]
+              }
+            },
+            {
+              "id": "observability-mcp-server",
+              "name": "Acme Observability MCP Server",
+              "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+              "score": 1,
+              "label": "not_relevant",
+              "matched_terms": {
+                "incident": [
+                  "draft/use_cases/0"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "incident": [
+                  "draft/description",
+                  "draft/abilities/1",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/2/description",
+                  "draft/outputs/0/description",
+                  "draft/outputs/1/description",
+                  "draft/outputs/2/description"
+                ]
+              }
+            }
+          ]
+        },
+        "augmented": {
+          "metrics": {
+            "retrieved": 3,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 2,
+            "false_positives": 3,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "useful_precision": 0.6666666666666666,
+            "precision_at_5": 0.0
+          },
+          "ranking": [
+            {
+              "id": "incident-triage-agent",
+              "name": "Incident Triage Agent",
+              "source_file": "examples/valid/incident-triage-agent.capability.yaml",
+              "score": 2,
+              "label": "partial",
+              "matched_terms": {
+                "remediation": [
+                  "draft/outputs/1/description"
+                ],
+                "incident": [
+                  "name",
+                  "draft/name",
+                  "draft/abilities/0",
+                  "draft/abilities/1",
+                  "draft/inputs/0/description",
+                  "draft/inputs/1/name",
+                  "draft/outputs/2/name"
+                ]
+              }
+            },
+            {
+              "id": "observability-mcp-server",
+              "name": "Acme Observability MCP Server",
+              "source_file": "examples/valid/observability-mcp-server.capability.yaml",
+              "score": 1,
+              "label": "not_relevant",
+              "matched_terms": {
+                "incident": [
+                  "supportedUseCases/0/title",
+                  "draft/use_cases/0"
+                ]
+              }
+            },
+            {
+              "id": "sre-toolkit",
+              "name": "SRE Toolkit",
+              "source_file": "examples/valid/sre-toolkit.capability.yaml",
+              "score": 1,
+              "label": "partial",
+              "matched_terms": {
+                "incident": [
+                  "description",
+                  "embeddedComponents/0/description",
+                  "embeddedComponents/2/description",
+                  "draft/description",
+                  "draft/abilities/1",
+                  "draft/inputs/0/name",
+                  "draft/inputs/0/description",
+                  "draft/inputs/2/description",
+                  "draft/outputs/0/description",
+                  "draft/outputs/1/description",
+                  "draft/outputs/2/description"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

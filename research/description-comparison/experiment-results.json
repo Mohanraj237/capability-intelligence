@@ -1,0 +1,1642 @@
+{
+  "protocol": "existing-five-description-artifacts-v1",
+  "candidate_count": 5,
+  "query_count": 16,
+  "zero_relevant_query_count": 11,
+  "input_sha256": {
+    "ability-descriptions/capability-representations/a2a-style/agent-eval-framework.yaml": "cff90930294b0cab17e215f7e1e6ca4807303ed5fe4cd27f05be2578716478d8",
+    "ability-descriptions/capability-representations/a2a-style/playwright-mcp.yaml": "c16219fa98f42d98bc6f77c09350a333464a0dad9fc78af040561187217193ae",
+    "ability-descriptions/capability-representations/a2a-style/runbook-search.yaml": "bf6dcdeb20d6b30cceff1630d9f34f85948eb4169de268001684e364e42873b9",
+    "ability-descriptions/capability-representations/a2a-style/sql-review.yaml": "121db307a3af2624a10adde44a6380e955c9999018a4d389aec87ac5a8efc564",
+    "ability-descriptions/capability-representations/a2a-style/translator.yaml": "8a276fa97312604d906261cfc84ada1fd9ec2a731b677f92e7a5c7e27989b2b3",
+    "ability-descriptions/capability-representations/free-text/agent-eval-framework.txt": "573f879e8fdfb2d1d184d25a72b7447f5be1d3c2a8d7a6719b6fdb5d444a6f4b",
+    "ability-descriptions/capability-representations/free-text/playwright-mcp.txt": "2a29ed600199c6903d237617ae74bb5e15d244f39db21eaa7616e44f2c1efb40",
+    "ability-descriptions/capability-representations/free-text/runbook-search.txt": "6603222112ce8676b1d4b15a9a120f2cdde360d330823f1cf30becba6e611289",
+    "ability-descriptions/capability-representations/free-text/sql-review.txt": "c0602e5054618d2c974a72571516d14611b07570d257df8f26e781c042165621",
+    "ability-descriptions/capability-representations/free-text/translator.txt": "68bcc8aecb865eec58e06f7fd04f12462f68e20215234a07730982fd3a44eda6",
+    "research/description-comparison/experiment-method.md": "a10114ea0dd346f5c755dca33869132a64dbeb5136f50aa50bdaf77f78173d94",
+    "research/description-comparison/oasf-inspired/agent-eval-framework.yaml": "ed8afb3b6c0d99291302c0832cc8e15adbffd1c17c15cc6f723bb82e3c296966",
+    "research/description-comparison/oasf-inspired/playwright-mcp.yaml": "6e9a55e60764b0e8c8f8a2fee90ce797dd6ecba332ee2e857553bcf89bc5f68e",
+    "research/description-comparison/oasf-inspired/runbook-search.yaml": "78bcc4c4adc7fcf9092e6997a75f42d8ac8fe15b7114a27880e238b381de5be6",
+    "research/description-comparison/oasf-inspired/sql-review.yaml": "3a6b270331cf2142ad0fb38a5de58f04012882c26420915c9d9c543aa075cd91",
+    "research/description-comparison/oasf-inspired/translator.yaml": "88e82a3cbdb7779db3210d9186421d1272cdf6086684ea1737e605ee5d6e2d0b",
+    "research/description-comparison/run.rb": "6019dc511efb23ec759f933834cd5dbf0284541c0786acd578ffb1742d8c2653",
+    "research/structured-matching/needs.yaml": "4ce80ff4f9a0e3ef55c2b39313165d3746d35d932e11d55c5821fc266d9525be"
+  },
+  "summary": {
+    "free_text": {
+      "retrieved": 9,
+      "relevant_retrieved": 5,
+      "partial_retrieved": 3,
+      "false_positives": 4,
+      "relevant_total": 5,
+      "precision": 0.5555555555555556,
+      "recall": 1.0,
+      "zero_relevant_requests_returning_results": 3
+    },
+    "a2a_style": {
+      "retrieved": 9,
+      "relevant_retrieved": 5,
+      "partial_retrieved": 3,
+      "false_positives": 4,
+      "relevant_total": 5,
+      "precision": 0.5555555555555556,
+      "recall": 1.0,
+      "zero_relevant_requests_returning_results": 3
+    },
+    "oasf_inspired": {
+      "retrieved": 9,
+      "relevant_retrieved": 5,
+      "partial_retrieved": 3,
+      "false_positives": 4,
+      "relevant_total": 5,
+      "precision": 0.5555555555555556,
+      "recall": 1.0,
+      "zero_relevant_requests_returning_results": 3
+    }
+  },
+  "requests": [
+    {
+      "id": "Q01",
+      "request": "Review SQL changes and return review findings.",
+      "criterion": "Reviews SQL changes, including the analytics fork; no execution or policy-specific checks required.",
+      "terms": [
+        "sql review",
+        "sql changes",
+        "review findings"
+      ],
+      "relevant": [
+        "sql-review"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "All four SQL Review records describe SQL review; the fork adds analytics warehouse rules.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "sql review": {
+                  "paragraph": "SQL Review reviews SQL changes in pull requests for performance anti-patterns and data-access-policy violations. It accepts a SQL diff or SQL file content and returns findings with severity, location, and suggested fixes. It supports PostgreSQL and MySQL through static analysis and never executes queries.\n"
+                },
+                "sql changes": {
+                  "paragraph": "SQL Review reviews SQL changes in pull requests for performance anti-patterns and data-access-policy violations. It accepts a SQL diff or SQL file content and returns findings with severity, location, and suggested fixes. It supports PostgreSQL and MySQL through static analysis and never executes queries.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review",
+              "score": 3,
+              "label": "relevant",
+              "evidence": {
+                "sql review": {
+                  "/name": "SQL Review"
+                },
+                "sql changes": {
+                  "/description": "Reviews SQL changes for performance anti-patterns and data-access-policy violations and suggests fixes."
+                },
+                "review findings": {
+                  "/outputs/0": "Review Findings"
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review",
+              "score": 3,
+              "label": "relevant",
+              "evidence": {
+                "sql review": {
+                  "/name": "SQL Review",
+                  "/custom_details/abilities/0": "sql-review"
+                },
+                "sql changes": {
+                  "/description": "Reviews SQL changes for performance anti-patterns and data-access-policy violations, explaining findings with suggested fixes."
+                },
+                "review findings": {
+                  "/custom_details/outputs/0/name": "review-findings"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q02",
+      "request": "Translate product documentation between English, German, and Japanese.",
+      "criterion": "Translates product documentation between the requested languages.",
+      "terms": [
+        "translate",
+        "translation",
+        "german",
+        "japanese"
+      ],
+      "relevant": [
+        "translator"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Translator description explicitly names documentation translation and all three languages.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "german": {
+                  "paragraph": "Translator translates product documentation between English, German, and Japanese. Its draft inputs are product documentation and source/target language context, and its output is translated documentation. Exact interface contracts are unspecified; the source metadata is an intentionally invalid example.\n"
+                },
+                "japanese": {
+                  "paragraph": "Translator translates product documentation between English, German, and Japanese. Its draft inputs are product documentation and source/target language context, and its output is translated documentation. Exact interface contracts are unspecified; the source metadata is an intentionally invalid example.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "german": {
+                  "/description": "Translates product documentation between English, German, and Japanese."
+                },
+                "japanese": {
+                  "/description": "Translates product documentation between English, German, and Japanese."
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "score": 4,
+              "label": "relevant",
+              "evidence": {
+                "translate": {
+                  "/custom_details/inputs/0/description": "Product documentation to translate; document format is unspecified.",
+                  "/custom_details/use_cases/0": "Translate product documentation"
+                },
+                "translation": {
+                  "/mapped_skills/0/taxonomy_path": "language_processing/language_translation",
+                  "/mapped_skills/0/caption": "Language Translation",
+                  "/custom_details/abilities/0": "translation",
+                  "/custom_details/inputs/2/description": "Desired translation language among English, German, and Japanese."
+                },
+                "german": {
+                  "/description": "Translates product documentation between English, German, and Japanese.",
+                  "/custom_details/inputs/1/description": "English, German, or Japanese; whether the caller supplies it or it is detected is unspecified.",
+                  "/custom_details/inputs/2/description": "Desired translation language among English, German, and Japanese.",
+                  "/custom_details/constraints/supported_languages/1": "German"
+                },
+                "japanese": {
+                  "/description": "Translates product documentation between English, German, and Japanese.",
+                  "/custom_details/inputs/1/description": "English, German, or Japanese; whether the caller supplies it or it is detected is unspecified.",
+                  "/custom_details/inputs/2/description": "Desired translation language among English, German, and Japanese.",
+                  "/custom_details/constraints/supported_languages/2": "Japanese"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q03",
+      "request": "Find relevant runbook sections for a production alert.",
+      "criterion": "Locates relevant runbooks directly or through a declared component or dependency.",
+      "terms": [
+        "runbook",
+        "runbooks",
+        "alert"
+      ],
+      "relevant": [
+        "runbook-search"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Runbook Search returns sections, Incident Triage Agent retrieves runbooks, and SRE Toolkit includes Runbook Search.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "runbook-search",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "runbook": {
+                  "paragraph": "Runbook Search searches the SRE runbook library for sections relevant to an alert, service, or symptom. It accepts a JSON search query and returns JSON runbook matches with links to source pages. It indexes only the SRE wiki, not team-specific wikis.\n"
+                },
+                "alert": {
+                  "paragraph": "Runbook Search searches the SRE runbook library for sections relevant to an alert, service, or symptom. It accepts a JSON search query and returns JSON runbook matches with links to source pages. It indexes only the SRE wiki, not team-specific wikis.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "runbook-search",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "runbook": {
+                  "/name": "Runbook Search",
+                  "/outputs/0": "Runbook Matches"
+                },
+                "runbooks": {
+                  "/description": "Searches SRE runbooks for relevant sections with links to source pages."
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "runbook-search",
+              "score": 3,
+              "label": "relevant",
+              "evidence": {
+                "runbook": {
+                  "/name": "Runbook Search",
+                  "/custom_details/abilities/0": "runbook-search",
+                  "/custom_details/outputs/0/name": "runbook-matches",
+                  "/custom_details/outputs/0/description": "Relevant runbook sections with source links; object is a draft representation and the contract may define a different JSON shape.",
+                  "/custom_details/use_cases/0": "Find the runbook for an alert or symptom"
+                },
+                "runbooks": {
+                  "/description": "Semantic search over SRE runbooks returning relevant sections with links to source pages."
+                },
+                "alert": {
+                  "/custom_details/inputs/0/description": "Search query about an alert, service, or symptom; JSON structure must be confirmed against the referenced OpenAPI contract.",
+                  "/custom_details/use_cases/0": "Find the runbook for an alert or symptom"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q04",
+      "request": "Let agents automate a browser, fill forms, and take screenshots.",
+      "criterion": "Agent-accessible browser automation; the tab-isolation fork qualifies by its stated Playwright MCP lineage and automation scope.",
+      "terms": [
+        "browser",
+        "forms",
+        "screenshots"
+      ],
+      "relevant": [
+        "playwright-mcp"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Playwright MCP explicitly describes these actions; agentic-playwright-mcp describes a Playwright MCP fork with tab isolation. Fork details are less certain.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "score": 3,
+              "label": "relevant",
+              "evidence": {
+                "browser": {
+                  "paragraph": "Playwright MCP automates browser interactions such as clicking elements, filling forms, taking screenshots, and performing end-to-end browser testing. Its draft inputs are a web page target and requested browser action; its draft outputs are browser interaction results and screenshots. Exact tool contracts are discovered at runtime rather than specified in the metadata.\n"
+                },
+                "forms": {
+                  "paragraph": "Playwright MCP automates browser interactions such as clicking elements, filling forms, taking screenshots, and performing end-to-end browser testing. Its draft inputs are a web page target and requested browser action; its draft outputs are browser interaction results and screenshots. Exact tool contracts are discovered at runtime rather than specified in the metadata.\n"
+                },
+                "screenshots": {
+                  "paragraph": "Playwright MCP automates browser interactions such as clicking elements, filling forms, taking screenshots, and performing end-to-end browser testing. Its draft inputs are a web page target and requested browser action; its draft outputs are browser interaction results and screenshots. Exact tool contracts are discovered at runtime rather than specified in the metadata.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "browser": {
+                  "/description": "Automates browser interactions, captures screenshots, and performs end-to-end browser testing.",
+                  "/inputs/1": "Browser Action",
+                  "/outputs/0": "Browser Interaction Result"
+                },
+                "screenshots": {
+                  "/description": "Automates browser interactions, captures screenshots, and performs end-to-end browser testing."
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "score": 3,
+              "label": "relevant",
+              "evidence": {
+                "browser": {
+                  "/description": "Microsoft MCP server for browser automation, screenshots, form interactions, and end-to-end testing.",
+                  "/mapped_skills/0/taxonomy_path": "tool_use_automation/browser_automation",
+                  "/mapped_skills/0/caption": "Browser Automation",
+                  "/custom_details/abilities/0": "browser-automation",
+                  "/custom_details/abilities/3": "end-to-end-browser-testing",
+                  "/custom_details/inputs/1/name": "Browser Action",
+                  "/custom_details/outputs/0/name": "Browser Interaction Result",
+                  "/custom_details/outputs/0/description": "Browser action or testing outcome; exact response schema is unspecified.",
+                  "/custom_details/use_cases/1": "Capture browser screenshots",
+                  "/custom_details/use_cases/3": "Perform end-to-end browser testing"
+                },
+                "forms": {
+                  "/custom_details/use_cases/2": "Fill forms and click elements"
+                },
+                "screenshots": {
+                  "/description": "Microsoft MCP server for browser automation, screenshots, form interactions, and end-to-end testing.",
+                  "/custom_details/use_cases/1": "Capture browser screenshots"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q05",
+      "request": "Run regression evaluations for agents and compare model versions.",
+      "criterion": "Repeatable agent evaluations and prompt/model comparison on a test set.",
+      "terms": [
+        "regression",
+        "evaluation",
+        "graders",
+        "model versions"
+      ],
+      "relevant": [
+        "agent-eval-framework"
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Agent Evaluation Framework description and supportedUseCases state evaluations, graders, CI reports, and version comparison.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "agent-eval-framework",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "evaluation": {
+                  "paragraph": "Agent Evaluation Framework runs repeatable evaluations of agents and skills in CI and compares prompt or model versions on the same test set. Its draft inputs are evaluation test cases, grader configuration, and evaluation targets; its output is an evaluation report describing outcomes, regressions, or comparisons. Exact input/output schemas are unspecified.\n"
+                },
+                "model versions": {
+                  "paragraph": "Agent Evaluation Framework runs repeatable evaluations of agents and skills in CI and compares prompt or model versions on the same test set. Its draft inputs are evaluation test cases, grader configuration, and evaluation targets; its output is an evaluation report describing outcomes, regressions, or comparisons. Exact input/output schemas are unspecified.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "agent-eval-framework",
+              "score": 2,
+              "label": "relevant",
+              "evidence": {
+                "evaluation": {
+                  "/name": "Agent Evaluation Framework",
+                  "/inputs/0": "Evaluation Test Cases",
+                  "/inputs/2": "Evaluation Targets",
+                  "/outputs/0": "Evaluation Report"
+                },
+                "model versions": {
+                  "/description": "Evaluates agents and skills, detects regressions, and compares prompt or model versions."
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 1,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "precision_at_1": 1.0
+          },
+          "ranking": [
+            {
+              "id": "agent-eval-framework",
+              "score": 4,
+              "label": "relevant",
+              "evidence": {
+                "regression": {
+                  "/description": "Python framework for repeatable evaluations of agents and skills using test cases, graders, and CI regression reports.",
+                  "/custom_details/abilities/0": "agent-regression-evaluation",
+                  "/custom_details/outputs/0/description": "Evaluation outcomes and regression or version-comparison results; report format is unspecified.",
+                  "/custom_details/use_cases/0": "Run regression evaluations for an agent in CI"
+                },
+                "evaluation": {
+                  "/name": "Agent Evaluation Framework",
+                  "/mapped_skills/0/taxonomy_path": "ai_ml_engineering/model_evaluation",
+                  "/mapped_skills/0/caption": "Model and Agent Evaluation",
+                  "/custom_details/abilities/0": "agent-regression-evaluation",
+                  "/custom_details/abilities/2": "evaluation-report-generation",
+                  "/custom_details/inputs/0/name": "Evaluation Test Cases",
+                  "/custom_details/inputs/0/description": "Test cases defining evaluation scenarios and expected outcomes.",
+                  "/custom_details/inputs/1/description": "Graders and evaluation criteria for the suite.",
+                  "/custom_details/inputs/2/name": "Evaluation Targets",
+                  "/custom_details/outputs/0/name": "Evaluation Report",
+                  "/custom_details/outputs/0/description": "Evaluation outcomes and regression or version-comparison results; report format is unspecified."
+                },
+                "graders": {
+                  "/description": "Python framework for repeatable evaluations of agents and skills using test cases, graders, and CI regression reports.",
+                  "/custom_details/inputs/1/description": "Graders and evaluation criteria for the suite.",
+                  "/custom_details/constraints/model_grader_costs": "Model-based graders incur model usage costs."
+                },
+                "model versions": {
+                  "/custom_details/inputs/2/description": "Agents, skills, prompt versions, or model versions to evaluate or compare.",
+                  "/custom_details/use_cases/1": "Compare two prompt or model versions on the same test set"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q06",
+      "request": "Summarize meetings and extract action items.",
+      "criterion": "Listens to meetings and produces summaries with action items.",
+      "terms": [
+        "meeting",
+        "meetings",
+        "action items"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Meeting Notes Agent description explicitly states meeting listening, summaries, and action items.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q07",
+      "request": "Summarize long internal documents into an executive brief.",
+      "criterion": "Produces executive briefs from long internal documents.",
+      "terms": [
+        "internal documents",
+        "executive brief",
+        "executive briefs",
+        "document summarization"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Document Summarizer description explicitly states structured executive briefs.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q08",
+      "request": "Generate unit tests for changed functions and explain uncovered branches.",
+      "criterion": "Generates unit tests and explains remaining uncovered branches.",
+      "terms": [
+        "unit tests",
+        "unit test",
+        "changed functions",
+        "uncovered branches"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Unit Test Generator description states both generated tests and branch explanations.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q09",
+      "request": "Search code across internal repositories with ownership-aware ranking.",
+      "criterion": "Searches repository code with ownership-aware ranking.",
+      "terms": [
+        "code search",
+        "internal repositories",
+        "ownership aware"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Code Search description and rankingProfile state semantic code search with ownership awareness.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q10",
+      "request": "Query stored logs, metrics, and traces through read-only tools.",
+      "criterion": "Exposes read-only queries for all three observability data types.",
+      "terms": [
+        "logs",
+        "metrics",
+        "traces",
+        "read only"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Observability server explicitly queries all three. Incident Triage Agent correlates logs and metrics for alerts but does not declare a general trace-query interface.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q11",
+      "request": "Draft a blameless postmortem from an incident timeline.",
+      "criterion": "Drafts postmortems from incident timelines.",
+      "terms": [
+        "postmortem",
+        "blameless",
+        "incident timeline"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "SRE Toolkit embedded postmortem-template explicitly states this behavior.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q12",
+      "request": "Block deployments while a SEV-1 incident is open.",
+      "criterion": "Blocks deployment during an open SEV-1 incident.",
+      "terms": [
+        "deploys",
+        "deployment",
+        "sev 1",
+        "pre deploy"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "SRE Toolkit embedded pre-deploy-check explicitly blocks deploys during an open SEV-1 incident.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q13",
+      "request": "Explain the query plan of a slow SQL query.",
+      "criterion": "Explicitly supports explaining a slow query plan, not just static SQL review.",
+      "terms": [
+        "query plan",
+        "slow query",
+        "sql"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+        "sql-review"
+      ],
+      "evidence": "Only compatible SQL Review 1.4.0 adds the query-plan use case. Other SQL Review records serve an adjacent review purpose.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "sql": {
+                  "paragraph": "SQL Review reviews SQL changes in pull requests for performance anti-patterns and data-access-policy violations. It accepts a SQL diff or SQL file content and returns findings with severity, location, and suggested fixes. It supports PostgreSQL and MySQL through static analysis and never executes queries.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "sql": {
+                  "/name": "SQL Review",
+                  "/description": "Reviews SQL changes for performance anti-patterns and data-access-policy violations and suggests fixes.",
+                  "/inputs/0": "SQL Diff or SQL File Content"
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "sql-review",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "sql": {
+                  "/name": "SQL Review",
+                  "/description": "Reviews SQL changes for performance anti-patterns and data-access-policy violations, explaining findings with suggested fixes.",
+                  "/custom_details/abilities/0": "sql-review",
+                  "/custom_details/abilities/1": "sql-performance-analysis",
+                  "/custom_details/inputs/0/name": "sql-change",
+                  "/custom_details/inputs/0/description": "Unified diff or SQL file content to review.",
+                  "/custom_details/use_cases/0": "Review SQL in pull requests for performance anti-patterns"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q14",
+      "request": "Search the live web for current information with citable URLs.",
+      "criterion": "General live web search, not an internal runbook or repository search.",
+      "terms": [
+        "search",
+        "web",
+        "urls",
+        "current information"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+        "runbook-search"
+      ],
+      "evidence": "No record declares general live web search. Runbook and code search are closed-corpus alternatives; the agent and toolkit include runbook lookup.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 2,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "score": 1,
+              "label": "not_relevant",
+              "evidence": {
+                "web": {
+                  "paragraph": "Playwright MCP automates browser interactions such as clicking elements, filling forms, taking screenshots, and performing end-to-end browser testing. Its draft inputs are a web page target and requested browser action; its draft outputs are browser interaction results and screenshots. Exact tool contracts are discovered at runtime rather than specified in the metadata.\n"
+                }
+              }
+            },
+            {
+              "id": "runbook-search",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "search": {
+                  "paragraph": "Runbook Search searches the SRE runbook library for sections relevant to an alert, service, or symptom. It accepts a JSON search query and returns JSON runbook matches with links to source pages. It indexes only the SRE wiki, not team-specific wikis.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 2,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "score": 1,
+              "label": "not_relevant",
+              "evidence": {
+                "web": {
+                  "/inputs/0": "Web Page Target"
+                }
+              }
+            },
+            {
+              "id": "runbook-search",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "search": {
+                  "/name": "Runbook Search",
+                  "/inputs/0": "Search Query"
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 2,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 2,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "playwright-mcp",
+              "score": 1,
+              "label": "not_relevant",
+              "evidence": {
+                "web": {
+                  "/custom_details/inputs/0/name": "Web Page Target",
+                  "/custom_details/inputs/0/description": "Web page to interact with, represented in this draft as a URL or page reference.",
+                  "/custom_details/use_cases/0": "Automate web page interactions"
+                }
+              }
+            },
+            {
+              "id": "runbook-search",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "search": {
+                  "/name": "Runbook Search",
+                  "/description": "Semantic search over SRE runbooks returning relevant sections with links to source pages.",
+                  "/custom_details/abilities/0": "runbook-search",
+                  "/custom_details/inputs/0/description": "Search query about an alert, service, or symptom; JSON structure must be confirmed against the referenced OpenAPI contract."
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q15",
+      "request": "Translate product documentation into Spanish.",
+      "criterion": "Explicitly supports Spanish as a translation target.",
+      "terms": [
+        "translate",
+        "translation",
+        "documentation",
+        "spanish"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+        "translator"
+      ],
+      "evidence": "Translator supports English, German, and Japanese only in the stated scope; Spanish is not established.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "documentation": {
+                  "paragraph": "Translator translates product documentation between English, German, and Japanese. Its draft inputs are product documentation and source/target language context, and its output is translated documentation. Exact interface contracts are unspecified; the source metadata is an intentionally invalid example.\n"
+                }
+              }
+            }
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "score": 1,
+              "label": "partial",
+              "evidence": {
+                "documentation": {
+                  "/description": "Translates product documentation between English, German, and Japanese.",
+                  "/inputs/0": "Product Documentation",
+                  "/outputs/0": "Translated Documentation"
+                }
+              }
+            }
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 1,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 1,
+            "false_positives": 1,
+            "relevant_total": 0,
+            "precision": 0.0,
+            "recall": null,
+            "precision_at_1": 0.0
+          },
+          "ranking": [
+            {
+              "id": "translator",
+              "score": 3,
+              "label": "partial",
+              "evidence": {
+                "translate": {
+                  "/custom_details/inputs/0/description": "Product documentation to translate; document format is unspecified.",
+                  "/custom_details/use_cases/0": "Translate product documentation"
+                },
+                "translation": {
+                  "/mapped_skills/0/taxonomy_path": "language_processing/language_translation",
+                  "/mapped_skills/0/caption": "Language Translation",
+                  "/custom_details/abilities/0": "translation",
+                  "/custom_details/inputs/2/description": "Desired translation language among English, German, and Japanese."
+                },
+                "documentation": {
+                  "/description": "Translates product documentation between English, German, and Japanese.",
+                  "/custom_details/inputs/0/name": "Product Documentation",
+                  "/custom_details/inputs/0/description": "Product documentation to translate; document format is unspecified.",
+                  "/custom_details/outputs/0/name": "Translated Documentation",
+                  "/custom_details/outputs/0/description": "Product documentation translated into the target language.",
+                  "/custom_details/use_cases/0": "Translate product documentation"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q16",
+      "request": "Automatically execute remediation for production incidents.",
+      "criterion": "Executes remediation, rather than proposing response steps.",
+      "terms": [
+        "remediation",
+        "incident",
+        "incidents",
+        "execute"
+      ],
+      "relevant": [
+
+      ],
+      "partial": [
+
+      ],
+      "evidence": "Incident Triage Agent explicitly never executes remediation; SRE Toolkit offers adjacent workflows, not automated incident remediation.",
+      "variants": {
+        "free_text": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "a2a_style": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        },
+        "oasf_inspired": {
+          "metrics": {
+            "retrieved": 0,
+            "relevant_retrieved": 0,
+            "partial_retrieved": 0,
+            "false_positives": 0,
+            "relevant_total": 0,
+            "precision": null,
+            "recall": null,
+            "precision_at_1": null
+          },
+          "ranking": [
+
+          ]
+        }
+      }
+    }
+  ],
+  "explicit_field_coverage": [
+    {
+      "id": "sql-review",
+      "variant": "free_text",
+      "inputs": null,
+      "outputs": null,
+      "typed_ports": null,
+      "inference_flags": null,
+      "taxonomy_nodes": null,
+      "constraints": null
+    },
+    {
+      "id": "sql-review",
+      "variant": "a2a_style",
+      "inputs": 1,
+      "outputs": 1,
+      "typed_ports": 0,
+      "inference_flags": 0,
+      "taxonomy_nodes": 0,
+      "constraints": 0
+    },
+    {
+      "id": "sql-review",
+      "variant": "oasf_inspired",
+      "inputs": 1,
+      "outputs": 1,
+      "typed_ports": 2,
+      "inference_flags": 2,
+      "taxonomy_nodes": 1,
+      "constraints": 2
+    },
+    {
+      "id": "translator",
+      "variant": "free_text",
+      "inputs": null,
+      "outputs": null,
+      "typed_ports": null,
+      "inference_flags": null,
+      "taxonomy_nodes": null,
+      "constraints": null
+    },
+    {
+      "id": "translator",
+      "variant": "a2a_style",
+      "inputs": 3,
+      "outputs": 1,
+      "typed_ports": 0,
+      "inference_flags": 0,
+      "taxonomy_nodes": 0,
+      "constraints": 0
+    },
+    {
+      "id": "translator",
+      "variant": "oasf_inspired",
+      "inputs": 3,
+      "outputs": 1,
+      "typed_ports": 4,
+      "inference_flags": 4,
+      "taxonomy_nodes": 1,
+      "constraints": 1
+    },
+    {
+      "id": "runbook-search",
+      "variant": "free_text",
+      "inputs": null,
+      "outputs": null,
+      "typed_ports": null,
+      "inference_flags": null,
+      "taxonomy_nodes": null,
+      "constraints": null
+    },
+    {
+      "id": "runbook-search",
+      "variant": "a2a_style",
+      "inputs": 1,
+      "outputs": 1,
+      "typed_ports": 0,
+      "inference_flags": 0,
+      "taxonomy_nodes": 0,
+      "constraints": 0
+    },
+    {
+      "id": "runbook-search",
+      "variant": "oasf_inspired",
+      "inputs": 1,
+      "outputs": 1,
+      "typed_ports": 2,
+      "inference_flags": 2,
+      "taxonomy_nodes": 1,
+      "constraints": 1
+    },
+    {
+      "id": "playwright-mcp",
+      "variant": "free_text",
+      "inputs": null,
+      "outputs": null,
+      "typed_ports": null,
+      "inference_flags": null,
+      "taxonomy_nodes": null,
+      "constraints": null
+    },
+    {
+      "id": "playwright-mcp",
+      "variant": "a2a_style",
+      "inputs": 2,
+      "outputs": 2,
+      "typed_ports": 0,
+      "inference_flags": 0,
+      "taxonomy_nodes": 0,
+      "constraints": 0
+    },
+    {
+      "id": "playwright-mcp",
+      "variant": "oasf_inspired",
+      "inputs": 2,
+      "outputs": 2,
+      "typed_ports": 4,
+      "inference_flags": 4,
+      "taxonomy_nodes": 1,
+      "constraints": 0
+    },
+    {
+      "id": "agent-eval-framework",
+      "variant": "free_text",
+      "inputs": null,
+      "outputs": null,
+      "typed_ports": null,
+      "inference_flags": null,
+      "taxonomy_nodes": null,
+      "constraints": null
+    },
+    {
+      "id": "agent-eval-framework",
+      "variant": "a2a_style",
+      "inputs": 3,
+      "outputs": 1,
+      "typed_ports": 0,
+      "inference_flags": 0,
+      "taxonomy_nodes": 0,
+      "constraints": 0
+    },
+    {
+      "id": "agent-eval-framework",
+      "variant": "oasf_inspired",
+      "inputs": 3,
+      "outputs": 1,
+      "typed_ports": 4,
+      "inference_flags": 4,
+      "taxonomy_nodes": 1,
+      "constraints": 1
+    }
+  ]
+}

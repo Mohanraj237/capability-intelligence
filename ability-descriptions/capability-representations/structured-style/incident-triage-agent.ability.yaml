@@ -1,0 +1,36 @@
+name: Incident Triage Agent
+description: Correlates production alerts with deployments, logs, metrics, and runbooks to propose severity and a first-response plan.
+draft: true
+source_file: examples/valid/incident-triage-agent.capability.yaml
+source_context: Valid example, version 0.4.0, experimental. A2A contract is externally referenced. Proposes actions only and never executes remediation; English only.
+abilities:
+  - incident-triage
+  - incident-context-correlation
+  - runbook-search
+  - first-response-planning
+inputs:
+  - name: Production Alert
+    type: object
+    inferred: true
+    description: Alert details describing the production incident or symptom.
+  - name: Incident Context
+    type: object
+    inferred: true
+    description: Related deployments, logs, metrics, and runbook information, potentially retrieved through dependencies rather than supplied by the caller.
+outputs:
+  - name: Severity Proposal
+    type: string
+    inferred: true
+    description: Proposed severity for the on-call engineer to confirm; severity vocabulary is unspecified.
+  - name: First Response Plan
+    type: object
+    inferred: true
+    description: Proposed response steps for human confirmation, not executed remediation.
+  - name: Incident Context Summary
+    type: string
+    inferred: true
+    description: Summary of deployments, logs, and metrics related to the alert.
+use_cases:
+  - Propose a severity and first response for a new production alert
+  - Summarize related deployments, logs, and metrics for an alert
+use_cases_basis: declared

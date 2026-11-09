@@ -1,0 +1,6 @@
+name: Runbook Search
+description: Searches SRE runbooks for relevant sections with links to source pages.
+inputs:
+  - Search Query
+outputs:
+  - Runbook Matches

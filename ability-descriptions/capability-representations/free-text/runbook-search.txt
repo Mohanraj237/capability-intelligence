@@ -1,0 +1,1 @@
+Runbook Search searches the SRE runbook library for sections relevant to an alert, service, or symptom. It accepts a JSON search query and returns JSON runbook matches with links to source pages. It indexes only the SRE wiki, not team-specific wikis.

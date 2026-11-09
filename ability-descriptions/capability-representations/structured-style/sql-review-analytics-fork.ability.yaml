@@ -1,0 +1,21 @@
+name: SQL Review (analytics fork)
+description: Fork of SQL Review with extra rules for the analytics data warehouse.
+draft: true
+source_file: examples/consistency/duplicate-id.capability.yaml
+source_context: Consistency fixture, version 1.0.0, experimental. Structurally valid alone but duplicates the baseline SQL Review identifier; no interface contracts or use cases declared.
+abilities:
+  - sql-review
+  - analytics-warehouse-rule-check
+inputs:
+  - name: Analytics SQL Changes
+    type: string
+    inferred: true
+    description: SQL changes targeting the analytics data warehouse; accepted formats are unspecified.
+outputs:
+  - name: Analytics Review Findings
+    type: array
+    inferred: true
+    description: SQL review findings including analytics-specific rules; finding schema is unspecified.
+use_cases:
+  - Review analytics data warehouse SQL using additional rules
+use_cases_basis: inferred

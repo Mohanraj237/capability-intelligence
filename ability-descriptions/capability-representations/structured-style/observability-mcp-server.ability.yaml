@@ -1,0 +1,22 @@
+name: Acme Observability MCP Server
+description: Vendor-hosted MCP server for read-only queries of logs, metrics, and traces stored in Acme Observability.
+draft: true
+source_file: examples/valid/observability-mcp-server.capability.yaml
+source_context: Valid example with a fictional vendor and unversioned endpoint. Tools are discovered at runtime; cannot change alerting or retention settings.
+abilities:
+  - log-query
+  - metric-query
+  - trace-query
+inputs:
+  - name: Observability Query
+    type: object
+    inferred: true
+    description: Read-only request for logs, metrics, or traces; actual tool parameters are discovered at runtime.
+outputs:
+  - name: Observability Results
+    type: object
+    inferred: true
+    description: Matching logs, metric data, or traces depending on the selected tool; result schemas are unspecified.
+use_cases:
+  - Query logs and metrics during an incident investigation
+use_cases_basis: declared

@@ -1,0 +1,8 @@
+name: Agent Evaluation Framework
+description: Evaluates agents and skills, detects regressions, and compares prompt or model versions.
+inputs:
+  - Evaluation Test Cases
+  - Grader Configuration
+  - Evaluation Targets
+outputs:
+  - Evaluation Report

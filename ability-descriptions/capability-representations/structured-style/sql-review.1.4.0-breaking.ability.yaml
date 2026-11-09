@@ -1,0 +1,23 @@
+name: SQL Review
+description: Reviews SQL changes for performance anti-patterns and explains each finding with a suggested fix.
+draft: true
+source_file: examples/compatibility/sql-review.1.4.0-breaking.capability.yaml
+source_context: Incompatible revision fixture, version 1.4.0, same capability ID as baseline. Removes CLI interface and data-access-policy use case without a major bump; disallowed active-to-experimental transition.
+abilities:
+  - sql-review
+  - sql-performance-analysis
+inputs:
+  - name: sql-change
+    type: string
+    media_type: text/x-diff
+    inferred: false
+    description: Unified diff or SQL file content to review.
+outputs:
+  - name: review-findings
+    type: string
+    media_type: text/markdown
+    inferred: false
+    description: Findings with severity, location, and a suggested fix.
+use_cases:
+  - Review SQL in pull requests for performance anti-patterns
+use_cases_basis: declared

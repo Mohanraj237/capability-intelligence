@@ -1,0 +1,8 @@
+name: Translator
+description: Translates product documentation between English, German, and Japanese.
+inputs:
+  - Product Documentation
+  - Source Language
+  - Target Language
+outputs:
+  - Translated Documentation

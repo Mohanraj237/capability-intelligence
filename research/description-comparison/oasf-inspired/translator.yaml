@@ -1,0 +1,36 @@
+# Simplified local adaptation, not an OASF-valid record. See ../results.md.
+name: Translator
+description: Translates product documentation between English, German, and Japanese.
+oasf_reference:
+  schema_version: "1.1.3"
+  source_ref: v1.1.3
+mapped_skills:
+  - taxonomy_path: language_processing/language_translation
+    caption: Language Translation
+    mapping: Translation category; language support is a separate constraint.
+custom_details:
+  source_draft: ability-descriptions/translator.ability.yaml
+  abilities: [translation]
+  inputs:
+    - name: Product Documentation
+      type: string
+      inferred: true
+      description: Product documentation to translate; document format is unspecified.
+    - name: Source Language
+      type: string
+      inferred: true
+      description: English, German, or Japanese; whether the caller supplies it or it is detected is unspecified.
+    - name: Target Language
+      type: string
+      inferred: true
+      description: Desired translation language among English, German, and Japanese.
+  outputs:
+    - name: Translated Documentation
+      type: string
+      inferred: true
+      description: Product documentation translated into the target language.
+  use_cases: [Translate product documentation]
+  constraints:
+    supported_languages: [English, German, Japanese]
+  source_status: Intentionally invalid metadata fixture; this mapping does not repair it.
+  type_status: Proposed types; no formal ports are declared by the source.

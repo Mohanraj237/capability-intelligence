@@ -1,0 +1,1 @@
+Agent Evaluation Framework runs repeatable evaluations of agents and skills in CI and compares prompt or model versions on the same test set. Its draft inputs are evaluation test cases, grader configuration, and evaluation targets; its output is an evaluation report describing outcomes, regressions, or comparisons. Exact input/output schemas are unspecified.

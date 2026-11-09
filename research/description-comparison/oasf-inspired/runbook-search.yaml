@@ -1,0 +1,29 @@
+# Simplified local adaptation, not an OASF-valid record. See ../results.md.
+name: Runbook Search
+description: Semantic search over SRE runbooks returning relevant sections with links to source pages.
+oasf_reference:
+  schema_version: "1.1.3"
+  source_ref: v1.1.3
+mapped_skills:
+  - taxonomy_path: research_knowledge_productivity/knowledge_management
+    caption: Knowledge Management
+    mapping: Broad knowledge-retrieval category; not general Web Search.
+custom_details:
+  source_draft: ability-descriptions/runbook-search.ability.yaml
+  abilities: [runbook-search]
+  inputs:
+    - name: query
+      type: object
+      media_type: application/json
+      inferred: false
+      description: Search query about an alert, service, or symptom; JSON structure must be confirmed against the referenced OpenAPI contract.
+  outputs:
+    - name: runbook-matches
+      type: object
+      media_type: application/json
+      inferred: false
+      description: Relevant runbook sections with source links; object is a draft representation and the contract may define a different JSON shape.
+  use_cases: [Find the runbook for an alert or symptom]
+  constraints:
+    corpus: SRE wiki only; team-specific wikis are not indexed.
+  type_status: Published JSON media types; object shapes remain proposed and unverified.

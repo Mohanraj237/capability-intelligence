@@ -1,0 +1,21 @@
+name: Document Summarizer
+description: Summarizes long internal documents into structured executive briefs.
+draft: true
+source_file: examples/invalid/missing-mandatory-field.capability.yaml
+source_context: Intentionally invalid example, experimental. Missing mandatory source and riskTier; no interface contracts or use cases declared.
+abilities:
+  - document-summarization
+  - executive-brief-generation
+inputs:
+  - name: Internal Documents
+    type: array
+    inferred: true
+    description: Long internal documents to summarize; document formats are unspecified.
+outputs:
+  - name: Executive Brief
+    type: object
+    inferred: true
+    description: Structured executive summary; sections and serialization format are unspecified.
+use_cases:
+  - Condense long internal documents into structured executive briefs
+use_cases_basis: inferred

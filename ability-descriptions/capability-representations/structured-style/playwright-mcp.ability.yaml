@@ -1,0 +1,34 @@
+name: Playwright MCP
+description: Microsoft MCP server for browser automation, screenshots, form interactions, and end-to-end testing.
+draft: true
+source_file: examples/valid/playwright-mcp.capability.yaml
+source_context: Valid example with differing publication versions. MCP tools are discovered at runtime; setup and limitations are not stated.
+abilities:
+  - browser-automation
+  - screenshot-capture
+  - form-interaction
+  - end-to-end-browser-testing
+inputs:
+  - name: Web Page Target
+    type: string
+    inferred: true
+    description: Web page to interact with, represented in this draft as a URL or page reference.
+  - name: Browser Action
+    type: object
+    inferred: true
+    description: Requested interaction such as clicking an element, filling a form, or capturing a screenshot.
+outputs:
+  - name: Browser Interaction Result
+    type: object
+    inferred: true
+    description: Browser action or testing outcome; exact response schema is unspecified.
+  - name: Screenshot
+    type: binary
+    inferred: true
+    description: Captured page image; binary is a conceptual representation, not a claim about MCP image encoding or delivery.
+use_cases:
+  - Automate web page interactions
+  - Capture browser screenshots
+  - Fill forms and click elements
+  - Perform end-to-end browser testing
+use_cases_basis: inferred
