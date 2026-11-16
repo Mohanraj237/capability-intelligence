@@ -1,0 +1,13 @@
+
+> ai-capability-manifest@0.1.0 research
+> node research/spikes-1-3/analyze.js
+
+Analysed 96 distinct records (60 capabilities, 36 agent cards).
+  N1: V0 recall 100% precision 71% | V1 recall 100% precision 52% | V2 recall 100% precision 71%
+  N2: V0 recall 100% precision 36% | V1 recall 100% precision 19% | V2 recall 100% precision 62%
+  N3: V0 recall 50% precision 53% | V1 recall 100% precision 39% | V2 recall 50% precision 53%
+  N4: V0 recall 100% precision 38% | V1 recall 100% precision 33% | V2 recall 100% precision 38%
+  schema 0.1 of 2026-10-22: 12 of 60 drafts valid; assessable 34 of 60 (17 without inference)
+  revised schema 0.1: 57 of 60 drafts valid with the same mapping; 58 of 60 starter-model drafts valid
+  validator levels (starter drafts): none 2, discoverable 25, assessable 31, adoptable 0, governed 0; identity via the validator: 14 correct, 0 false, 0 missed
+Wrote research/spikes-1-3/results.md and results.json.

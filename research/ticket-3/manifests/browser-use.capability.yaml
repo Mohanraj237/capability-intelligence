@@ -1,0 +1,28 @@
+schemaVersion: "0.1"
+id: browser-use/browser-use
+name: Browser Use
+description: >-
+  Python browser automation library with an MCP server publication for browser
+  agents and web tasks.
+capabilityType: mcp_server
+source:
+  type: repository
+  url: https://github.com/browser-use/browser-use
+  repositoryId: "881458615"
+publications:
+  - kind: package
+    locator: pkg:pypi/browser-use
+    nativeName: browser-use
+    nativeVersion: "0.13.11"
+    versionScheme: pep440
+  - kind: registry_entry
+    locator: com.browser-use/browser-use
+    nativeVersion: "0.13.11"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-10-21"
+riskTier: unassessed
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: MCP package publication declares the PyPI distribution.

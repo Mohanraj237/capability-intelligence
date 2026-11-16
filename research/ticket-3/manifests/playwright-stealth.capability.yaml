@@ -1,0 +1,29 @@
+schemaVersion: "0.1"
+id: pulsemcp/playwright-stealth
+name: Playwright Stealth MCP Server
+description: >-
+  Browser automation using Playwright with optional stealth mode to bypass
+  anti-bot protection.
+capabilityType: mcp_server
+source:
+  type: repository
+  url: https://github.com/pulsemcp/mcp-servers
+  path: experimental/playwright-stealth
+  repositoryId: "982277834"
+publications:
+  - kind: registry_entry
+    locator: com.pulsemcp/playwright-stealth
+    nativeVersion: "0.2.3"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-06-17"
+  - kind: package
+    locator: pkg:npm/playwright-stealth-mcp-server
+    nativeName: playwright-stealth-mcp-server
+    nativeVersion: "0.2.3"
+    versionScheme: semver
+riskTier: unassessed
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: Local MCP server published in the registry and on npm.

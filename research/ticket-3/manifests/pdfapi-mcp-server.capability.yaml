@@ -1,0 +1,27 @@
+schemaVersion: "0.1"
+id: amranswill/pdfapi-mcp-server
+name: PDF Generation API MCP Server
+description: >-
+  Exposes a PDF Generation API to AI agents for generating invoices, receipts,
+  and report PDFs from structured JSON.
+capabilityType: mcp_server
+source:
+  type: repository
+  url: https://github.com/amranswill/pdf-generation-api
+publications:
+  - kind: registry_entry
+    locator: io.github.amranswill/pdfapi-mcp-server
+    nativeVersion: "1.0.2"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-07-10"
+  - kind: package
+    locator: pkg:npm/%40aranswill/mcp-server
+    nativeName: "@aranswill/mcp-server"
+    nativeVersion: "1.0.2"
+    versionScheme: semver
+riskTier: unassessed
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: npm package is explicitly back-linked to the MCP Registry entry.

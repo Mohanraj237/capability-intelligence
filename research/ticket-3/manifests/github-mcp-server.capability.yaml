@@ -1,0 +1,33 @@
+schemaVersion: "0.1"
+id: github/github-mcp-server
+name: GitHub MCP Server
+description: >-
+  Connects AI assistants to GitHub to manage repositories, issues, pull requests,
+  and workflows through natural language.
+capabilityType: mcp_server
+source:
+  type: repository
+  url: https://github.com/github/github-mcp-server
+  repositoryId: "942771284"
+publications:
+  - kind: registry_entry
+    locator: io.github.github/github-mcp-server
+    nativeVersion: "2.0.3"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-10-21"
+  - kind: container_image
+    locator: ghcr.io/github/github-mcp-server
+    nativeVersion: "2.0.3"
+    versionScheme: semver
+  - kind: hosted_endpoint
+    locator: https://api.githubcopilot.com/mcp/
+  - kind: marketplace_entry
+    locator: github@claude-plugins-official
+    nativeName: github
+riskTier: unassessed
+interfaces:
+  - type: mcp
+    transport: streamable-http
+    description: >-
+      The registry advertises a hosted streamable HTTP endpoint and a local OCI package.

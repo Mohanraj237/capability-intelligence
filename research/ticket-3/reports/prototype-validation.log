@@ -1,0 +1,63 @@
+capability-manifest 0.1.0 - supported schema versions: 0.1
+
+VALID    examples/valid/playwright-mcp.capability.yaml
+         microsoft/playwright-mcp - mcp_server - validated against schema 0.1
+         checks: structure passed, identity passed, references passed, metadata unverified, risk unverified, source unverified
+         completeness: assessable (adoptable needs: setup, limitations)
+         UNVERIFIED  SOURCE_NOT_CHECKED  /source (line 19, col 3)
+           Source reachability was not checked (offline by default).
+           next: Run with --check-sources to attempt an HTTPS reachability check.
+         UNVERIFIED  PUBLICATION_VERSIONS_DIFFER  /publications (line 23, col 3)
+           Publications state different versions: 0.0.82 (io.github.microsoft/playwright-mcp), 0.0.83 (pkg:npm/%40playwright/mcp). Which one an adopter gets depends on the channel.
+           next: Expected while channels publish at different times. Confirm the current version with the owner before comparing or pinning versions.
+         UNVERIFIED  RISK_UNASSESSED  /riskTier (line 59, col 11)
+           riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.
+           next: Request a risk assessment from the governance owners, then record the tier and assessmentReference.
+
+VALID    research/ticket-3/manifests/browser-use.capability.yaml
+         browser-use/browser-use - mcp_server - validated against schema 0.1
+         checks: structure passed, identity passed, references passed, metadata passed, risk unverified, source unverified
+         completeness: discoverable (assessable needs: runtime, license, owner)
+         UNVERIFIED  SOURCE_NOT_CHECKED  /source (line 9, col 3)
+           Source reachability was not checked (offline by default).
+           next: Run with --check-sources to attempt an HTTPS reachability check.
+         UNVERIFIED  RISK_UNASSESSED  /riskTier (line 24, col 11)
+           riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.
+           next: Request a risk assessment from the governance owners, then record the tier and assessmentReference.
+
+VALID    research/ticket-3/manifests/github-mcp-server.capability.yaml
+         github/github-mcp-server - mcp_server - validated against schema 0.1
+         checks: structure passed, identity passed, references passed, metadata passed, risk unverified, source unverified
+         completeness: discoverable (assessable needs: runtime, license, owner)
+         UNVERIFIED  SOURCE_NOT_CHECKED  /source (line 9, col 3)
+           Source reachability was not checked (offline by default).
+           next: Run with --check-sources to attempt an HTTPS reachability check.
+         UNVERIFIED  RISK_UNASSESSED  /riskTier (line 28, col 11)
+           riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.
+           next: Request a risk assessment from the governance owners, then record the tier and assessmentReference.
+
+VALID    research/ticket-3/manifests/pdfapi-mcp-server.capability.yaml
+         amranswill/pdfapi-mcp-server - mcp_server - validated against schema 0.1
+         checks: structure passed, identity passed, references passed, metadata passed, risk unverified, source unverified
+         completeness: discoverable (assessable needs: runtime, license, owner)
+         UNVERIFIED  SOURCE_NOT_CHECKED  /source (line 9, col 3)
+           Source reachability was not checked (offline by default).
+           next: Run with --check-sources to attempt an HTTPS reachability check.
+         UNVERIFIED  RISK_UNASSESSED  /riskTier (line 23, col 11)
+           riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.
+           next: Request a risk assessment from the governance owners, then record the tier and assessmentReference.
+
+VALID    research/ticket-3/manifests/playwright-stealth.capability.yaml
+         pulsemcp/playwright-stealth - mcp_server - validated against schema 0.1
+         checks: structure passed, identity passed, references passed, metadata passed, risk unverified, source unverified
+         completeness: discoverable (assessable needs: runtime, license, owner)
+         UNVERIFIED  SOURCE_NOT_CHECKED  /source (line 9, col 3)
+           Source reachability was not checked (offline by default).
+           next: Run with --check-sources to attempt an HTTPS reachability check.
+         UNVERIFIED  RISK_UNASSESSED  /riskTier (line 25, col 11)
+           riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.
+           next: Request a risk assessment from the governance owners, then record the tier and assessmentReference.
+
+Summary: 5 manifest(s): 5 valid, 0 invalid - 0 error(s), 0 warning(s), 11 unverified check(s)
+Completeness of the 5 structurally valid manifest(s): none 0, discoverable 4, assessable 1, adoptable 0, governed 0
+Note: Structural validity does not establish that a source is reachable, a dependency is available, or a capability is secure or approved for production.
