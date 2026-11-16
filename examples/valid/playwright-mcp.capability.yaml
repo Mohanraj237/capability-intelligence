@@ -44,6 +44,8 @@ publications:
     nativeVersion: latest
     versionScheme: floating
     verifiedBy: The plugin only configures the server (its .mcp.json runs npx @playwright/mcp@latest).
+    platformCompatibility:
+      - claude-code
 owner:
   name: Microsoft Corporation
   contact: https://github.com/microsoft/playwright-mcp/issues
@@ -64,11 +66,10 @@ interfaces:
     description: Local MCP server started by the MCP client; its tools are discovered at runtime through tools/list.
 runtime:
   - kind: local_process
-    detail: Node.js >=18, started with npx @playwright/mcp.
+    detail: Node.js >=18.
   - kind: container
-    detail: docker.io/mcp/playwright
   - kind: agent_host
-    detail: Claude Code, through the plugin playwright@claude-plugins-official.
+    detail: Loaded as a plugin that only configures the MCP server.
 provenance:
   - field: /name
     method: curated
@@ -114,4 +115,9 @@ provenance:
   - field: /runtime/0/detail
     method: native
     source: npm package.json engines; the registry entry's package type (npm).
+    observedAt: "2026-10-22"
+  - field: /publications/3/platformCompatibility
+    method: derived
+    basis: convention
+    source: claude-plugins-official is the Claude Code plugin marketplace.
     observedAt: "2026-10-22"

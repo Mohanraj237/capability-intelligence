@@ -21,8 +21,6 @@ lastUpdated: "2026-10-20"
 interfaces:
   - type: "mcp"
     description: "Transports: stdio via npm package devloop-mcp."
-platformCompatibility:
-  - "node"
 documentation: "https://devloop.build"
 x-provenance:
   extractedFrom: "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.vincentvella%2Fdevloop&version=latest"

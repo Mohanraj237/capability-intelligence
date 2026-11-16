@@ -1,0 +1,76 @@
+{
+  "reportFormatVersion": "0.1",
+  "tool": "capability-manifest",
+  "toolVersion": "0.1.0",
+  "supportedSchemaVersions": [
+    "0.1"
+  ],
+  "summary": {
+    "manifests": 1,
+    "valid": 0,
+    "invalid": 1,
+    "errors": 3,
+    "warnings": 0,
+    "unverified": 0
+  },
+  "results": [
+    {
+      "file": "first-draft\\mcp-atlassian.capability.yaml",
+      "id": "sooperset/mcp-atlassian",
+      "capabilityType": "mcp-server",
+      "schemaVersion": 0.1,
+      "validatedAgainst": "0.1",
+      "valid": false,
+      "checks": {
+        "structure": "failed",
+        "identity": "skipped",
+        "references": "skipped",
+        "metadata": "skipped",
+        "risk": "skipped",
+        "source": "skipped"
+      },
+      "completeness": null,
+      "counts": {
+        "errors": 3,
+        "warnings": 0,
+        "unverified": 0
+      },
+      "findings": [
+        {
+          "severity": "error",
+          "stage": "structural",
+          "check": "structure",
+          "code": "MISSING_REQUIRED_FIELD",
+          "path": "/riskTier",
+          "line": 5,
+          "column": 1,
+          "message": "Missing mandatory field 'riskTier'.",
+          "hint": "Use 'unassessed' when no risk assessment has been completed; an assessed tier (low, medium, high) also requires assessmentReference. Allowed values: unassessed, low, medium, high."
+        },
+        {
+          "severity": "error",
+          "stage": "structural",
+          "check": "structure",
+          "code": "INVALID_TYPE",
+          "path": "/schemaVersion",
+          "line": 5,
+          "column": 16,
+          "message": "Field 'schemaVersion' must be a string, but it is a number.",
+          "hint": "Use schemaVersion: \"0.1\" (quoted MAJOR.MINOR). Unquoted 0.1 is read by YAML as a number, and patch versions such as \"0.1.0\" are not used."
+        },
+        {
+          "severity": "error",
+          "stage": "structural",
+          "check": "structure",
+          "code": "INVALID_VALUE",
+          "path": "/capabilityType",
+          "line": 9,
+          "column": 17,
+          "message": "'mcp-server' is not an allowed value for 'capabilityType'.",
+          "hint": "Did you mean 'mcp_server'? Allowed values: skill, agent, mcp_server, plugin, tool, library, application, service, workflow, framework, platform."
+        }
+      ]
+    }
+  ],
+  "notice": "Structural validity does not establish that a source is reachable, a dependency is available, or a capability is secure or approved for production."
+}

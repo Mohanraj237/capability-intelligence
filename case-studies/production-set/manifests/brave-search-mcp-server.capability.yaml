@@ -1,0 +1,161 @@
+# Production reference set, need N3 (web search with citable URLs).
+# Real public capability: Brave Search MCP Server (github.com/brave/brave-search-mcp-server).
+# Values observed on 2026-11-13 from the GitHub repository API, the npm package, Docker Hub, and the
+# README. riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner)
+# are not stated by the source and are left out.
+schemaVersion: "0.1"
+id: brave/brave-search-mcp-server
+name: Brave Search MCP Server
+description: >-
+  MCP server for the Brave Search API. Gives an agent web, news, image, video, local business, and
+  place search, LLM-optimised context, and AI summarisation, with result URLs that can be cited.
+capabilityType: mcp_server
+capabilityVersion: "2.1.4"
+source:
+  type: repository
+  url: https://github.com/brave/brave-search-mcp-server
+  repositoryId: "1001041900"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:npm/%40brave/brave-search-mcp-server
+    nativeName: "@brave/brave-search-mcp-server"
+    nativeVersion: "2.1.4"
+    versionScheme: semver
+    updatedAt: "2026-09-17"
+    platformCompatibility:
+      - claude-desktop
+      - github-copilot
+  - kind: container_image
+    locator: docker.io/mcp/brave-search
+    nativeVersion: latest
+    versionScheme: floating
+    updatedAt: "2026-06-25"
+    verifiedBy: The README's Docker configuration runs docker.io/mcp/brave-search. The image is in Docker's mcp namespace, not Brave's.
+    platformCompatibility:
+      - claude-desktop
+      - github-copilot
+owner:
+  name: Brave Software, Inc.
+  contact: https://github.com/brave/brave-search-mcp-server/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://brave.com/search/api/
+keywords:
+  - brave
+  - search
+  - mcp
+  - api
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Live web search with citable result URLs
+    description: brave_web_search returns web results with URLs, with filters for freshness and country.
+  - title: News, image, and video search
+    description: brave_news_search, brave_image_search, and brave_video_search.
+  - title: Grounded answers and context for an LLM
+    description: brave_llm_context and brave_summarizer return content prepared for a model.
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: Local MCP server (stdio is the default since 2.x). Also serves streamable HTTP with --transport http.
+embeddedComponents:
+  - type: tool
+    name: brave_web_search
+    description: Web search with rich result types and filters.
+  - type: tool
+    name: brave_news_search
+    description: News search.
+  - type: tool
+    name: brave_local_search
+    description: Local business search; needs a Pro plan, otherwise falls back to web search.
+  - type: tool
+    name: brave_llm_context
+    description: Search results prepared as context for a model.
+  - type: tool
+    name: brave_summarizer
+    description: AI summary of search results.
+runtime:
+  - kind: local_process
+    detail: Node.js.
+  - kind: container
+setup:
+  - name: BRAVE_API_KEY
+    kind: env_var
+    description: Brave Search API key from the developer dashboard (api-dashboard.search.brave.com). Not needed if BRAVE_API_KEY_FILE is set.
+    secret: true
+    required: true
+  - name: BRAVE_MCP_TRANSPORT
+    kind: env_var
+    description: stdio (default) or http.
+    secret: false
+    required: false
+  - name: BRAVE_MCP_ENABLED_TOOLS
+    kind: env_var
+    description: Space-separated allow-list of tools to expose.
+    secret: false
+    required: false
+dependencies: []
+limitations:
+  - Requires a Brave Search API account and plan; some features (local search, extra snippets) need a Pro plan.
+  - The HTTP transport binds to 127.0.0.1 by default; exposing it needs BRAVE_MCP_HOST and origin and host allow-lists.
+  - The documented Docker image is published in Docker's namespace with the floating tag 'latest' and was last updated 2026-06-25, before the latest npm release.
+  - Version 2.x changed the default transport and the image search response; clients written for 1.x need updating.
+costInformation:
+  model: provider_billed
+  details: The server is free (MIT). Queries are billed under a Brave Search API plan; the README does not state prices.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the README introduction and Tools section.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: npm latest 2.1.4 (2026-09-17); GitHub release v2.1.4.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /publications/1/updatedAt
+    method: linked
+    source: Docker Hub repository mcp/brave-search, last_updated.
+    observedAt: "2026-11-13"
+  - field: /owner
+    method: native
+    source: npm package.json author and bugs.url.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: npm package.json license; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: curated
+    source: The Brave Search API page linked from the README's Getting an API Key section.
+    observedAt: "2026-11-13"
+  - field: /embeddedComponents
+    method: native
+    source: README Tools section.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Environment Variables section.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Migration, Tools, and Environment Variables sections; Docker Hub last_updated.
+    observedAt: "2026-11-13"
+  - field: /costInformation
+    method: curated
+    source: README Getting an API Key section (plans) and the MIT license.
+    observedAt: "2026-11-13"
+  - field: /publications/0/platformCompatibility
+    method: native
+    source: "README Installation: Claude Desktop and VS Code (GitHub Copilot) configurations for NPX."
+    observedAt: "2026-11-16"
+  - field: /publications/1/platformCompatibility
+    method: native
+    source: "README Installation: Claude Desktop and VS Code (GitHub Copilot) configurations for Docker."
+    observedAt: "2026-11-16"

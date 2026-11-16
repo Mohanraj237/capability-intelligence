@@ -1,0 +1,170 @@
+# Production reference set, need N3 (web search with citable URLs).
+# Real public capability: Exa MCP server (github.com/exa-labs/exa-mcp-server).
+# Values observed on 2026-11-13 from the GitHub repository API, the npm package, the official MCP
+# Registry, and the README. The README documents the hosted server; the npm package runs it locally.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: exa-labs/exa-mcp-server
+name: Exa MCP Server
+description: >-
+  MCP server for Exa web search. Gives an agent web search that returns clean, ready-to-use
+  content (web_search_exa), reads full pages as Markdown (web_fetch_exa), and optionally runs
+  advanced filtered searches and multi-step research with Exa Agent.
+capabilityType: mcp_server
+capabilityVersion: "3.4.3"
+source:
+  type: repository
+  url: https://github.com/exa-labs/exa-mcp-server
+  repositoryId: "895291604"
+  status: active
+publications:
+  - kind: hosted_endpoint
+    locator: https://mcp.exa.ai/mcp
+    nativeVersion: "3.5.1"
+    versionScheme: semver
+    verifiedBy: Listed as a remote in the official MCP Registry entry ai.exa/exa, and documented in the README.
+    platformCompatibility:
+      - claude-code
+      - codex
+      - cursor
+      - gemini-cli
+      - github-copilot
+      - windsurf
+  - kind: registry_entry
+    locator: ai.exa/exa
+    nativeVersion: "3.4.1"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-09-23"
+    verifiedBy: MCP Registry namespace ai.exa (domain-verified); the npm package's mcpName points to it.
+  - kind: package
+    locator: pkg:npm/exa-mcp-server
+    nativeName: exa-mcp-server
+    nativeVersion: "3.4.3"
+    versionScheme: semver
+    updatedAt: "2026-11-03"
+owner:
+  name: Exa Labs
+  contact: https://github.com/exa-labs/exa-mcp-server/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://exa.ai/docs/reference/exa-mcp
+keywords:
+  - exa
+  - web-search
+  - crawling
+  - mcp
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Live web search with citable result URLs
+    description: web_search_exa searches the web and returns content with the source URLs.
+  - title: Read a web page as Markdown
+    description: web_fetch_exa returns the full content of one or more URLs.
+  - title: Multi-step web research
+    description: The optional agent_run tool runs an Exa Agent for research, list-building, and structured output.
+interfaces:
+  - type: mcp
+    transport: streamable-http
+    contractRef: https://mcp.exa.ai/mcp/server-card
+    description: Hosted server at https://mcp.exa.ai/mcp. Tools are chosen with the tools URL parameter.
+embeddedComponents:
+  - type: tool
+    name: web_search_exa
+    description: Web search (enabled by default).
+  - type: tool
+    name: web_fetch_exa
+    description: Read web pages as Markdown (enabled by default).
+  - type: tool
+    name: web_search_advanced_exa
+    description: Search with filters, domains, dates, and subpage crawling (optional).
+  - type: tool
+    name: agent_run
+    description: Run an Exa Agent for multi-step research (optional).
+runtime:
+  - kind: hosted_service
+    detail: Hosted by Exa.
+  - kind: local_process
+    detail: Node.js >=20.
+setup:
+  - name: Exa account (OAuth)
+    kind: account
+    group: oauth
+    description: Optional. The hosted server works anonymously with rate limits; signing in with OAuth gives higher limits and Exa Agent.
+    secret: false
+    required: false
+  - name: x-api-key
+    kind: header
+    group: api-key
+    description: Optional. HTTP header with an Exa API key from dashboard.exa.ai, instead of OAuth, for higher limits and Exa Agent.
+    secret: true
+    required: false
+dependencies: []
+limitations:
+  - Anonymous use of the hosted server is rate-limited; Exa Agent needs an account.
+  - Search queries and fetched URLs are sent to Exa's service.
+  - Setting the tools URL parameter replaces the default tools, so every wanted tool must be listed.
+  - The MCP Registry entry (3.4.1) lags the npm package (3.4.3); the hosted endpoint has no version.
+costInformation:
+  model: provider_billed
+  details: The server is free (MIT). Anonymous use is rate-limited; higher limits use an Exa account, and the README does not state prices.
+provenance:
+  - field: /interfaces/0/contractRef
+    method: native
+    source: MCP Server Card, linked from Exa's AI Catalog at exa.ai/.well-known/ai-catalog.json.
+    observedAt: "2026-11-16"
+  - field: /publications/0/nativeVersion
+    method: native
+    source: MCP Server Card version (the hosted server; npm and the MCP Registry still state 3.4.3 and 3.4.1).
+    observedAt: "2026-11-16"
+  - field: /setup/1
+    method: native
+    source: MCP Server Card remotes[0].headers (x-api-key, optional, secret).
+    observedAt: "2026-11-16"
+  - field: /description
+    method: curated
+    source: Written from the npm description and the README's Available Tools section.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: npm latest 3.4.3 (2026-11-03).
+    observedAt: "2026-11-13"
+  - field: /publications/1
+    method: linked
+    source: Official MCP Registry API, latest entry for ai.exa/exa.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner
+    method: native
+    source: npm package.json author and bugs.url.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: npm package.json license; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: linked
+    source: GitHub repository homepage.
+    observedAt: "2026-11-13"
+  - field: /runtime/1/detail
+    method: native
+    source: npm package.json engines and bin (dist/stdio.cjs).
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Authentication section.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Authentication and Available Tools sections; registry and npm versions.
+    observedAt: "2026-11-13"
+  - field: /publications/0/platformCompatibility
+    method: native
+    source: "README Installation for https://mcp.exa.ai/mcp: Claude plugin, codex mcp add, Cursor and VS Code install links, and the client table (Gemini CLI, Windsurf)."
+    observedAt: "2026-11-16"

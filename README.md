@@ -21,11 +21,17 @@ and exchanged so that the other missions operate on consistent information. It c
 | Spikes 1-3 research: four journeys on 60 real capability records in seven formats, the evidence behind the 2026-10-23 revision of 0.1 | [`docs/spikes-1-3-research.md`](docs/spikes-1-3-research.md), [`research/spikes-1-3/`](research/spikes-1-3/) |
 | Validator, compatibility checkers, exchange export (CLI and library) | [`bin/`](bin/), [`src/`](src/) |
 | POC report: findings, decisions, traceability, verification, open questions | [`docs/poc-report.md`](docs/poc-report.md) |
+| Production reference set: 22 real capability manifests, with their validation report and exchange document | [`case-studies/production-set/`](case-studies/production-set/) |
+| Phase 1 field testing: every field tested against the 22 manifests and five journeys (T1-T11) | [`docs/phase-1-testing/`](docs/phase-1-testing/), [`research/phase-1/field-audit/`](research/phase-1/field-audit/) |
+| The standard to share with the other missions and AI teams | [`docs/capability-manifest-standard-v0.1.md`](docs/capability-manifest-standard-v0.1.md) |
+| Every open design decision, with owner and status | [`docs/decision-register.md`](docs/decision-register.md) |
 
 > Status: POC; schema 0.1 is an unpublished draft. Several rules are proposals made by this POC,
 > because the four spike documents define research questions but contain no findings yet. On
 > 2026-10-23 the draft was revised in place to apply the proposals of the Spikes 1-3 research,
-> at the Mission 4 team's direction; those are proposals too. Each rule's provenance is tagged in
+> at the Mission 4 team's direction; those are proposals too. Phase 1 revised it again on
+> 2026-11-13 and 2026-11-16; [`docs/review-guide.md`](docs/review-guide.md) says what is current
+> and what is awaiting acceptance. Each rule's provenance is tagged in
 > [`docs/manifest-spec.md`](docs/manifest-spec.md). Mission 4 owns
 > the structure and rules only. Inventory content, risk classifications, approvals,
 > recommendations, and the contribution workflow belong to the other missions
@@ -35,6 +41,10 @@ and exchanged so that the other missions operate on consistent information. It c
 
 | Document | Purpose |
 |---|---|
+| [`docs/review-guide.md`](docs/review-guide.md) | **Start here:** which documents are current, in what order to review them, and what has changed since older documents |
+| [`docs/capability-manifest-standard-v0.1.md`](docs/capability-manifest-standard-v0.1.md) | The standard, written for the other missions and AI teams |
+| [`docs/phase-1-testing/README.md`](docs/phase-1-testing/README.md) | Phase 1 field testing and the [field-by-field review](docs/phase-1-testing/field-by-field-review.md) |
+| [`docs/decision-register.md`](docs/decision-register.md) | Every open decision (C1-C13, U1-U10, R1-R11) |
 | [`docs/manifest-spec.md`](docs/manifest-spec.md) | Normative rules for manifests, with provenance of each rule |
 | [`docs/field-dictionary/0.1.md`](docs/field-dictionary/0.1.md) | Field reference generated from the schema (do not edit by hand) |
 | [`docs/poc-report.md`](docs/poc-report.md) | Findings, decisions, traceability, verification, open questions |
@@ -53,7 +63,7 @@ Requires Node.js 22 or later.
 
 ```bash
 npm install          # ajv, ajv-formats, yaml, semver (exact versions pinned)
-npm test             # 206 unit, contract, pilot, research, and CLI tests (node:test)
+npm test             # 218 unit, contract, pilot, research, field-audit, and CLI tests (node:test)
 node bin/capability-manifest.js validate examples/valid
 ```
 
@@ -329,7 +339,7 @@ the contribution workflow (Mission 5).
 schemaVersion: "0.1"                 # quoted MAJOR.MINOR
 id: my-namespace/my-capability       # stable, never changes; not a URL
 name: My Capability
-capabilityType: skill                # skill | agent | mcp_server | plugin | tool | application | service | workflow | framework | platform
+capabilityType: skill                # skill | agent | mcp_server | plugin | tool | library | application | service | workflow | framework | platform
 source:
   type: repository                   # repository | registry | provider | other
   url: https://github.com/example-org/my-repo
@@ -356,11 +366,13 @@ lastUpdated: "2026-10-22"                                           # the date o
 
 This manifest reaches the adoptable level; only a recorded risk assessment would make it governed.
 The other optional fields appear in the examples:
-- `maturity`, `intendedAudience`, `platformCompatibility`, and `costInformation` in
-  `examples/valid/sql-review.capability.yaml` and `examples/valid/agent-eval-framework.capability.yaml`;
+- `maturity`, `publications[].platformCompatibility` (AI hosts, stated per publication), `integrations`, and
+  `costInformation` in `examples/valid/sql-review.capability.yaml` and
+  `examples/valid/agent-eval-framework.capability.yaml`;
 - `publications`, `keywords`, `documentation`, and `provenance` in
   `examples/valid/playwright-mcp.capability.yaml`;
-- `relations` in `examples/valid/agentic-playwright-mcp.capability.yaml`.
+- `relations` in `examples/valid/agentic-playwright-mcp.capability.yaml`;
+- 22 real, curated manifests of every common type in `case-studies/production-set/manifests/`.
 
 Then run `node bin/capability-manifest.js validate path/to/manifest.yaml`. The
 [field dictionary](docs/field-dictionary/0.1.md) describes every field, conditional rule, and
@@ -409,6 +421,10 @@ pilot/journeys.yaml                       journey pilot: journeys, questions, an
 pilot/sample.js, pilot/samples/           random sampler (network) and its snapshot of native metadata
 pilot/crosswalk.js                        native formats (SKILL.md, server.json, package.json) -> manifest concepts
 pilot/analyze.js                          drafts, coverage, journey answerability -> pilot/results.md, pilot/drafts/
+research/phase-1/field-audit/             Phase 1 field audit: pre-registered protocol, harness (audit.js, crosscheck.py),
+                                          results.json -> docs/phase-1-testing/drafts/
+case-studies/production-set/              22 real manifests (the regression corpus) and their outputs
+case-studies/two-use-cases/               how Missions 5, 2, 1, and 3 use the outputs, on two real capabilities
 research/spikes-1-3/                      Spikes 1-3 research: pre-registered needs, snapshot, crosswalk for seven
                                           formats, judgments, analysis -> results.md; reference/ keeps the
                                           2026-10-22 schema draft and the manifests valid under it
@@ -421,10 +437,12 @@ test/                                     node:test suites: schema, structural, 
 
 - **While schema 0.1 is an unpublished draft**, edit `schema/0.1/capability.schema.json` in place,
   then check the change with `schema-compat`. Compare a copy of the previous draft against the edited
-  file, with a corpus of the manifests that were valid under it (`--corpus examples`, or a copy of
-  them if the examples change too, as in `research/spikes-1-3/reference/`). Regenerate the field
+  file, with a corpus of the manifests that were valid under it (`--corpus
+  case-studies/production-set/manifests` for the 22 real manifests, `--corpus examples`, or a copy
+  of them if they change too, as in `research/spikes-1-3/reference/`). Regenerate the field
   dictionary with `npm run docs`, the pilot and research results with `npm run pilot` and
-  `npm run research`, then run `npm test`.
+  `npm run research`, then run `npm test`. For a change to a field's meaning, also rerun the field
+  audit (`node research/phase-1/field-audit/audit.js`).
 - **Once a version is published, it is immutable.** Copy `schema/<version>/` to the next version,
   set `properties.schemaVersion.const`, and make the changes there. Additive changes and relaxations
   need a MINOR version; breaking changes need a MAJOR version. The registry discovers the new

@@ -1,0 +1,183 @@
+# Production reference set, need N2 (read and update GitHub issues and pull requests).
+# Real public capability: GitHub's official MCP server (github.com/github/github-mcp-server).
+# Values observed on 2026-11-13 from the official MCP Registry, the GitHub repository API, and the
+# README. It is available as a hosted remote server and as a local container image.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: github/github-mcp-server
+name: GitHub MCP Server
+description: >-
+  GitHub's official MCP server. Lets AI agents read repositories and code, create and update issues
+  and pull requests, review code changes, monitor GitHub Actions runs, and examine security
+  findings, through natural language.
+capabilityType: mcp_server
+capabilityVersion: "2.1.0"
+source:
+  type: repository
+  url: https://github.com/github/github-mcp-server
+  repositoryId: "942771284"
+  status: active
+publications:
+  - kind: registry_entry
+    locator: io.github.github/github-mcp-server
+    nativeVersion: "2.1.0"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-11-03"
+    verifiedBy: MCP Registry namespace io.github.github (GitHub account github).
+  - kind: container_image
+    locator: ghcr.io/github/github-mcp-server
+    nativeVersion: "2.1.0"
+    versionScheme: semver
+    verifiedBy: The registry entry's OCI package ghcr.io/github/github-mcp-server:2.1.0.
+    platformCompatibility:
+      - claude-code
+      - claude-desktop
+      - cursor
+      - gemini-cli
+      - github-copilot
+      - windsurf
+  - kind: hosted_endpoint
+    locator: https://api.githubcopilot.com/mcp/
+    versionScheme: unversioned
+    verifiedBy: The registry entry's streamable-http remote, documented in the README as the remote GitHub MCP Server.
+    platformCompatibility:
+      - claude-code
+      - claude-desktop
+      - codex
+      - cursor
+      - github-copilot
+      - windsurf
+owner:
+  name: GitHub
+  contact: https://github.com/github/github-mcp-server/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://github.com/github/github-mcp-server#readme
+keywords:
+  - github
+  - issues
+  - pull-requests
+  - mcp
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Read and update GitHub issues and pull requests
+    description: Create, update, and manage issues and pull requests; triage bugs and review code changes.
+  - title: Browse and query repositories
+    description: Search code and files, analyse commits, and understand project structure.
+  - title: Investigate CI failures
+    description: Monitor GitHub Actions workflow runs and analyse build failures.
+  - title: Review security findings
+    description: Examine code scanning and Dependabot alerts.
+interfaces:
+  - type: mcp
+    transport: streamable-http
+    contractRef: https://api.githubcopilot.com/mcp/server-card
+    description: Remote server at https://api.githubcopilot.com/mcp/, authenticated with OAuth or a token.
+  - type: mcp
+    transport: stdio
+    description: Local server from the container image ghcr.io/github/github-mcp-server, or built from source.
+runtime:
+  - kind: hosted_service
+    detail: Hosted by GitHub.
+  - kind: container
+setup:
+  - name: GITHUB_PERSONAL_ACCESS_TOKEN
+    kind: env_var
+    group: personal-access-token
+    description: GitHub personal access token for the local server. Grant only the scopes the toolsets need.
+    secret: true
+    required: true
+  - name: GitHub OAuth
+    kind: account
+    group: oauth
+    description: OAuth sign-in with a GitHub account, instead of a personal access token.
+    secret: false
+    required: true
+  - name: GITHUB_TOOLSETS
+    kind: env_var
+    description: Optional. Comma-separated toolsets to enable, for example repos,issues,pull_requests; the defaults are used otherwise.
+    secret: false
+    required: false
+  - name: GITHUB_READ_ONLY
+    kind: env_var
+    description: Optional. Set to 1 to skip all write tools.
+    secret: false
+    required: false
+  - name: GITHUB_HOST
+    kind: env_var
+    description: Optional. GitHub Enterprise Server or ghe.com host name.
+    secret: false
+    required: false
+integrations:
+  - github-enterprise-server
+dependencies: []
+limitations:
+  - Acts with the permissions of the token or OAuth grant, including write access to repositories, issues, and pull requests unless read-only mode is set.
+  - The remote server needs an MCP host with remote server support (for example VS Code 1.101+), and organisation policies may have to allow it.
+  - The local server needs Docker (or a build from source).
+  - The hosted endpoint has no version of its own.
+costInformation:
+  model: free
+  details: MIT open source. Use of the hosted endpoint is subject to the user's GitHub plan and organisation policies.
+provenance:
+  - field: /interfaces/0/contractRef
+    method: native
+    source: MCP Server Card, linked from GitHub's AI Catalog at github.com/.well-known/ai-catalog.json; its repository.id 942771284 equals source.repositoryId.
+    observedAt: "2026-11-16"
+  - field: /description
+    method: curated
+    source: Written from the README introduction and Use Cases.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: MCP Registry latest 2.1.0 (2026-11-03) and GitHub release v2.1.0.
+    observedAt: "2026-11-13"
+  - field: /publications
+    method: linked
+    source: Official MCP Registry API, io.github.github/github-mcp-server (OCI package and remote).
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub organization github; the repository describes itself as GitHub's official MCP Server.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: linked
+    source: GitHub license detection (MIT).
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Local GitHub MCP Server, Tool Configuration, read-only, and GitHub Enterprise sections.
+    observedAt: "2026-11-13"
+  - field: /integrations
+    method: native
+    source: README Enterprise section (GitHub Enterprise Server).
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Prerequisites, Token Security Best Practices, and read-only mode.
+    observedAt: "2026-11-13"
+  - field: /costInformation
+    method: curated
+    source: MIT license; README policies note.
+    observedAt: "2026-11-13"
+  - field: /publications/1/platformCompatibility
+    method: native
+    source: "README Local GitHub MCP Server: VS Code Docker install, claude mcp add with docker run, and the installation guides for other MCP hosts."
+    observedAt: "2026-11-16"
+  - field: /publications/2/platformCompatibility
+    method: native
+    source: "README Remote GitHub MCP Server: Prerequisites (VS Code, Claude Desktop, Cursor, Windsurf) and the installation guides for other MCP hosts."
+    observedAt: "2026-11-16"

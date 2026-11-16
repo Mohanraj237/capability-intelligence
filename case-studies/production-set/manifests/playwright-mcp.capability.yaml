@@ -1,0 +1,144 @@
+# Production reference set, need N1 (browser automation).
+# Real public capability: Microsoft's Playwright MCP server (github.com/microsoft/playwright-mcp).
+# Values observed on 2026-11-13 from the GitHub repository API, the npm package, the official MCP
+# Registry, and the README. This is the production version of examples/valid/playwright-mcp, which
+# describes the 2026-10-22 research snapshot and stops at 'assessable'. Do not validate the two in one
+# run: they share the id microsoft/playwright-mcp on purpose.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: microsoft/playwright-mcp
+name: Playwright MCP
+description: >-
+  MCP server by Microsoft that lets an AI agent automate a browser with Playwright. The agent
+  works from structured accessibility snapshots of the page instead of screenshots, so no vision
+  model is needed: it navigates, clicks, fills forms, and takes screenshots.
+capabilityType: mcp_server
+capabilityVersion: "0.0.85"
+source:
+  type: repository
+  url: https://github.com/microsoft/playwright-mcp
+  repositoryId: "952688112"
+  status: active
+publications:
+  - kind: registry_entry
+    locator: io.github.microsoft/playwright-mcp
+    nativeVersion: "0.0.85"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-11-09"
+    verifiedBy: MCP Registry namespace io.github.microsoft (GitHub account microsoft); the npm package's mcpName points to it.
+  - kind: package
+    locator: pkg:npm/%40playwright/mcp
+    nativeName: "@playwright/mcp"
+    nativeVersion: "0.0.85"
+    versionScheme: semver
+    updatedAt: "2026-11-09"
+    platformCompatibility:
+      - claude-code
+      - claude-desktop
+      - codex
+      - cursor
+      - gemini-cli
+      - github-copilot
+      - windsurf
+owner:
+  name: Microsoft Corporation
+  contact: https://github.com/microsoft/playwright-mcp/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  scope: capability
+documentation: https://playwright.dev
+keywords:
+  - playwright
+  - browser-automation
+  - testing
+  - mcp
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Let a coding agent click through a web application
+    description: Navigate, click, type, and fill forms from accessibility snapshots, without a vision model.
+  - title: Exploratory and self-healing browser tests
+    description: Run long agentic loops that keep browser state between steps.
+  - title: Capture screenshots and page state
+    description: Take screenshots and read console messages and network requests.
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: Local MCP server started by the MCP client with npx; can also serve HTTP with --port.
+runtime:
+  - kind: local_process
+    detail: Node.js >=18.
+setup:
+  - name: PLAYWRIGHT_MCP_BROWSER
+    kind: env_var
+    description: Optional. Browser to use (chrome, firefox, webkit, msedge); the --browser option.
+    secret: false
+    required: false
+  - name: PLAYWRIGHT_MCP_HEADLESS
+    kind: env_var
+    description: Optional. Run the browser headless; headed by default.
+    secret: false
+    required: false
+  - name: PLAYWRIGHT_MCP_ISOLATED
+    kind: env_var
+    description: Optional. Keep the browser profile in memory instead of on disk.
+    secret: false
+    required: false
+dependencies: []
+limitations:
+  - By default the browser uses a persistent profile on disk, so logins and cookies survive between sessions; use --isolated for tests.
+  - "--allowed-origins is not a security boundary, per the documentation; by default the browser may request any origin."
+  - For coding agents, Microsoft suggests the separate Playwright CLI with skills, which uses fewer tokens than MCP.
+  - The README configuration uses the floating @latest version; pin a version for production.
+  - Still a 0.0.x version series.
+costInformation:
+  model: free
+  details: Apache-2.0 open source; no charge.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the README introduction and Key Features.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: npm latest 0.0.85 (2026-11-09), MCP Registry 0.0.85, and GitHub release v0.0.85.
+    observedAt: "2026-11-13"
+  - field: /publications/0
+    method: linked
+    source: Official MCP Registry API, latest entry for io.github.microsoft/playwright-mcp.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner
+    method: native
+    source: npm package.json author and bugs.url.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: npm package.json license; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: native
+    source: npm package.json homepage.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: npm package.json engines and the README Requirements.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Configuration table (options and their environment variables). No credentials are needed.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README sections on the Playwright CLI, Configuration (--allowed-origins), and User profile.
+    observedAt: "2026-11-13"
+  - field: /publications/1/platformCompatibility
+    method: native
+    source: "README Getting started: npx configuration per client (Claude Code, Claude Desktop, Codex, Copilot, Cursor, Gemini CLI, VS Code, Windsurf)."
+    observedAt: "2026-11-16"

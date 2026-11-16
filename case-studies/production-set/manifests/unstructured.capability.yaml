@@ -1,0 +1,143 @@
+# Production reference set, need N4 (extract text and tables from PDFs).
+# Real public capability: Unstructured, the open-source library (github.com/Unstructured-IO/unstructured).
+# Values observed on 2026-11-13 from the GitHub repository API, the latest GitHub release, PyPI, and
+# the README. This describes the open-source library only, not Unstructured's commercial platform.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: unstructured-io/unstructured
+name: Unstructured
+description: >-
+  Open-source Python library that converts PDFs, HTML, Word documents, images, and many other
+  formats into structured elements (titles, text, tables) for language models. Partitions PDFs with
+  layout detection and OCR, including table extraction.
+capabilityType: library
+capabilityVersion: "0.27.37"
+source:
+  type: repository
+  url: https://github.com/Unstructured-IO/unstructured
+  repositoryId: "541798154"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/unstructured
+    nativeName: unstructured
+    nativeVersion: "0.27.37"
+    versionScheme: pep440
+    updatedAt: "2026-11-06"
+  - kind: container_image
+    locator: downloads.unstructured.io/unstructured-io/unstructured
+    nativeVersion: latest
+    versionScheme: floating
+    verifiedBy: Documented in the README's Quick Start; images are built for every push to main.
+owner:
+  name: Unstructured
+  contact: https://github.com/Unstructured-IO/unstructured/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  scope: capability
+documentation: https://docs.unstructured.io/open-source/introduction/overview
+keywords:
+  - pdf
+  - document-parsing
+  - ocr
+  - etl
+relations:
+  - type: distinct_from
+    locator: https://www.unstructured.io
+    evidence: The README separates the open-source library from Unstructured's enterprise Platform product.
+    verified: true
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Extract text and tables from PDFs
+    description: partition_pdf returns the document's elements, including tables, using layout detection and OCR.
+  - title: Prepare documents for language models
+    description: Turns many document formats into clean elements for chunking and embedding.
+interfaces:
+  - type: library
+    description: Python API, for example unstructured.partition.pdf.partition_pdf.
+    inputs:
+      - name: document
+        mediaType: application/pdf
+        description: The PDF to partition; other formats are supported with extras.
+runtime:
+  - kind: local_process
+    detail: Python >=3.11,<3.14; PDF support needs the pdf extra (or all-docs).
+  - kind: container
+setup:
+  - name: poppler-utils
+    kind: system_package
+    description: System package needed to process PDFs and images.
+    secret: false
+    required: true
+  - name: tesseract-ocr
+    kind: system_package
+    description: System package needed for OCR of PDFs and images.
+    secret: false
+    required: true
+  - name: libmagic-dev
+    kind: system_package
+    description: System package for file-type detection.
+    secret: false
+    required: false
+  - name: DO_NOT_TRACK
+    kind: env_var
+    description: Set to any non-empty value to turn off the library's analytics, which are on by default (SCARF_NO_ANALYTICS works too).
+    secret: false
+    required: false
+dependencies: []
+limitations:
+  - Sends analytics pings to packages.unstructured.io by default (no document content, per the README); set DO_NOT_TRACK to opt out.
+  - PDF processing needs system packages (poppler, tesseract) as well as the Python extras.
+  - Supports Python 3.11 to 3.13 only.
+  - The documented container image uses the floating tag 'latest' and is rebuilt on every push to main; pin a version for production.
+costInformation:
+  model: free
+  details: Apache-2.0 open source; runs locally. The commercial platform is a separate product.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the GitHub repository description and the README introduction.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: PyPI version 0.27.37 (2026-11-06) and GitHub release 0.27.37.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub organization Unstructured-IO; PyPI names no author.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: PyPI license_expression Apache-2.0; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: curated
+    source: Open-source documentation at docs.unstructured.io, linked from the README.
+    observedAt: "2026-11-13"
+  - field: /keywords
+    method: linked
+    source: GitHub repository topics (a selection).
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: PyPI requires_python and the README's installation section.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README installation (system dependencies) and Analytics sections.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Analytics, installation, and container sections; PyPI requires_python.
+    observedAt: "2026-11-13"

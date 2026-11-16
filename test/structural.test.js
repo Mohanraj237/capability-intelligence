@@ -124,7 +124,7 @@ describe('conditional fields', () => {
   });
 
   it('accepts an assessed tier that cites its assessment', () => {
-    assert.deepEqual(structuralFindings(baseManifest({ riskTier: 'high', assessmentReference: { id: 'RA-1' } })), []);
+    assert.deepEqual(structuralFindings(baseManifest({ riskTier: 'high', assessmentReference: { id: 'RA-1', assessedOn: '2026-10-01' } })), []);
   });
 
   it('requires deprecation details for deprecated and retired capabilities', () => {
@@ -370,13 +370,13 @@ describe('manifest syntax', () => {
   });
 });
 
-describe('maturity, audience, platform, and cost metadata', () => {
+describe('maturity, platform, and cost metadata', () => {
   it('accepts the optional fields and the framework and platform types', () => {
     const manifest = baseManifest({
       capabilityType: 'platform',
       maturity: 'production',
-      intendedAudience: ['data analysts'],
-      platformCompatibility: ['linux', 'github-actions'],
+      publications: [{ kind: 'package', locator: 'pkg:npm/x', platformCompatibility: ['claude-code', 'cursor'] }],
+      integrations: ['github-actions', 'jira-data-center'],
       costInformation: { model: 'usage_based', url: 'https://pricing.example.com/llm-gateway' },
     });
     assert.deepEqual(structuralFindings(manifest), []);
@@ -392,9 +392,20 @@ describe('maturity, audience, platform, and cost metadata', () => {
     assert.equal(finding.path, '/costInformation/details');
   });
 
-  it('requires lowercase kebab-case platform tokens without duplicates', () => {
-    only(structuralFindings(baseManifest({ platformCompatibility: ['VS Code'] })), 'INVALID_FORMAT');
-    const duplicate = only(structuralFindings(baseManifest({ platformCompatibility: ['linux', 'linux'] })), 'CONSTRAINT_VIOLATION');
+  it('accepts only AI hosts in publications[].platformCompatibility, and points runtimes and systems elsewhere', () => {
+    const hosts = (platformCompatibility) => baseManifest({ publications: [{ kind: 'package', locator: 'pkg:npm/x', platformCompatibility }] });
+    for (const token of ['python', 'linux', 'github-actions', 'jira-cloud']) {
+      const finding = only(structuralFindings(hosts([token])), 'INVALID_VALUE');
+      assert.equal(finding.path, '/publications/0/platformCompatibility/0');
+      assert.match(finding.hint, /claude-code/);
+    }
+    const duplicate = only(structuralFindings(hosts(['cursor', 'cursor'])), 'CONSTRAINT_VIOLATION');
+    assert.match(duplicate.message, /duplicate items/);
+  });
+
+  it('requires lowercase kebab-case integration tokens without duplicates', () => {
+    only(structuralFindings(baseManifest({ integrations: ['Jira Cloud'] })), 'INVALID_FORMAT');
+    const duplicate = only(structuralFindings(baseManifest({ integrations: ['gitlab', 'gitlab'] })), 'CONSTRAINT_VIOLATION');
     assert.match(duplicate.message, /duplicate items/);
   });
 });

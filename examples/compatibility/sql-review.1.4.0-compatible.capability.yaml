@@ -16,6 +16,13 @@ source:
   type: repository
   url: https://github.com/example-org/ai-capability-catalog
   path: skills/sql-review
+publications:
+  - kind: repository
+    locator: https://github.com/example-org/ai-capability-catalog/tree/sql-review-v1.4.0/skills/sql-review
+    nativeVersion: sql-review-v1.4.0
+    versionScheme: tag
+    platformCompatibility:
+      - github-copilot
 owner:
   name: AI Platform Engineering
   contact: ai-platform@example.com
@@ -37,9 +44,6 @@ supportedUseCases:
   - title: Check queries against the data-access policy
     description: Detects reads of classified PII columns and points to the approved access pattern.
   - title: Explain the query plan of a slow query
-intendedAudience:
-  - backend engineers
-  - database reviewers
 interfaces:
   - type: agent_skill
     contractRef: https://github.com/example-org/ai-capability-catalog/blob/main/skills/sql-review/SKILL.md
@@ -63,9 +67,8 @@ runtime:
   - kind: local_process
     detail: The sql-review CLI.
 setup: []
-platformCompatibility:
+integrations:
   - github-actions
-  - vs-code
 dependencies: []
 limitations:
   - Supports the PostgreSQL and MySQL dialects only.

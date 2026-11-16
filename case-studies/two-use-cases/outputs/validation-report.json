@@ -1,0 +1,120 @@
+{
+  "reportFormatVersion": "0.1",
+  "tool": "capability-manifest",
+  "toolVersion": "0.1.0",
+  "supportedSchemaVersions": [
+    "0.1"
+  ],
+  "summary": {
+    "manifests": 2,
+    "valid": 2,
+    "invalid": 0,
+    "errors": 0,
+    "warnings": 0,
+    "unverified": 3
+  },
+  "results": [
+    {
+      "file": "../production-set/manifests/mcp-atlassian.capability.yaml",
+      "id": "sooperset/mcp-atlassian",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 49,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 56,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "../production-set/manifests/pr-agent.capability.yaml",
+      "id": "the-pr-agent/pr-agent",
+      "capabilityType": "tool",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 63,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    }
+  ],
+  "notice": "Structural validity does not establish that a source is reachable, a dependency is available, or a capability is secure or approved for production."
+}

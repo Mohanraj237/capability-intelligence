@@ -1,0 +1,7383 @@
+{
+  "generatedOn": "2026-11-16",
+  "corpus": [
+    {
+      "file": "case-studies/production-set/manifests/brave-search-mcp-server.capability.yaml",
+      "id": "brave/brave-search-mcp-server",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/browser-use.capability.yaml",
+      "id": "browser-use/browser-use",
+      "type": "framework"
+    },
+    {
+      "file": "case-studies/production-set/manifests/caveman/caveman-commit.capability.yaml",
+      "id": "juliusbrussee/caveman-commit",
+      "type": "skill"
+    },
+    {
+      "file": "case-studies/production-set/manifests/caveman/caveman-plugin.capability.yaml",
+      "id": "juliusbrussee/caveman-plugin",
+      "type": "plugin"
+    },
+    {
+      "file": "case-studies/production-set/manifests/caveman/caveman-review.capability.yaml",
+      "id": "juliusbrussee/caveman-review",
+      "type": "skill"
+    },
+    {
+      "file": "case-studies/production-set/manifests/caveman/caveman.capability.yaml",
+      "id": "juliusbrussee/caveman",
+      "type": "skill"
+    },
+    {
+      "file": "case-studies/production-set/manifests/caveman/megacave.capability.yaml",
+      "id": "juliusbrussee/megacave",
+      "type": "skill"
+    },
+    {
+      "file": "case-studies/production-set/manifests/caveman/ultracave.capability.yaml",
+      "id": "juliusbrussee/ultracave",
+      "type": "skill"
+    },
+    {
+      "file": "case-studies/production-set/manifests/chrome-devtools-mcp.capability.yaml",
+      "id": "chromedevtools/chrome-devtools-mcp",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/claude-code-action.capability.yaml",
+      "id": "anthropics/claude-code-action",
+      "type": "workflow"
+    },
+    {
+      "file": "case-studies/production-set/manifests/docling.capability.yaml",
+      "id": "docling-project/docling",
+      "type": "library"
+    },
+    {
+      "file": "case-studies/production-set/manifests/exa-mcp-server.capability.yaml",
+      "id": "exa-labs/exa-mcp-server",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/github-mcp-server.capability.yaml",
+      "id": "github/github-mcp-server",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/langchain-tavily.capability.yaml",
+      "id": "tavily-ai/langchain-tavily",
+      "type": "library"
+    },
+    {
+      "file": "case-studies/production-set/manifests/mcp-atlassian.capability.yaml",
+      "id": "sooperset/mcp-atlassian",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/pdf-parse.capability.yaml",
+      "id": "mehmet-kozan/pdf-parse",
+      "type": "library"
+    },
+    {
+      "file": "case-studies/production-set/manifests/pdfplumber.capability.yaml",
+      "id": "jsvine/pdfplumber",
+      "type": "library"
+    },
+    {
+      "file": "case-studies/production-set/manifests/playwright-mcp.capability.yaml",
+      "id": "microsoft/playwright-mcp",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/pr-agent.capability.yaml",
+      "id": "the-pr-agent/pr-agent",
+      "type": "tool"
+    },
+    {
+      "file": "case-studies/production-set/manifests/tavily-mcp.capability.yaml",
+      "id": "tavily-ai/tavily-mcp",
+      "type": "mcp_server"
+    },
+    {
+      "file": "case-studies/production-set/manifests/unstructured.capability.yaml",
+      "id": "unstructured-io/unstructured",
+      "type": "library"
+    },
+    {
+      "file": "case-studies/production-set/manifests/webapp-testing.capability.yaml",
+      "id": "anthropics/webapp-testing",
+      "type": "skill"
+    }
+  ],
+  "baseline": {
+    "summary": {
+      "manifests": 22,
+      "valid": 22,
+      "invalid": 0,
+      "errors": 0,
+      "warnings": 0,
+      "unverified": 57
+    },
+    "levels": {
+      "brave/brave-search-mcp-server": "adoptable",
+      "browser-use/browser-use": "adoptable",
+      "juliusbrussee/caveman-commit": "adoptable",
+      "juliusbrussee/caveman-plugin": "adoptable",
+      "juliusbrussee/caveman-review": "adoptable",
+      "juliusbrussee/caveman": "adoptable",
+      "juliusbrussee/megacave": "adoptable",
+      "juliusbrussee/ultracave": "adoptable",
+      "chromedevtools/chrome-devtools-mcp": "adoptable",
+      "anthropics/claude-code-action": "adoptable",
+      "docling-project/docling": "adoptable",
+      "exa-labs/exa-mcp-server": "adoptable",
+      "github/github-mcp-server": "adoptable",
+      "tavily-ai/langchain-tavily": "adoptable",
+      "sooperset/mcp-atlassian": "adoptable",
+      "mehmet-kozan/pdf-parse": "adoptable",
+      "jsvine/pdfplumber": "adoptable",
+      "microsoft/playwright-mcp": "adoptable",
+      "the-pr-agent/pr-agent": "adoptable",
+      "tavily-ai/tavily-mcp": "adoptable",
+      "unstructured-io/unstructured": "adoptable",
+      "anthropics/webapp-testing": "adoptable"
+    }
+  },
+  "fields": [
+    {
+      "path": "schemaVersion",
+      "depth": 0,
+      "requirement": "mandatory",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M5"
+      ],
+      "hostUse": false,
+      "native": [
+        "$schema",
+        "-",
+        "protocolVersion (of A2A, not of this record)",
+        "-",
+        "Metadata-Version (of the format)"
+      ],
+      "removal": {
+        "path": "schemaVersion",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "schemaVersion",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong constant",
+        "value": "\"zz\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "id",
+      "depth": 0,
+      "requirement": "mandatory",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "name (registry name, not stable across forks)",
+        "name",
+        "name",
+        "name",
+        "Name"
+      ],
+      "removal": {
+        "path": "id",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "id",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "name",
+      "depth": 0,
+      "requirement": "mandatory",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 6,
+        "native": 2
+      },
+      "journeyQuestions": [
+        "J1.name"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "title / name",
+        "name",
+        "name",
+        "name",
+        "Name"
+      ],
+      "removal": {
+        "path": "name",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "name",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "description",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "discoverable (description)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 16,
+        "native": 6
+      },
+      "journeyQuestions": [
+        "J1.what",
+        "J1.audience",
+        "J5.when"
+      ],
+      "journeyCredit": 44,
+      "soleAnswers": 22,
+      "missions": [
+        "M1",
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "description",
+        "description",
+        "description",
+        "description",
+        "Summary"
+      ],
+      "removal": {
+        "path": "description",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> none": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 22
+        },
+        "codesRemoved": {},
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "description",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "capabilityType",
+      "depth": 0,
+      "requirement": "mandatory",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 2,
+        "derived": 9
+      },
+      "journeyQuestions": [
+        "J1.kind"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M1",
+        "M2"
+      ],
+      "hostUse": true,
+      "native": [
+        "(implied: MCP server)",
+        "(implied: skill)",
+        "(implied: agent)",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "capabilityType",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "capabilityType",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "capabilityVersion",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "assessable (version)",
+      "type": "string",
+      "present": 15,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "native": 15
+      },
+      "journeyQuestions": [
+        "J3.version"
+      ],
+      "journeyCredit": 7.5,
+      "soleAnswers": 0,
+      "missions": [
+        "M5"
+      ],
+      "hostUse": false,
+      "native": [
+        "version",
+        "-",
+        "version",
+        "version",
+        "Version"
+      ],
+      "removal": {
+        "path": "capabilityVersion",
+        "holders": 15,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 15
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "capabilityVersion",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source",
+      "depth": 0,
+      "requirement": "mandatory",
+      "level": null,
+      "type": "object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 28
+      },
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M2",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "repository.url",
+        "-",
+        "provider.url",
+        "repository",
+        "Project-URL (Source)"
+      ],
+      "removal": {
+        "path": "source",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 7
+      },
+      "mutation": {
+        "path": "source",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.type",
+      "depth": 1,
+      "requirement": "required in source",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "source.type",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "source.type",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.url",
+      "depth": 1,
+      "requirement": "conditional in source",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J2.same",
+        "J3.get"
+      ],
+      "journeyCredit": 18.33,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "source.url",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "CONDITIONAL_FIELD_REQUIRED": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "source.url",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "not https",
+        "value": "\"http://insecure.example.com\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.path",
+      "depth": 1,
+      "requirement": "optional in source",
+      "level": null,
+      "type": "string",
+      "present": 6,
+      "emptyList": 0,
+      "byType": {
+        "skill": 6
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "source.path",
+        "holders": 6,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "DUPLICATE_SOURCE": 5
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "source.path",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.repositoryId",
+      "depth": 1,
+      "requirement": "optional in source",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 17
+      },
+      "journeyQuestions": [
+        "J2.same"
+      ],
+      "journeyCredit": 7.33,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "source.repositoryId",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 17
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "source.repositoryId",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.status",
+      "depth": 1,
+      "requirement": "optional in source",
+      "level": "assessable (lifecycle signal)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 5
+      },
+      "journeyQuestions": [
+        "J3.maintained"
+      ],
+      "journeyCredit": 11,
+      "soleAnswers": 2,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "source.status",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> discoverable": 2
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 5
+        },
+        "codesRemoved": {},
+        "questionsLost": 2
+      },
+      "mutation": {
+        "path": "source.status",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.updatedAt",
+      "depth": 1,
+      "requirement": "optional in source",
+      "level": "assessable (lifecycle signal)",
+      "type": "string",
+      "present": 6,
+      "emptyList": 0,
+      "byType": {
+        "skill": 5,
+        "plugin": 1
+      },
+      "provenance": {
+        "linked": 6
+      },
+      "journeyQuestions": [
+        "J3.maintained"
+      ],
+      "journeyCredit": 2.83,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "source.updatedAt",
+        "holders": 6,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 6
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "source.updatedAt",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.registry",
+      "depth": 1,
+      "requirement": "conditional in source",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "source.registry",
+        "tested": true,
+        "manifest": "ai-platform/agent-eval-framework",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.identifier",
+      "depth": 1,
+      "requirement": "conditional in source",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [
+        "J2.same",
+        "J3.get"
+      ],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "source.identifier",
+        "tested": true,
+        "manifest": "ai-platform/agent-eval-framework",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "source.description",
+      "depth": 1,
+      "requirement": "conditional in source",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "source.description",
+        "tested": false
+      }
+    },
+    {
+      "path": "publications",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 9,
+        "native": 13,
+        "derived": 2
+      },
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M1",
+        "M2"
+      ],
+      "hostUse": true,
+      "native": [
+        "packages[], remotes[]",
+        "-",
+        "url",
+        "(the package itself)",
+        "(the package itself)"
+      ],
+      "removal": {
+        "path": "publications",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> discoverable": 7
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 12
+        },
+        "codesRemoved": {
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 25
+      },
+      "mutation": {
+        "path": "publications",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].kind",
+      "depth": 1,
+      "requirement": "required in publications[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "publications[].kind",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].kind",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].locator",
+      "depth": 1,
+      "requirement": "required in publications[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 1
+      },
+      "journeyQuestions": [
+        "J2.same",
+        "J3.get",
+        "J5.launch"
+      ],
+      "journeyCredit": 29.33,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "publications[].locator",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].locator",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].nativeName",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": null,
+      "type": "string",
+      "present": 15,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 6,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "publications[].nativeName",
+        "holders": 15,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].nativeName",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].nativeVersion",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": "assessable (version)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 2,
+        "native": 1
+      },
+      "journeyQuestions": [
+        "J3.version"
+      ],
+      "journeyCredit": 14.5,
+      "soleAnswers": 7,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "publications[].nativeVersion",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PUBLICATION_REPEATS_SOURCE": 8,
+          "PROVENANCE_FIELD_NOT_FOUND": 3
+        },
+        "codesRemoved": {
+          "PUBLICATION_VERSIONS_DIFFER": 3
+        },
+        "questionsLost": 7
+      },
+      "mutation": {
+        "path": "publications[].nativeVersion",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].versionScheme",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": "assessable (version)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "publications[].versionScheme",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {
+          "PUBLICATION_VERSIONS_DIFFER": 3
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].versionScheme",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].status",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": "assessable (lifecycle signal)",
+      "type": "string",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "framework": 1,
+        "mcp_server": 4
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J3.maintained"
+      ],
+      "journeyCredit": 1.67,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "publications[].status",
+        "holders": 5,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].status",
+        "tested": true,
+        "manifest": "browser-use/browser-use",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].statusMessage",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "publications[].statusMessage",
+        "tested": false
+      }
+    },
+    {
+      "path": "publications[].updatedAt",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": "assessable (lifecycle signal)",
+      "type": "string",
+      "present": 15,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 1
+      },
+      "journeyQuestions": [
+        "J3.maintained"
+      ],
+      "journeyCredit": 6.5,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "publications[].updatedAt",
+        "holders": 15,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 1
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].updatedAt",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].verifiedBy",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": null,
+      "type": "string",
+      "present": 13,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "tool": 1,
+        "library": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "publications[].verifiedBy",
+        "holders": 13,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "publications[].verifiedBy",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "publications[].platformCompatibility",
+      "depth": 1,
+      "requirement": "optional in publications[]",
+      "level": null,
+      "type": "array of string",
+      "present": 9,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "plugin": 1,
+        "skill": 1
+      },
+      "provenance": {
+        "native": 11,
+        "derived": 2
+      },
+      "journeyQuestions": [
+        "J1.host",
+        "J5.host"
+      ],
+      "journeyCredit": 18,
+      "soleAnswers": 18,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "publications[].platformCompatibility",
+        "holders": 9,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 9
+        },
+        "codesRemoved": {
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 18
+      },
+      "mutation": {
+        "path": "publications[].platformCompatibility",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "item outside the list",
+        "value": "[\"not-a-valid-value\"]",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "owner",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "native": 13,
+        "linked": 7,
+        "curated": 9
+      },
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "hostUse": false,
+      "native": [
+        "(namespace)",
+        "-",
+        "provider.organization",
+        "author / maintainers",
+        "Author / Maintainer"
+      ],
+      "removal": {
+        "path": "owner",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> discoverable": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 17
+        },
+        "codesRemoved": {},
+        "questionsLost": 66
+      },
+      "mutation": {
+        "path": "owner",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "owner.name",
+      "depth": 1,
+      "requirement": "required in owner",
+      "level": "assessable (owner)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "linked": 7,
+        "native": 4,
+        "curated": 1
+      },
+      "journeyQuestions": [
+        "J3.who"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "owner.name",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "owner.name",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "owner.contact",
+      "depth": 1,
+      "requirement": "optional in owner",
+      "level": "adoptable (owner contact)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 8,
+        "native": 4
+      },
+      "journeyQuestions": [
+        "J3.contact"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "owner.contact",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> assessable": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 12
+        },
+        "codesRemoved": {},
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "owner.contact",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "owner.affiliation",
+      "depth": 1,
+      "requirement": "optional in owner",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J2.affiliation"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "owner.affiliation",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "owner.affiliation",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "license",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "assessable (license)",
+      "type": "object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "native": 12,
+        "linked": 5
+      },
+      "journeyQuestions": [
+        "J3.terms"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M1",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "license",
+        "-",
+        "license",
+        "License-Expression"
+      ],
+      "removal": {
+        "path": "license",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> discoverable": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 17
+        },
+        "codesRemoved": {
+          "LICENSE_NEEDS_REVIEW": 7
+        },
+        "questionsLost": 44
+      },
+      "mutation": {
+        "path": "license",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "license.expression",
+      "depth": 1,
+      "requirement": "optional in license",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "license.expression",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "CONDITIONAL_FIELD_REQUIRED": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "license.expression",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "license.text",
+      "depth": 1,
+      "requirement": "conditional in license",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "license.text",
+        "tested": true,
+        "manifest": "acme/observability-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "license.url",
+      "depth": 1,
+      "requirement": "optional in license",
+      "level": null,
+      "type": "string",
+      "present": 6,
+      "emptyList": 0,
+      "byType": {
+        "skill": 5,
+        "plugin": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "license.url",
+        "holders": 6,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "license.url",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "not https",
+        "value": "\"http://insecure.example.com\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "license.scope",
+      "depth": 1,
+      "requirement": "optional in license",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J4.license-scope"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "license.scope",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {
+          "LICENSE_NEEDS_REVIEW": 7
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "license.scope",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "documentation",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 2,
+        "native": 5,
+        "linked": 9
+      },
+      "journeyQuestions": [
+        "J3.docs"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [],
+      "hostUse": false,
+      "native": [
+        "websiteUrl",
+        "-",
+        "documentationUrl",
+        "homepage",
+        "Project-URL (Documentation)"
+      ],
+      "removal": {
+        "path": "documentation",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 16
+        },
+        "codesRemoved": {},
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "documentation",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "not https",
+        "value": "\"http://insecure.example.com\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "keywords",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of string",
+      "present": 17,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": {
+        "linked": 5,
+        "native": 1
+      },
+      "journeyQuestions": [
+        "J1.fits"
+      ],
+      "journeyCredit": 8.5,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "skills[].tags",
+        "keywords",
+        "Keywords"
+      ],
+      "removal": {
+        "path": "keywords",
+        "holders": 17,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 6
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "keywords",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "item breaks the pattern",
+        "value": "[\" leading space\"]",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "lifecycleStatus",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "assessable (lifecycle signal)",
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [
+        "J3.maintained"
+      ],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "(registry status: observed, goes to publications[].status)",
+        "-",
+        "-",
+        "deprecated (observed)",
+        "yanked (observed)"
+      ],
+      "removal": null,
+      "mutation": {
+        "path": "lifecycleStatus",
+        "tested": true,
+        "manifest": "ai-platform/agent-eval-framework",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "maturity",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [
+        "J1.mature"
+      ],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M1",
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "Development Status classifier"
+      ],
+      "removal": null,
+      "mutation": {
+        "path": "maturity",
+        "tested": true,
+        "manifest": "ai-platform/agent-eval-framework",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "riskTier",
+      "depth": 0,
+      "requirement": "mandatory",
+      "level": "governed (risk assessment)",
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J4.risk"
+      ],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M1",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "riskTier",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "riskTier",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "assessmentReference",
+      "depth": 0,
+      "requirement": "conditional",
+      "level": null,
+      "type": "object",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M1",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": null,
+      "mutation": {
+        "path": "assessmentReference",
+        "tested": true,
+        "manifest": "sre/runbook-search",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "assessmentReference.id",
+      "depth": 1,
+      "requirement": "required in assessmentReference",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "assessmentReference.id",
+        "tested": true,
+        "manifest": "sre/runbook-search",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "assessmentReference.url",
+      "depth": 1,
+      "requirement": "optional in assessmentReference",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "assessmentReference.url",
+        "tested": true,
+        "manifest": "ai-platform/sql-review",
+        "kind": "not https",
+        "value": "\"http://insecure.example.com\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "assessmentReference.assessedOn",
+      "depth": 1,
+      "requirement": "required in assessmentReference",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "assessmentReference.assessedOn",
+        "tested": true,
+        "manifest": "sre/runbook-search",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "lastUpdated",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M5"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "lastUpdated",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "lastUpdated",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "deprecation",
+      "depth": 0,
+      "requirement": "conditional",
+      "level": null,
+      "type": "object",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [
+        "J4.replaced"
+      ],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [
+        "M1",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "deprecated message",
+        "-"
+      ],
+      "removal": null,
+      "mutation": {
+        "path": "deprecation",
+        "tested": true,
+        "manifest": "sre/sre-toolkit",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "deprecation.reason",
+      "depth": 1,
+      "requirement": "required in deprecation",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "deprecation.reason",
+        "tested": true,
+        "manifest": "sre/sre-toolkit",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "deprecation.replacedBy",
+      "depth": 1,
+      "requirement": "optional in deprecation",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "deprecation.replacedBy",
+        "tested": false
+      }
+    },
+    {
+      "path": "deprecation.sunsetDate",
+      "depth": 1,
+      "requirement": "optional in deprecation",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "deprecation.sunsetDate",
+        "tested": true,
+        "manifest": "sre/sre-toolkit",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "supportedUseCases",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 8
+      },
+      "journeyQuestions": [
+        "J1.fits",
+        "J1.audience",
+        "J5.when"
+      ],
+      "journeyCredit": 35.5,
+      "soleAnswers": 5,
+      "missions": [
+        "M1",
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "(inside description)",
+        "skills[].examples",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "supportedUseCases",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 8
+        },
+        "codesRemoved": {},
+        "questionsLost": 5
+      },
+      "mutation": {
+        "path": "supportedUseCases",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "supportedUseCases[].title",
+      "depth": 1,
+      "requirement": "required in supportedUseCases[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "supportedUseCases[].title",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "supportedUseCases[].title",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "supportedUseCases[].description",
+      "depth": 1,
+      "requirement": "optional in supportedUseCases[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "supportedUseCases[].description",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "supportedUseCases[].description",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces",
+      "depth": 0,
+      "requirement": "conditional",
+      "level": "discoverable (interface)",
+      "type": "array of object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "derived": 1,
+        "native": 4
+      },
+      "journeyQuestions": [
+        "J3.integrate"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M1"
+      ],
+      "hostUse": true,
+      "native": [
+        "packages[].transport, remotes[].type",
+        "(the format)",
+        "preferredTransport, additionalInterfaces",
+        "bin (cli)",
+        "entry points (cli)"
+      ],
+      "removal": {
+        "path": "interfaces",
+        "holders": 22,
+        "invalid": 7,
+        "levelDrops": {
+          "adoptable -> invalid": 7,
+          "adoptable -> none": 15
+        },
+        "codesAdded": {
+          "CONDITIONAL_FIELD_REQUIRED": 7,
+          "PROVENANCE_FIELD_NOT_FOUND": 2
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 7,
+          "RISK_UNASSESSED": 7,
+          "PUBLICATION_VERSIONS_DIFFER": 2,
+          "LICENSE_NEEDS_REVIEW": 1
+        },
+        "questionsLost": 59
+      },
+      "mutation": {
+        "path": "interfaces",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].type",
+      "depth": 1,
+      "requirement": "required in interfaces[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J5.protocol"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].type",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "CONDITIONAL_RULE_VIOLATION": 7,
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "interfaces[].type",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "CONDITIONAL_RULE_VIOLATION",
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].specVersion",
+      "depth": 1,
+      "requirement": "optional in interfaces[]",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "interfaces[].specVersion",
+        "tested": true,
+        "manifest": "acme/observability-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].transport",
+      "depth": 1,
+      "requirement": "optional in interfaces[]",
+      "level": null,
+      "type": "string",
+      "present": 7,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7
+      },
+      "provenance": {
+        "native": 1
+      },
+      "journeyQuestions": [
+        "J5.transport"
+      ],
+      "journeyCredit": 6,
+      "soleAnswers": 5,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].transport",
+        "holders": 7,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 1
+        },
+        "codesRemoved": {},
+        "questionsLost": 5
+      },
+      "mutation": {
+        "path": "interfaces[].transport",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].contractRef",
+      "depth": 1,
+      "requirement": "conditional in interfaces[]",
+      "level": null,
+      "type": "string",
+      "present": 10,
+      "emptyList": 0,
+      "byType": {
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "mcp_server": 2
+      },
+      "provenance": {
+        "native": 2
+      },
+      "journeyQuestions": [
+        "J5.transport"
+      ],
+      "journeyCredit": 9,
+      "soleAnswers": 8,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].contractRef",
+        "holders": 10,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 2
+        },
+        "codesRemoved": {},
+        "questionsLost": 8
+      },
+      "mutation": {
+        "path": "interfaces[].contractRef",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "not https",
+        "value": "\"http://insecure.example.com\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].description",
+      "depth": 1,
+      "requirement": "optional in interfaces[]",
+      "level": null,
+      "type": "string",
+      "present": 17,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].description",
+        "holders": 17,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].description",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].inputs",
+      "depth": 1,
+      "requirement": "optional in interfaces[]",
+      "level": null,
+      "type": "array of object",
+      "present": 4,
+      "emptyList": 0,
+      "byType": {
+        "library": 4
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].inputs",
+        "holders": 4,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].inputs",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].inputs[].name",
+      "depth": 2,
+      "requirement": "required in interfaces[].inputs[]",
+      "level": null,
+      "type": "string",
+      "present": 4,
+      "emptyList": 0,
+      "byType": {
+        "library": 4
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].inputs[].name",
+        "holders": 4,
+        "invalid": 4,
+        "levelDrops": {
+          "adoptable -> invalid": 4
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 4
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 4,
+          "RISK_UNASSESSED": 4
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].inputs[].name",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].inputs[].mediaType",
+      "depth": 2,
+      "requirement": "optional in interfaces[].inputs[]",
+      "level": null,
+      "type": "string",
+      "present": 4,
+      "emptyList": 0,
+      "byType": {
+        "library": 4
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].inputs[].mediaType",
+        "holders": 4,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].inputs[].mediaType",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].inputs[].description",
+      "depth": 2,
+      "requirement": "optional in interfaces[].inputs[]",
+      "level": null,
+      "type": "string",
+      "present": 4,
+      "emptyList": 0,
+      "byType": {
+        "library": 4
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].inputs[].description",
+        "holders": 4,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].inputs[].description",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].outputs",
+      "depth": 1,
+      "requirement": "optional in interfaces[]",
+      "level": null,
+      "type": "array of object",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "library": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].outputs",
+        "holders": 1,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].outputs",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].outputs[].name",
+      "depth": 2,
+      "requirement": "required in interfaces[].outputs[]",
+      "level": null,
+      "type": "string",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "library": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].outputs[].name",
+        "holders": 1,
+        "invalid": 1,
+        "levelDrops": {
+          "adoptable -> invalid": 1
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 1
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 1,
+          "RISK_UNASSESSED": 1
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].outputs[].name",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].outputs[].mediaType",
+      "depth": 2,
+      "requirement": "optional in interfaces[].outputs[]",
+      "level": null,
+      "type": "string",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "library": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].outputs[].mediaType",
+        "holders": 1,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].outputs[].mediaType",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "interfaces[].outputs[].description",
+      "depth": 2,
+      "requirement": "optional in interfaces[].outputs[]",
+      "level": null,
+      "type": "string",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "library": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "interfaces[].outputs[].description",
+        "holders": 1,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "interfaces[].outputs[].description",
+        "tested": true,
+        "manifest": "docling-project/docling",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "runtime",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "assessable (runtime)",
+      "type": "array of object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "native": 12,
+        "derived": 6
+      },
+      "journeyQuestions": [
+        "J3.runs"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M1"
+      ],
+      "hostUse": false,
+      "native": [
+        "packages[].runtimeHint",
+        "-",
+        "-",
+        "engines",
+        "Requires-Python"
+      ],
+      "removal": {
+        "path": "runtime",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> discoverable": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 18
+        },
+        "codesRemoved": {
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "runtime",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "runtime[].kind",
+      "depth": 1,
+      "requirement": "required in runtime[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "runtime[].kind",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "runtime[].kind",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "runtime[].detail",
+      "depth": 1,
+      "requirement": "optional in runtime[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "native": 11
+      },
+      "journeyQuestions": [
+        "J5.launch"
+      ],
+      "journeyCredit": 11,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "runtime[].detail",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 11
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "runtime[].detail",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "adoptable (setup)",
+      "type": "array of object",
+      "present": 22,
+      "emptyList": 8,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "native": 13,
+        "linked": 6,
+        "curated": 4
+      },
+      "journeyQuestions": [
+        "J3.setup",
+        "J5.credentials"
+      ],
+      "journeyCredit": 44,
+      "soleAnswers": 44,
+      "missions": [
+        "M1"
+      ],
+      "hostUse": true,
+      "native": [
+        "packages[].environmentVariables, headers",
+        "-",
+        "securitySchemes",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "setup",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> assessable": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 22
+        },
+        "codesRemoved": {},
+        "questionsLost": 44
+      },
+      "mutation": {
+        "path": "setup",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup[].name",
+      "depth": 1,
+      "requirement": "required in setup[]",
+      "level": null,
+      "type": "string",
+      "present": 14,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "setup[].name",
+        "holders": 14,
+        "invalid": 14,
+        "levelDrops": {
+          "adoptable -> invalid": 14
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 14
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 14,
+          "RISK_UNASSESSED": 14,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 2,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "setup[].name",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup[].kind",
+      "depth": 1,
+      "requirement": "optional in setup[]",
+      "level": null,
+      "type": "string",
+      "present": 14,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "setup[].kind",
+        "holders": 14,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "setup[].kind",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup[].group",
+      "depth": 1,
+      "requirement": "optional in setup[]",
+      "level": null,
+      "type": "string",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "workflow": 1,
+        "mcp_server": 4
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "setup[].group",
+        "holders": 5,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "setup[].group",
+        "tested": true,
+        "manifest": "anthropics/claude-code-action",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup[].description",
+      "depth": 1,
+      "requirement": "optional in setup[]",
+      "level": null,
+      "type": "string",
+      "present": 14,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "setup[].description",
+        "holders": 14,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "setup[].description",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup[].secret",
+      "depth": 1,
+      "requirement": "optional in setup[]",
+      "level": null,
+      "type": "boolean",
+      "present": 14,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "setup[].secret",
+        "holders": 14,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "setup[].secret",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"yes\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "setup[].required",
+      "depth": 1,
+      "requirement": "optional in setup[]",
+      "level": null,
+      "type": "boolean",
+      "present": 14,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": true,
+      "native": null,
+      "removal": {
+        "path": "setup[].required",
+        "holders": 14,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "setup[].required",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"yes\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "integrations",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of string",
+      "present": 6,
+      "emptyList": 0,
+      "byType": {
+        "workflow": 1,
+        "library": 2,
+        "mcp_server": 2,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 2,
+        "native": 2
+      },
+      "journeyQuestions": [
+        "J3.works-with"
+      ],
+      "journeyCredit": 6,
+      "soleAnswers": 6,
+      "missions": [
+        "M1"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "Framework classifier"
+      ],
+      "removal": {
+        "path": "integrations",
+        "holders": 6,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 4
+        },
+        "codesRemoved": {},
+        "questionsLost": 6
+      },
+      "mutation": {
+        "path": "integrations",
+        "tested": true,
+        "manifest": "anthropics/claude-code-action",
+        "kind": "item breaks the pattern",
+        "value": "[\" leading space\"]",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "dependencies",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 16,
+      "emptyList": 16,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J3.depends"
+      ],
+      "journeyCredit": 16,
+      "soleAnswers": 16,
+      "missions": [
+        "M1",
+        "M3"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "dependencies",
+        "holders": 16,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 16
+      },
+      "mutation": {
+        "path": "dependencies",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "dependencies[].id",
+      "depth": 1,
+      "requirement": "required in dependencies[]",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "dependencies[].id",
+        "tested": true,
+        "manifest": "ai-platform/incident-triage-agent",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "limitations",
+      "depth": 0,
+      "requirement": "optional",
+      "level": "adoptable (limitations)",
+      "type": "array of string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 21,
+        "linked": 1
+      },
+      "journeyQuestions": [
+        "J3.limits",
+        "J5.side-effects"
+      ],
+      "journeyCredit": 44,
+      "soleAnswers": 44,
+      "missions": [
+        "M1",
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "limitations",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {
+          "adoptable -> assessable": 22
+        },
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 22
+        },
+        "codesRemoved": {},
+        "questionsLost": 44
+      },
+      "mutation": {
+        "path": "limitations",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "item of the wrong type",
+        "value": "[42]",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "costInformation",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": {
+        "curated": 10,
+        "native": 1,
+        "linked": 1
+      },
+      "journeyQuestions": [
+        "J3.cost"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M1"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "costInformation",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 12
+        },
+        "codesRemoved": {},
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "costInformation",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "costInformation.model",
+      "depth": 1,
+      "requirement": "required in costInformation",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "costInformation.model",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "costInformation.model",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "costInformation.details",
+      "depth": 1,
+      "requirement": "conditional in costInformation",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "costInformation.details",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "costInformation.details",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "costInformation.url",
+      "depth": 1,
+      "requirement": "optional in costInformation",
+      "level": null,
+      "type": "string",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "plugin": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "costInformation.url",
+        "holders": 1,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "costInformation.url",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-plugin",
+        "kind": "not https",
+        "value": "\"http://insecure.example.com\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "components",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "plugin": 1
+      },
+      "provenance": {
+        "derived": 1
+      },
+      "journeyQuestions": [
+        "J2.part-of",
+        "J5.tools"
+      ],
+      "journeyCredit": 1.5,
+      "soleAnswers": 1,
+      "missions": [],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "components",
+        "holders": 1,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 1
+        },
+        "codesRemoved": {
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 1
+      },
+      "mutation": {
+        "path": "components",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-plugin",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "components[].id",
+      "depth": 1,
+      "requirement": "required in components[]",
+      "level": null,
+      "type": "string",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "plugin": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "components[].id",
+        "holders": 1,
+        "invalid": 1,
+        "levelDrops": {
+          "adoptable -> invalid": 1
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 1
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 1,
+          "LICENSE_NEEDS_REVIEW": 1,
+          "RISK_UNASSESSED": 1,
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "components[].id",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-plugin",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "embeddedComponents",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 8,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 4,
+        "plugin": 1,
+        "library": 1,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": {
+        "native": 4,
+        "linked": 1
+      },
+      "journeyQuestions": [
+        "J5.tools"
+      ],
+      "journeyCredit": 7.5,
+      "soleAnswers": 7,
+      "missions": [],
+      "hostUse": false,
+      "native": [
+        "(tools/list at runtime)",
+        "-",
+        "skills[]",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "embeddedComponents",
+        "holders": 8,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "PROVENANCE_FIELD_NOT_FOUND": 5
+        },
+        "codesRemoved": {},
+        "questionsLost": 7
+      },
+      "mutation": {
+        "path": "embeddedComponents",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "embeddedComponents[].name",
+      "depth": 1,
+      "requirement": "required in embeddedComponents[]",
+      "level": null,
+      "type": "string",
+      "present": 8,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 4,
+        "plugin": 1,
+        "library": 1,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "embeddedComponents[].name",
+        "holders": 8,
+        "invalid": 8,
+        "levelDrops": {
+          "adoptable -> invalid": 8
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 8
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 8,
+          "RISK_UNASSESSED": 8,
+          "LICENSE_NEEDS_REVIEW": 2,
+          "DERIVED_VALUE_UNCONFIRMED": 2,
+          "PUBLICATION_VERSIONS_DIFFER": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "embeddedComponents[].name",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "embeddedComponents[].type",
+      "depth": 1,
+      "requirement": "required in embeddedComponents[]",
+      "level": null,
+      "type": "string",
+      "present": 8,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 4,
+        "plugin": 1,
+        "library": 1,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "embeddedComponents[].type",
+        "holders": 8,
+        "invalid": 8,
+        "levelDrops": {
+          "adoptable -> invalid": 8
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 8
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 8,
+          "RISK_UNASSESSED": 8,
+          "LICENSE_NEEDS_REVIEW": 2,
+          "DERIVED_VALUE_UNCONFIRMED": 2,
+          "PUBLICATION_VERSIONS_DIFFER": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "embeddedComponents[].type",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "embeddedComponents[].description",
+      "depth": 1,
+      "requirement": "optional in embeddedComponents[]",
+      "level": null,
+      "type": "string",
+      "present": 8,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 4,
+        "plugin": 1,
+        "library": 1,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "embeddedComponents[].description",
+        "holders": 8,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "embeddedComponents[].description",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "parent",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "object",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "skill": 5
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J2.part-of"
+      ],
+      "journeyCredit": 5,
+      "soleAnswers": 5,
+      "missions": [],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "parent",
+        "holders": 5,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 5
+      },
+      "mutation": {
+        "path": "parent",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "parent.id",
+      "depth": 1,
+      "requirement": "required in parent",
+      "level": null,
+      "type": "string",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "skill": 5
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "parent.id",
+        "holders": 5,
+        "invalid": 5,
+        "levelDrops": {
+          "adoptable -> invalid": 5
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 5
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 5,
+          "LICENSE_NEEDS_REVIEW": 5,
+          "RISK_UNASSESSED": 5
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "parent.id",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "relations",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "framework": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J2.related"
+      ],
+      "journeyCredit": 5,
+      "soleAnswers": 5,
+      "missions": [
+        "M2"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "relations",
+        "holders": 5,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 5
+      },
+      "mutation": {
+        "path": "relations",
+        "tested": true,
+        "manifest": "browser-use/browser-use",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "relations[].type",
+      "depth": 1,
+      "requirement": "required in relations[]",
+      "level": null,
+      "type": "string",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "framework": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "relations[].type",
+        "holders": 5,
+        "invalid": 5,
+        "levelDrops": {
+          "adoptable -> invalid": 5
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 5
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 5,
+          "PUBLICATION_VERSIONS_DIFFER": 1,
+          "RISK_UNASSESSED": 5,
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "relations[].type",
+        "tested": true,
+        "manifest": "browser-use/browser-use",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "relations[].id",
+      "depth": 1,
+      "requirement": "optional in relations[]",
+      "level": null,
+      "type": "string",
+      "present": 1,
+      "emptyList": 0,
+      "byType": {
+        "library": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "relations[].id",
+        "holders": 1,
+        "invalid": 1,
+        "levelDrops": {
+          "adoptable -> invalid": 1
+        },
+        "codesAdded": {
+          "CONDITIONAL_FIELD_REQUIRED": 1
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 1,
+          "RISK_UNASSESSED": 1
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "relations[].id",
+        "tested": true,
+        "manifest": "tavily-ai/langchain-tavily",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "relations[].locator",
+      "depth": 1,
+      "requirement": "conditional in relations[]",
+      "level": null,
+      "type": "string",
+      "present": 4,
+      "emptyList": 0,
+      "byType": {
+        "framework": 1,
+        "tool": 1,
+        "library": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "relations[].locator",
+        "holders": 4,
+        "invalid": 4,
+        "levelDrops": {
+          "adoptable -> invalid": 4
+        },
+        "codesAdded": {
+          "CONDITIONAL_FIELD_REQUIRED": 4
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 4,
+          "PUBLICATION_VERSIONS_DIFFER": 1,
+          "RISK_UNASSESSED": 4,
+          "DERIVED_VALUE_UNCONFIRMED": 1
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "relations[].locator",
+        "tested": true,
+        "manifest": "browser-use/browser-use",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "relations[].evidence",
+      "depth": 1,
+      "requirement": "optional in relations[]",
+      "level": null,
+      "type": "string",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "framework": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "relations[].evidence",
+        "holders": 5,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "relations[].evidence",
+        "tested": true,
+        "manifest": "browser-use/browser-use",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "relations[].verified",
+      "depth": 1,
+      "requirement": "optional in relations[]",
+      "level": null,
+      "type": "boolean",
+      "present": 5,
+      "emptyList": 0,
+      "byType": {
+        "framework": 1,
+        "library": 2,
+        "tool": 1,
+        "skill": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "relations[].verified",
+        "holders": 5,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {
+          "RELATION_UNVERIFIED": 5
+        },
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "relations[].verified",
+        "tested": true,
+        "manifest": "browser-use/browser-use",
+        "kind": "wrong type",
+        "value": "\"yes\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance",
+      "depth": 0,
+      "requirement": "optional",
+      "level": null,
+      "type": "array of object",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [
+        "J4.provenance"
+      ],
+      "journeyCredit": 22,
+      "soleAnswers": 22,
+      "missions": [
+        "M5"
+      ],
+      "hostUse": false,
+      "native": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "removal": {
+        "path": "provenance",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 22
+      },
+      "mutation": {
+        "path": "provenance",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "\"not-an-object-or-list\"",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance[].field",
+      "depth": 1,
+      "requirement": "required in provenance[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "provenance[].field",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "provenance[].field",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance[].method",
+      "depth": 1,
+      "requirement": "required in provenance[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "provenance[].method",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "provenance[].method",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance[].basis",
+      "depth": 1,
+      "requirement": "conditional in provenance[]",
+      "level": null,
+      "type": "string",
+      "present": 9,
+      "emptyList": 0,
+      "byType": {
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "mcp_server": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "provenance[].basis",
+        "holders": 9,
+        "invalid": 9,
+        "levelDrops": {
+          "adoptable -> invalid": 9
+        },
+        "codesAdded": {
+          "CONDITIONAL_FIELD_REQUIRED": 9
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 9,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "RISK_UNASSESSED": 9,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "provenance[].basis",
+        "tested": true,
+        "manifest": "juliusbrussee/caveman-commit",
+        "kind": "value outside the list",
+        "value": "\"not-a-valid-value\"",
+        "caught": true,
+        "codes": [
+          "INVALID_VALUE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance[].source",
+      "depth": 1,
+      "requirement": "required in provenance[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "provenance[].source",
+        "holders": 22,
+        "invalid": 22,
+        "levelDrops": {
+          "adoptable -> invalid": 22
+        },
+        "codesAdded": {
+          "MISSING_REQUIRED_FIELD": 22
+        },
+        "codesRemoved": {
+          "SOURCE_NOT_CHECKED": 22,
+          "RISK_UNASSESSED": 22,
+          "PUBLICATION_VERSIONS_DIFFER": 3,
+          "LICENSE_NEEDS_REVIEW": 7,
+          "DERIVED_VALUE_UNCONFIRMED": 2
+        },
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "provenance[].source",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "wrong type",
+        "value": "42",
+        "caught": true,
+        "codes": [
+          "INVALID_TYPE"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance[].observedAt",
+      "depth": 1,
+      "requirement": "optional in provenance[]",
+      "level": null,
+      "type": "string",
+      "present": 22,
+      "emptyList": 0,
+      "byType": {
+        "mcp_server": 7,
+        "framework": 1,
+        "skill": 6,
+        "plugin": 1,
+        "workflow": 1,
+        "library": 5,
+        "tool": 1
+      },
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": {
+        "path": "provenance[].observedAt",
+        "holders": 22,
+        "invalid": 0,
+        "levelDrops": {},
+        "codesAdded": {},
+        "codesRemoved": {},
+        "questionsLost": 0
+      },
+      "mutation": {
+        "path": "provenance[].observedAt",
+        "tested": true,
+        "manifest": "brave/brave-search-mcp-server",
+        "kind": "breaks the pattern",
+        "value": "\" leading space\"",
+        "caught": true,
+        "codes": [
+          "INVALID_FORMAT"
+        ],
+        "otherErrors": 0
+      }
+    },
+    {
+      "path": "provenance[].confirmedBy",
+      "depth": 1,
+      "requirement": "optional in provenance[]",
+      "level": null,
+      "type": "string",
+      "present": 0,
+      "emptyList": 0,
+      "byType": {},
+      "provenance": null,
+      "journeyQuestions": [],
+      "journeyCredit": 0,
+      "soleAnswers": 0,
+      "missions": [],
+      "hostUse": false,
+      "native": null,
+      "removal": null,
+      "mutation": {
+        "path": "provenance[].confirmedBy",
+        "tested": false
+      }
+    }
+  ],
+  "journeys": {
+    "rows": [
+      {
+        "journey": "J1",
+        "question": "name",
+        "ask": "What is it called?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "name"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J1",
+        "question": "what",
+        "ask": "What does it do?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "description"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J1",
+        "question": "fits",
+        "ask": "Is it meant for my use case?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "supportedUseCases",
+          "keywords"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J1",
+        "question": "kind",
+        "ask": "What kind of capability is it?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "capabilityType"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J1",
+        "question": "host",
+        "ask": "Does it work in my AI host?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "publications[].platformCompatibility"
+        ],
+        "answered": 9
+      },
+      {
+        "journey": "J1",
+        "question": "audience",
+        "ask": "Who is it intended for?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "supportedUseCases",
+          "description"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J1",
+        "question": "mature",
+        "ask": "Is it proven in real use?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "maturity"
+        ],
+        "answered": 0
+      },
+      {
+        "journey": "J2",
+        "question": "same",
+        "ask": "Is this the same capability as another entry?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "publications[].locator",
+          "source.repositoryId",
+          "source.url",
+          "source.identifier"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J2",
+        "question": "related",
+        "ask": "Is it a fork",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "relations"
+        ],
+        "answered": 5
+      },
+      {
+        "journey": "J2",
+        "question": "part-of",
+        "ask": "Is it part of a larger package?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "parent",
+          "components"
+        ],
+        "answered": 6
+      },
+      {
+        "journey": "J2",
+        "question": "affiliation",
+        "ask": "Is it internal or external?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "owner.affiliation"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "get",
+        "ask": "Where do I get it?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "source.url",
+          "source.identifier",
+          "publications[].locator"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "integrate",
+        "ask": "How does my system use it?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "interfaces"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "runs",
+        "ask": "Where does it run",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "runtime"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "version",
+        "ask": "Which version is current?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "capabilityVersion",
+          "publications[].nativeVersion"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "maintained",
+        "ask": "Is it still maintained?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "lifecycleStatus",
+          "source.status",
+          "source.updatedAt",
+          "publications[].status",
+          "publications[].updatedAt"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "terms",
+        "ask": "May we use it",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "license"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "who",
+        "ask": "Who maintains it?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "owner.name"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "contact",
+        "ask": "How do I reach the maintainers?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "owner.contact"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "setup",
+        "ask": "What configuration or credentials does it need?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "setup"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "limits",
+        "ask": "What are its known limitations?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "limitations"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "depends",
+        "ask": "What other capabilities does it need?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "dependencies"
+        ],
+        "answered": 16
+      },
+      {
+        "journey": "J3",
+        "question": "works-with",
+        "ask": "Which systems does it work with?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "integrations"
+        ],
+        "answered": 6
+      },
+      {
+        "journey": "J3",
+        "question": "cost",
+        "ask": "What does it cost to use?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "costInformation"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J3",
+        "question": "docs",
+        "ask": "Where is its documentation?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "documentation"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J4",
+        "question": "provenance",
+        "ask": "Where does each fact come from?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "provenance"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J4",
+        "question": "risk",
+        "ask": "Has it been risk-assessed",
+        "need": "required",
+        "governance": true,
+        "anyOf": [
+          "riskTier"
+        ],
+        "answered": 0
+      },
+      {
+        "journey": "J4",
+        "question": "license-scope",
+        "ask": "Does the license cover this capability or only the repository?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "license.scope"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J4",
+        "question": "replaced",
+        "ask": "If it is deprecated",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "deprecation"
+        ],
+        "answered": 0
+      },
+      {
+        "journey": "J5",
+        "question": "when",
+        "ask": "When should the agent use it?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "description",
+          "supportedUseCases"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J5",
+        "question": "protocol",
+        "ask": "Which protocol does the host speak to it?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "interfaces[].type"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J5",
+        "question": "transport",
+        "ask": "Which transport or contract does it use?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "interfaces[].transport",
+          "interfaces[].contractRef"
+        ],
+        "answered": 15
+      },
+      {
+        "journey": "J5",
+        "question": "launch",
+        "ask": "How is it installed or started?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "publications[].locator",
+          "runtime[].detail"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J5",
+        "question": "credentials",
+        "ask": "Which secrets and settings must be supplied?",
+        "need": "required",
+        "governance": false,
+        "anyOf": [
+          "setup"
+        ],
+        "answered": 22
+      },
+      {
+        "journey": "J5",
+        "question": "tools",
+        "ask": "Which tools",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "embeddedComponents",
+          "components"
+        ],
+        "answered": 8
+      },
+      {
+        "journey": "J5",
+        "question": "host",
+        "ask": "Is this host supported?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "publications[].platformCompatibility"
+        ],
+        "answered": 9
+      },
+      {
+        "journey": "J5",
+        "question": "side-effects",
+        "ask": "What can go wrong or change data?",
+        "need": "helpful",
+        "governance": false,
+        "anyOf": [
+          "limitations"
+        ],
+        "answered": 22
+      }
+    ],
+    "perManifest": [
+      {
+        "id": "brave/brave-search-mcp-server",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "browser-use/browser-use",
+        "type": "framework",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "juliusbrussee/caveman-commit",
+        "type": "skill",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "juliusbrussee/caveman-plugin",
+        "type": "plugin",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "juliusbrussee/caveman-review",
+        "type": "skill",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "juliusbrussee/caveman",
+        "type": "skill",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "juliusbrussee/megacave",
+        "type": "skill",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "juliusbrussee/ultracave",
+        "type": "skill",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "chromedevtools/chrome-devtools-mcp",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "anthropics/claude-code-action",
+        "type": "workflow",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "docling-project/docling",
+        "type": "library",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "exa-labs/exa-mcp-server",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "github/github-mcp-server",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "tavily-ai/langchain-tavily",
+        "type": "library",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "sooperset/mcp-atlassian",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "mehmet-kozan/pdf-parse",
+        "type": "library",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "jsvine/pdfplumber",
+        "type": "library",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "microsoft/playwright-mcp",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "the-pr-agent/pr-agent",
+        "type": "tool",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "tavily-ai/tavily-mcp",
+        "type": "mcp_server",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "unstructured-io/unstructured",
+        "type": "library",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      },
+      {
+        "id": "anthropics/webapp-testing",
+        "type": "skill",
+        "requiredAnswered": 20,
+        "required": 20,
+        "missing": []
+      }
+    ],
+    "answeredInstances": 646
+  },
+  "retrieval": [
+    {
+      "fields": [
+        "name"
+      ],
+      "recall": 0.21052631578947367,
+      "precision": 1,
+      "f1": 0.34782608695652173
+    },
+    {
+      "fields": [
+        "name",
+        "description"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.9166666666666666,
+      "f1": 0.8778054862842893
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.9166666666666666,
+      "f1": 0.8778054862842893
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "supportedUseCases"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.8571428571428571,
+      "f1": 0.9
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "embeddedComponents"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.9166666666666666,
+      "f1": 0.8778054862842893
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "interfaces"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.9166666666666666,
+      "f1": 0.8778054862842893
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "integrations"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.9166666666666666,
+      "f1": 0.8778054862842893
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "limitations"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.7586206896551724,
+      "f1": 0.7981859410430838
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords",
+        "supportedUseCases",
+        "embeddedComponents",
+        "interfaces",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7272727272727273,
+      "f1": 0.8228571428571427
+    },
+    {
+      "fields": [
+        "description",
+        "keywords",
+        "supportedUseCases",
+        "embeddedComponents",
+        "interfaces",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7272727272727273,
+      "f1": 0.8228571428571427
+    },
+    {
+      "fields": [
+        "name",
+        "keywords",
+        "supportedUseCases",
+        "embeddedComponents",
+        "interfaces",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7241379310344828,
+      "f1": 0.8208469055374592
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "supportedUseCases",
+        "embeddedComponents",
+        "interfaces",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7272727272727273,
+      "f1": 0.8228571428571427
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords",
+        "embeddedComponents",
+        "interfaces",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.8421052631578947,
+      "precision": 0.7586206896551724,
+      "f1": 0.7981859410430838
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords",
+        "supportedUseCases",
+        "interfaces",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7272727272727273,
+      "f1": 0.8228571428571427
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords",
+        "supportedUseCases",
+        "embeddedComponents",
+        "integrations",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7272727272727273,
+      "f1": 0.8228571428571427
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords",
+        "supportedUseCases",
+        "embeddedComponents",
+        "interfaces",
+        "limitations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.7272727272727273,
+      "f1": 0.8228571428571427
+    },
+    {
+      "fields": [
+        "name",
+        "description",
+        "keywords",
+        "supportedUseCases",
+        "embeddedComponents",
+        "interfaces",
+        "integrations"
+      ],
+      "recall": 0.9473684210526315,
+      "precision": 0.8571428571428571,
+      "f1": 0.9
+    }
+  ],
+  "retrievalFull": {
+    "fields": [
+      "name",
+      "description",
+      "keywords",
+      "supportedUseCases",
+      "embeddedComponents",
+      "interfaces",
+      "integrations",
+      "limitations"
+    ],
+    "recall": 0.9473684210526315,
+    "precision": 0.7272727272727273,
+    "f1": 0.8228571428571427,
+    "perNeed": {
+      "N1": {
+        "found": [
+          "browser-use/browser-use",
+          "chromedevtools/chrome-devtools-mcp",
+          "mehmet-kozan/pdf-parse",
+          "microsoft/playwright-mcp",
+          "anthropics/webapp-testing"
+        ],
+        "missed": [],
+        "wrong": [
+          "mehmet-kozan/pdf-parse"
+        ]
+      },
+      "N2": {
+        "found": [
+          "juliusbrussee/caveman-commit",
+          "juliusbrussee/caveman-plugin",
+          "juliusbrussee/caveman-review",
+          "juliusbrussee/caveman",
+          "anthropics/claude-code-action",
+          "github/github-mcp-server",
+          "sooperset/mcp-atlassian",
+          "the-pr-agent/pr-agent",
+          "tavily-ai/tavily-mcp"
+        ],
+        "missed": [],
+        "wrong": [
+          "juliusbrussee/caveman-commit",
+          "juliusbrussee/caveman-plugin",
+          "juliusbrussee/caveman-review",
+          "juliusbrussee/caveman",
+          "sooperset/mcp-atlassian",
+          "tavily-ai/tavily-mcp"
+        ]
+      },
+      "N3": {
+        "found": [
+          "brave/brave-search-mcp-server",
+          "exa-labs/exa-mcp-server",
+          "tavily-ai/langchain-tavily",
+          "tavily-ai/tavily-mcp"
+        ],
+        "missed": [],
+        "wrong": []
+      },
+      "N4": {
+        "found": [
+          "docling-project/docling",
+          "mehmet-kozan/pdf-parse",
+          "jsvine/pdfplumber",
+          "unstructured-io/unstructured"
+        ],
+        "missed": [],
+        "wrong": []
+      },
+      "N5": {
+        "found": [
+          "juliusbrussee/caveman",
+          "sooperset/mcp-atlassian"
+        ],
+        "missed": [],
+        "wrong": [
+          "juliusbrussee/caveman"
+        ]
+      },
+      "N6": {
+        "found": [
+          "juliusbrussee/caveman-review",
+          "anthropics/claude-code-action",
+          "the-pr-agent/pr-agent"
+        ],
+        "missed": [],
+        "wrong": []
+      },
+      "N7": {
+        "found": [
+          "juliusbrussee/caveman-commit",
+          "juliusbrussee/caveman-plugin",
+          "juliusbrussee/caveman-review",
+          "juliusbrussee/caveman",
+          "juliusbrussee/megacave",
+          "microsoft/playwright-mcp"
+        ],
+        "missed": [
+          "juliusbrussee/ultracave"
+        ],
+        "wrong": [
+          "microsoft/playwright-mcp"
+        ]
+      }
+    }
+  },
+  "identity": {
+    "cases": [
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/brave-search-mcp-server-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/brave-search-mcp-server-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/brave-search-mcp-server-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/browser-use-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/browser-use-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/browser-use-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/caveman-commit-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/caveman-commit-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/caveman-commit-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/caveman-plugin-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/caveman-plugin-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/caveman-plugin-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/caveman-review-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/caveman-review-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/caveman-review-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/caveman-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/caveman-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/caveman-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/megacave-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/megacave-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/megacave-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/ultracave-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/ultracave-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/ultracave-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/chrome-devtools-mcp-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/chrome-devtools-mcp-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/chrome-devtools-mcp-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/claude-code-action-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/claude-code-action-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/claude-code-action-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/docling-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/docling-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/docling-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/exa-mcp-server-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/exa-mcp-server-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/exa-mcp-server-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/github-mcp-server-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/github-mcp-server-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/github-mcp-server-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/langchain-tavily-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/langchain-tavily-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/langchain-tavily-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/mcp-atlassian-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/mcp-atlassian-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/mcp-atlassian-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/pdf-parse-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/pdf-parse-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/pdf-parse-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/pdfplumber-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/pdfplumber-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/pdfplumber-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/playwright-mcp-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/playwright-mcp-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/playwright-mcp-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/pr-agent-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/pr-agent-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/pr-agent-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/tavily-mcp-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/tavily-mcp-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/tavily-mcp-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/unstructured-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION",
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/unstructured-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/unstructured-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      },
+      {
+        "label": "same publications, new id and source",
+        "signal": "publications[].locator",
+        "id": "audit/webapp-testing-copy",
+        "expected": "DUPLICATE_PUBLICATION",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_PUBLICATION"
+        ]
+      },
+      {
+        "label": "repository renamed, new id",
+        "signal": "source.repositoryId",
+        "id": "audit/webapp-testing-copy",
+        "expected": "DUPLICATE_SOURCE",
+        "detected": true,
+        "codes": [
+          "DUPLICATE_SOURCE"
+        ]
+      },
+      {
+        "label": "same name only, different capability",
+        "signal": "name (must not link)",
+        "id": "audit/webapp-testing-namesake",
+        "expected": "no duplicate finding",
+        "detected": true,
+        "codes": []
+      }
+    ],
+    "falseLinks": [],
+    "realPair": [
+      "DUPLICATE_SOURCE",
+      "DUPLICATE_PUBLICATION",
+      "DUPLICATE_PUBLICATION"
+    ]
+  },
+  "recipes": [
+    {
+      "id": "brave/brave-search-mcp-server",
+      "type": "mcp_server",
+      "interfaces": "mcp",
+      "steps": [
+        "stdio: `npx -y @brave/brave-search-mcp-server`",
+        "stdio: `docker run -i --rm docker.io/mcp/brave-search`"
+      ],
+      "env": [
+        "BRAVE_API_KEY (secret)"
+      ],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [
+        "claude-desktop",
+        "github-copilot"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "browser-use/browser-use",
+      "type": "framework",
+      "interfaces": "library, cli",
+      "steps": [
+        "library: `pip install browser-use`"
+      ],
+      "env": [],
+      "otherSetup": [
+        "Model provider API key [account]",
+        "Chrome or Chromium [software]"
+      ],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "juliusbrussee/caveman-commit",
+      "type": "skill",
+      "interfaces": "agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-commit/SKILL.md"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "juliusbrussee/caveman-plugin",
+      "type": "plugin",
+      "interfaces": "other, agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/JuliusBrussee/caveman",
+        "plugin: `/plugin install caveman@caveman`"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [
+        "claude-code"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "juliusbrussee/caveman-review",
+      "type": "skill",
+      "interfaces": "agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-review/SKILL.md"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "juliusbrussee/caveman",
+      "type": "skill",
+      "interfaces": "agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "juliusbrussee/megacave",
+      "type": "skill",
+      "interfaces": "agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/JuliusBrussee/caveman/blob/main/skills/megacave/SKILL.md"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "juliusbrussee/ultracave",
+      "type": "skill",
+      "interfaces": "agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/JuliusBrussee/caveman/blob/main/skills/ultracave/SKILL.md"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "chromedevtools/chrome-devtools-mcp",
+      "type": "mcp_server",
+      "interfaces": "mcp, cli",
+      "steps": [
+        "stdio: `npx -y chrome-devtools-mcp`",
+        "plugin: `/plugin install chrome-devtools-mcp@chrome-devtools-plugins`"
+      ],
+      "env": [],
+      "otherSetup": [
+        "Google Chrome [software]"
+      ],
+      "alternatives": [],
+      "hosts": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "devin",
+        "gemini-cli",
+        "github-copilot",
+        "windsurf"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "anthropics/claude-code-action",
+      "type": "workflow",
+      "interfaces": "ci_action",
+      "steps": [
+        "ci: `uses: anthropics/claude-code-action@<pin>`"
+      ],
+      "env": [],
+      "otherSetup": [
+        "Claude GitHub App [app]"
+      ],
+      "alternatives": [
+        "anthropic-api: anthropic_api_key (secret)",
+        "claude-oauth: claude_code_oauth_token (secret)",
+        "cloud-provider: Cloud provider OIDC"
+      ],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "docling-project/docling",
+      "type": "library",
+      "interfaces": "library, cli",
+      "steps": [
+        "library: `pip install docling`"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "exa-labs/exa-mcp-server",
+      "type": "mcp_server",
+      "interfaces": "mcp",
+      "steps": [
+        "remote: https://mcp.exa.ai/mcp",
+        "registry: ai.exa/exa (host resolves the package)",
+        "stdio: `npx -y exa-mcp-server`"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [
+        "oauth: Exa account (OAuth)",
+        "api-key: x-api-key (secret)"
+      ],
+      "hosts": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "gemini-cli",
+        "github-copilot",
+        "windsurf"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "github/github-mcp-server",
+      "type": "mcp_server",
+      "interfaces": "mcp, mcp",
+      "steps": [
+        "registry: io.github.github/github-mcp-server (host resolves the package)",
+        "stdio: `docker run -i --rm ghcr.io/github/github-mcp-server`",
+        "remote: https://api.githubcopilot.com/mcp/"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [
+        "personal-access-token: GITHUB_PERSONAL_ACCESS_TOKEN (secret)",
+        "oauth: GitHub OAuth"
+      ],
+      "hosts": [
+        "claude-code",
+        "claude-desktop",
+        "cursor",
+        "gemini-cli",
+        "github-copilot",
+        "windsurf",
+        "codex"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "tavily-ai/langchain-tavily",
+      "type": "library",
+      "interfaces": "library",
+      "steps": [
+        "library: `pip install langchain-tavily`"
+      ],
+      "env": [
+        "TAVILY_API_KEY (secret)"
+      ],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "sooperset/mcp-atlassian",
+      "type": "mcp_server",
+      "interfaces": "mcp",
+      "steps": [
+        "stdio: `uvx mcp-atlassian`",
+        "stdio: `docker run -i --rm ghcr.io/sooperset/mcp-atlassian`"
+      ],
+      "env": [
+        "JIRA_URL"
+      ],
+      "otherSetup": [],
+      "alternatives": [
+        "jira-cloud: JIRA_USERNAME + JIRA_API_TOKEN (secret)",
+        "jira-server-data-center: JIRA_PERSONAL_TOKEN (secret)"
+      ],
+      "hosts": [
+        "claude-desktop",
+        "cursor",
+        "github-copilot"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "mehmet-kozan/pdf-parse",
+      "type": "library",
+      "interfaces": "library, cli",
+      "steps": [
+        "library: `npm install pdf-parse`"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "jsvine/pdfplumber",
+      "type": "library",
+      "interfaces": "library, cli",
+      "steps": [
+        "library: `pip install pdfplumber`"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "microsoft/playwright-mcp",
+      "type": "mcp_server",
+      "interfaces": "mcp",
+      "steps": [
+        "registry: io.github.microsoft/playwright-mcp (host resolves the package)",
+        "stdio: `npx -y @playwright/mcp`"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [
+        "claude-code",
+        "claude-desktop",
+        "codex",
+        "cursor",
+        "gemini-cli",
+        "github-copilot",
+        "windsurf"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "the-pr-agent/pr-agent",
+      "type": "tool",
+      "interfaces": "cli, ci_action, other",
+      "steps": [
+        "ci: `uses: The-PR-Agent/pr-agent@<pin>`"
+      ],
+      "env": [
+        "OPENAI_KEY (secret)",
+        "GITHUB_TOKEN (secret)"
+      ],
+      "otherSetup": [],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "tavily-ai/tavily-mcp",
+      "type": "mcp_server",
+      "interfaces": "mcp, mcp",
+      "steps": [
+        "stdio: `npx -y tavily-mcp`",
+        "registry: io.github.tavily-ai/tavily-mcp (host resolves the package)",
+        "remote: https://mcp.tavily.com/mcp"
+      ],
+      "env": [],
+      "otherSetup": [],
+      "alternatives": [
+        "api-key: TAVILY_API_KEY (secret)",
+        "oauth: Tavily OAuth"
+      ],
+      "hosts": [
+        "claude-desktop",
+        "cursor",
+        "claude-code"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "unstructured-io/unstructured",
+      "type": "library",
+      "interfaces": "library",
+      "steps": [
+        "library: `pip install unstructured`"
+      ],
+      "env": [],
+      "otherSetup": [
+        "poppler-utils [system_package]",
+        "tesseract-ocr [system_package]",
+        "libmagic-dev [system_package]"
+      ],
+      "alternatives": [],
+      "hosts": [],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    },
+    {
+      "id": "anthropics/webapp-testing",
+      "type": "skill",
+      "interfaces": "agent_skill",
+      "steps": [
+        "skill: load SKILL.md from https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md"
+      ],
+      "env": [],
+      "otherSetup": [
+        "Python Playwright [software]"
+      ],
+      "alternatives": [],
+      "hosts": [
+        "claude-code"
+      ],
+      "launchable": true,
+      "gaps": [],
+      "freeTextOnly": false
+    }
+  ],
+  "exchange": {
+    "capabilities": 22,
+    "rejected": 0,
+    "lossless": 22,
+    "levelsCarried": 22
+  },
+  "governed": [
+    {
+      "scenario": "Assessed low on 2026-11-16 (current)",
+      "levels": {
+        "governed": 22
+      },
+      "codes": {
+        "SOURCE_NOT_CHECKED": 22,
+        "PUBLICATION_VERSIONS_DIFFER": 3,
+        "LICENSE_NEEDS_REVIEW": 7,
+        "DERIVED_VALUE_UNCONFIRMED": 3
+      }
+    },
+    {
+      "scenario": "Assessed low on 2025-11-15 (more than 12 months ago)",
+      "levels": {
+        "governed": 22
+      },
+      "codes": {
+        "ASSESSMENT_EXPIRED": 22,
+        "SOURCE_NOT_CHECKED": 22,
+        "PUBLICATION_VERSIONS_DIFFER": 3,
+        "LICENSE_NEEDS_REVIEW": 7,
+        "DERIVED_VALUE_UNCONFIRMED": 3
+      }
+    },
+    {
+      "scenario": "Tier low without an assessment reference",
+      "levels": {
+        "invalid": 22
+      },
+      "codes": {
+        "CONDITIONAL_FIELD_REQUIRED": 22
+      }
+    }
+  ]
+}

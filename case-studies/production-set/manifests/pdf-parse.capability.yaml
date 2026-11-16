@@ -1,0 +1,112 @@
+# Production reference set, need N4 (extract text and tables from PDFs).
+# Real public capability: pdf-parse (github.com/mehmet-kozan/pdf-parse), the npm package.
+# Values observed on 2026-11-13 from the npm registry, npm download counts, and the README; the
+# repository id is from the research snapshot of 2026-10-22 (the GitHub API was rate-limited).
+# Flagged in the sample review: very widely used, but one maintainer.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: mehmet-kozan/pdf-parse
+name: pdf-parse
+description: >-
+  Pure TypeScript module for extracting text, images, and tables from PDFs, in Node.js or the
+  browser. Also reads document metadata and renders pages as PNG.
+capabilityType: library
+capabilityVersion: "2.4.5"
+source:
+  type: repository
+  url: https://github.com/mehmet-kozan/pdf-parse
+  repositoryId: "1052760396"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:npm/pdf-parse
+    nativeName: pdf-parse
+    nativeVersion: "2.4.5"
+    versionScheme: semver
+    updatedAt: "2025-10-20"
+owner:
+  name: Mehmet Kozan
+  contact: https://github.com/mehmet-kozan/pdf-parse/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  scope: capability
+documentation: https://mehmet-kozan.github.io/pdf-parse/
+keywords:
+  - pdf
+  - pdf-parser
+  - pdf-table
+  - typescript
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Extract text from PDFs in Node.js
+    description: PDFParse.getText() returns the text of all or selected pages.
+  - title: Extract tables from PDFs
+    description: getTable() detects and extracts tabular data.
+  - title: Render pages and extract images
+    description: getScreenshot() renders pages as PNG; getImage() extracts embedded images.
+interfaces:
+  - type: library
+    description: JavaScript API (PDFParse with getText, getTable, getImage, getScreenshot, getInfo).
+    inputs:
+      - name: pdf
+        mediaType: application/pdf
+        description: A PDF as a buffer or URL.
+  - type: cli
+    description: Command-line interface for quick PDF processing (docs/command-line.md).
+runtime:
+  - kind: local_process
+    detail: Node.js >=20.16.0 <21 or >=22.3.0; also runs in the browser and serverless platforms.
+setup: []
+dependencies: []
+limitations:
+  - Maintained by one individual; the last npm release was 2.4.5 on 2025-10-20.
+  - Version 2 changed the API from v1 (require('pdf-parse')(buffer)); getRaw() is kept for v1-compatible output.
+  - The README describes a 'supportware' model for v3 through sponsorship, with a separate pdf-parse-pro package.
+  - No OCR is described for scanned PDFs.
+costInformation:
+  model: free
+  details: Apache-2.0 open source on npm.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the README title and Features.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: npm latest 2.4.5 (2025-10-20).
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API, as recorded in the research snapshot.
+    observedAt: "2026-10-22"
+  - field: /source/status
+    method: linked
+    source: GitHub repository API for mehmet-kozan/pdf-parse (archived false; last push 2026-05-04).
+    observedAt: "2026-11-13"
+  - field: /owner
+    method: native
+    source: npm package.json author and bugs.url.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: npm package.json license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: native
+    source: npm package.json homepage.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: npm package.json engines and the README Features.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: curated
+    source: Installed with npm; no credentials or system packages are named.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Getting Started (v1 to v2), the v3 supportware note, and npm release date.
+    observedAt: "2026-11-13"

@@ -1,0 +1,123 @@
+# Production reference set, need N4 (extract text and tables from PDFs).
+# Real public capability: Docling (github.com/docling-project/docling), an LF AI & Data Foundation
+# project started at IBM Research Zurich. Values observed on 2026-11-13 from PyPI, the GitHub
+# repository API, and the README.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: docling-project/docling
+name: Docling
+description: >-
+  Converts documents for generative AI. Parses PDF with page layout, reading order, table
+  structure, code, and formulas, plus DOCX, PPTX, XLSX, HTML, images, audio, and more, into one
+  document representation that exports to Markdown, HTML, or lossless JSON. Runs locally, including
+  in air-gapped environments, with OCR for scanned PDFs.
+capabilityType: library
+capabilityVersion: "2.150.0"
+source:
+  type: repository
+  url: https://github.com/docling-project/docling
+  repositoryId: "826168160"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/docling
+    nativeName: docling
+    nativeVersion: "2.150.0"
+    versionScheme: pep440
+    updatedAt: "2026-11-10"
+owner:
+  name: Docling Project (LF AI & Data Foundation)
+  contact: https://github.com/docling-project/docling/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://docling-project.github.io/docling
+keywords:
+  - pdf
+  - document-parsing
+  - tables
+  - markdown
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Extract text and tables from PDFs
+    description: Advanced PDF understanding with layout, reading order, and table structure.
+  - title: Convert documents to Markdown or JSON for an LLM
+    description: One representation for many formats, exported to Markdown, HTML, or lossless JSON.
+  - title: Process sensitive documents locally
+    description: Local execution, including air-gapped environments.
+interfaces:
+  - type: library
+    description: Python API (DocumentConverter).
+    inputs:
+      - name: document
+        mediaType: application/pdf
+        description: A PDF or another supported document.
+    outputs:
+      - name: markdown
+        mediaType: text/markdown
+        description: The converted document.
+  - type: cli
+    description: "`docling <source>` command."
+runtime:
+  - kind: local_process
+    detail: Python >=3.10,<4.0.
+setup: []
+integrations:
+  - langchain
+  - llamaindex
+dependencies: []
+limitations:
+  - Releases are very frequent (2.150.0 on 2026-11-10); pin a version for production.
+  - Uses AI models for layout and table structure; optional visual language models need more compute.
+  - The MCP server and the API server (docling-serve) are separate packages, not part of this library.
+costInformation:
+  model: free
+  details: MIT open source; runs locally.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the GitHub repository description and the README Features.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: PyPI version 2.150.0 (2026-11-10) and GitHub release v2.150.0.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: curated
+    source: GitHub organization docling-project; README 'Docling is hosted as a project in the LF AI & Data Foundation'.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: native
+    source: PyPI project URLs (issues).
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: PyPI license_expression MIT; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: linked
+    source: GitHub repository homepage.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: PyPI requires_python and the README installation.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: curated
+    source: The README's installation is pip install docling; no credentials are needed.
+    observedAt: "2026-11-13"
+  - field: /integrations
+    method: curated
+    source: README integrations (LangChain, LlamaIndex).
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Features (VLMs, MCP server, API server); PyPI release history.
+    observedAt: "2026-11-13"

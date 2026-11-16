@@ -1,0 +1,102 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:exa.ai:server:exa-mcp",
+      "displayName": "Exa MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://mcp.exa.ai/mcp/server-card",
+      "capabilities": ["web_search_exa", "web_fetch_exa", "agent_run"],
+      "description": "Hosted MCP server giving agents Exa web search and clean page fetching. Works without an API key at limited usage; connect with an Exa API key or OAuth for full limits and the Exa research agent tool.",
+      "representativeQueries": [
+        "search the web for current information about a topic",
+        "fetch and read the content of a web page as markdown",
+        "find recent news, papers, or companies matching a description",
+        "run a multi-step research task and return a cited report"
+      ],
+      "metadata": {
+        "docs": "https://exa.ai/docs/get-started/exa-mcp",
+        "repository": "https://github.com/exa-labs/exa-mcp-server",
+        "configSchema": "https://mcp.exa.ai/.well-known/mcp-config"
+      },
+      "trustManifest": {
+        "identity": "https://exa.ai",
+        "identityType": "https",
+        "attestations": [
+          {
+            "type": "Trust-Center",
+            "uri": "https://trust.exa.ai",
+            "mediaType": "text/html"
+          },
+          {
+            "type": "API-Documentation",
+            "uri": "https://exa.ai/docs",
+            "mediaType": "text/html"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:exa.ai:api:rest",
+      "displayName": "Exa Search API",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://api.exa.ai/openapi.json",
+      "capabilities": [
+        "search",
+        "contents",
+        "findSimilar",
+        "answer",
+        "agent",
+        "monitors",
+        "batches",
+        "websets"
+      ],
+      "description": "REST API for neural and keyword web search, page contents extraction, similarity search, grounded answers, the Exa research agent, monitors, batch jobs, and structured data collection (Websets).",
+      "representativeQueries": [
+        "search the web with semantic or keyword queries and get ranked results",
+        "retrieve clean text, highlights, or summaries from a list of URLs",
+        "find pages similar to a given URL",
+        "get a cited answer to a factual question from the live web"
+      ],
+      "metadata": {
+        "docs": "https://exa.ai/docs"
+      },
+      "trustManifest": {
+        "identity": "https://exa.ai",
+        "identityType": "https",
+        "attestations": [
+          {
+            "type": "Trust-Center",
+            "uri": "https://trust.exa.ai",
+            "mediaType": "text/html"
+          },
+          {
+            "type": "API-Documentation",
+            "uri": "https://exa.ai/docs",
+            "mediaType": "text/html"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:exa.ai:skill:agent-skills",
+      "displayName": "Exa Agent Skills",
+      "type": "application/ai-skill+md",
+      "url": "https://exa.ai/docs/skill.md",
+      "description": "Agent skill (SKILL.md) that teaches coding agents such as Claude Code, Cursor and Codex how to search, retrieve content, run research, and build applications with Exa. Per-task skills live in the repository.",
+      "representativeQueries": [
+        "teach my coding agent how to use the Exa API",
+        "install a skill for web research in Claude Code or Cursor",
+        "give my agent a lead-generation or company-research workflow"
+      ],
+      "metadata": {
+        "docs": "https://exa.ai/docs/get-started/agent-skills/overview",
+        "repository": "https://github.com/exa-labs/agent-skills"
+      },
+      "trustManifest": {
+        "identity": "https://exa.ai",
+        "identityType": "https"
+      }
+    }
+  ]
+}

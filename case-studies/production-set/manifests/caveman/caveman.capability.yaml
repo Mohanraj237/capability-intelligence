@@ -1,0 +1,71 @@
+# Child of juliusbrussee/caveman-plugin. The base voice skill (skills/caveman/SKILL.md). The repository
+# also ships it alone as a release ZIP (dist/caveman.skill) and through `npx skills add`.
+schemaVersion: "0.1"
+id: juliusbrussee/caveman
+name: Caveman
+description: >-
+  Terse caveman voice: answer first, fluff gone, every technical fact kept. Use for /caveman,
+  "caveman mode", "talk like caveman", "be brief", "less tokens". Stays on until "stop caveman" or
+  "normal mode".
+capabilityType: skill
+source:
+  type: repository
+  url: https://github.com/JuliusBrussee/caveman
+  path: skills/caveman
+  repositoryId: "1201173969"
+  status: active
+  updatedAt: "2026-10-06"
+parent:
+  id: juliusbrussee/caveman-plugin
+publications:
+  - kind: repository
+    locator: https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman
+    nativeVersion: main
+    versionScheme: floating
+owner:
+  name: Julius Brussee
+  contact: https://github.com/JuliusBrussee/caveman/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  url: https://github.com/JuliusBrussee/caveman/blob/main/LICENSE
+  scope: repository
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+interfaces:
+  - type: agent_skill
+    contractRef: https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md
+runtime:
+  - kind: agent_host
+    detail: Coding agents that load Agent Skills.
+documentation: https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/README.md
+supportedUseCases:
+  - title: "Make agent replies terse"
+    description: "Answer first, no ceremony; code, commands, paths, numbers, and errors kept verbatim."
+  - title: "Report the current caveman mode"
+    description: "`/caveman status` reports the mode and changes nothing."
+setup: []
+limitations:
+  - "Stays on for the whole session until \"stop caveman\" or \"normal mode\"."
+  - "Switches to plain prose for security warnings, irreversible actions, questions to the user, and anything persisted outside chat (code, comments, commits, docs, issues, tickets)."
+  - "Mode status is tracked only on hosts that run the plugin's hooks; elsewhere `/caveman status` answers \"(not tracked by this host)\"."
+  - "Median output reduction against an \"Answer concisely.\" control is 3% (n=10, one run, measured on the 3.1.0 skill text). It saves nothing on agents billed per request, and the project lists cases where it is net-negative."
+costInformation:
+  model: free
+  details: Apache-2.0, in the Caveman repository; the skill needs no account, service, or script.
+provenance:
+  - { field: /description, method: native, source: "skills/caveman/SKILL.md front matter description", observedAt: "2026-11-09" }
+  - { field: /name, method: curated, source: "Display name written for this record; the native name is 'caveman'", observedAt: "2026-11-09" }
+  - { field: /capabilityType, method: derived, basis: convention, source: "A SKILL.md is a skill", observedAt: "2026-11-09" }
+  - { field: /source/updatedAt, method: linked, source: "git log -1 on skills/caveman, UTC date", observedAt: "2026-11-09" }
+  - { field: /runtime, method: derived, basis: convention, source: "Agent Skills are loaded by an agent host", observedAt: "2026-11-09" }
+  - { field: /x-invocation, method: native, source: "skills/caveman/SKILL.md front matter has no disable-model-invocation flag", observedAt: "2026-11-09" }
+  - { field: /documentation, method: linked, source: "GitHub contents API: skills/caveman/README.md", observedAt: "2026-11-16" }
+  - { field: /supportedUseCases, method: curated, source: "Written from skills/caveman/SKILL.md (rules and examples)", observedAt: "2026-11-16" }
+  - { field: /setup, method: linked, source: "GitHub contents API: skills/caveman holds only README.md and SKILL.md, so nothing is installed or configured", observedAt: "2026-11-16" }
+  - { field: /limitations, method: curated, source: "skills/caveman/SKILL.md (Persistence, When to break the rules); output reduction and per-request billing from the project's notes as recorded in juliusbrussee/caveman-plugin", observedAt: "2026-11-16" }
+  - { field: /costInformation, method: curated, source: "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call", observedAt: "2026-11-16" }
+# Extension field: how the skill can be started, from its front matter. No flag means the host default
+# (the model may load it from its description; the user may also type its command).
+x-invocation:
+  disableModelInvocation: false

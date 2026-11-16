@@ -1,6 +1,7 @@
 # Internal skill, published from a monorepo that also contains sre-toolkit (same source.url,
 # different source.path). Assessed risk tier, so assessmentReference is present. It also uses the
-# optional maturity, intendedAudience, platformCompatibility, and costInformation fields. It states
+# optional maturity, integrations, and costInformation fields, and a repository publication that
+# states the tag adopters pin and the AI host it is used in (publications[].platformCompatibility). It states
 # every fact of every completeness level ('setup: []' declares that nothing needs to be set up),
 # so it reaches 'governed'. LicenseRef- marks terms that are not on the SPDX License List.
 schemaVersion: "0.1"
@@ -16,6 +17,13 @@ source:
   type: repository
   url: https://github.com/example-org/ai-capabilities
   path: skills/sql-review
+publications:
+  - kind: repository
+    locator: https://github.com/example-org/ai-capabilities/tree/sql-review-v1.3.0/skills/sql-review
+    nativeVersion: sql-review-v1.3.0
+    versionScheme: tag
+    platformCompatibility:
+      - github-copilot
 owner:
   name: AI Platform Engineering
   contact: ai-platform@example.com
@@ -36,9 +44,6 @@ supportedUseCases:
     description: Flags full-table scans, unbounded queries on partitioned tables, and N+1 query patterns.
   - title: Check queries against the data-access policy
     description: Detects reads of classified PII columns and points to the approved access pattern.
-intendedAudience:
-  - backend engineers
-  - database reviewers
 interfaces:
   - type: agent_skill
     contractRef: https://github.com/example-org/ai-capabilities/blob/main/skills/sql-review/SKILL.md
@@ -59,9 +64,8 @@ runtime:
   - kind: local_process
     detail: The sql-review CLI.
 setup: []
-platformCompatibility:
+integrations:
   - github-actions
-  - vs-code
 dependencies: []
 limitations:
   - Supports the PostgreSQL and MySQL dialects only.

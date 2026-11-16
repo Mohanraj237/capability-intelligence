@@ -144,8 +144,8 @@ Every rule is tagged with its provenance:
   | Field | Needed by | Content owner |
   |---|---|---|
   | `maturity`: `prototype`, `pilot`, `production` | Mission 2 tracks maturity separately from availability; Mission 4 scope includes standardizing maturity | Mission 2 assigns the values; the definitions are to be agreed with it |
-  | `intendedAudience` | Mission 2 identifies each capability's intended audience | Capability owners and Mission 2 |
-  | `platformCompatibility` (kebab-case tokens) | Integration metadata, in Mission 4 scope; Mission 1 judges feasibility | Capability owners; the token vocabulary is not yet controlled |
+  | `intendedAudience` (**removed 2026-11-16**, C15: every value restated the description, use cases, runtime, or integrations; the audience is now read from `supportedUseCases`) | Mission 2 identifies each capability's intended audience | Capability owners and Mission 2 |
+  | `publications[].platformCompatibility` (AI hosts, controlled list, stated only per publication since 2026-11-16) and `integrations` (kebab-case tokens), revised 2026-11-16 (C5, C12, C14) | Integration metadata, in Mission 4 scope; Mission 1 judges feasibility | Capability owners; the host list is controlled by Mission 4, the integration tokens are not yet controlled |
   | `costInformation`: `model` plus `details` and `url` | Mission 1 ranks by cost where data is available | Capability owners |
 
   `lifecycleStatus` expresses availability, and `maturity` expresses evidence of real-world use.
@@ -371,7 +371,7 @@ automation such as the validation step of Mission 5's contribution workflow.
 | Structural, error | `YAML_SYNTAX_ERROR`, `DUPLICATE_KEY`, `NOT_A_MAPPING`, `SCHEMA_VERSION_UNSUPPORTED`, `MISSING_REQUIRED_FIELD`, `CONDITIONAL_FIELD_REQUIRED`, `CONDITIONAL_RULE_VIOLATION`, `UNKNOWN_FIELD`, `INVALID_TYPE`, `INVALID_VALUE`, `INVALID_FORMAT`, `CONSTRAINT_VIOLATION`, `SCHEMA_VIOLATION` |
 | Structural, warning | `YAML_PORTABILITY` |
 | Consistency, error | `DUPLICATE_ID`, `SELF_REFERENCE` |
-| Consistency, warning | `DUPLICATE_SOURCE`, `DUPLICATE_PUBLICATION`, `REFERENCE_TO_DEPRECATED`, `REFERENCE_TO_RETIRED`, `PARENT_CHILD_MISMATCH`, `DATE_IN_FUTURE`, `DEPRECATION_STATUS_MISMATCH`, `LIFECYCLE_SIGNALS_CONFLICT`, `PROVENANCE_FIELD_NOT_FOUND`, `SOURCE_UNREACHABLE` |
+| Consistency, warning | `DUPLICATE_SOURCE`, `DUPLICATE_PUBLICATION`, `REFERENCE_TO_DEPRECATED`, `REFERENCE_TO_RETIRED`, `PARENT_CHILD_MISMATCH`, `DATE_IN_FUTURE`, `DEPRECATION_STATUS_MISMATCH`, `LIFECYCLE_SIGNALS_CONFLICT`, `RUNTIME_REPEATS_PUBLICATION` (added 2026-11-16, C16; it replaces `PLATFORM_COMPATIBILITY_MISMATCH`, retired with the capability-wide host list, C14), `PUBLICATION_REPEATS_SOURCE` (C9), `SETUP_SINGLE_GROUP` (C13), `ASSESSMENT_EXPIRED` (Mission 3, 12 months), `PROVENANCE_FIELD_NOT_FOUND`, `SOURCE_UNREACHABLE` |
 | Consistency, unverified | `UNRESOLVED_REFERENCE`, `RELATION_UNVERIFIED`, `PUBLICATION_VERSIONS_DIFFER`, `LICENSE_NEEDS_REVIEW`, `DERIVED_VALUE_UNCONFIRMED`, `RISK_UNASSESSED`, `SOURCE_NOT_CHECKED`, `SOURCE_NOT_CHECKABLE`, `SOURCE_NOT_ACCESSIBLE` |
 | Completeness, error | `COMPLETENESS_BELOW_REQUIRED` (only with `--require-level`) |
 | Compatibility | Errors: `IDENTITY_CHANGED`, `LIFECYCLE_TRANSITION_NOT_ALLOWED`, `VERSION_DECREASED`, `INSUFFICIENT_VERSION_BUMP` (a warning below 1.0.0). Warning: `LIFECYCLE_STATUS_REMOVED`. Unverified: `VERSION_NOT_COMPARABLE` |

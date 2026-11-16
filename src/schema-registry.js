@@ -22,7 +22,8 @@ const SCHEMA_VERSION_PATTERN = /^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$/;
 //   x-lifecycleTransitions  allowed lifecycleStatus transitions (enforced by compat)
 //   x-completenessLevels    completeness levels (reported by validate, enforced on request)
 //   x-synonyms              names that native formats use for a field (used in hints)
-export const ANNOTATION_KEYWORDS = ['x-hint', 'x-lifecycleTransitions', 'x-completenessLevels', 'x-synonyms'];
+//   x-retiredFields         fields removed from this version, with where their content goes (used in hints)
+export const ANNOTATION_KEYWORDS = ['x-hint', 'x-lifecycleTransitions', 'x-completenessLevels', 'x-synonyms', 'x-retiredFields'];
 
 export function createAjv() {
   // strictRequired/strictTypes are disabled because conditional rules (if/then) legitimately

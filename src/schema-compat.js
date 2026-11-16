@@ -15,7 +15,7 @@ import { parseManifestText } from './yaml-source.js';
 const IMPACT_RANK = { none: 0, annotation: 1, relaxation: 2, additive: 2, breaking: 3 };
 const BUMP_RANK = { none: 0, minor: 1, major: 2 };
 const BOUNDS = [['minLength', 'min'], ['maxLength', 'max'], ['minItems', 'min'], ['maxItems', 'max']];
-const ANNOTATIONS = ['title', 'description', 'examples', '$comment', 'x-hint', 'x-synonyms'];
+const ANNOTATIONS = ['title', 'description', 'examples', '$comment', 'x-hint', 'x-synonyms', 'x-retiredFields'];
 
 // Accepts a registered schema version ("0.1") or a path to a schema file (for unregistered drafts).
 export function loadSchemaInput(input, registry) {

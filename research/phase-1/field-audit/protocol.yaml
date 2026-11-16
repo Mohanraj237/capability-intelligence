@@ -1,0 +1,127 @@
+# Phase 1 field audit: pre-registered protocol.
+#
+# Written on 2026-11-16, before the harness (audit.js) was run against the 22 production
+# manifests. The journeys, questions, needs, search terms, and relevance judgments below are not
+# changed after the first run; any later deviation is recorded at the end of this file.
+#
+# Sources: the pilot journeys (pilot/journeys.yaml), the Spikes 1-3 journeys J1-J4 and needs
+# N1-N4 (research/spikes-1-3/needs.yaml), and the consumer needs of Missions 1, 2, 3, and 5
+# (test/consumers.test.js). Journey J5 is new: it asks what an AI host (Claude Code, Cursor, an
+# agent framework) needs from the manifest to load and use a capability.
+#
+# A question is answered for a manifest when any of its fields has a value (an explicit empty
+# list counts: it declares "none"). `excluding` values assert nothing.
+
+journeys:
+  - id: J1
+    title: Find a capability for a need
+    questions:
+      - { id: name, ask: What is it called?, need: required, anyOf: [name] }
+      - { id: what, ask: What does it do?, need: required, anyOf: [description] }
+      - { id: fits, ask: Is it meant for my use case?, need: required, anyOf: [supportedUseCases, keywords] }
+      - { id: kind, ask: What kind of capability is it?, need: required, anyOf: [capabilityType] }
+      - { id: host, ask: Does it work in my AI host?, need: helpful, anyOf: ["publications[].platformCompatibility"] }
+      # Since decision register C15 (2026-11-16) the audience is read from the use cases and the
+      # description; intendedAudience restated them and was removed.
+      - { id: audience, ask: Who is it intended for?, need: helpful, anyOf: [supportedUseCases, description] }
+      - { id: mature, ask: Is it proven in real use?, need: helpful, anyOf: [maturity] }
+
+  - id: J2
+    title: Recognise the same capability across sources
+    questions:
+      - { id: same, ask: Is this the same capability as another entry?, need: required, anyOf: ["publications[].locator", source.repositoryId, source.url, source.identifier] }
+      - { id: related, ask: Is it a fork, wrapper, or derivative of another entry?, need: helpful, anyOf: [relations] }
+      - { id: part-of, ask: Is it part of a larger package?, need: helpful, anyOf: [parent, components] }
+      - { id: affiliation, ask: Is it internal or external?, need: helpful, anyOf: [owner.affiliation] }
+
+  - id: J3
+    title: Compare candidates and decide whether to adopt
+    questions:
+      - { id: get, ask: Where do I get it?, need: required, anyOf: [source.url, source.identifier, "publications[].locator"] }
+      - { id: integrate, ask: How does my system use it?, need: required, anyOf: [interfaces] }
+      - { id: runs, ask: Where does it run, on what runtime?, need: required, anyOf: [runtime] }
+      - { id: version, ask: Which version is current?, need: required, anyOf: [capabilityVersion, "publications[].nativeVersion"] }
+      - { id: maintained, ask: Is it still maintained?, need: required, anyOf: [lifecycleStatus, source.status, source.updatedAt, "publications[].status", "publications[].updatedAt"] }
+      - { id: terms, ask: May we use it, and under what terms?, need: required, anyOf: [license] }
+      - { id: who, ask: Who maintains it?, need: required, anyOf: [owner.name] }
+      - { id: contact, ask: How do I reach the maintainers?, need: required, anyOf: [owner.contact] }
+      - { id: setup, ask: What configuration or credentials does it need?, need: required, anyOf: [setup] }
+      - { id: limits, ask: What are its known limitations?, need: required, anyOf: [limitations] }
+      - { id: depends, ask: What other capabilities does it need?, need: helpful, anyOf: [dependencies] }
+      - { id: works-with, ask: Which systems does it work with?, need: helpful, anyOf: [integrations] }
+      - { id: cost, ask: What does it cost to use?, need: helpful, anyOf: [costInformation] }
+      - { id: docs, ask: Where is its documentation?, need: helpful, anyOf: [documentation] }
+
+  - id: J4
+    title: Judge whether there is enough information, and what to ask
+    questions:
+      - { id: provenance, ask: Where does each fact come from?, need: required, anyOf: [provenance] }
+      - { id: risk, ask: Has it been risk-assessed, and with what result?, need: required, governance: true, anyOf: [riskTier], excluding: [unassessed] }
+      - { id: license-scope, ask: Does the license cover this capability or only the repository?, need: helpful, anyOf: [license.scope] }
+      - { id: replaced, ask: If it is deprecated, what replaces it?, need: helpful, anyOf: [deprecation] }
+
+  - id: J5
+    title: Load and use it from an AI host
+    questions:
+      - { id: when, ask: When should the agent use it?, need: required, anyOf: [description, supportedUseCases] }
+      - { id: protocol, ask: Which protocol does the host speak to it?, need: required, anyOf: ["interfaces[].type"] }
+      - { id: transport, ask: Which transport or contract does it use?, need: helpful, anyOf: ["interfaces[].transport", "interfaces[].contractRef"] }
+      - { id: launch, ask: How is it installed or started?, need: required, anyOf: ["publications[].locator", "runtime[].detail"] }
+      - { id: credentials, ask: Which secrets and settings must be supplied?, need: required, anyOf: [setup] }
+      - { id: tools, ask: Which tools, commands, or sub-skills does it expose?, need: helpful, anyOf: [embeddedComponents, components] }
+      - { id: host, ask: Is this host supported?, need: helpful, anyOf: ["publications[].platformCompatibility"] }
+      - { id: side-effects, ask: What can go wrong or change data?, need: helpful, anyOf: [limitations] }
+
+# J1 retrieval needs over the 22 manifests. N1-N4 are the research needs unchanged; N5-N7 are
+# new needs that the production set adds. Relevance is judged from each capability's documented
+# purpose, before any matcher run: relevant = meets the need; partial = related but narrower.
+# Every manifest not listed is judged not relevant.
+needs:
+  - id: N1
+    statement: Let a coding agent drive a real browser to test our web application.
+    terms: [browser, playwright, puppeteer, selenium, e2e, screenshot, web app testing]
+    relevant: [microsoft/playwright-mcp, chromedevtools/chrome-devtools-mcp, anthropics/webapp-testing]
+    partial: [browser-use/browser-use]
+  - id: N2
+    statement: Let an agent read and update GitHub issues and pull requests.
+    terms: [github, pull request, pull requests, issue, issues]
+    relevant: [github/github-mcp-server]
+    partial: [anthropics/claude-code-action, the-pr-agent/pr-agent]
+  - id: N3
+    statement: Give an agent live web search with citable result URLs.
+    terms: [web search, search engine, search api, serp, internet search]
+    relevant: [brave/brave-search-mcp-server, exa-labs/exa-mcp-server, tavily-ai/tavily-mcp, tavily-ai/langchain-tavily]
+    partial: []
+  - id: N4
+    statement: Extract the text and tables from PDF files inside an agent workflow.
+    terms: [pdf, pdfs, extract text, tables, document conversion, ocr]
+    relevant: [docling-project/docling, jsvine/pdfplumber, unstructured-io/unstructured, mehmet-kozan/pdf-parse]
+    partial: []
+  - id: N5
+    statement: Let an agent find, read, and update Jira issues.
+    terms: [jira, atlassian, issue tracker, tickets]
+    relevant: [sooperset/mcp-atlassian]
+    partial: []
+  - id: N6
+    statement: Review pull requests automatically and comment on code quality.
+    terms: [code review, review pull requests, pull request review, review comments, review the diff]
+    relevant: [the-pr-agent/pr-agent, anthropics/claude-code-action]
+    partial: [juliusbrussee/caveman-review, juliusbrussee/caveman-plugin, github/github-mcp-server]
+  - id: N7
+    statement: Reduce the number of output tokens an agent spends on replies.
+    terms: [tokens, terse, compressed, brief, concise, token usage]
+    relevant: [juliusbrussee/caveman, juliusbrussee/caveman-plugin, juliusbrussee/ultracave, juliusbrussee/megacave]
+    partial: [juliusbrussee/caveman-commit, juliusbrussee/caveman-review]
+
+# Fields searched by the J1 matcher, by name; each configuration is tested.
+searchFields:
+  name: [name]
+  description: [description]
+  keywords: [keywords]
+  supportedUseCases: ["supportedUseCases[].title", "supportedUseCases[].description"]
+  embeddedComponents: ["embeddedComponents[].name", "embeddedComponents[].description"]
+  interfaces: ["interfaces[].description"]
+  integrations: [integrations]
+  limitations: [limitations]
+
+deviations: []

@@ -1,0 +1,132 @@
+# Production reference set, need N3 (web search with citable URLs).
+# Real public capability: langchain-tavily, Tavily's official LangChain integration
+# (github.com/tavily-ai/langchain-tavily). Values observed on 2026-11-13 from PyPI, the GitHub
+# repository API, and the README. The repository publishes no GitHub releases; versions come from PyPI.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: tavily-ai/langchain-tavily
+name: LangChain Tavily
+description: >-
+  Tavily's integration for LangChain. Provides LangChain tools for real-time web search with result
+  URLs (TavilySearch), page content extraction (TavilyExtract), site mapping and crawling
+  (TavilyMap, TavilyCrawl), and research reports (TavilyResearch).
+capabilityType: library
+capabilityVersion: "0.2.18"
+source:
+  type: repository
+  url: https://github.com/tavily-ai/langchain-tavily
+  repositoryId: "950113961"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/langchain-tavily
+    nativeName: langchain-tavily
+    nativeVersion: "0.2.18"
+    versionScheme: pep440
+    updatedAt: "2026-04-16"
+owner:
+  name: Tavily
+  contact: https://github.com/tavily-ai/langchain-tavily/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://github.com/tavily-ai/langchain-tavily#readme
+keywords:
+  - tavily
+  - langchain
+  - web-search
+relations:
+  - type: distinct_from
+    id: tavily-ai/tavily-mcp
+    evidence: Both use the Tavily API; this one is a LangChain library, tavily-mcp is an MCP server.
+    verified: true
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Live web search with citable result URLs in a LangChain agent
+    description: TavilySearch returns results with their URLs, as a LangChain tool for agents.
+  - title: Extract, map, and crawl web pages
+    description: TavilyExtract, TavilyMap, and TavilyCrawl.
+  - title: Research reports
+    description: TavilyResearch and TavilyGetResearch.
+interfaces:
+  - type: library
+    description: Python package langchain_tavily with LangChain tool classes.
+embeddedComponents:
+  - type: tool
+    name: TavilySearch
+    description: Web search.
+  - type: tool
+    name: TavilyExtract
+    description: Extract page content.
+  - type: tool
+    name: TavilyMap
+    description: Map a website.
+  - type: tool
+    name: TavilyCrawl
+    description: Crawl a website.
+  - type: tool
+    name: TavilyResearch
+    description: Run a research task.
+runtime:
+  - kind: local_process
+    detail: Python >=3.10,<4.0.
+setup:
+  - name: TAVILY_API_KEY
+    kind: env_var
+    description: Tavily API key, from app.tavily.com.
+    secret: true
+    required: true
+integrations:
+  - langchain
+dependencies: []
+limitations:
+  - Requires a Tavily account; searches go to Tavily's API.
+  - Only for LangChain-based agents.
+  - The latest PyPI release is from 2026-04-16, although the repository is still updated.
+costInformation:
+  model: provider_billed
+  details: The library is free (MIT). Searches use a Tavily account; the README does not state prices.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the README sections and the classes it imports.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: PyPI version 0.2.18 (2026-04-16).
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub organization tavily-ai; PyPI names no author.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: "PyPI license MIT and classifier 'License :: OSI Approved :: MIT License'."
+    observedAt: "2026-11-13"
+  - field: /embeddedComponents
+    method: native
+    source: README import statements.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: PyPI requires_python and the README Installation.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Credentials section.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README; PyPI release date.
+    observedAt: "2026-11-13"

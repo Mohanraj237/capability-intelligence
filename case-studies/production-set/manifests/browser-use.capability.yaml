@@ -1,0 +1,148 @@
+# Production reference set, need N1 (browser automation).
+# Real public capability: browser-use, the open-source Python library (github.com/browser-use/browser-use).
+# Values observed on 2026-11-13 from PyPI, the official MCP Registry, the GitHub repository API, and
+# the README. This describes the open-source library; Browser Use Cloud (hosted browsers and agent
+# API) is a separate paid service and is recorded as a relation, not described here.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: browser-use/browser-use
+name: browser-use
+description: >-
+  Open-source Python library for AI browser agents. An agent is given a task in natural language
+  and controls a real Chrome or Chromium browser to complete it, writing Python against the Chrome
+  DevTools Protocol. Works with OpenAI, Anthropic, Google, and local models.
+capabilityType: framework
+capabilityVersion: "1.0.3"
+source:
+  type: repository
+  url: https://github.com/browser-use/browser-use
+  repositoryId: "881458615"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/browser-use
+    nativeName: browser-use
+    nativeVersion: "1.0.3"
+    versionScheme: pep440
+    updatedAt: "2026-11-12"
+  - kind: registry_entry
+    locator: com.browser-use/browser-use
+    nativeVersion: "0.13.11"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-10-21"
+    verifiedBy: MCP Registry namespace com.browser-use (domain-verified); the README declares mcp-name com.browser-use/browser-use.
+owner:
+  name: Browser Use
+  contact: https://github.com/browser-use/browser-use/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://docs.browser-use.com
+keywords:
+  - browser-automation
+  - ai-agents
+  - python
+  - cdp
+relations:
+  - type: distinct_from
+    locator: https://cloud.browser-use.com
+    evidence: The README separates the free MIT library from Browser Use Cloud, whose hosted browsers and models charge for usage.
+    verified: true
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Automate a web task with an AI agent
+    description: Give the agent a task in natural language; it drives the browser until the task is done.
+  - title: Use a local browser with existing logins
+    description: Drive the Chrome you have open, a copy of a profile, or a fresh temporary profile.
+interfaces:
+  - type: library
+    description: Python API (Agent, Browser, and model classes such as ChatOpenAI and ChatAnthropic).
+  - type: cli
+    description: Command-line interface, the README's 'Path 2'.
+runtime:
+  - kind: local_process
+    detail: Python >=3.11,<4.0.
+setup:
+  - name: Model provider API key
+    kind: account
+    description: An API key for the chosen model, for example OPENAI_API_KEY; not needed with a local model such as Ollama.
+    secret: true
+    required: true
+  - name: BROWSER_USE_API_KEY
+    kind: env_var
+    description: Optional. Key for Browser Use's own model and cloud browsers, from cloud.browser-use.com.
+    secret: true
+    required: false
+  - name: Chrome or Chromium
+    kind: software
+    description: A local Chrome, Chromium, or Edge browser for Browser('chromium') or Browser('chrome').
+    secret: false
+    required: true
+dependencies: []
+limitations:
+  - The project says to pin the exact version; releases move fast and can break code.
+  - Version 1.0 is a rewrite; code written for 0.x needs migrating (MIGRATING.md).
+  - Passwords passed as sensitive_data are redacted from output but are not sandboxed; model-written Python can read them.
+  - With Browser('chrome') the agent acts in your own browser with your logins.
+  - Page content goes to the chosen model provider.
+  - The MCP Registry entry (0.13.11) lags the PyPI release (1.0.3).
+costInformation:
+  model: provider_billed
+  details: The library is free (MIT). Model inference and Browser Use Cloud are billed by their providers; a local model can be used instead.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the README Path 3 (Python Library) section and the PyPI metadata.
+    observedAt: "2026-11-13"
+  - field: /capabilityType
+    method: curated
+    source: Chosen by the curator; a library for building agents, not an agent with an A2A card.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: PyPI version 1.0.3 (2026-11-12) and GitHub release 1.0.3.
+    observedAt: "2026-11-13"
+  - field: /publications/1
+    method: linked
+    source: Official MCP Registry API, latest entry for com.browser-use/browser-use.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub organization browser-use; PyPI author Gregor Zunic.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: "PyPI license MIT and classifier 'License :: OSI Approved :: MIT License'; README FAQ."
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: native
+    source: PyPI project URLs (Documentation).
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: PyPI requires_python and the README install commands.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Path 3 example and authentication FAQ.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Path 3 (pinning, migration) and FAQ (authentication, free use); registry and PyPI versions.
+    observedAt: "2026-11-13"
+  - field: /costInformation
+    method: native
+    source: README FAQ 'Can I use this for free?'.
+    observedAt: "2026-11-13"

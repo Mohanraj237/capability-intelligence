@@ -13145,7 +13145,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -13166,7 +13168,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -13458,7 +13462,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -13479,7 +13485,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -13549,7 +13557,8 @@
         "errors": [],
         "warnings": [
           "DUPLICATE_SOURCE",
-          "DUPLICATE_PUBLICATION"
+          "DUPLICATE_PUBLICATION",
+          "RUNTIME_REPEATS_PUBLICATION"
         ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
@@ -13806,7 +13815,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -13827,7 +13838,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -14049,7 +14062,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -14070,7 +14085,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -14236,7 +14253,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -14257,7 +14276,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "LICENSE_NEEDS_REVIEW",
@@ -14279,7 +14300,9 @@
           ]
         ],
         "errors": [],
-        "warnings": [],
+        "warnings": [
+          "PUBLICATION_REPEATS_SOURCE"
+        ],
         "unverified": [
           "SOURCE_NOT_CHECKED",
           "RISK_UNASSESSED"

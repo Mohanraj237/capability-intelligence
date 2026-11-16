@@ -3,7 +3,13 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { validateFiles } from '../src/validator.js';
-import { baseManifest, codes, validateAll, without } from './helpers.js';
+import { baseManifest, codes, structuralFindings, validateAll, without } from './helpers.js';
+
+function only(findings, code) {
+  const matching = findings.filter((finding) => finding.code === code);
+  assert.equal(matching.length, 1, `expected exactly one ${code}, got: ${JSON.stringify(codes(findings))}`);
+  return matching[0];
+}
 
 const findingsOf = (report, index) => report.results[index].findings;
 const consistencyCodes = (report, index) => codes(findingsOf(report, index).filter((f) => f.stage === 'consistency'));
@@ -226,16 +232,118 @@ describe('metadata and risk', () => {
     assert.doesNotMatch(finding.message, /2d446f9e1b79/);
   });
 
+  it('states AI hosts only per publication, and rejects a capability-wide list (decision register C14)', async () => {
+    const publications = [
+      { kind: 'marketplace_entry', locator: 'reviewer@claude-plugins-official', platformCompatibility: ['claude-code'] },
+      { kind: 'package', locator: 'pkg:npm/reviewer', platformCompatibility: ['claude-code', 'cursor', 'github-copilot'] },
+      { kind: 'container_image', locator: 'docker.io/example/reviewer' },
+    ];
+    const report = await validateAll([baseManifest({ id: 'team/hosts', publications })]);
+    assert.equal(report.summary.errors, 0);
+    assert.equal(report.summary.warnings, 0);
+    const root = only(structuralFindings(baseManifest({ platformCompatibility: ['claude-code'] })), 'UNKNOWN_FIELD');
+    assert.equal(root.path, '/platformCompatibility');
+    assert.match(root.hint, /publications\[\]\.platformCompatibility/);
+  });
+
+  it('answers the removed intendedAudience with where its content goes (decision register C15)', () => {
+    const finding = only(structuralFindings(baseManifest({ intendedAudience: ['backend engineers'] })), 'UNKNOWN_FIELD');
+    assert.equal(finding.path, '/intendedAudience');
+    assert.match(finding.hint, /supportedUseCases/);
+    assert.match(finding.hint, /x-intendedAudience/);
+    assert.deepEqual(structuralFindings(baseManifest({ 'x-intendedAudience': ['backend engineers'] })), []);
+  });
+
+  it('warns when a runtime detail repeats a publication (decision register C16)', async () => {
+    const publications = [
+      { kind: 'package', locator: 'pkg:npm/%40example-org/reviewer' },
+      { kind: 'container_image', locator: 'docker.io/example/reviewer' },
+    ];
+    const runtime = [
+      { kind: 'local_process', detail: 'Node.js >=18, started with npx @example-org/reviewer.' },
+      { kind: 'container', detail: 'docker.io/example/reviewer' },
+      { kind: 'hosted_service', detail: 'Hosted by the vendor.' },
+      { kind: 'local_process', detail: 'Node.js >=18; needs @example-org/reviewer-core installed separately.' },
+    ];
+    const report = await validateAll([baseManifest({ publications, runtime })]);
+    const repeats = findingsOf(report, 0).filter((f) => f.code === 'RUNTIME_REPEATS_PUBLICATION');
+    assert.deepEqual(repeats.map((f) => [f.severity, f.path]), [['warning', '/runtime/0/detail'], ['warning', '/runtime/1/detail']]);
+    assert.match(repeats[0].message, /'@example-org\/reviewer'/);
+  });
+
+  it('warns when a repository publication repeats the source without stating a ref', async () => {
+    const source = { type: 'repository', url: 'https://github.com/example-org/skills', path: 'skills/review' };
+    const report = await validateAll([
+      baseManifest({ id: 'team/no-ref', source, publications: [{ kind: 'repository', locator: 'https://github.com/example-org/skills/tree/main/skills/review', versionScheme: 'unversioned' }] }),
+      baseManifest({ id: 'team/with-ref', source: { ...source, path: 'skills/other' }, publications: [{ kind: 'repository', locator: 'https://github.com/example-org/skills/tree/main/skills/other', nativeVersion: 'main', versionScheme: 'floating' }] }),
+      baseManifest({ id: 'team/action', source: { type: 'repository', url: 'https://github.com/example-org/action' }, publications: [{ kind: 'repository', locator: 'https://github.com/example-org/action', nativeVersion: 'v1', versionScheme: 'tag' }] }),
+      baseManifest({ id: 'team/elsewhere', source: { type: 'repository', url: 'https://github.com/example-org/main-repo' }, publications: [{ kind: 'repository', locator: 'https://github.com/example-org/mirror' }] }),
+    ]);
+    const repeats = (index) => findingsOf(report, index).filter((f) => f.code === 'PUBLICATION_REPEATS_SOURCE');
+    assert.deepEqual(repeats(0).map((f) => [f.severity, f.path]), [['warning', '/publications/0']]);
+    assert.deepEqual(repeats(1), []); // the ref adopters pin is new information
+    assert.deepEqual(repeats(2), []); // an action pinned to a tag
+    assert.deepEqual(repeats(3), []); // a different repository is a channel of its own
+  });
+
+  it('accepts setup alternatives as groups, and warns about a single group', async () => {
+    const cloud = [{ name: 'JIRA_USERNAME', group: 'jira-cloud', required: true }, { name: 'JIRA_API_TOKEN', group: 'jira-cloud', secret: true, required: true }];
+    const report = await validateAll([
+      baseManifest({ id: 'team/two-groups', setup: [{ name: 'JIRA_URL', required: true }, ...cloud, { name: 'JIRA_PERSONAL_TOKEN', group: 'jira-server-data-center', secret: true, required: true }] }),
+      baseManifest({ id: 'team/one-group', setup: cloud }),
+    ]);
+    assert.equal(report.summary.errors, 0);
+    const single = (index) => findingsOf(report, index).filter((f) => f.code === 'SETUP_SINGLE_GROUP');
+    assert.deepEqual(single(0), []);
+    assert.deepEqual(single(1).map((f) => [f.severity, f.path]), [['warning', '/setup/0/group']]);
+    assert.ok(structuralFindings(baseManifest({ setup: [{ name: 'X', group: 'Jira Cloud' }] })).some((f) => f.path === '/setup/0/group'));
+  });
+
+  it('reports an assessment older than 12 months as expired, and requires its date', async () => {
+    const assessed = (id, assessedOn) => baseManifest({ id, riskTier: 'low', assessmentReference: { id: `RA-${id.split('/')[1]}`, assessedOn } });
+    const report = await validateAll([
+      assessed('team/current', '2026-01-15'),
+      assessed('team/expired', '2025-10-19'),
+      assessed('team/leap', '2024-02-29'),
+    ], { today: '2026-10-19' });
+    const expired = (index) => findingsOf(report, index).filter((f) => f.code === 'ASSESSMENT_EXPIRED');
+    assert.deepEqual(expired(0), []);
+    assert.deepEqual(expired(1).map((f) => [f.severity, f.path]), [['warning', '/assessmentReference/assessedOn']]);
+    assert.match(expired(1)[0].message, /expired on 2026-10-19/);
+    assert.match(expired(2)[0].message, /expired on 2025-02-28/);
+    const undated = structuralFindings(baseManifest({ riskTier: 'low', assessmentReference: { id: 'RA-1' } }));
+    assert.ok(undated.some((f) => f.code === 'MISSING_REQUIRED_FIELD' && f.path.startsWith('/assessmentReference')));
+  });
+
+  it('warns when provenance evidence is older than 180 days', async () => {
+    const entry = (observedAt) => ({ field: '/description', method: 'native', source: 'README', observedAt });
+    const report = await validateAll([
+      baseManifest({ id: 'team/fresh', provenance: [entry('2026-06-01')] }),
+      baseManifest({ id: 'team/stale', provenance: [entry('2026-04-01'), entry('2026-10-01'), entry('2025-12-01')] }),
+    ], { today: '2026-10-19' });
+    const stale = (index) => findingsOf(report, index).filter((f) => f.code === 'EVIDENCE_STALE');
+    assert.deepEqual(stale(0), []);
+    assert.deepEqual(stale(1).map((f) => [f.severity, f.path]), [['warning', '/provenance']]);
+    assert.match(stale(1)[0].message, /2 of 3 .* oldest on 2025-12-01/);
+  });
+
+  it('rejects a platform in a publication that is not an AI host', () => {
+    const findings = structuralFindings(baseManifest({ publications: [{ kind: 'package', locator: 'pkg:npm/x', platformCompatibility: ['python'] }] }));
+    assert.ok(findings.some((f) => f.severity === 'error' && f.path === '/publications/0/platformCompatibility/0'));
+  });
+
   it('reports license terms in prose, and repository-wide licenses, as needing review', async () => {
     const report = await validateAll([
       baseManifest({ id: 'team/prose', license: { text: 'Proprietary. Complete terms in LICENSE.txt' } }),
       baseManifest({ id: 'team/repository', license: { expression: 'MIT', scope: 'repository' } }),
       baseManifest({ id: 'team/stated', license: { expression: 'Apache-2.0', scope: 'capability' } }),
+      baseManifest({ id: 'team/confirmed', license: { expression: 'MIT', scope: 'repository' }, provenance: [{ field: '/license', method: 'linked', source: 'Repository LICENSE', confirmedBy: 'Capability owner' }] }),
     ]);
     const paths = (index) => findingsOf(report, index).filter((f) => f.code === 'LICENSE_NEEDS_REVIEW').map((f) => [f.severity, f.path]);
     assert.deepEqual(paths(0), [['unverified', '/license']]);
     assert.deepEqual(paths(1), [['unverified', '/license/scope']]);
     assert.deepEqual(paths(2), []);
+    assert.deepEqual(paths(3), []); // confirmed by the owner (C10, U10)
   });
 
   it('reports heuristic values that nobody confirmed, and provenance for fields that have no value', async () => {
@@ -263,7 +371,7 @@ describe('metadata and risk', () => {
   it('reports unassessed risk as unverified, and an assessed tier as a passed risk check', async () => {
     const report = await validateAll([
       baseManifest({ id: 'team/unassessed' }),
-      baseManifest({ id: 'team/assessed', riskTier: 'low', assessmentReference: { id: 'RA-7' }, source: { type: 'provider', url: 'https://vendor.example/x' } }),
+      baseManifest({ id: 'team/assessed', riskTier: 'low', assessmentReference: { id: 'RA-7', assessedOn: '2026-10-01' }, source: { type: 'provider', url: 'https://vendor.example/x' } }),
     ]);
     assert.equal(findingsOf(report, 0).find((f) => f.code === 'RISK_UNASSESSED').severity, 'unverified');
     assert.equal(report.results[0].checks.risk, 'unverified');

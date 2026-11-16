@@ -1,0 +1,204 @@
+# Use case 2: an AI capability that analyses GitHub pull requests and reviews code quality.
+# Real public capability: PR-Agent (github.com/The-PR-Agent/pr-agent), originally built by Qodo and
+# donated to the community. Every value comes from its public sources, observed on 2026-11-13: the
+# GitHub repository API, the latest GitHub release, the PyPI package, Docker Hub, the README, and
+# pyproject.toml. provenance says where each value comes from.
+#
+# Not filled in, on purpose:
+# - riskTier stays 'unassessed': no risk assessment exists. Only Mission 3 can set it.
+# - maturity is assigned by Mission 2 (the inventory), not by the source.
+# - lifecycleStatus is declared by the owner; the project does not declare one.
+# capabilityType 'tool' is a curated choice: PR-Agent calls itself a code review agent, but it is
+# run as a CLI, a GitHub Action, or a webhook app, and it publishes no A2A Agent Card.
+schemaVersion: "0.1"
+id: the-pr-agent/pr-agent
+name: PR-Agent
+description: >-
+  Open-source, AI-powered code review agent for pull requests. Reviews a pull request's changes
+  and comments on code quality and possible issues (/review), suggests code improvements
+  (/improve), writes a pull request description (/describe), and answers questions about the
+  change (/ask). Works with GitHub, GitLab, Bitbucket, Azure DevOps, and Gitea.
+capabilityType: tool
+capabilityVersion: "0.50.0"
+source:
+  type: repository
+  url: https://github.com/The-PR-Agent/pr-agent
+  repositoryId: "662766482"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/pr-agent
+    nativeName: pr-agent
+    nativeVersion: "0.50.0"
+    versionScheme: pep440
+  - kind: container_image
+    locator: docker.io/pragent/pr-agent
+    nativeVersion: "0.50.0"
+    versionScheme: semver
+    updatedAt: "2026-11-08"
+    verifiedBy: The README names pragent/pr-agent as the image namespace for releases 0.34.2 and later.
+  - kind: repository
+    locator: https://github.com/The-PR-Agent/pr-agent
+    nativeVersion: main
+    versionScheme: floating
+    verifiedBy: The README's GitHub Action example uses the-pr-agent/pr-agent@main.
+owner:
+  name: The PR Agent
+  contact: https://github.com/the-pr-agent/pr-agent/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://docs.pr-agent.ai
+keywords:
+  - ai
+  - code-review
+  - pull-request
+  - devtools
+relations:
+  - type: distinct_from
+    locator: https://www.qodo.ai
+    evidence: "README: 'This repository contains the open-source PR Agent Project. It is not the Qodo offering for open-source projects.'"
+    verified: true
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Review the code quality of a pull request
+    description: The /review command comments on the changes, possible issues, and code quality.
+  - title: Suggest code improvements
+    description: The /improve command proposes concrete code changes for the pull request.
+  - title: Describe a pull request
+    description: The /describe command writes the pull request's title and description.
+  - title: Answer questions about a pull request
+    description: The /ask command answers free-text questions about the change.
+interfaces:
+  - type: cli
+    description: "`pr-agent --pr_url <PR_URL> review`, after pip install \"pr-agent[github]\"."
+  - type: ci_action
+    description: >-
+      GitHub Action the-pr-agent/pr-agent@main, triggered on pull_request opened and synchronize;
+      it reads OPENAI_KEY and GITHUB_TOKEN from the workflow environment.
+  - type: other
+    description: >-
+      Comment commands on a pull request (/review, /improve, /describe, /ask), run by the GitHub
+      Action, the GitHub App, or a webhook deployment.
+embeddedComponents:
+  - type: command
+    name: /review
+    description: Review the pull request.
+  - type: command
+    name: /improve
+    description: Suggest code improvements.
+  - type: command
+    name: /describe
+    description: Generate the pull request description.
+  - type: command
+    name: /ask
+    description: Answer a question about the pull request.
+runtime:
+  - kind: ci_runner
+    detail: A GitHub Actions runner, triggered on pull_request opened and synchronize.
+  - kind: local_process
+    detail: Python >=3.12; the GitHub provider needs the github extra.
+  - kind: container
+setup:
+  - name: OPENAI_KEY
+    kind: env_var
+    description: API key for the model provider (OpenAI in the default example). Other providers are configured through LiteLLM settings.
+    secret: true
+    required: true
+  - name: GITHUB_TOKEN
+    kind: env_var
+    description: GitHub token that lets PR-Agent read the pull request and post comments. In GitHub Actions, secrets.GITHUB_TOKEN.
+    secret: true
+    required: true
+integrations:
+  - github
+  - github-actions
+  - gitlab
+  - bitbucket
+  - azure-devops
+  - gitea
+dependencies: []
+limitations:
+  - Needs an external large language model; the pull request's code is sent to the configured model provider.
+  - The README's GitHub Action example pins the floating reference @main; pin a release for production.
+  - /help_docs is disabled since v0.36.1 pending a fix for a credential-exposure issue (issue 2445).
+  - Community-maintained legacy project of Qodo; distinct from Qodo's commercial code review product.
+  - Reviews are AI-generated suggestions and can be wrong; it does not approve or block merges by itself.
+costInformation:
+  model: provider_billed
+  details: The software is free (MIT). Each command makes a model API call, billed by the model provider.
+provenance:
+  - field: /name
+    method: native
+    source: README and GitHub repository description ('PR Agent').
+    observedAt: "2026-11-13"
+  - field: /description
+    method: curated
+    source: Written from the README introduction, Usage Examples, and the supported git providers list.
+    observedAt: "2026-11-13"
+  - field: /capabilityType
+    method: curated
+    source: Chosen by the curator; the project calls itself an agent but publishes no A2A Agent Card.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: Latest GitHub release v0.50.0 (2026-11-07) and PyPI version 0.50.0. pyproject.toml on main still says 0.49.0.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API; the old URL github.com/qodo-ai/pr-agent redirects here.
+    observedAt: "2026-11-13"
+  - field: /source/status
+    method: linked
+    source: GitHub repository API (archived false; last push 2026-11-12).
+    observedAt: "2026-11-13"
+  - field: /publications/1/nativeVersion
+    method: linked
+    source: Docker Hub tags for pragent/pr-agent (0.50.0, updated 2026-11-08).
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: native
+    source: LICENSE copyright holder 'The PR Agent'; GitHub organization The-PR-Agent.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: native
+    source: PyPI project URLs (Issues).
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: LICENSE file and PyPI license text (MIT); GitHub detects MIT.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: native
+    source: PyPI project URLs (Documentation).
+    observedAt: "2026-11-13"
+  - field: /keywords
+    method: linked
+    source: GitHub repository topics.
+    observedAt: "2026-11-13"
+  - field: /supportedUseCases
+    method: curated
+    source: README Usage Examples and See It in Action sections.
+    observedAt: "2026-11-13"
+  - field: /runtime
+    method: native
+    source: README Quick Start (GitHub Action, CLI) and pyproject.toml requires-python; Docker Hub namespace.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README GitHub Action example (OPENAI_KEY, GITHUB_TOKEN).
+    observedAt: "2026-11-13"
+  - field: /integrations
+    method: native
+    source: README 'Platform Agnostic' git providers and deployment options.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Features note on /help_docs, Data Privacy section, and project history.
+    observedAt: "2026-11-13"
+  - field: /costInformation
+    method: curated
+    source: README ('Each command uses a single LLM call') and the MIT license.
+    observedAt: "2026-11-13"

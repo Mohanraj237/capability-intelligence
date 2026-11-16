@@ -1,0 +1,1152 @@
+{
+  "reportFormatVersion": "0.1",
+  "tool": "capability-manifest",
+  "toolVersion": "0.1.0",
+  "supportedSchemaVersions": [
+    "0.1"
+  ],
+  "summary": {
+    "manifests": 22,
+    "valid": 22,
+    "invalid": 0,
+    "errors": 0,
+    "warnings": 0,
+    "unverified": 35
+  },
+  "results": [
+    {
+      "file": "case-studies\\production-set\\manifests\\brave-search-mcp-server.capability.yaml",
+      "id": "brave/brave-search-mcp-server",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 51,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\browser-use.capability.yaml",
+      "id": "browser-use/browser-use",
+      "capabilityType": "framework",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "PUBLICATION_VERSIONS_DIFFER",
+          "path": "/publications",
+          "line": 23,
+          "column": 3,
+          "message": "Publications state different versions: 1.0.3 (pkg:pypi/browser-use), 0.13.11 (com.browser-use/browser-use), 1.0.3 (capabilityVersion). Which one an adopter gets depends on the channel.",
+          "hint": "Expected while channels publish at different times. Confirm the current version with the owner before comparing or pinning versions."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 54,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\caveman\\caveman-commit.capability.yaml",
+      "id": "juliusbrussee/caveman-commit",
+      "capabilityType": "skill",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 30,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 31,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\caveman\\caveman-plugin.capability.yaml",
+      "id": "juliusbrussee/caveman-plugin",
+      "capabilityType": "plugin",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 4
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 52,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 66,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "DERIVED_VALUE_UNCONFIRMED",
+          "path": "/provenance/15",
+          "line": 276,
+          "column": 5,
+          "message": "The value at /runtime was inferred by a heuristic (Hook commands in plugin.json; python3 invocation in skills/caveman-compress/SKILL.md) and has not been confirmed.",
+          "hint": "Confirm the value with the owner or a curator and record confirmedBy, or correct it."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "DERIVED_VALUE_UNCONFIRMED",
+          "path": "/provenance/19",
+          "line": 280,
+          "column": 5,
+          "message": "The value at /components was inferred by a heuristic (Independence stated in CLAUDE.md ('Fully independent skill', 'self-contained'), judged with the three tests in docs/spikes-1-3-research.md section 9.1) and has not been confirmed.",
+          "hint": "Confirm the value with the owner or a curator and record confirmedBy, or correct it."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\caveman\\caveman-review.capability.yaml",
+      "id": "juliusbrussee/caveman-review",
+      "capabilityType": "skill",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 30,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 31,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\caveman\\caveman.capability.yaml",
+      "id": "juliusbrussee/caveman",
+      "capabilityType": "skill",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 32,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 33,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\caveman\\megacave.capability.yaml",
+      "id": "juliusbrussee/megacave",
+      "capabilityType": "skill",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 32,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 33,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\caveman\\ultracave.capability.yaml",
+      "id": "juliusbrussee/ultracave",
+      "capabilityType": "skill",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 32,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 33,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\chrome-devtools-mcp.capability.yaml",
+      "id": "chromedevtools/chrome-devtools-mcp",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 56,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\claude-code-action.capability.yaml",
+      "id": "anthropics/claude-code-action",
+      "capabilityType": "workflow",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 39,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\docling.capability.yaml",
+      "id": "docling-project/docling",
+      "capabilityType": "library",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 42,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\exa-mcp-server.capability.yaml",
+      "id": "exa-labs/exa-mcp-server",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "PUBLICATION_VERSIONS_DIFFER",
+          "path": "/publications",
+          "line": 22,
+          "column": 3,
+          "message": "Publications state different versions: 3.5.1 (https://mcp.exa.ai/mcp), 3.4.1 (ai.exa/exa), 3.4.3 (pkg:npm/exa-mcp-server), 3.4.3 (capabilityVersion). Which one an adopter gets depends on the channel.",
+          "hint": "Expected while channels publish at different times. Confirm the current version with the owner before comparing or pinning versions."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 60,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\github-mcp-server.capability.yaml",
+      "id": "github/github-mcp-server",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 65,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\langchain-tavily.capability.yaml",
+      "id": "tavily-ai/langchain-tavily",
+      "capabilityType": "library",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 45,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\mcp-atlassian.capability.yaml",
+      "id": "sooperset/mcp-atlassian",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "LICENSE_NEEDS_REVIEW",
+          "path": "/license/scope",
+          "line": 49,
+          "column": 10,
+          "message": "The license was read from the repository as a whole; it may not cover this capability, for example in a monorepo.",
+          "hint": "Have the owner or a curator confirm that the license applies to this capability, and record who in provenance[].confirmedBy for /license; or set license.scope to 'capability' if it was read for the capability itself."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 56,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\pdf-parse.capability.yaml",
+      "id": "mehmet-kozan/pdf-parse",
+      "capabilityType": "library",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 41,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\pdfplumber.capability.yaml",
+      "id": "jsvine/pdfplumber",
+      "capabilityType": "library",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 39,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\playwright-mcp.capability.yaml",
+      "id": "microsoft/playwright-mcp",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 58,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\pr-agent.capability.yaml",
+      "id": "the-pr-agent/pr-agent",
+      "capabilityType": "tool",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 63,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\tavily-mcp.capability.yaml",
+      "id": "tavily-ai/tavily-mcp",
+      "capabilityType": "mcp_server",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "PUBLICATION_VERSIONS_DIFFER",
+          "path": "/publications",
+          "line": 22,
+          "column": 3,
+          "message": "Publications state different versions: 0.2.22 (pkg:npm/tavily-mcp), 0.2.15 (io.github.tavily-ai/tavily-mcp), 0.2.22 (capabilityVersion). Which one an adopter gets depends on the channel.",
+          "hint": "Expected while channels publish at different times. Confirm the current version with the owner before comparing or pinning versions."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 59,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\unstructured.capability.yaml",
+      "id": "unstructured-io/unstructured",
+      "capabilityType": "library",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "passed",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 1
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 51,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        }
+      ]
+    },
+    {
+      "file": "case-studies\\production-set\\manifests\\webapp-testing.capability.yaml",
+      "id": "anthropics/webapp-testing",
+      "capabilityType": "skill",
+      "schemaVersion": "0.1",
+      "validatedAgainst": "0.1",
+      "valid": true,
+      "checks": {
+        "structure": "passed",
+        "identity": "passed",
+        "references": "passed",
+        "metadata": "unverified",
+        "risk": "unverified",
+        "source": "passed"
+      },
+      "completeness": {
+        "level": "adoptable",
+        "unmet": {
+          "discoverable": [],
+          "assessable": [],
+          "adoptable": [],
+          "governed": [
+            "risk assessment"
+          ]
+        }
+      },
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "unverified": 2
+      },
+      "findings": [
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "risk",
+          "code": "RISK_UNASSESSED",
+          "path": "/riskTier",
+          "line": 48,
+          "column": 11,
+          "message": "riskTier is 'unassessed': no risk assessment is recorded. It must not be treated as low risk or as approved.",
+          "hint": "Request a risk assessment from the governance owners, then record the tier and assessmentReference."
+        },
+        {
+          "severity": "unverified",
+          "stage": "consistency",
+          "check": "metadata",
+          "code": "DERIVED_VALUE_UNCONFIRMED",
+          "path": "/provenance/9",
+          "line": 118,
+          "column": 5,
+          "message": "The value at /publications/0/platformCompatibility was inferred by a heuristic (Agent Skill format, which Claude Code loads; the source names no host. To be confirmed.) and has not been confirmed.",
+          "hint": "Confirm the value with the owner or a curator and record confirmedBy, or correct it."
+        }
+      ]
+    }
+  ],
+  "notice": "Structural validity does not establish that a source is reachable, a dependency is available, or a capability is secure or approved for production."
+}

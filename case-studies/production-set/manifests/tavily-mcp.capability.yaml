@@ -1,0 +1,177 @@
+# Production reference set, need N3 (web search with citable URLs).
+# Real public capability: Tavily MCP Server (github.com/tavily-ai/tavily-mcp).
+# Values observed on 2026-11-13 from the GitHub repository API, the npm package, the official MCP
+# Registry, and the README. The channels state different versions (npm 0.2.22, registry 0.2.15) and
+# the hosted endpoint publishes none. riskTier stays 'unassessed' (Mission 3); maturity (Mission 2)
+# and lifecycleStatus (owner) are not stated by the source and are left out.
+schemaVersion: "0.1"
+id: tavily-ai/tavily-mcp
+name: Tavily MCP Server
+description: >-
+  MCP server for the Tavily search API. Gives an agent real-time web search (tavily-search),
+  extraction of page content (tavily-extract), a structured map of a website (tavily-map), and a
+  crawler that explores a site (tavily-crawl). Available as a hosted server or a local one.
+capabilityType: mcp_server
+capabilityVersion: "0.2.22"
+source:
+  type: repository
+  url: https://github.com/tavily-ai/tavily-mcp
+  repositoryId: "923109265"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:npm/tavily-mcp
+    nativeName: tavily-mcp
+    nativeVersion: "0.2.22"
+    versionScheme: semver
+    updatedAt: "2026-08-05"
+    platformCompatibility:
+      - claude-desktop
+      - cursor
+  - kind: registry_entry
+    locator: io.github.tavily-ai/tavily-mcp
+    nativeVersion: "0.2.15"
+    versionScheme: semver
+    status: active
+    updatedAt: "2026-01-26"
+    verifiedBy: MCP Registry namespace io.github.tavily-ai; the npm package's mcpName points to it.
+  - kind: hosted_endpoint
+    locator: https://mcp.tavily.com/mcp
+    versionScheme: unversioned
+    verifiedBy: Documented in the README as Tavily's remote MCP server.
+    platformCompatibility:
+      - claude-code
+      - cursor
+owner:
+  name: Tavily
+  contact: https://github.com/tavily-ai/tavily-mcp/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://github.com/tavily-ai/tavily-mcp#readme
+keywords:
+  - tavily
+  - web-search
+  - web-extraction
+  - crawl
+  - mcp
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Live web search with citable result URLs
+    description: tavily-search runs a real-time web search and returns results with their URLs.
+  - title: Extract the content of web pages
+    description: tavily-extract returns the content of given URLs.
+  - title: Map and crawl a website
+    description: tavily-map builds a structured map of a site; tavily-crawl explores it.
+interfaces:
+  - type: mcp
+    transport: streamable-http
+    description: Hosted server at https://mcp.tavily.com/mcp, authenticated by OAuth or an API key.
+  - type: mcp
+    transport: stdio
+    description: Local server started with `npx -y tavily-mcp@latest`.
+embeddedComponents:
+  - type: tool
+    name: tavily-search
+    description: Real-time web search.
+  - type: tool
+    name: tavily-extract
+    description: Extract content from web pages.
+  - type: tool
+    name: tavily-map
+    description: Build a structured map of a website.
+  - type: tool
+    name: tavily-crawl
+    description: Crawl a website.
+runtime:
+  - kind: hosted_service
+    detail: Hosted by Tavily.
+  - kind: local_process
+    detail: Node.js v20 or higher.
+setup:
+  - name: TAVILY_API_KEY
+    kind: env_var
+    group: api-key
+    description: Tavily API key from app.tavily.com.
+    secret: true
+    required: true
+  - name: Tavily OAuth
+    kind: account
+    group: oauth
+    description: Hosted server only. OAuth sign-in with a Tavily account, instead of an API key.
+    secret: false
+    required: true
+  - name: DEFAULT_PARAMETERS
+    kind: env_var
+    description: JSON object of default values for tavily-search (for example search depth).
+    secret: false
+    required: false
+  - name: TAVILY_HUMAN_ID
+    kind: env_var
+    description: Optional identifier of the end user, forwarded to Tavily as the X-Human-Id header.
+    secret: false
+    required: false
+dependencies: []
+limitations:
+  - Requires a Tavily account; searches go to Tavily's API.
+  - The README's hosted-server example puts the API key in the URL query string, where it can end up in logs; prefer OAuth.
+  - The MCP Registry entry (0.2.15) lags the npm package (0.2.22); the hosted endpoint has no version.
+  - The repository publishes no GitHub releases; versions come from npm.
+costInformation:
+  model: provider_billed
+  details: The server is free (MIT). Searches use a Tavily account; a free account is available and the README does not state paid pricing.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the GitHub repository description and the README feature list.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: npm latest 0.2.22 (2026-08-05).
+    observedAt: "2026-11-13"
+  - field: /publications/1
+    method: linked
+    source: Official MCP Registry API, latest entry for io.github.tavily-ai/tavily-mcp.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner
+    method: native
+    source: npm package.json author and bugs.url.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: npm package.json license; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /keywords
+    method: native
+    source: npm package.json keywords (a selection).
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Local MCP, Default Parameters, and Identifying the End User sections; registry environmentVariables.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Remote MCP Server section; registry and npm versions; GitHub releases API.
+    observedAt: "2026-11-13"
+  - field: /costInformation
+    method: curated
+    source: README Prerequisites (free account) and the MIT license.
+    observedAt: "2026-11-13"
+  - field: /publications/0/platformCompatibility
+    method: native
+    source: README Local MCP Prerequisites (Claude Desktop or Cursor).
+    observedAt: "2026-11-16"
+  - field: /publications/2/platformCompatibility
+    method: native
+    source: README Connect to Claude Code (claude mcp add --transport http) and Connect to Cursor, for https://mcp.tavily.com/mcp.
+    observedAt: "2026-11-16"
+  - field: /runtime/1/detail
+    method: native
+    source: README Local MCP Prerequisites (Node.js v20 or higher).
+    observedAt: "2026-11-16"

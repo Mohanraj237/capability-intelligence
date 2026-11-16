@@ -101,7 +101,7 @@ describe('schema-compat command', () => {
   });
 
   it('confirms with the corpus that the 2026-10-23 revision of 0.1 invalidates no manifest valid under the 2026-10-22 draft', () => {
-    const { code, stdout } = run('schema-compat', 'research/spikes-1-3/reference/capability-0.1-2026-10-22.schema.json', '0.1', '--corpus', 'research/spikes-1-3/reference/examples-2026-10-22');
+    const { code, stdout } = run('schema-compat', 'research/spikes-1-3/reference/capability-0.1-2026-10-22.schema.json', 'research/phase-1/reference/capability-0.1-2026-10-23.schema.json', '--corpus', 'research/spikes-1-3/reference/examples-2026-10-22');
     assert.equal(code, 0);
     assert.match(stdout, /Corpus: 9 manifest\(s\) valid under 0\.1 re-declared as 0\.1: 9 still valid\./);
     assert.match(stdout, /RELAXATION +REQUIREMENT_REMOVED +lifecycleStatus/);

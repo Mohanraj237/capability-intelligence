@@ -1,0 +1,65 @@
+# Child of juliusbrussee/caveman-plugin. CLAUDE.md: "Caveman commit message behavior. Fully independent skill."
+schemaVersion: "0.1"
+id: juliusbrussee/caveman-commit
+name: Caveman Commit
+description: >-
+  Write a Conventional Commits message compressed to intent only. Use for "write a commit",
+  "commit message", /commit or /caveman-commit.
+capabilityType: skill
+source:
+  type: repository
+  url: https://github.com/JuliusBrussee/caveman
+  path: skills/caveman-commit
+  repositoryId: "1201173969"
+  status: active
+  updatedAt: "2026-08-23"
+parent:
+  id: juliusbrussee/caveman-plugin
+publications:
+  - kind: repository
+    locator: https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-commit
+    nativeVersion: main
+    versionScheme: floating
+owner:
+  name: Julius Brussee
+  contact: https://github.com/JuliusBrussee/caveman/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  url: https://github.com/JuliusBrussee/caveman/blob/main/LICENSE
+  scope: repository
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+interfaces:
+  - type: agent_skill
+    contractRef: https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-commit/SKILL.md
+runtime:
+  - kind: agent_host
+    detail: Coding agents that load Agent Skills.
+documentation: https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-commit/README.md
+supportedUseCases:
+  - title: "Write a Conventional Commits message"
+    description: "Imperative subject of 50 characters where possible (72 at most); a body only for a non-obvious why, breaking changes, migrations, or linked issues."
+setup: []
+limitations:
+  - "Only writes the message: it does not stage files, commit, or amend."
+  - "Leaves out AI attribution such as \"Generated with Claude Code\" unless the user's own rule requires an attribution trailer; check this against your organisation's policy."
+  - "Always writes a body for breaking changes, security fixes, data migrations, and reverts."
+costInformation:
+  model: free
+  details: Apache-2.0, in the Caveman repository; the skill needs no account, service, or script.
+provenance:
+  - { field: /description, method: native, source: "skills/caveman-commit/SKILL.md front matter description", observedAt: "2026-11-09" }
+  - { field: /name, method: curated, source: "Display name written for this record; the native name is 'caveman-commit'", observedAt: "2026-11-09" }
+  - { field: /capabilityType, method: derived, basis: convention, source: "A SKILL.md is a skill", observedAt: "2026-11-09" }
+  - { field: /source/updatedAt, method: linked, source: "git log -1 on skills/caveman-commit, UTC date", observedAt: "2026-11-09" }
+  - { field: /runtime, method: derived, basis: convention, source: "Agent Skills are loaded by an agent host", observedAt: "2026-11-09" }
+  - { field: /x-invocation, method: native, source: "skills/caveman-commit/SKILL.md front matter has no disable-model-invocation flag", observedAt: "2026-11-09" }
+  - { field: /documentation, method: linked, source: "GitHub contents API: skills/caveman-commit/README.md", observedAt: "2026-11-16" }
+  - { field: /supportedUseCases, method: curated, source: "Written from skills/caveman-commit/SKILL.md (rules and examples)", observedAt: "2026-11-16" }
+  - { field: /setup, method: linked, source: "GitHub contents API: skills/caveman-commit holds only README.md and SKILL.md, so nothing is installed or configured", observedAt: "2026-11-16" }
+  - { field: /limitations, method: curated, source: "skills/caveman-commit/SKILL.md (What NEVER goes in, Auto-Clarity, Boundaries)", observedAt: "2026-11-16" }
+  - { field: /costInformation, method: curated, source: "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call", observedAt: "2026-11-16" }
+# Extension field: how the skill can be started, from its front matter (no flag means the host default).
+x-invocation:
+  disableModelInvocation: false

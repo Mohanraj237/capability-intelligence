@@ -1,0 +1,232 @@
+# Use case 1: an MCP server that reads Jira issues, updates their status, and supports summaries.
+# Real public capability: MCP Atlassian by sooperset (github.com/sooperset/mcp-atlassian).
+# Every value comes from its public sources, observed on 2026-11-13: the GitHub repository API, the
+# latest GitHub release, the PyPI package, the README, and the documentation at
+# mcp-atlassian.soomiles.com (llms-full.txt). provenance says where each value comes from.
+#
+# Not filled in, on purpose:
+# - riskTier stays 'unassessed': no risk assessment exists. Only Mission 3 can set it.
+# - maturity is assigned by Mission 2 (the inventory), not by the source.
+# - lifecycleStatus is declared by the owner; the project does not declare one.
+# The server also covers Confluence. It is described as one capability because it is one package
+# and one process; the Jira tools are listed as embedded components.
+schemaVersion: "0.1"
+id: sooperset/mcp-atlassian
+name: MCP Atlassian
+description: >-
+  Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira), for Cloud and
+  Server/Data Center deployments. Lets an AI assistant search Jira with JQL, read issue details,
+  create and update issues, and change an issue's status through its workflow transitions.
+capabilityType: mcp_server
+capabilityVersion: "0.24.3"
+source:
+  type: repository
+  url: https://github.com/sooperset/mcp-atlassian
+  repositoryId: "897809208"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/mcp-atlassian
+    nativeName: mcp-atlassian
+    nativeVersion: "0.24.3"
+    versionScheme: pep440
+    updatedAt: "2026-11-12"
+    platformCompatibility:
+      - claude-desktop
+      - cursor
+      - github-copilot
+  - kind: container_image
+    locator: ghcr.io/sooperset/mcp-atlassian
+    nativeVersion: latest
+    versionScheme: floating
+    verifiedBy: Image published under the repository owner's GitHub Container Registry namespace and documented in the project's installation guide.
+owner:
+  name: sooperset
+  contact: https://github.com/sooperset/mcp-atlassian/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: repository
+documentation: https://mcp-atlassian.soomiles.com
+keywords:
+  - atlassian
+  - jira
+  - confluence
+  - mcp
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Find and read Jira issues
+    description: Search issues with JQL (jira_search) and read one issue with its comments (jira_get_issue).
+  - title: Update the status of a Jira issue
+    description: Move an issue through its workflow, for example to Done (jira_transition_issue).
+  - title: Summarise Jira issues and sprints
+    description: >-
+      Returns issue, sprint, and search data that the AI assistant summarises. The server
+      supplies the data; the summary is written by the assistant's model.
+  - title: Create and edit Jira issues
+    description: Create issues (jira_create_issue) and update their fields (jira_update_issue).
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: >-
+      Local MCP server started by the MCP client (the default). The same server also supports the
+      sse and streamable-http transports for shared or multi-user deployments. Tools are discovered
+      at runtime through tools/list.
+embeddedComponents:
+  - type: tool
+    name: jira_search
+    description: Search issues with JQL.
+  - type: tool
+    name: jira_get_issue
+    description: Get issue details.
+  - type: tool
+    name: jira_create_issue
+    description: Create an issue. Writes to Jira.
+  - type: tool
+    name: jira_update_issue
+    description: Update an issue's fields. Writes to Jira.
+  - type: tool
+    name: jira_transition_issue
+    description: Change an issue's status. Writes to Jira.
+  - type: tool
+    name: jira_get_sprint_issues
+    description: List the issues in a sprint (agile toolset).
+runtime:
+  - kind: local_process
+    detail: Python >=3.10.
+  - kind: container
+setup:
+  - name: JIRA_URL
+    kind: env_var
+    description: Base URL of the Jira site, for example https://your-company.atlassian.net.
+    secret: false
+    required: true
+  - name: JIRA_USERNAME
+    kind: env_var
+    group: jira-cloud
+    description: Atlassian account email. Jira Cloud only, together with JIRA_API_TOKEN.
+    secret: false
+    required: true
+  - name: JIRA_API_TOKEN
+    kind: env_var
+    group: jira-cloud
+    description: Jira Cloud API token, created at id.atlassian.com/manage-profile/security/api-tokens.
+    secret: true
+    required: true
+  - name: JIRA_PERSONAL_TOKEN
+    kind: env_var
+    group: jira-server-data-center
+    description: Personal Access Token for Jira Server/Data Center, used instead of username and API token.
+    secret: true
+    required: true
+  - name: READ_ONLY_MODE
+    kind: env_var
+    description: Set to true to disable all write operations (create, update, transition).
+    secret: false
+    required: false
+  - name: TOOLSETS
+    kind: env_var
+    description: Restrict the tools offered, for example 'default' (about 35 core tools) or 'default,jira_agile'.
+    secret: false
+    required: false
+integrations:
+  - jira-cloud
+  - jira-data-center
+dependencies: []
+limitations:
+  - Not an official Atlassian product; maintained by an individual open-source maintainer.
+  - Jira Server/Data Center is supported from version 8.14; Confluence Server/Data Center from 6.0.
+  - Write tools (create, update, transition) are enabled unless READ_ONLY_MODE=true is set.
+  - When TOOLSETS is not set, all toolsets are enabled (98 tools in total, Jira and Confluence).
+  - Acts with the permissions of the Atlassian account whose token it is given.
+  - The container image is documented with the floating tag 'latest'; pin a version for production.
+costInformation:
+  model: free
+  details: MIT-licensed open source. Requires existing Atlassian (Jira) licences.
+provenance:
+  - field: /name
+    method: native
+    source: README title 'MCP Atlassian'.
+    observedAt: "2026-11-13"
+  - field: /description
+    method: curated
+    source: Written from the GitHub repository description, the README introduction, and its Key Tools table.
+    observedAt: "2026-11-13"
+  - field: /capabilityType
+    method: derived
+    basis: convention
+    source: The README and package describe it as a Model Context Protocol (MCP) server.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: Latest GitHub release v0.24.3 (2026-11-12) and PyPI version 0.24.3.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API for sooperset/mcp-atlassian.
+    observedAt: "2026-11-13"
+  - field: /source/status
+    method: linked
+    source: GitHub repository API (archived false; last push 2026-11-13).
+    observedAt: "2026-11-13"
+  - field: /publications/1/locator
+    method: linked
+    source: Documentation, installation and Docker examples (image ghcr.io/sooperset/mcp-atlassian:latest).
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub repository owner (user account sooperset); PyPI author email names sooperset.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: linked
+    source: GitHub license detection (MIT) and the README's License section. PyPI states no license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: native
+    source: GitHub repository homepage and the README Documentation section.
+    observedAt: "2026-11-13"
+  - field: /keywords
+    method: linked
+    source: GitHub repository topics.
+    observedAt: "2026-11-13"
+  - field: /supportedUseCases
+    method: curated
+    source: README 'Start Using' examples and Key Tools table; tools reference in the documentation.
+    observedAt: "2026-11-13"
+  - field: /interfaces/0/transport
+    method: native
+    source: README configuration example (command uvx) and the documentation's TRANSPORT setting.
+    observedAt: "2026-11-13"
+  - field: /embeddedComponents
+    method: native
+    source: README Key Tools table; jira_get_sprint_issues from the documentation's agile examples.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: pyproject.toml requires-python and the README's uvx configuration.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Quick Start and the documentation's environment-variable reference.
+    observedAt: "2026-11-13"
+  - field: /integrations
+    method: curated
+    source: README Compatibility table for Jira deployments.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README License and Compatibility sections; documentation on READ_ONLY_MODE and TOOLSETS.
+    observedAt: "2026-11-13"
+  - field: /costInformation
+    method: curated
+    source: Derived from the MIT license; Atlassian licensing is the adopter's own.
+    observedAt: "2026-11-13"
+  - field: /publications/0/platformCompatibility
+    method: native
+    source: "README Quick Start: uvx configuration for Claude Desktop, Cursor, or GitHub Copilot."
+    observedAt: "2026-11-16"

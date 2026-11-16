@@ -21,8 +21,6 @@ lastUpdated: "2026-10-16"
 interfaces:
   - type: "mcp"
     description: "Transports: stdio via npm package sih-br-mcp; streamable-http at https://sih.sidneybissoli.com/mcp."
-platformCompatibility:
-  - "node"
 documentation: "https://sih.sidneybissoli.com"
 setup:
   - name: "SIH_CACHE_DIR"

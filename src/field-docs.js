@@ -80,6 +80,18 @@ export function generateFieldDictionary(schema, { sourcePath, previous }) {
         '',
       ]
       : []),
+    ...(schema['x-retiredFields']
+      ? [
+        '## Retired fields',
+        '',
+        'Read from `x-retiredFields`. These fields were removed from this version; a manifest that still uses one is rejected with the hint below.',
+        '',
+        '| Field | Where its content goes |',
+        '|---|---|',
+        ...Object.entries(schema['x-retiredFields']).map(([name, hint]) => row([`\`${name}\``, hint])),
+        '',
+      ]
+      : []),
     ...(previous ? changesSince(previous, schema) : []),
   ];
   return lines.join('\n');
@@ -178,6 +190,7 @@ function describeCondition(ifSchema, prefix) {
   const values = Object.entries(ifSchema.properties ?? {}).map(([key, sub]) => {
     const path = prefix ? `${prefix}.${key}` : key;
     if (sub.properties) return describeCondition(sub, path);
+    if (sub.contains?.required) return `an entry of \`${path}\` has ${sub.contains.required.map((key) => `\`${key}\``).join(', ')}`;
     if ('const' in sub) return `\`${path}\` is \`${sub.const}\``;
     if (sub.enum) return `\`${path}\` is one of ${sub.enum.map((value) => `\`${value}\``).join(', ')}`;
     return `\`${path}\` matches the rule's condition`;

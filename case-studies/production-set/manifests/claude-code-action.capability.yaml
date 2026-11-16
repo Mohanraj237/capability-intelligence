@@ -1,0 +1,137 @@
+# Production reference set, need N2 (read and update GitHub issues and pull requests).
+# Real public capability: Claude Code Action (github.com/anthropics/claude-code-action).
+# Values observed on 2026-11-13 from action.yml, package.json, the README, and the GitHub repository
+# API. Used as a GitHub Action from the major-version tag v1.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: anthropics/claude-code-action
+name: Claude Code Action
+description: >-
+  GitHub Action that runs Claude Code on pull requests and issues. It answers questions about the
+  code, reviews pull request changes and suggests improvements, and implements fixes, refactoring,
+  and features, replying through GitHub comments and reviews.
+capabilityType: workflow
+source:
+  type: repository
+  url: https://github.com/anthropics/claude-code-action
+  repositoryId: "986421638"
+  status: active
+publications:
+  - kind: repository
+    locator: https://github.com/anthropics/claude-code-action
+    nativeName: anthropics/claude-code-action
+    nativeVersion: v1
+    versionScheme: tag
+    verifiedBy: Used in workflows as anthropics/claude-code-action@v1; the repository's latest release is v1.
+owner:
+  name: Anthropic
+  contact: https://github.com/anthropics/claude-code-action/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://github.com/anthropics/claude-code-action#readme
+keywords:
+  - github-actions
+  - code-review
+  - claude-code
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Review pull requests automatically
+    description: Analyses the changes in a pull request and suggests improvements.
+  - title: Answer questions on pull requests and issues
+    description: Replies to comments that mention the trigger phrase.
+  - title: Implement changes from an issue or comment
+    description: Makes simple fixes, refactoring, and new features, and pushes them to a branch.
+interfaces:
+  - type: ci_action
+    contractRef: https://github.com/anthropics/claude-code-action/blob/main/action.yml
+    description: GitHub Action (composite) with inputs such as prompt, claude_args, trigger_phrase, and the authentication inputs.
+runtime:
+  - kind: ci_runner
+    detail: Runs on your own GitHub Actions runner; the composite action installs Bun and Claude Code.
+setup:
+  - name: anthropic_api_key
+    kind: input
+    group: anthropic-api
+    description: Anthropic API key (action input, from a repository secret).
+    secret: true
+    required: true
+  - name: claude_code_oauth_token
+    kind: input
+    group: claude-oauth
+    description: Claude Code OAuth token (action input, from a repository secret), instead of an API key.
+    secret: true
+    required: true
+  - name: Cloud provider OIDC
+    kind: account
+    group: cloud-provider
+    description: OIDC access to Amazon Bedrock, Google Vertex AI, or Microsoft Foundry, instead of an Anthropic key or token.
+    secret: false
+    required: true
+  - name: github_token
+    kind: input
+    description: Optional action input. Token with repo and pull request permissions; not needed when the Claude GitHub App is installed.
+    secret: true
+    required: false
+  - name: Claude GitHub App
+    kind: app
+    description: Installed with /install-github-app in Claude Code; needs a repository admin.
+    secret: false
+    required: false
+integrations:
+  - github-actions
+dependencies: []
+limitations:
+  - Can push code changes and comment on pull requests and issues with the permissions it is given.
+  - Code and prompts go to the chosen model provider (Anthropic API, Bedrock, Vertex AI, or Foundry).
+  - Installing the GitHub App and adding secrets needs a repository admin.
+  - The quickstart (/install-github-app) is only for direct Anthropic API users.
+  - The v1 tag moves with each v1 release; pin a commit for production.
+costInformation:
+  model: provider_billed
+  details: The action is free (MIT). Each run uses the model provider's API and GitHub Actions minutes.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the README introduction and Features.
+    observedAt: "2026-11-13"
+  - field: /capabilityType
+    method: derived
+    basis: convention
+    source: A GitHub Action (action.yml) is a workflow capability.
+    observedAt: "2026-11-13"
+  - field: /publications/0/nativeVersion
+    method: linked
+    source: GitHub releases (latest v1); package.json version 1.0.0.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub organization anthropics.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: linked
+    source: GitHub license detection (MIT).
+    observedAt: "2026-11-13"
+  - field: /interfaces/0
+    method: native
+    source: action.yml inputs and runs.using composite.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: action.yml input descriptions and the README Quickstart.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Features ('Runs on Your Infrastructure') and Quickstart notes.
+    observedAt: "2026-11-13"

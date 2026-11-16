@@ -12,14 +12,14 @@ import { getRegistry, validateFiles } from '../src/validator.js';
 // Mission -> documented need -> manifest fields (paths; [] marks list items).
 const NEEDS = {
   'Mission 1 (Recommendation)': {
-    'match needs against capabilities': ['description', 'supportedUseCases[].title', 'capabilityType', 'interfaces[].type', 'platformCompatibility[]'],
+    'match needs against capabilities': ['description', 'supportedUseCases[].title', 'capabilityType', 'interfaces[].type', 'publications[].platformCompatibility[]', 'integrations[]'],
     'rank by risk and cost where data is available': ['riskTier', 'assessmentReference.id', 'costInformation.model'],
-    'judge feasibility and constraints': ['maturity', 'lifecycleStatus', 'limitations[]', 'dependencies[].id', 'platformCompatibility[]', 'runtime[].kind', 'setup[].name', 'license.expression'],
+    'judge feasibility and constraints': ['maturity', 'lifecycleStatus', 'limitations[]', 'dependencies[].id', 'publications[].platformCompatibility[]', 'integrations[]', 'runtime[].kind', 'setup[].name', 'license.expression'],
     'explain recommendations and alternatives': ['description', 'supportedUseCases[].description', 'limitations[]', 'deprecation.replacedBy'],
   },
   'Mission 2 (Landscape)': {
     'track maturity, availability, use cases, limitations': ['maturity', 'lifecycleStatus', 'supportedUseCases[].title', 'limitations[]'],
-    'problem solved and intended audience': ['description', 'intendedAudience[]'],
+    'problem solved and who it is for': ['description', 'supportedUseCases[].title'],
     'catalogue capabilities, tools, frameworks, platforms': ['id', 'name', 'capabilityType', 'source.type', 'owner.affiliation'],
     'recognise one capability across sources': ['publications[].locator', 'publications[].nativeVersion', 'source.repositoryId', 'relations[].type'],
   },

@@ -1,0 +1,2101 @@
+{
+  "generatedOn": "2026-11-16",
+  "specification": "github.com/Agent-Card/ai-catalog specification/ai-catalog.md, commit ecade3e (2026-11-08)",
+  "projections": {
+    "reference": {
+      "level": 2,
+      "errors": [],
+      "warnings": 0,
+      "bytes": 22570
+    },
+    "manifest": {
+      "level": 2,
+      "errors": [],
+      "warnings": 0,
+      "bytes": 137909
+    },
+    "hybrid": {
+      "level": 2,
+      "errors": [],
+      "warnings": 0,
+      "bytes": 144295
+    }
+  },
+  "roundTrip": {
+    "reference": {
+      "identical": 0,
+      "valid": 0,
+      "missingRequired": {
+        "/capabilityType": 13,
+        "/riskTier": 22
+      },
+      "perField": [
+        {
+          "path": "schemaVersion",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "id",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "name",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "description",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "capabilityType",
+          "holders": 22,
+          "kept": 9
+        },
+        {
+          "path": "capabilityVersion",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "source",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "source.type",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.url",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.path",
+          "holders": 6,
+          "kept": 0
+        },
+        {
+          "path": "source.repositoryId",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "source.status",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "source.updatedAt",
+          "holders": 6,
+          "kept": 0
+        },
+        {
+          "path": "source.registry",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "source.identifier",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "source.description",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "publications",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "publications[].kind",
+          "holders": 22,
+          "kept": 6
+        },
+        {
+          "path": "publications[].locator",
+          "holders": 22,
+          "kept": 6
+        },
+        {
+          "path": "publications[].nativeName",
+          "holders": 15,
+          "kept": 0
+        },
+        {
+          "path": "publications[].nativeVersion",
+          "holders": 22,
+          "kept": 7
+        },
+        {
+          "path": "publications[].versionScheme",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "publications[].status",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "publications[].statusMessage",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "publications[].updatedAt",
+          "holders": 15,
+          "kept": 0
+        },
+        {
+          "path": "publications[].verifiedBy",
+          "holders": 13,
+          "kept": 0
+        },
+        {
+          "path": "publications[].platformCompatibility",
+          "holders": 9,
+          "kept": 0
+        },
+        {
+          "path": "owner",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "owner.name",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.contact",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "owner.affiliation",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "license",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "license.expression",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "license.text",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "license.url",
+          "holders": 6,
+          "kept": 0
+        },
+        {
+          "path": "license.scope",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "documentation",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "keywords",
+          "holders": 17,
+          "kept": 17
+        },
+        {
+          "path": "lifecycleStatus",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "maturity",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "riskTier",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.id",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.url",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.assessedOn",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "lastUpdated",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "deprecation",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.reason",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.replacedBy",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.sunsetDate",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "supportedUseCases",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "supportedUseCases[].title",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "supportedUseCases[].description",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "interfaces",
+          "holders": 22,
+          "kept": 5
+        },
+        {
+          "path": "interfaces[].type",
+          "holders": 22,
+          "kept": 8
+        },
+        {
+          "path": "interfaces[].specVersion",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].transport",
+          "holders": 7,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].contractRef",
+          "holders": 10,
+          "kept": 10
+        },
+        {
+          "path": "interfaces[].description",
+          "holders": 17,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].inputs",
+          "holders": 4,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].inputs[].name",
+          "holders": 4,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].inputs[].mediaType",
+          "holders": 4,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].inputs[].description",
+          "holders": 4,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].outputs",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].outputs[].name",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].outputs[].mediaType",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].outputs[].description",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "runtime",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "runtime[].kind",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "runtime[].detail",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "setup",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "setup[].name",
+          "holders": 14,
+          "kept": 0
+        },
+        {
+          "path": "setup[].kind",
+          "holders": 14,
+          "kept": 0
+        },
+        {
+          "path": "setup[].group",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "setup[].description",
+          "holders": 14,
+          "kept": 0
+        },
+        {
+          "path": "setup[].secret",
+          "holders": 14,
+          "kept": 0
+        },
+        {
+          "path": "setup[].required",
+          "holders": 14,
+          "kept": 0
+        },
+        {
+          "path": "integrations",
+          "holders": 6,
+          "kept": 0
+        },
+        {
+          "path": "dependencies",
+          "holders": 16,
+          "kept": 0
+        },
+        {
+          "path": "dependencies[].id",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "limitations",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "costInformation",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "costInformation.model",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "costInformation.details",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "costInformation.url",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "components",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "components[].id",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "embeddedComponents",
+          "holders": 8,
+          "kept": 0
+        },
+        {
+          "path": "embeddedComponents[].name",
+          "holders": 8,
+          "kept": 0
+        },
+        {
+          "path": "embeddedComponents[].type",
+          "holders": 8,
+          "kept": 0
+        },
+        {
+          "path": "embeddedComponents[].description",
+          "holders": 8,
+          "kept": 0
+        },
+        {
+          "path": "parent",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "parent.id",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "relations",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "relations[].type",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "relations[].id",
+          "holders": 1,
+          "kept": 0
+        },
+        {
+          "path": "relations[].locator",
+          "holders": 4,
+          "kept": 0
+        },
+        {
+          "path": "relations[].evidence",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "relations[].verified",
+          "holders": 5,
+          "kept": 0
+        },
+        {
+          "path": "provenance",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "provenance[].field",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "provenance[].method",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "provenance[].basis",
+          "holders": 9,
+          "kept": 0
+        },
+        {
+          "path": "provenance[].source",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "provenance[].observedAt",
+          "holders": 22,
+          "kept": 0
+        },
+        {
+          "path": "provenance[].confirmedBy",
+          "holders": 0,
+          "kept": 0
+        }
+      ]
+    },
+    "manifest": {
+      "identical": 22,
+      "valid": 22,
+      "missingRequired": {},
+      "perField": [
+        {
+          "path": "schemaVersion",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "id",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "name",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "description",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "capabilityType",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "capabilityVersion",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "source",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.type",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.url",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.path",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "source.repositoryId",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.status",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.updatedAt",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "source.registry",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "source.identifier",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "source.description",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "publications",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].kind",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].locator",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].nativeName",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "publications[].nativeVersion",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].versionScheme",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].status",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "publications[].statusMessage",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "publications[].updatedAt",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "publications[].verifiedBy",
+          "holders": 13,
+          "kept": 13
+        },
+        {
+          "path": "publications[].platformCompatibility",
+          "holders": 9,
+          "kept": 9
+        },
+        {
+          "path": "owner",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.name",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.contact",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.affiliation",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "license",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "license.expression",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "license.text",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "license.url",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "license.scope",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "documentation",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "keywords",
+          "holders": 17,
+          "kept": 17
+        },
+        {
+          "path": "lifecycleStatus",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "maturity",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "riskTier",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "assessmentReference",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.id",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.url",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.assessedOn",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "lastUpdated",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "deprecation",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.reason",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.replacedBy",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.sunsetDate",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "supportedUseCases",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "supportedUseCases[].title",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "supportedUseCases[].description",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "interfaces",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "interfaces[].type",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "interfaces[].specVersion",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].transport",
+          "holders": 7,
+          "kept": 7
+        },
+        {
+          "path": "interfaces[].contractRef",
+          "holders": 10,
+          "kept": 10
+        },
+        {
+          "path": "interfaces[].description",
+          "holders": 17,
+          "kept": 17
+        },
+        {
+          "path": "interfaces[].inputs",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].inputs[].name",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].inputs[].mediaType",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].inputs[].description",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].outputs",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "interfaces[].outputs[].name",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "interfaces[].outputs[].mediaType",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "interfaces[].outputs[].description",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "runtime",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "runtime[].kind",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "runtime[].detail",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "setup",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "setup[].name",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].kind",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].group",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "setup[].description",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].secret",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].required",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "integrations",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "dependencies",
+          "holders": 16,
+          "kept": 16
+        },
+        {
+          "path": "dependencies[].id",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "limitations",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation.model",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation.details",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation.url",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "components",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "components[].id",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "embeddedComponents",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "embeddedComponents[].name",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "embeddedComponents[].type",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "embeddedComponents[].description",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "parent",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "parent.id",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations[].type",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations[].id",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "relations[].locator",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "relations[].evidence",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations[].verified",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "provenance",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].field",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].method",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].basis",
+          "holders": 9,
+          "kept": 9
+        },
+        {
+          "path": "provenance[].source",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].observedAt",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].confirmedBy",
+          "holders": 0,
+          "kept": 0
+        }
+      ]
+    },
+    "hybrid": {
+      "identical": 22,
+      "valid": 22,
+      "missingRequired": {},
+      "perField": [
+        {
+          "path": "schemaVersion",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "id",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "name",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "description",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "capabilityType",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "capabilityVersion",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "source",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.type",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.url",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.path",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "source.repositoryId",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.status",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "source.updatedAt",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "source.registry",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "source.identifier",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "source.description",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "publications",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].kind",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].locator",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].nativeName",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "publications[].nativeVersion",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].versionScheme",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "publications[].status",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "publications[].statusMessage",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "publications[].updatedAt",
+          "holders": 15,
+          "kept": 15
+        },
+        {
+          "path": "publications[].verifiedBy",
+          "holders": 13,
+          "kept": 13
+        },
+        {
+          "path": "publications[].platformCompatibility",
+          "holders": 9,
+          "kept": 9
+        },
+        {
+          "path": "owner",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.name",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.contact",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "owner.affiliation",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "license",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "license.expression",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "license.text",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "license.url",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "license.scope",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "documentation",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "keywords",
+          "holders": 17,
+          "kept": 17
+        },
+        {
+          "path": "lifecycleStatus",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "maturity",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "riskTier",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "assessmentReference",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.id",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.url",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "assessmentReference.assessedOn",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "lastUpdated",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "deprecation",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.reason",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.replacedBy",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "deprecation.sunsetDate",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "supportedUseCases",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "supportedUseCases[].title",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "supportedUseCases[].description",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "interfaces",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "interfaces[].type",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "interfaces[].specVersion",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "interfaces[].transport",
+          "holders": 7,
+          "kept": 7
+        },
+        {
+          "path": "interfaces[].contractRef",
+          "holders": 10,
+          "kept": 10
+        },
+        {
+          "path": "interfaces[].description",
+          "holders": 17,
+          "kept": 17
+        },
+        {
+          "path": "interfaces[].inputs",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].inputs[].name",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].inputs[].mediaType",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].inputs[].description",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "interfaces[].outputs",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "interfaces[].outputs[].name",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "interfaces[].outputs[].mediaType",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "interfaces[].outputs[].description",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "runtime",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "runtime[].kind",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "runtime[].detail",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "setup",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "setup[].name",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].kind",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].group",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "setup[].description",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].secret",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "setup[].required",
+          "holders": 14,
+          "kept": 14
+        },
+        {
+          "path": "integrations",
+          "holders": 6,
+          "kept": 6
+        },
+        {
+          "path": "dependencies",
+          "holders": 16,
+          "kept": 16
+        },
+        {
+          "path": "dependencies[].id",
+          "holders": 0,
+          "kept": 0
+        },
+        {
+          "path": "limitations",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation.model",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation.details",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "costInformation.url",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "components",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "components[].id",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "embeddedComponents",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "embeddedComponents[].name",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "embeddedComponents[].type",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "embeddedComponents[].description",
+          "holders": 8,
+          "kept": 8
+        },
+        {
+          "path": "parent",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "parent.id",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations[].type",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations[].id",
+          "holders": 1,
+          "kept": 1
+        },
+        {
+          "path": "relations[].locator",
+          "holders": 4,
+          "kept": 4
+        },
+        {
+          "path": "relations[].evidence",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "relations[].verified",
+          "holders": 5,
+          "kept": 5
+        },
+        {
+          "path": "provenance",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].field",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].method",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].basis",
+          "holders": 9,
+          "kept": 9
+        },
+        {
+          "path": "provenance[].source",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].observedAt",
+          "holders": 22,
+          "kept": 22
+        },
+        {
+          "path": "provenance[].confirmedBy",
+          "holders": 0,
+          "kept": 0
+        }
+      ]
+    }
+  },
+  "byType": {
+    "application/vnd.npm.package+json": 6,
+    "application/vnd.pypi.project+json": 7,
+    "application/vnd.mcp-registry.server+json": 5,
+    "application/agent-skills+md": 6,
+    "application/vnd.claude-code.plugin+json": 1,
+    "application/vnd.github.action+yaml": 1,
+    "application/mcp-server-card+json": 2
+  },
+  "perCapability": [
+    {
+      "id": "brave/brave-search-mcp-server",
+      "type": "mcp_server",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.npm.package+json"
+      ]
+    },
+    {
+      "id": "browser-use/browser-use",
+      "type": "framework",
+      "artifacts": 2,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json",
+        "application/vnd.mcp-registry.server+json"
+      ]
+    },
+    {
+      "id": "juliusbrussee/caveman-commit",
+      "type": "skill",
+      "artifacts": 1,
+      "known": 1,
+      "types": [
+        "application/agent-skills+md"
+      ]
+    },
+    {
+      "id": "juliusbrussee/caveman-plugin",
+      "type": "plugin",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.claude-code.plugin+json"
+      ]
+    },
+    {
+      "id": "juliusbrussee/caveman-review",
+      "type": "skill",
+      "artifacts": 1,
+      "known": 1,
+      "types": [
+        "application/agent-skills+md"
+      ]
+    },
+    {
+      "id": "juliusbrussee/caveman",
+      "type": "skill",
+      "artifacts": 1,
+      "known": 1,
+      "types": [
+        "application/agent-skills+md"
+      ]
+    },
+    {
+      "id": "juliusbrussee/megacave",
+      "type": "skill",
+      "artifacts": 1,
+      "known": 1,
+      "types": [
+        "application/agent-skills+md"
+      ]
+    },
+    {
+      "id": "juliusbrussee/ultracave",
+      "type": "skill",
+      "artifacts": 1,
+      "known": 1,
+      "types": [
+        "application/agent-skills+md"
+      ]
+    },
+    {
+      "id": "chromedevtools/chrome-devtools-mcp",
+      "type": "mcp_server",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.npm.package+json"
+      ]
+    },
+    {
+      "id": "anthropics/claude-code-action",
+      "type": "workflow",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.github.action+yaml"
+      ]
+    },
+    {
+      "id": "docling-project/docling",
+      "type": "library",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json"
+      ]
+    },
+    {
+      "id": "exa-labs/exa-mcp-server",
+      "type": "mcp_server",
+      "artifacts": 3,
+      "known": 1,
+      "types": [
+        "application/mcp-server-card+json",
+        "application/vnd.mcp-registry.server+json",
+        "application/vnd.npm.package+json"
+      ]
+    },
+    {
+      "id": "github/github-mcp-server",
+      "type": "mcp_server",
+      "artifacts": 2,
+      "known": 1,
+      "types": [
+        "application/mcp-server-card+json",
+        "application/vnd.mcp-registry.server+json"
+      ]
+    },
+    {
+      "id": "tavily-ai/langchain-tavily",
+      "type": "library",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json"
+      ]
+    },
+    {
+      "id": "sooperset/mcp-atlassian",
+      "type": "mcp_server",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json"
+      ]
+    },
+    {
+      "id": "mehmet-kozan/pdf-parse",
+      "type": "library",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.npm.package+json"
+      ]
+    },
+    {
+      "id": "jsvine/pdfplumber",
+      "type": "library",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json"
+      ]
+    },
+    {
+      "id": "microsoft/playwright-mcp",
+      "type": "mcp_server",
+      "artifacts": 2,
+      "known": 0,
+      "types": [
+        "application/vnd.mcp-registry.server+json",
+        "application/vnd.npm.package+json"
+      ]
+    },
+    {
+      "id": "the-pr-agent/pr-agent",
+      "type": "tool",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json"
+      ]
+    },
+    {
+      "id": "tavily-ai/tavily-mcp",
+      "type": "mcp_server",
+      "artifacts": 2,
+      "known": 0,
+      "types": [
+        "application/vnd.npm.package+json",
+        "application/vnd.mcp-registry.server+json"
+      ]
+    },
+    {
+      "id": "unstructured-io/unstructured",
+      "type": "library",
+      "artifacts": 1,
+      "known": 0,
+      "types": [
+        "application/vnd.pypi.project+json"
+      ]
+    },
+    {
+      "id": "anthropics/webapp-testing",
+      "type": "skill",
+      "artifacts": 1,
+      "known": 1,
+      "types": [
+        "application/agent-skills+md"
+      ]
+    }
+  ],
+  "unrepresented": [
+    "brave/brave-search-mcp-server: container_image docker.io/mcp/brave-search",
+    "juliusbrussee/caveman-commit: repository https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-commit",
+    "juliusbrussee/caveman-plugin: marketplace_entry caveman@caveman",
+    "juliusbrussee/caveman-review: repository https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-review",
+    "juliusbrussee/caveman: repository https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman",
+    "juliusbrussee/megacave: repository https://github.com/JuliusBrussee/caveman/tree/main/skills/megacave",
+    "juliusbrussee/ultracave: repository https://github.com/JuliusBrussee/caveman/tree/main/skills/ultracave",
+    "chromedevtools/chrome-devtools-mcp: marketplace_entry chrome-devtools-mcp@chrome-devtools-plugins",
+    "anthropics/claude-code-action: repository https://github.com/anthropics/claude-code-action",
+    "exa-labs/exa-mcp-server: hosted_endpoint https://mcp.exa.ai/mcp",
+    "github/github-mcp-server: container_image ghcr.io/github/github-mcp-server",
+    "github/github-mcp-server: hosted_endpoint https://api.githubcopilot.com/mcp/",
+    "sooperset/mcp-atlassian: container_image ghcr.io/sooperset/mcp-atlassian",
+    "the-pr-agent/pr-agent: container_image docker.io/pragent/pr-agent",
+    "the-pr-agent/pr-agent: repository https://github.com/The-PR-Agent/pr-agent",
+    "tavily-ai/tavily-mcp: hosted_endpoint https://mcp.tavily.com/mcp",
+    "unstructured-io/unstructured: container_image downloads.unstructured.io/unstructured-io/unstructured",
+    "anthropics/webapp-testing: repository https://github.com/anthropics/skills/tree/main/skills/webapp-testing"
+  ],
+  "live": [
+    {
+      "host": "exa.ai",
+      "entries": [
+        {
+          "identifier": "urn:air:exa.ai:server:exa-mcp",
+          "type": "application/mcp-server-card+json",
+          "url": "https://mcp.exa.ai/mcp/server-card"
+        },
+        {
+          "identifier": "urn:air:exa.ai:api:rest",
+          "type": "application/vnd.oai.openapi+json",
+          "url": "https://api.exa.ai/openapi.json"
+        },
+        {
+          "identifier": "urn:air:exa.ai:skill:agent-skills",
+          "type": "application/ai-skill+md",
+          "url": "https://exa.ai/docs/skill.md"
+        }
+      ],
+      "errors": [],
+      "warnings": [
+        "/entries/0/displayName: displayName duplicates a value the referenced artifact carries (authoritative-source rule).",
+        "/entries/0/description: description duplicates a value the referenced artifact carries (authoritative-source rule).",
+        "/entries/2/type: type 'application/ai-skill+md' is neither a known type nor a vendor (vnd.) type."
+      ],
+      "unrecognized": [
+        "capabilities",
+        "representativeQueries",
+        "metadata",
+        "trustManifest"
+      ],
+      "matchedByOurUrls": [
+        "https://mcp.exa.ai/mcp/server-card"
+      ]
+    },
+    {
+      "host": "github.com",
+      "entries": [
+        {
+          "identifier": "urn:air:github.com:mcp:github-mcp-server",
+          "type": "application/mcp-server-card+json",
+          "url": "https://api.githubcopilot.com/mcp/server-card"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "unrecognized": [],
+      "matchedByOurUrls": [
+        "https://api.githubcopilot.com/mcp/server-card"
+      ]
+    }
+  ],
+  "urlChecks": {
+    "checkedOn": "2026-11-16",
+    "checks": [
+      {
+        "url": "https://registry.npmjs.org/%40brave/brave-search-mcp-server",
+        "type": "application/vnd.npm.package+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://pypi.org/pypi/browser-use/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.modelcontextprotocol.io/v0.1/servers/com.browser-use%2Fbrowser-use/versions/latest",
+        "type": "application/vnd.mcp-registry.server+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman-commit/SKILL.md",
+        "type": "application/agent-skills+md",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/.claude-plugin/plugin.json",
+        "type": "application/vnd.claude-code.plugin+json",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman-review/SKILL.md",
+        "type": "application/agent-skills+md",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman/SKILL.md",
+        "type": "application/agent-skills+md",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/megacave/SKILL.md",
+        "type": "application/agent-skills+md",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/ultracave/SKILL.md",
+        "type": "application/agent-skills+md",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://registry.npmjs.org/chrome-devtools-mcp",
+        "type": "application/vnd.npm.package+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/main/action.yml",
+        "type": "application/vnd.github.action+yaml",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "url": "https://pypi.org/pypi/docling/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://mcp.exa.ai/mcp/server-card",
+        "type": "application/mcp-server-card+json",
+        "status": 200,
+        "contentType": "application/mcp-server-card+json"
+      },
+      {
+        "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.exa%2Fexa/versions/latest",
+        "type": "application/vnd.mcp-registry.server+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.npmjs.org/exa-mcp-server",
+        "type": "application/vnd.npm.package+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://api.githubcopilot.com/mcp/server-card",
+        "type": "application/mcp-server-card+json",
+        "status": 200,
+        "contentType": "application/mcp-server-card+json"
+      },
+      {
+        "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.github%2Fgithub-mcp-server/versions/latest",
+        "type": "application/vnd.mcp-registry.server+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://pypi.org/pypi/langchain-tavily/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://pypi.org/pypi/mcp-atlassian/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.npmjs.org/pdf-parse",
+        "type": "application/vnd.npm.package+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://pypi.org/pypi/pdfplumber/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.microsoft%2Fplaywright-mcp/versions/latest",
+        "type": "application/vnd.mcp-registry.server+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.npmjs.org/%40playwright/mcp",
+        "type": "application/vnd.npm.package+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://pypi.org/pypi/pr-agent/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.npmjs.org/tavily-mcp",
+        "type": "application/vnd.npm.package+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.tavily-ai%2Ftavily-mcp/versions/latest",
+        "type": "application/vnd.mcp-registry.server+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://pypi.org/pypi/unstructured/json",
+        "type": "application/vnd.pypi.project+json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md",
+        "type": "application/agent-skills+md",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      }
+    ]
+  }
+}

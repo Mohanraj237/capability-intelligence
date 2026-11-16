@@ -25,11 +25,11 @@ describe('completeness levels', () => {
     const assessable = { ...discoverable, runtime: [{ kind: 'local_process' }], license: { expression: 'MIT' }, capabilityVersion: '1.0.0' };
     assert.equal(levelOf(assessable), 'assessable');
     assert.equal(levelOf(adoptableManifest()), 'adoptable');
-    assert.equal(levelOf(adoptableManifest({ riskTier: 'low', assessmentReference: { id: 'RA-1' } })), 'governed');
+    assert.equal(levelOf(adoptableManifest({ riskTier: 'low', assessmentReference: { id: 'RA-1', assessedOn: '2026-10-01' } })), 'governed');
   });
 
   it('is cumulative: higher facts do not count while a lower level is missing a fact', () => {
-    const result = assessCompleteness(without(adoptableManifest({ riskTier: 'high', assessmentReference: { id: 'RA-2' } }), 'runtime'), schema);
+    const result = assessCompleteness(without(adoptableManifest({ riskTier: 'high', assessmentReference: { id: 'RA-2', assessedOn: '2026-10-01' } }), 'runtime'), schema);
     assert.equal(result.level, 'discoverable');
     assert.deepEqual(result.unmet, { discoverable: [], assessable: ['runtime'], adoptable: [], governed: [] });
   });

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.example.com/ai-capability-manifest/0.1/capability.schema.json",
+  "$id": "https://raw.githubusercontent.com/Mohanraj237/capability-intelligence/main/schema/0.1/capability.schema.json",
   "title": "AI Capability Manifest",
-  "description": "Metadata contract describing one independently adoptable AI capability (Mission 4, Manifest v0.1 draft, revised in place on 2026-10-23 from the Spikes 1-3 research). It describes a capability; it is not a runtime execution protocol, and it references native contracts (MCP, A2A, OpenAPI, SKILL.md) instead of restating them. Mission 4 owns this structure and its rules; the content of each manifest belongs to the capability's owners and the inventory owners. Only facts that every sampled source supplies are mandatory; the validator reports the completeness level a manifest reaches (x-completenessLevels) instead of requiring more. Omitted optional fields mean 'not provided' and null is never allowed; an explicit empty list means 'declared none'. Top-level fields prefixed with 'x-' are extension fields that core consumers ignore.",
+  "description": "Metadata contract describing one independently adoptable AI capability (Mission 4, Manifest v0.1 draft, revised in place on 2026-10-23 from the Spikes 1-3 research, on 2026-11-13 with five additive changes from the Phase 1 field review, and on 2026-11-16 with AI hosts stated only per publication in a controlled publications[].platformCompatibility, an optional integrations field, and intendedAudience removed as repetitive). It describes a capability; it is not a runtime execution protocol, and it references native contracts (MCP, A2A, OpenAPI, SKILL.md) instead of restating them. Mission 4 owns this structure and its rules; the content of each manifest belongs to the capability's owners and the inventory owners. Only facts that every sampled source supplies are mandatory; the validator reports the completeness level a manifest reaches (x-completenessLevels) instead of requiring more. Omitted optional fields mean 'not provided' and null is never allowed; an explicit empty list means 'declared none'. Top-level fields prefixed with 'x-' are extension fields that core consumers ignore.",
   "type": "object",
   "required": [
     "schemaVersion",
@@ -46,8 +46,8 @@
     },
     "capabilityType": {
       "type": "string",
-      "enum": ["skill", "agent", "mcp_server", "plugin", "tool", "application", "service", "workflow", "framework", "platform"],
-      "description": "Capability classification. 'framework' and 'platform' cover the frameworks and platforms that the capability landscape catalogues. Prompts, commands, hooks, and resources are modelled as embeddedComponents of a parent capability, not as capability types.",
+      "enum": ["skill", "agent", "mcp_server", "plugin", "tool", "library", "application", "service", "workflow", "framework", "platform"],
+      "description": "Capability classification. 'library' is a package that code calls (for example a PDF parser on PyPI or npm); 'tool' is something a person or an agent runs (a CLI, a GitHub Action, a bot); 'framework' is a library for building agents or applications on top of it. 'framework' and 'platform' cover the frameworks and platforms that the capability landscape catalogues. Prompts, commands, hooks, and resources are modelled as embeddedComponents of a parent capability, not as capability types.",
       "examples": ["skill"],
       "x-hint": "Use one of the capability types defined by the schema (lowercase snake_case)."
     },
@@ -62,14 +62,14 @@
     },
     "source": {
       "$ref": "#/$defs/source",
-      "description": "Primary reference to where the capability is maintained or obtained: repository, registry entry, provider, or other reference. A source is a location, not an identity. Other channels that distribute the same capability go in publications.",
+      "description": "The canonical origin: the one place where the capability is maintained (a repository, a provider, or, when no maintained source is visible, a registry entry). It anchors identity (url, path, repositoryId) and records the health of the maintained source (status, updatedAt). A source is a location, not an identity. Exactly one per capability; what adopters install or connect to goes in publications.",
       "x-synonyms": ["repository"]
     },
     "publications": {
       "type": "array",
       "minItems": 1,
       "items": { "$ref": "#/$defs/publication" },
-      "description": "Channels that distribute this same capability, each with its native name, version, and status: registry entries, packages, container images, marketplace entries, hosted endpoints. One capability is often published several times with different names and versions; listing them is what lets consumers recognise it across sources.",
+      "description": "What adopters obtain: the channels that distribute this same capability, each with its native name, version, and status: registry entries, packages, container images, marketplace entries, hosted endpoints, and a repository only when adopters use it directly (an Agent Skill, a CI action), stating the ref they pin. One capability is often published several times with different names and versions; listing them is what lets consumers recognise it across sources. A fact is recorded once: a repository publication without a ref repeats source and is reported (PUBLICATION_REPEATS_SOURCE).",
       "x-hint": "Provide a list of publications, each with 'kind' and 'locator', e.g. '- { kind: package, locator: \"pkg:npm/%40example-org/runbook-search\" }'."
     },
     "owner": {
@@ -122,7 +122,7 @@
     "riskTier": {
       "type": "string",
       "enum": ["unassessed", "low", "medium", "high"],
-      "description": "Risk classification or assessment state. 'unassessed' means no risk assessment is recorded and must never be interpreted as low risk or approval. A risk tier is not an approval. The classification vocabulary is owned by the governance framework (Mission 3); the tier names here are placeholders until it is agreed.",
+      "description": "Risk classification or assessment state. 'unassessed' means no risk assessment is recorded and must never be interpreted as low risk or approval. A risk tier is not an approval. The classification vocabulary is owned by the governance framework (Mission 3), which confirmed these four values on 2026-11-16. An assessment is valid for 12 months from assessmentReference.assessedOn.",
       "examples": ["unassessed"],
       "x-hint": "Use 'unassessed' when no risk assessment has been completed; an assessed tier (low, medium, high) also requires assessmentReference."
     },
@@ -147,16 +147,6 @@
       "description": "Use cases the capability is intended to support.",
       "x-hint": "Provide a list of use cases, each with a 'title', e.g. '- title: Review SQL in pull requests'."
     },
-    "intendedAudience": {
-      "type": "array",
-      "minItems": 1,
-      "maxItems": 10,
-      "uniqueItems": true,
-      "items": { "type": "string", "minLength": 3, "maxLength": 80 },
-      "description": "Roles or groups the capability is intended for, for example 'backend engineers' or 'data analysts'.",
-      "examples": [["backend engineers", "database reviewers"]],
-      "x-hint": "Provide a list of audiences, e.g. '- backend engineers'."
-    },
     "interfaces": {
       "type": "array",
       "minItems": 1,
@@ -168,7 +158,7 @@
       "type": "array",
       "minItems": 1,
       "items": { "$ref": "#/$defs/runtimeEnvironment" },
-      "description": "Where and on what the capability runs: a local process, a container, a hosted service, an agent host, or a CI runner. Required for the 'assessable' completeness level.",
+      "description": "Where and on what the capability runs: a local process, a container, a hosted service, an agent host, or a CI runner, with what that environment requires. It is stated once for the capability, because a capability without publications (an internal one used from its source) still runs somewhere. It does not repeat what publications state: the install coordinates are publications[].locator and the AI hosts are publications[].platformCompatibility. Required for the 'assessable' completeness level.",
       "x-hint": "Provide a list of runtime environments, each with a 'kind', e.g. '- { kind: local_process, detail: Node.js >=18 }'.",
       "x-synonyms": ["engines"]
     },
@@ -179,20 +169,20 @@
       "x-hint": "Provide a list of setup items, each with a 'name', e.g. '- { name: GITHUB_TOKEN, secret: true, required: true }', or [] to declare that nothing is needed.",
       "x-synonyms": ["configuration", "environmentVariables", "env", "secrets"]
     },
-    "platformCompatibility": {
+    "integrations": {
       "type": "array",
       "minItems": 1,
-      "maxItems": 20,
+      "maxItems": 30,
       "uniqueItems": true,
       "items": { "type": "string", "maxLength": 64, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-      "description": "Platforms, hosts, or clients the capability is known to work with, as lowercase kebab-case tokens (for example 'vs-code', 'github-actions', 'linux'). The token vocabulary is not yet controlled.",
-      "examples": [["vs-code", "github-actions"]],
-      "x-hint": "Use lowercase kebab-case platform tokens, e.g. 'github-actions'."
+      "description": "External systems, products, and frameworks that the capability connects to, works against, or plugs into, as lowercase kebab-case tokens: git forges and CI platforms (github, gitlab, github-actions), products and their deployment variants (jira-cloud, jira-data-center, github-enterprise-server), and frameworks (langchain, llamaindex). Not the AI host it runs in (publications[].platformCompatibility) and not its runtime (runtime). The token vocabulary is not yet controlled.",
+      "examples": [["gitlab", "jira-data-center", "langchain"]],
+      "x-hint": "Use lowercase kebab-case tokens, e.g. 'gitlab' or 'jira-data-center'."
     },
     "dependencies": {
       "type": "array",
       "items": { "$ref": "#/$defs/capabilityRef" },
-      "description": "Other capabilities this capability requires, referenced by id. An empty list declares that there are none.",
+      "description": "Other registered capabilities that this capability requires, referenced by id (for example an agent that uses an MCP server). Only capabilities belong here: installed software and operating-system packages (Chrome, poppler) are setup items of kind software or system_package, accounts and API keys are setup items of kind account or env_var, the runtime and container are runtime entries, and the systems it works against (a Jira site, GitHub) are integrations. An empty list declares that it needs no other registered capability; it does not mean that nothing else is needed.",
       "x-hint": "Provide a list of capability references, e.g. '- id: sre/runbook-search', or [] to declare none."
     },
     "limitations": {
@@ -242,6 +232,10 @@
     }
   },
   "additionalProperties": false,
+  "x-retiredFields": {
+    "platformCompatibility": "AI hosts are stated per publication: move each host to publications[].platformCompatibility of the publication that supports it (decision register C14).",
+    "intendedAudience": "Removed from schema 0.1 because it restated the description, use cases, runtime, and integrations (decision register C15). State who it is for in supportedUseCases, or keep it as the extension field 'x-intendedAudience'."
+  },
   "allOf": [
     {
       "description": "An assessed riskTier must cite the assessment that produced it, so that a tier cannot be self-asserted.",
@@ -430,7 +424,7 @@
         "kind": {
           "type": "string",
           "enum": ["registry_entry", "package", "container_image", "marketplace_entry", "hosted_endpoint", "repository", "other"],
-          "description": "Kind of channel: an entry in a registry or catalog (the MCP Registry, the Docker MCP catalog); a package (npm, PyPI); a container image; an entry in a plugin marketplace; a hosted endpoint; a repository from which the capability is used directly (Agent Skills, GitHub Actions); or other.",
+          "description": "Kind of channel: an entry in a registry or catalog (the MCP Registry, the Docker MCP catalog); a package (npm, PyPI); a container image; an entry in a plugin marketplace; a hosted endpoint; a repository from which the capability is used directly (Agent Skills, GitHub Actions), with the ref adopters pin in nativeVersion; or other.",
           "x-hint": "Use one of the publication kinds defined by the schema."
         },
         "locator": {
@@ -479,6 +473,17 @@
           "minLength": 3,
           "maxLength": 300,
           "description": "How this publication is known to belong to the capability: a declared back-link (npm mcpName, PyPI mcp-name), the registry's verification of a namespace, a build from the same repository, or a configuration that only runs it. Omit when the link is not verified."
+        },
+        "platformCompatibility": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["claude-code", "claude-desktop", "codex", "cursor", "devin", "gemini-cli", "github-copilot", "windsurf"] },
+          "description": "AI hosts and clients (coding agents, AI assistants, AI-enabled editors) in which this publication has documented or tested support, for example a marketplace entry that only installs into 'claude-code' while the npm package is also configured in 'cursor'. This is the only place the manifest states AI hosts: a capability supports the union of the hosts of its publications, so there is no capability-wide list to repeat them (decision register C14). Only AI hosts belong here: languages and runtimes (python, nodejs) are stated in runtime, operating-system restrictions in limitations, and the systems, products, and frameworks it connects to (gitlab, jira-cloud, langchain) in integrations. Hosts are named by the agent or assistant that loads the capability, not by the editor it runs in: MCP servers configured in VS Code are used by GitHub Copilot, so they are github-copilot. State a host only with evidence for this publication (its documentation gives a configuration for that host, or it was tested there); a directory name or packaging convention alone is not proof. For an MCP server, any client that supports its transport may work too, so a host that is not listed is unknown, never incompatible; omitting the field means not provided. Omit it for publications that run in no AI host, such as a library package. A capability used straight from its repository states its hosts on a repository publication with the ref adopters pin. The host vocabulary is controlled; a new host is an additive change.",
+          "examples": [["claude-code", "github-copilot"]],
+          "x-hint": "Use the AI host names defined by the schema, e.g. 'claude-code'. Languages and runtimes go in runtime; connected systems and frameworks go in integrations.",
+          "x-synonyms": ["platforms", "hosts", "clients", "compatibility"]
         }
       },
       "additionalProperties": false,
@@ -551,7 +556,7 @@
     },
     "assessmentReference": {
       "type": "object",
-      "required": ["id"],
+      "required": ["id", "assessedOn"],
       "properties": {
         "id": {
           "type": "string",
@@ -560,10 +565,10 @@
           "description": "Identifier of the assessment record in the governance system of record."
         },
         "url": { "$ref": "#/$defs/httpsUrl", "description": "Link to the assessment record." },
-        "assessedOn": { "$ref": "#/$defs/date", "description": "Date the assessment was completed." }
+        "assessedOn": { "$ref": "#/$defs/date", "description": "Date the assessment was completed. An assessment is valid for 12 months from this date (Mission 3, 2026-11-16); after that the validator reports ASSESSMENT_EXPIRED until a new assessment is recorded." }
       },
       "additionalProperties": false,
-      "x-hint": "Provide assessmentReference with at least the assessment 'id', e.g. 'id: RA-2026-0142'."
+      "x-hint": "Provide assessmentReference with the assessment 'id' and the date it was completed, e.g. '{ id: RA-2026-0142, assessedOn: \"2026-08-14\" }'."
     },
     "deprecation": {
       "type": "object",
@@ -588,8 +593,8 @@
       "properties": {
         "model": {
           "type": "string",
-          "enum": ["free", "included", "subscription", "usage_based", "chargeback", "other"],
-          "description": "Cost model: free; included in an existing license or contract; subscription; usage-based pricing; internal chargeback; or other.",
+          "enum": ["free", "included", "subscription", "usage_based", "provider_billed", "chargeback", "other"],
+          "description": "Cost model: free; included in an existing license or contract; subscription; usage-based pricing; provider_billed when the capability itself is free but every use calls a third-party service (a model or search API) that bills the adopter under its own plan; internal chargeback; or other.",
           "x-hint": "Use one of the cost models defined by the schema."
         },
         "details": {
@@ -636,8 +641,8 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["mcp", "a2a", "openapi", "agent_skill", "cli", "library", "ui", "other"],
-          "description": "Interface or protocol through which the capability is used.",
+          "enum": ["mcp", "a2a", "openapi", "agent_skill", "cli", "library", "ci_action", "ui", "other"],
+          "description": "Interface or protocol through which the capability is used. ci_action: a step in a CI workflow, such as a GitHub Action (action.yml), whose inputs form the contract.",
           "x-hint": "Use one of the interface types defined by the schema."
         },
         "specVersion": {
@@ -723,7 +728,8 @@
           "type": "string",
           "minLength": 3,
           "maxLength": 300,
-          "description": "Specifics, for example 'Node.js >=18' or 'docker.io/mcp/playwright'."
+          "description": "What the environment requires or who operates it, for example 'Node.js >=18', 'Python >=3.10,<4.0', 'Linux x86_64 only', or 'Hosted by the vendor'. Not the image reference, package name, install command, or AI host: those are publications[].locator and publications[].platformCompatibility.",
+          "examples": ["Node.js >=18"]
         }
       },
       "additionalProperties": false,
@@ -739,6 +745,20 @@
           "maxLength": 120,
           "description": "What must be provided: an environment variable (for example GITHUB_PERSONAL_ACCESS_TOKEN), a header, an account, or a setting."
         },
+        "kind": {
+          "type": "string",
+          "enum": ["env_var", "input", "header", "system_package", "software", "account", "app", "setting", "other"],
+          "description": "What kind of item name is: env_var, an environment variable; input, an input of a CI action or a configuration key; header, an HTTP header; system_package, an operating-system package; software, other installed software such as a browser or a language package; account, an account or API key with a service; app, an app to install, such as a GitHub App; setting, any other setting; or other.",
+          "x-hint": "Use one of the setup kinds defined by the schema, or omit the field."
+        },
+        "group": {
+          "type": "string",
+          "maxLength": 64,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Alternatives: items that share a group form one way of setting the capability up, and an adopter supplies the required items of one group only (for example group jira-cloud for a username and API token, group jira-server-data-center for a personal access token). Items without a group are needed whichever group is chosen. A group is only meaningful when the setup list has at least two groups.",
+          "examples": ["jira-cloud"],
+          "x-hint": "Use a lowercase kebab-case group name, e.g. jira-cloud, shared by the items of one alternative."
+        },
         "description": {
           "type": "string",
           "minLength": 3,
@@ -751,7 +771,7 @@
         },
         "required": {
           "type": "boolean",
-          "description": "true when the capability does not work without it."
+          "description": "true when the capability does not work without it. For an item in a group, true when that alternative does not work without it."
         }
       },
       "additionalProperties": false,
@@ -827,12 +847,12 @@
           "maxLength": 300,
           "description": "The field, document, rule, or person the value comes from, for example 'npm package.json license'."
         },
-        "observedAt": { "$ref": "#/$defs/date", "description": "Date the value was read or declared." },
+        "observedAt": { "$ref": "#/$defs/date", "description": "Date the value was read or declared. Evidence older than 180 days is reported (EVIDENCE_STALE) so that it is re-read before it is relied on." },
         "confirmedBy": {
           "type": "string",
           "minLength": 2,
           "maxLength": 120,
-          "description": "Who confirmed a derived value, if anyone."
+          "description": "Who confirmed the value, if anyone: the capability owner or a curator of the contribution workflow (Mission 5), by name or role. A confirmation closes the related review: a derived value is no longer reported as unconfirmed, and a repository-wide license confirmed for /license is no longer reported for review."
         }
       },
       "additionalProperties": false,
@@ -858,8 +878,8 @@
         },
         "type": {
           "type": "string",
-          "enum": ["prompt", "command", "hook", "resource", "tool", "other"],
-          "description": "Kind of embedded component.",
+          "enum": ["prompt", "command", "hook", "resource", "tool", "skill", "agent", "other"],
+          "description": "Kind of embedded component. skill: an Agent Skill bundled in its parent and not adopted on its own; agent: a subagent definition bundled in its parent. A bundled skill or agent that is independently adoptable gets its own manifest and is listed in components instead.",
           "x-hint": "Use one of the embedded component types defined by the schema."
         },
         "description": {

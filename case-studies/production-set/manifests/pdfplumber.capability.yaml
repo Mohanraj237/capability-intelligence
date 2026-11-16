@@ -1,0 +1,108 @@
+# Production reference set, need N4 (extract text and tables from PDFs).
+# Real public capability: pdfplumber (github.com/jsvine/pdfplumber).
+# Values observed on 2026-11-13 from the GitHub repository API, the latest GitHub release, PyPI, and
+# the README. riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus
+# (owner) are not stated by the source and are left out.
+schemaVersion: "0.1"
+id: jsvine/pdfplumber
+name: pdfplumber
+description: >-
+  Python library and command-line tool that extracts text and tables from PDF files, with
+  detailed information about every character, line, and rectangle, and visual debugging of the
+  extraction. Built on pdfminer.six.
+capabilityType: library
+capabilityVersion: "0.11.10"
+source:
+  type: repository
+  url: https://github.com/jsvine/pdfplumber
+  repositoryId: "41279279"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:pypi/pdfplumber
+    nativeName: pdfplumber
+    nativeVersion: "0.11.10"
+    versionScheme: pep440
+    updatedAt: "2026-06-15"
+owner:
+  name: Jeremy Singer-Vine
+  contact: https://github.com/jsvine/pdfplumber/issues
+  affiliation: external
+license:
+  expression: MIT
+  scope: capability
+documentation: https://github.com/jsvine/pdfplumber#readme
+keywords:
+  - pdf
+  - pdf-parsing
+  - table-extraction
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Extract text from PDF pages
+    description: Page.extract_text() returns the page's text, optionally preserving the layout.
+  - title: Extract tables from PDFs
+    description: Page.extract_tables() returns the tables on a page as rows of cells.
+  - title: Inspect a PDF's layout
+    description: Lists every character, line, rectangle, and image with its position; renders pages for visual debugging.
+interfaces:
+  - type: library
+    description: Python API (pdfplumber.open, Page.extract_text, Page.extract_tables).
+    inputs:
+      - name: pdf-file
+        mediaType: application/pdf
+        description: The PDF to read.
+  - type: cli
+    description: "`pdfplumber file.pdf --format csv|json|text` prints the PDF's objects or text."
+runtime:
+  - kind: local_process
+    detail: Python (tested on 3.10 to 3.14; PyPI requires >=3.8).
+setup: []
+dependencies: []
+limitations:
+  - Works best on machine-generated PDFs, not scanned ones; there is no built-in OCR.
+  - Maintained by one individual; the last release was 0.11.10 on 2026-06-15.
+costInformation:
+  model: free
+  details: MIT open source; runs locally with no service calls.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from the GitHub repository description and the README introduction.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: PyPI version 0.11.10 and GitHub release v0.11.10 (2026-06-15).
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: native
+    source: PyPI author.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: "PyPI classifier 'License :: OSI Approved :: MIT License'; GitHub detects MIT."
+    observedAt: "2026-11-13"
+  - field: /keywords
+    method: linked
+    source: GitHub repository topics.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: README (tested Python versions, pip install) and PyPI requires_python.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: curated
+    source: The README's installation is pip install only; no credentials or system packages are named.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README introduction ('Works best on machine-generated, rather than scanned, PDFs'); GitHub owner and releases.
+    observedAt: "2026-11-13"

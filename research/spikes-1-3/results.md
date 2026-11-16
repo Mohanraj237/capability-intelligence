@@ -832,6 +832,8 @@ Warnings and unverified findings in run C:
 |---|---|---|
 | DUPLICATE_PUBLICATION | warning | 29 |
 | DUPLICATE_SOURCE | warning | 11 |
+| PUBLICATION_REPEATS_SOURCE | warning | 11 |
+| RUNTIME_REPEATS_PUBLICATION | warning | 1 |
 | SOURCE_NOT_CHECKED | unverified | 58 |
 | RISK_UNASSESSED | unverified | 58 |
 | DERIVED_VALUE_UNCONFIRMED | unverified | 54 |

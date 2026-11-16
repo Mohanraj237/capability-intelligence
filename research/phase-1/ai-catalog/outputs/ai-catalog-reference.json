@@ -1,0 +1,744 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Mission 4 capability catalog (public capabilities)",
+    "identifier": "https://github.com/Mohanraj237/capability-intelligence",
+    "documentationUrl": "https://github.com/Mohanraj237/capability-intelligence/blob/main/docs/capability-manifest-standard-v0.1.md"
+  },
+  "entries": [
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/brave/brave-search-mcp-server",
+      "version": "2.1.4",
+      "tags": [
+        "brave",
+        "search",
+        "mcp",
+        "api"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/brave",
+        "displayName": "Brave Software, Inc.",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/brave/brave-search-mcp-server"
+            }
+          ]
+        }
+      ],
+      "displayName": "Brave Search MCP Server",
+      "description": "MCP server for the Brave Search API. Gives an agent web, news, image, video, local business, and place search, LLM-optimised context, and AI summarisation, with result URLs that can be cited.",
+      "type": "application/vnd.npm.package+json",
+      "url": "https://registry.npmjs.org/%40brave/brave-search-mcp-server"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/browser-use/browser-use",
+      "version": "1.0.3",
+      "tags": [
+        "browser-automation",
+        "ai-agents",
+        "python",
+        "cdp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/browser-use",
+        "displayName": "Browser Use",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/browser-use/browser-use"
+            }
+          ]
+        }
+      ],
+      "displayName": "browser-use",
+      "description": "Open-source Python library for AI browser agents. An agent is given a task in natural language and controls a real Chrome or Chromium browser to complete it, writing Python against the Chrome DevTools Protocol. Works with OpenAI, Anthropic, Google, and local models.",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/browser-use/browser-use#publication-0",
+            "type": "application/vnd.pypi.project+json",
+            "url": "https://pypi.org/pypi/browser-use/json",
+            "version": "1.0.3"
+          },
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/browser-use/browser-use#publication-1",
+            "type": "application/vnd.mcp-registry.server+json",
+            "url": "https://registry.modelcontextprotocol.io/v0.1/servers/com.browser-use%2Fbrowser-use/versions/latest",
+            "version": "0.13.11"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/juliusbrussee/caveman-commit",
+      "publisher": {
+        "identifier": "https://github.com/JuliusBrussee",
+        "displayName": "Julius Brussee",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/JuliusBrussee/caveman"
+            }
+          ]
+        }
+      ],
+      "displayName": "Caveman Commit",
+      "description": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman-commit/SKILL.md"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/juliusbrussee/caveman-plugin",
+      "version": "4.1.0",
+      "tags": [
+        "productivity",
+        "ai",
+        "anthropic",
+        "caveman",
+        "claude",
+        "claude-code",
+        "llm",
+        "meme",
+        "prompt-engineering",
+        "skill",
+        "tokens"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/JuliusBrussee",
+        "displayName": "Julius Brussee",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/JuliusBrussee/caveman"
+            }
+          ]
+        }
+      ],
+      "displayName": "Caveman (Claude Code plugin)",
+      "description": "Ultra-compressed communication mode. Shortens prose while preserving technical terms, code, commands, and exact errors.",
+      "type": "application/vnd.claude-code.plugin+json",
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/.claude-plugin/plugin.json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/juliusbrussee/caveman-review",
+      "publisher": {
+        "identifier": "https://github.com/JuliusBrussee",
+        "displayName": "Julius Brussee",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/JuliusBrussee/caveman"
+            }
+          ]
+        }
+      ],
+      "displayName": "Caveman Review",
+      "description": "Compressed code review - one line per finding with location, problem and fix. Use for /caveman-review, \"review this PR\", or \"review the diff\".",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman-review/SKILL.md"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/juliusbrussee/caveman",
+      "publisher": {
+        "identifier": "https://github.com/JuliusBrussee",
+        "displayName": "Julius Brussee",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/JuliusBrussee/caveman"
+            }
+          ]
+        }
+      ],
+      "displayName": "Caveman",
+      "description": "Terse caveman voice: answer first, fluff gone, every technical fact kept. Use for /caveman, \"caveman mode\", \"talk like caveman\", \"be brief\", \"less tokens\". Stays on until \"stop caveman\" or \"normal mode\".",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman/SKILL.md"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/juliusbrussee/megacave",
+      "publisher": {
+        "identifier": "https://github.com/JuliusBrussee",
+        "displayName": "Julius Brussee",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/JuliusBrussee/caveman"
+            }
+          ]
+        }
+      ],
+      "displayName": "Megacave",
+      "description": "Caveman in Classical Chinese: 文言文 register, far fewer characters, technical terms verbatim. Invoke only with /megacave or /caveman wenyan. Stays on until \"stop caveman\" or \"normal mode\".",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/megacave/SKILL.md"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/juliusbrussee/ultracave",
+      "publisher": {
+        "identifier": "https://github.com/JuliusBrussee",
+        "displayName": "Julius Brussee",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/JuliusBrussee/caveman"
+            }
+          ]
+        }
+      ],
+      "displayName": "Ultracave",
+      "description": "Caveman at maximum compression: fragments, one word when one word is enough, each fact once. Invoke only with /ultracave or /caveman ultra. Stays on until \"stop caveman\" or \"normal mode\".",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/ultracave/SKILL.md"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/chromedevtools/chrome-devtools-mcp",
+      "version": "1.13.0",
+      "tags": [
+        "chrome",
+        "devtools",
+        "browser",
+        "puppeteer",
+        "mcp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/ChromeDevTools",
+        "displayName": "Google LLC",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+            }
+          ]
+        }
+      ],
+      "displayName": "Chrome DevTools MCP",
+      "description": "Lets a coding agent control and inspect a live Chrome browser through Chrome DevTools: automate page actions with Puppeteer, take screenshots, analyse network requests and console messages, and record performance traces with actionable insights. Available as an MCP server and a CLI.",
+      "type": "application/vnd.npm.package+json",
+      "url": "https://registry.npmjs.org/chrome-devtools-mcp"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/anthropics/claude-code-action",
+      "tags": [
+        "github-actions",
+        "code-review",
+        "claude-code"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/anthropics",
+        "displayName": "Anthropic",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/anthropics/claude-code-action"
+            }
+          ]
+        }
+      ],
+      "displayName": "Claude Code Action",
+      "description": "GitHub Action that runs Claude Code on pull requests and issues. It answers questions about the code, reviews pull request changes and suggests improvements, and implements fixes, refactoring, and features, replying through GitHub comments and reviews.",
+      "type": "application/vnd.github.action+yaml",
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/main/action.yml"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/docling-project/docling",
+      "version": "2.150.0",
+      "tags": [
+        "pdf",
+        "document-parsing",
+        "tables",
+        "markdown"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/docling-project",
+        "displayName": "Docling Project (LF AI & Data Foundation)",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/docling-project/docling"
+            }
+          ]
+        }
+      ],
+      "displayName": "Docling",
+      "description": "Converts documents for generative AI. Parses PDF with page layout, reading order, table structure, code, and formulas, plus DOCX, PPTX, XLSX, HTML, images, audio, and more, into one document representation that exports to Markdown, HTML, or lossless JSON. Runs locally, including in air-gapped environments, with OCR for scanned PDFs.",
+      "type": "application/vnd.pypi.project+json",
+      "url": "https://pypi.org/pypi/docling/json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/exa-labs/exa-mcp-server",
+      "version": "3.4.3",
+      "tags": [
+        "exa",
+        "web-search",
+        "crawling",
+        "mcp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/exa-labs",
+        "displayName": "Exa Labs",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/exa-labs/exa-mcp-server"
+            }
+          ]
+        }
+      ],
+      "displayName": "Exa MCP Server",
+      "description": "MCP server for Exa web search. Gives an agent web search that returns clean, ready-to-use content (web_search_exa), reads full pages as Markdown (web_fetch_exa), and optionally runs advanced filtered searches and multi-step research with Exa Agent.",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/exa-labs/exa-mcp-server#contract-mcp",
+            "type": "application/mcp-server-card+json",
+            "url": "https://mcp.exa.ai/mcp/server-card"
+          },
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/exa-labs/exa-mcp-server#publication-1",
+            "type": "application/vnd.mcp-registry.server+json",
+            "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.exa%2Fexa/versions/latest",
+            "version": "3.4.1"
+          },
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/exa-labs/exa-mcp-server#publication-2",
+            "type": "application/vnd.npm.package+json",
+            "url": "https://registry.npmjs.org/exa-mcp-server",
+            "version": "3.4.3"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/github/github-mcp-server",
+      "version": "2.1.0",
+      "tags": [
+        "github",
+        "issues",
+        "pull-requests",
+        "mcp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/github",
+        "displayName": "GitHub",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/github/github-mcp-server"
+            }
+          ]
+        }
+      ],
+      "displayName": "GitHub MCP Server",
+      "description": "GitHub's official MCP server. Lets AI agents read repositories and code, create and update issues and pull requests, review code changes, monitor GitHub Actions runs, and examine security findings, through natural language.",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/github/github-mcp-server#contract-mcp",
+            "type": "application/mcp-server-card+json",
+            "url": "https://api.githubcopilot.com/mcp/server-card"
+          },
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/github/github-mcp-server#publication-0",
+            "type": "application/vnd.mcp-registry.server+json",
+            "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.github%2Fgithub-mcp-server/versions/latest",
+            "version": "2.1.0"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/tavily-ai/langchain-tavily",
+      "version": "0.2.18",
+      "tags": [
+        "tavily",
+        "langchain",
+        "web-search"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/tavily-ai",
+        "displayName": "Tavily",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/tavily-ai/langchain-tavily"
+            }
+          ]
+        }
+      ],
+      "displayName": "LangChain Tavily",
+      "description": "Tavily's integration for LangChain. Provides LangChain tools for real-time web search with result URLs (TavilySearch), page content extraction (TavilyExtract), site mapping and crawling (TavilyMap, TavilyCrawl), and research reports (TavilyResearch).",
+      "type": "application/vnd.pypi.project+json",
+      "url": "https://pypi.org/pypi/langchain-tavily/json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/sooperset/mcp-atlassian",
+      "version": "0.24.3",
+      "tags": [
+        "atlassian",
+        "jira",
+        "confluence",
+        "mcp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/sooperset",
+        "displayName": "sooperset",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/sooperset/mcp-atlassian"
+            }
+          ]
+        }
+      ],
+      "displayName": "MCP Atlassian",
+      "description": "Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira), for Cloud and Server/Data Center deployments. Lets an AI assistant search Jira with JQL, read issue details, create and update issues, and change an issue's status through its workflow transitions.",
+      "type": "application/vnd.pypi.project+json",
+      "url": "https://pypi.org/pypi/mcp-atlassian/json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/mehmet-kozan/pdf-parse",
+      "version": "2.4.5",
+      "tags": [
+        "pdf",
+        "pdf-parser",
+        "pdf-table",
+        "typescript"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/mehmet-kozan",
+        "displayName": "Mehmet Kozan",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/mehmet-kozan/pdf-parse"
+            }
+          ]
+        }
+      ],
+      "displayName": "pdf-parse",
+      "description": "Pure TypeScript module for extracting text, images, and tables from PDFs, in Node.js or the browser. Also reads document metadata and renders pages as PNG.",
+      "type": "application/vnd.npm.package+json",
+      "url": "https://registry.npmjs.org/pdf-parse"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/jsvine/pdfplumber",
+      "version": "0.11.10",
+      "tags": [
+        "pdf",
+        "pdf-parsing",
+        "table-extraction"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/jsvine",
+        "displayName": "Jeremy Singer-Vine",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/jsvine/pdfplumber"
+            }
+          ]
+        }
+      ],
+      "displayName": "pdfplumber",
+      "description": "Python library and command-line tool that extracts text and tables from PDF files, with detailed information about every character, line, and rectangle, and visual debugging of the extraction. Built on pdfminer.six.",
+      "type": "application/vnd.pypi.project+json",
+      "url": "https://pypi.org/pypi/pdfplumber/json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/microsoft/playwright-mcp",
+      "version": "0.0.85",
+      "tags": [
+        "playwright",
+        "browser-automation",
+        "testing",
+        "mcp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/microsoft",
+        "displayName": "Microsoft Corporation",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/microsoft/playwright-mcp"
+            }
+          ]
+        }
+      ],
+      "displayName": "Playwright MCP",
+      "description": "MCP server by Microsoft that lets an AI agent automate a browser with Playwright. The agent works from structured accessibility snapshots of the page instead of screenshots, so no vision model is needed: it navigates, clicks, fills forms, and takes screenshots.",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/microsoft/playwright-mcp#publication-0",
+            "type": "application/vnd.mcp-registry.server+json",
+            "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.microsoft%2Fplaywright-mcp/versions/latest",
+            "version": "0.0.85"
+          },
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/microsoft/playwright-mcp#publication-1",
+            "type": "application/vnd.npm.package+json",
+            "url": "https://registry.npmjs.org/%40playwright/mcp",
+            "version": "0.0.85"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/the-pr-agent/pr-agent",
+      "version": "0.50.0",
+      "tags": [
+        "ai",
+        "code-review",
+        "pull-request",
+        "devtools"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/The-PR-Agent",
+        "displayName": "The PR Agent",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/The-PR-Agent/pr-agent"
+            }
+          ]
+        }
+      ],
+      "displayName": "PR-Agent",
+      "description": "Open-source, AI-powered code review agent for pull requests. Reviews a pull request's changes and comments on code quality and possible issues (/review), suggests code improvements (/improve), writes a pull request description (/describe), and answers questions about the change (/ask). Works with GitHub, GitLab, Bitbucket, Azure DevOps, and Gitea.",
+      "type": "application/vnd.pypi.project+json",
+      "url": "https://pypi.org/pypi/pr-agent/json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/tavily-ai/tavily-mcp",
+      "version": "0.2.22",
+      "tags": [
+        "tavily",
+        "web-search",
+        "web-extraction",
+        "crawl",
+        "mcp"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/tavily-ai",
+        "displayName": "Tavily",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/tavily-ai/tavily-mcp"
+            }
+          ]
+        }
+      ],
+      "displayName": "Tavily MCP Server",
+      "description": "MCP server for the Tavily search API. Gives an agent real-time web search (tavily-search), extraction of page content (tavily-extract), a structured map of a website (tavily-map), and a crawler that explores a site (tavily-crawl). Available as a hosted server or a local one.",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/tavily-ai/tavily-mcp#publication-0",
+            "type": "application/vnd.npm.package+json",
+            "url": "https://registry.npmjs.org/tavily-mcp",
+            "version": "0.2.22"
+          },
+          {
+            "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/tavily-ai/tavily-mcp#publication-1",
+            "type": "application/vnd.mcp-registry.server+json",
+            "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.tavily-ai%2Ftavily-mcp/versions/latest",
+            "version": "0.2.15"
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/unstructured-io/unstructured",
+      "version": "0.27.37",
+      "tags": [
+        "pdf",
+        "document-parsing",
+        "ocr",
+        "etl"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/Unstructured-IO",
+        "displayName": "Unstructured",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/Unstructured-IO/unstructured"
+            }
+          ]
+        }
+      ],
+      "displayName": "Unstructured",
+      "description": "Open-source Python library that converts PDFs, HTML, Word documents, images, and many other formats into structured elements (titles, text, tables) for language models. Partitions PDFs with layout detection and OCR, including table extraction.",
+      "type": "application/vnd.pypi.project+json",
+      "url": "https://pypi.org/pypi/unstructured/json"
+    },
+    {
+      "identifier": "https://github.com/Mohanraj237/capability-intelligence/capabilities/anthropics/webapp-testing",
+      "tags": [
+        "playwright",
+        "testing",
+        "skill"
+      ],
+      "publisher": {
+        "identifier": "https://github.com/anthropics",
+        "displayName": "Anthropic",
+        "identityType": "url"
+      },
+      "updatedAt": "2026-11-16T00:00:00Z",
+      "trustManifests": [
+        {
+          "contributor": "https://github.com/Mohanraj237/capability-intelligence",
+          "provenance": [
+            {
+              "relation": "source",
+              "sourceId": "https://github.com/anthropics/skills"
+            }
+          ]
+        }
+      ],
+      "displayName": "Web Application Testing (skill)",
+      "description": "Agent Skill that teaches an agent to test local web applications with Playwright: verify frontend behaviour, debug the UI, capture screenshots, and read browser logs, by writing native Python Playwright scripts. Includes a helper script that starts and stops the app's servers.",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md"
+    }
+  ]
+}

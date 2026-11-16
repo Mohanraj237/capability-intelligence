@@ -1,0 +1,301 @@
+# Real manifest for the Caveman plugin for Claude Code, built from the public repository
+# https://github.com/JuliusBrussee/caveman at v4.1.0 (read on 2026-11-09). It is a case study of this
+# project, not an entry in any catalog: the ids use the GitHub owner as namespace, and who allocates
+# namespaces is open (U3). Every value traces to a file in that repository or to the GitHub API; the
+# provenance block says which, and verify-facts.mjs re-checks them against a local clone.
+#
+# What the plugin is: .claude-plugin/marketplace.json has "source": "./", so the plugin root is the
+# repository root. Claude Code auto-discovers every skills/*/SKILL.md (22), agents/*.md (3) and
+# commands/*.md (1, caveman-init.md); .claude-plugin/plugin.json declares four hooks.
+#
+# Modelling decisions (all judgments, listed in provenance as derived and unconfirmed):
+#   - components: the five skills that the repository's CLAUDE.md calls "fully independent" or
+#     "self-contained" get their own manifests and link back with `parent`.
+#   - embeddedComponents: everything else, typed skill, agent, command, or hook (C2). Each name is
+#     the native name; the kind is in `type`, so the earlier "skill:"/"agent:" name prefixes were
+#     dropped on 2026-11-16 (R1), and verify-facts.mjs matches on `type`.
+#   - cavecrew-builder has no description here: its native text is 301 characters and the schema
+#     allows 300. A native value the schema cannot hold is left out, never shortened.
+schemaVersion: "0.1"
+id: juliusbrussee/caveman-plugin
+name: Caveman (Claude Code plugin)
+description: >-
+  Ultra-compressed communication mode. Shortens prose while preserving technical terms, code,
+  commands, and exact errors.
+capabilityType: plugin
+capabilityVersion: "4.1.0"
+source:
+  type: repository
+  url: https://github.com/JuliusBrussee/caveman
+  repositoryId: "1201173969"
+  status: active
+  updatedAt: "2026-11-16"
+publications:
+  - kind: marketplace_entry
+    locator: caveman@caveman
+    nativeName: caveman
+    nativeVersion: "4.1.0"
+    versionScheme: semver
+    updatedAt: "2026-11-06"
+    verifiedBy: >-
+      The marketplace "caveman" is defined in the same repository by .claude-plugin/marketplace.json
+      (source "./"); .claude-plugin/plugin.json names the plugin "caveman" at version 4.1.0.
+    platformCompatibility:
+      - claude-code
+owner:
+  name: Julius Brussee
+  contact: https://github.com/JuliusBrussee/caveman/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  url: https://github.com/JuliusBrussee/caveman/blob/main/LICENSE
+  scope: repository
+documentation: https://docs.caveman.so/caveman
+keywords:
+  - productivity
+  - ai
+  - anthropic
+  - caveman
+  - claude
+  - claude-code
+  - llm
+  - meme
+  - prompt-engineering
+  - skill
+  - tokens
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Make agent replies terse
+    description: The caveman, ultracave and megacave skills cut filler and keep technical terms, code, commands and exact errors.
+  - title: Write terse Conventional Commit messages
+    description: The caveman-commit skill compresses a commit message to intent only.
+  - title: Review a diff with one line per finding
+    description: The caveman-review skill gives location, problem and fix for each finding.
+  - title: Compress a memory file such as CLAUDE.md
+    description: The caveman-compress skill rewrites the file in caveman format and keeps a readable backup outside the source tree.
+  - title: Show recorded token usage for the current session
+    description: The caveman-stats skill reports output and cache-read tokens and mode attribution.
+  - title: Delegate code lookup, small edits and review to compressed subagents
+    description: The cavecrew skill and three cavecrew subagents keep the main context small.
+  - title: Apply a task-shaped work pattern
+    description: Six skills shape how the agent investigates, builds, patches, refactors, migrates and verifies.
+  - title: Observe and reduce LLM spend with Caveman Cloud and the Caveman CLI
+    description: The setup, discover, evidence-review, manage, optimize and learn skills drive Caveman Cloud and the CLI.
+interfaces:
+  - type: other
+    contractRef: https://github.com/JuliusBrussee/caveman/blob/main/.claude-plugin/plugin.json
+    description: Claude Code plugin. plugin.json declares four hooks; skills/, agents/ and commands/ at the plugin root are auto-discovered.
+  - type: agent_skill
+    description: 22 Agent Skills under skills/, loaded by name and description. Five have their own manifests (components); 17 are listed in embeddedComponents.
+runtime:
+  - kind: agent_host
+    detail: Loaded as a plugin; the plugin root is the repository root.
+  - kind: local_process
+    detail: Node.js on PATH for the four hooks; Python 3 for the scripts of the caveman-compress skill.
+setup:
+  - name: CAVEMAN_DEFAULT_MODE
+    kind: env_var
+    description: >-
+      Optional. Default mode at session start: off, caveman, ultracave, megacave, commit, review,
+      compress, or manual. Without it, a repo-local .caveman/config.json or .caveman.json, then the
+      user config, then caveman.
+    secret: false
+    required: false
+  - name: CAVEMAN_REINFORCE
+    kind: env_var
+    description: Optional. Per-turn reinforcement switch, on by default. Also settable as "reinforce" in the config files.
+    secret: false
+    required: false
+  - name: CAVE_API_KEY
+    kind: env_var
+    description: Only for the caveman-setup skill. The Caveman Cloud gateway auth secret; keep it in an environment variable and never commit it.
+    secret: true
+    required: false
+limitations:
+  - Every skills/*/SKILL.md ships to every plugin user with no allowlist, so all 22 skill descriptions compete for activation on ordinary work.
+  - Saves nothing on agents billed per request, such as GitHub Copilot. The rules add input tokens, and the project's own notes list cases where caveman is net-negative.
+  - Output reduction against an "Answer concisely." control is 3% (caveman), 35% (ultracave) and 9% (megacave) at the median; n=10, one run, measured on the 3.1.0 skill text.
+  - The caveman-compress skill sends the full text of the named file to the model provider its script is configured for (claude CLI, Anthropic API or an OpenAI-compatible endpoint) and needs python3.
+  - The caveman-setup, -discover, -manage, -optimize and -evidence-review skills serve Caveman Cloud, a separate commercial service. Setup needs CAVE_API_KEY; manage, optimize and evidence-review need a Caveman CLI login.
+  - The caveman-learn skill acts on the output of `caveman learn report --json`, which needs the Caveman CLI.
+  - The four hooks run node and exit silently when Node.js is not on PATH, so session activation, mode tracking and stats recording do not run without it.
+costInformation:
+  model: free
+  details: >-
+    The repository is Apache-2.0. Caveman Cloud, which several driver skills target, is separate
+    commercial software that this license does not cover.
+  url: https://github.com/JuliusBrussee/caveman/blob/main/LICENSING.md
+components:
+  - id: juliusbrussee/caveman
+  - id: juliusbrussee/ultracave
+  - id: juliusbrussee/megacave
+  - id: juliusbrussee/caveman-commit
+  - id: juliusbrussee/caveman-review
+embeddedComponents:
+  # Skills (17 of 22; the other five are components above)
+  - name: cavecrew
+    type: skill
+    description: >-
+      When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit)
+      or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their
+      output is compressed, so main context lasts longer.
+  - name: caveman-compress
+    type: skill
+    description: >-
+      Compress a memory file such as CLAUDE.md or a todo list into caveman format to save input
+      tokens, keeping a readable backup. Sends the file's text to the configured model provider.
+      Trigger: /caveman-compress.
+  - name: caveman-help
+    type: skill
+    description: >-
+      Quick-reference card for the three caveman skills and their commands. Trigger: /caveman-help
+      or "caveman help".
+  - name: caveman-stats
+    type: skill
+    description: >-
+      Show recorded output and cache-read token usage and mode attribution for the current Claude
+      Code session, or locate the host's native usage report. Trigger: /caveman-stats.
+  - name: caveman-setup
+    type: skill
+    description: >-
+      Wire a repository through the Caveman Cloud gateway so every LLM request is measured, with no
+      behavior change. Use for "set up caveman" or adding LLM spend observability.
+  - name: caveman-discover
+    type: skill
+    description: >-
+      Find and label every LLM workflow in the repository so Caveman Cloud groups spend by workflow
+      instead of one bucket. Use for "discover workflows" or breaking LLM spend down by workflow.
+  - name: caveman-learn
+    type: skill
+    description: >-
+      Act on a Caveman learn report - review the ranked token sinks, apply cost-lowering fixes with
+      per-edit consent, and report what those fixes returned. Use when asked to lower an agent's
+      token cost, what caveman has saved, to trim a heavy CLAUDE.md, or to offload re-pasted context
+      into cavemem.
+  - name: caveman-manage
+    type: skill
+    description: >-
+      Inspect Caveman Cloud's experiment lifecycle and block unsafe execution. Use when asked to
+      start, approve, cancel, promote or roll back a Caveman experiment.
+  - name: caveman-optimize
+    type: skill
+    description: >-
+      Turn a Caveman optimization observation into an operator-chosen candidate with a paired
+      baseline evaluation. Use when asked to inspect or evaluate a Caveman optimization report.
+      Needs explicit approval.
+  - name: caveman-explore
+    type: skill
+    description: >-
+      Read-only repository explorer for cold-start orientation, broad cross-file localization, or
+      when a direct search failed. Skip it when the exact file or symbol is already named. Returns
+      path:line citations only; its reads stay out of main context.
+  - name: caveman-evidence-review
+    type: skill
+    description: >-
+      Read-only review of Caveman Cloud evidence: cost, Cave Score, workflows, traces, latency,
+      errors, routing, savings. Use when asked what Caveman found or where LLM spend goes.
+  - name: investigate-first
+    type: skill
+    description: >-
+      Diagnose ambiguous failures before editing. Use for unknown causes, intermittent behavior,
+      performance regressions, or investigations needing evidence-ranked hypotheses.
+  - name: lean-build
+    type: skill
+    description: >-
+      Build feature work with high overbuilding risk. Use for new behavior, product slices, or
+      integrations where repository reuse, strict scope, and an explicit stop condition matter.
+  - name: surgical-patch
+    type: skill
+    description: >-
+      Fix bugs and small behavior changes at the narrowest responsible layer. Use when regression
+      proof, preserved surrounding behavior, and task-relevant tests matter.
+  - name: safe-refactor
+    type: skill
+    description: >-
+      Restructure code while preserving behavior. Use for extraction, consolidation, ownership
+      moves, or cleanup where verification must bracket structural edits.
+  - name: migration
+    type: skill
+    description: >-
+      Implement reversible compatibility-safe transitions. Use for schema, data, API, protocol,
+      configuration, or dependency migrations requiring rollback and preservation proof.
+  - name: verify-and-stop
+    type: skill
+    description: >-
+      Prove existing work meets acceptance conditions without expanding scope. Use for
+      validation-only tasks, completion checks, focused gate runs, and last-mile proof.
+  # Subagents (3). cavecrew-builder has no description: the native text is 301 characters.
+  - name: cavecrew-builder
+    type: agent
+  - name: cavecrew-investigator
+    type: agent
+    description: >-
+      Read-only code locator. Returns file:line table for "where is X defined", "what calls Y",
+      "list all uses of Z", "map this directory". Output is caveman-compressed, one row per hit, to
+      keep main-thread context small. Refuses to suggest fixes.
+  - name: cavecrew-reviewer
+    type: agent
+    description: >-
+      Diff/branch/file reviewer. One line per finding, severity-tagged, no praise, no scope creep.
+      Output format `path:line: <emoji> <severity>: <problem>. <fix>.` Use for "review this PR",
+      "review my diff", "audit this file". Skips formatting nits unless they change meaning.
+  # Command (1; the .toml stubs in commands/ are Codex and Gemini only)
+  - name: caveman-init
+    type: command
+    description: Drop the always-on caveman activation rule into the current repo for every IDE agent
+  # Hooks (4, declared in .claude-plugin/plugin.json)
+  - name: SessionStart
+    type: hook
+    description: Runs src/hooks/caveman-activate.js (timeout 30 s). Status message "Loading caveman mode...".
+  - name: SubagentStart
+    type: hook
+    description: Runs src/hooks/caveman-activate.js --subagent (timeout 30 s). Status message "Loading caveman mode for subagent...".
+  - name: UserPromptSubmit
+    type: hook
+    description: Runs src/hooks/caveman-mode-tracker.js (timeout 30 s). Status message "Tracking caveman mode...".
+  - name: SessionEnd
+    type: hook
+    description: Runs src/hooks/caveman-stats.js --record (timeout 5 s). Status message "Recording caveman stats...".
+provenance:
+  - { field: /capabilityType, method: derived, basis: convention, source: ".claude-plugin/plugin.json marks a Claude Code plugin", observedAt: "2026-11-09" }
+  - { field: /name, method: curated, source: "Display name written for this record; the native name is 'caveman'", observedAt: "2026-11-09" }
+  - { field: /description, method: native, source: ".claude-plugin/plugin.json description", observedAt: "2026-11-09" }
+  - { field: /capabilityVersion, method: native, source: ".claude-plugin/plugin.json version", observedAt: "2026-11-09" }
+  - { field: /source/repositoryId, method: linked, source: "GitHub API repos/JuliusBrussee/caveman, id", observedAt: "2026-11-09" }
+  - { field: /source/status, method: linked, source: "GitHub API: archived is false", observedAt: "2026-11-09" }
+  - { field: /source/updatedAt, method: linked, source: "GitHub API pushed_at, UTC date", observedAt: "2026-11-16" }
+  - { field: /publications/0, method: native, source: ".claude-plugin/marketplace.json and plugin.json; install coordinate in README.md and INSTALL.md", observedAt: "2026-11-09" }
+  - { field: /owner/name, method: native, source: ".claude-plugin/plugin.json author.name", observedAt: "2026-11-09" }
+  - { field: /owner/contact, method: native, source: "package.json bugs.url", observedAt: "2026-11-09" }
+  - { field: /license, method: linked, source: "LICENSING.md and root LICENSE; GitHub API license.spdx_id; stated for the repository as a whole", observedAt: "2026-11-09" }
+  - { field: /documentation, method: linked, source: "GitHub API homepage", observedAt: "2026-11-09" }
+  - { field: /keywords, method: linked, source: "marketplace.json category; GitHub API topics", observedAt: "2026-11-09" }
+  - { field: /supportedUseCases, method: curated, source: "Titles written for this record from the skill descriptions", observedAt: "2026-11-09" }
+  - { field: /interfaces, method: derived, basis: convention, source: "plugin.json; the skills/ directory", observedAt: "2026-11-09" }
+  - { field: /runtime, method: derived, basis: heuristic, source: "Hook commands in plugin.json; python3 invocation in skills/caveman-compress/SKILL.md", observedAt: "2026-11-09" }
+  - { field: /setup, method: linked, source: "src/hooks/caveman-config.js; skills/caveman-setup/SKILL.md", observedAt: "2026-11-09" }
+  - { field: /limitations, method: linked, source: "CLAUDE.md; docs/HONEST-NUMBERS.md; SKILL.md files; hook commands in plugin.json", observedAt: "2026-11-09" }
+  - { field: /costInformation, method: linked, source: "LICENSING.md", observedAt: "2026-11-09" }
+  - { field: /components, method: derived, basis: heuristic, source: "Independence stated in CLAUDE.md ('Fully independent skill', 'self-contained'), judged with the three tests in docs/spikes-1-3-research.md section 9.1", observedAt: "2026-11-09" }
+  - { field: /embeddedComponents, method: linked, source: "skills/*/SKILL.md and agents/*.md front matter; commands/caveman-init.md; hooks in plugin.json", observedAt: "2026-11-09" }
+  - { field: /x-modes, method: linked, source: "src/hooks/caveman-config.js: VALID_MODES, VALID_DEFAULT_MODES, LEGACY_MODES", observedAt: "2026-11-09" }
+  - field: /publications/0/platformCompatibility
+    method: derived
+    basis: convention
+    source: An entry in a Claude Code plugin marketplace (.claude-plugin/marketplace.json), installed with /plugin install.
+    observedAt: "2026-11-16"
+# Extension field (accepted by the schema, ignored by core consumers): the modes the hooks store.
+# Modes are not a manifest concept yet (abilities vocabulary, U5, is open).
+x-modes:
+  storedModes: ["off", caveman, ultracave, megacave, commit, review, compress]
+  startupOnly: [manual]
+  defaultMode: caveman
+  legacyAliases:
+    lite: caveman
+    full: caveman
+    ultra: ultracave
+    wenyan: megacave
+    wenyan-lite: megacave
+    wenyan-full: megacave
+    wenyan-ultra: megacave

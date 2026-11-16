@@ -1,0 +1,126 @@
+# Production reference set, need N1 (browser automation).
+# Real public capability: Anthropic's webapp-testing Agent Skill (github.com/anthropics/skills,
+# skills/webapp-testing). Values observed on 2026-11-13 from SKILL.md and LICENSE.txt in that folder;
+# the repository id is from the research snapshot of 2026-10-22 (the GitHub API was rate-limited).
+# The skill has no version of its own: it is used from the repository's main branch.
+# Not to be confused with the github/awesome-copilot skill of the same name (distinct_from below).
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are not
+# stated by the source and are left out.
+schemaVersion: "0.1"
+id: anthropics/webapp-testing
+name: Web Application Testing (skill)
+description: >-
+  Agent Skill that teaches an agent to test local web applications with Playwright: verify
+  frontend behaviour, debug the UI, capture screenshots, and read browser logs, by writing native
+  Python Playwright scripts. Includes a helper script that starts and stops the app's servers.
+capabilityType: skill
+source:
+  type: repository
+  url: https://github.com/anthropics/skills
+  path: skills/webapp-testing
+  repositoryId: "1061953414"
+  status: active
+publications:
+  - kind: repository
+    locator: https://github.com/anthropics/skills/tree/main/skills/webapp-testing
+    nativeVersion: main
+    versionScheme: floating
+    verifiedBy: The skill folder in Anthropic's skills repository; SKILL.md name 'webapp-testing'.
+    platformCompatibility:
+      - claude-code
+owner:
+  name: Anthropic
+  contact: https://github.com/anthropics/skills/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  scope: capability
+documentation: https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md
+keywords:
+  - playwright
+  - testing
+  - skill
+relations:
+  - type: distinct_from
+    locator: https://github.com/github/awesome-copilot
+    evidence: The awesome-copilot collection publishes a different skill with the same name 'webapp-testing'.
+    verified: true
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Test a local web application
+    description: Write and run Python Playwright scripts that check the app's frontend behaviour.
+  - title: Debug a web UI
+    description: Take screenshots, inspect the DOM, and read browser logs.
+interfaces:
+  - type: agent_skill
+    contractRef: https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md
+    description: Agent Skill (SKILL.md with instructions and helper scripts).
+embeddedComponents:
+  - type: resource
+    name: scripts/with_server.py
+    description: Helper script that manages the lifecycle of one or more local servers.
+runtime:
+  - kind: agent_host
+    detail: Agent hosts that load Agent Skills.
+setup:
+  - name: Python Playwright
+    kind: software
+    description: The Playwright Python package and its browsers on the machine where the agent runs the scripts.
+    secret: false
+    required: true
+dependencies: []
+limitations:
+  - For local web applications; the skill drives Playwright through scripts the agent writes.
+  - No version of its own; it changes whenever the repository's main branch changes. Pin a commit for production.
+  - The SKILL.md license field only says 'Complete terms in LICENSE.txt'; the file in the skill folder is Apache-2.0, and the repository as a whole has no detected license.
+costInformation:
+  model: free
+  details: Apache-2.0; runs inside the agent host, whose model usage is billed separately.
+provenance:
+  - field: /description
+    method: curated
+    source: Written from SKILL.md (description and body).
+    observedAt: "2026-11-13"
+  - field: /capabilityType
+    method: derived
+    basis: convention
+    source: A folder with a SKILL.md is an Agent Skill.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API, as recorded in the research snapshot.
+    observedAt: "2026-10-22"
+  - field: /source/status
+    method: linked
+    source: GitHub repository API for anthropics/skills (archived false; last push 2026-11-06).
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: linked
+    source: GitHub organization anthropics.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: curated
+    source: The repository's GitHub issue tracker.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: linked
+    source: LICENSE.txt in the skill folder (Apache License 2.0), referenced by SKILL.md.
+    observedAt: "2026-11-13"
+  - field: /embeddedComponents
+    method: native
+    source: SKILL.md 'Helper Scripts Available'.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: curated
+    source: SKILL.md instructs the agent to write native Python Playwright scripts.
+    observedAt: "2026-11-13"
+  - field: /publications/0/platformCompatibility
+    method: derived
+    basis: heuristic
+    source: Agent Skill format, which Claude Code loads; the source names no host. To be confirmed.
+    observedAt: "2026-11-16"
+  - field: /limitations
+    method: curated
+    source: SKILL.md (scope, license field); LICENSE.txt; research finding on repository license detection.
+    observedAt: "2026-11-13"

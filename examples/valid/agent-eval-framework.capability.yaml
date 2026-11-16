@@ -1,6 +1,6 @@
 # Internal framework (capabilityType 'framework', which covers the frameworks the capability
 # landscape catalogues), distributed through a package registry. Uses the optional maturity,
-# intendedAudience, platformCompatibility, and costInformation fields. Not yet risk-assessed, so it
+# integrations and costInformation fields. Not yet risk-assessed, so it
 # reaches 'adoptable', not 'governed'.
 schemaVersion: "0.1"
 id: ai-platform/agent-eval-framework
@@ -27,9 +27,6 @@ lastUpdated: "2026-10-19"
 supportedUseCases:
   - title: Run regression evaluations for an agent in CI
   - title: Compare two prompt or model versions on the same test set
-intendedAudience:
-  - agent developers
-  - ML engineers
 interfaces:
   - type: library
     description: Python package with a pytest plugin.
@@ -45,9 +42,7 @@ setup:
     description: Needed only by graders that call a model.
     secret: true
     required: false
-platformCompatibility:
-  - linux
-  - macos
+integrations:
   - github-actions
 dependencies: []
 limitations:

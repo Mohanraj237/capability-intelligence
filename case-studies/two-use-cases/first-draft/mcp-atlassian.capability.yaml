@@ -1,0 +1,16 @@
+# A contributor's first attempt at registering MCP Atlassian (use case 1), before the validator's
+# feedback. The values are real; the mistakes are deliberate and typical: schemaVersion is not
+# quoted, capabilityType uses a hyphen instead of the agreed vocabulary, the MCP server declares
+# no interfaces, and riskTier is missing.
+schemaVersion: 0.1
+id: sooperset/mcp-atlassian
+name: MCP Atlassian
+description: MCP server for Atlassian products (Confluence and Jira), for Cloud and Server/Data Center.
+capabilityType: mcp-server
+source:
+  type: repository
+  url: https://github.com/sooperset/mcp-atlassian
+owner:
+  name: sooperset
+  contact: https://github.com/sooperset/mcp-atlassian/issues
+lastUpdated: "2026-11-13"

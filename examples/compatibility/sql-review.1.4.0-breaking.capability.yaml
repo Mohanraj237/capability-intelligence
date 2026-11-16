@@ -16,6 +16,13 @@ source:
   type: repository
   url: https://github.com/example-org/ai-capabilities
   path: skills/sql-review
+publications:
+  - kind: repository
+    locator: https://github.com/example-org/ai-capabilities/tree/sql-review-v1.4.0/skills/sql-review
+    nativeVersion: sql-review-v1.4.0
+    versionScheme: tag
+    platformCompatibility:
+      - github-copilot
 owner:
   name: AI Platform Engineering
   contact: ai-platform@example.com
@@ -34,9 +41,6 @@ lastUpdated: "2026-10-19"
 supportedUseCases:
   - title: Review SQL in pull requests for performance anti-patterns
     description: Flags full-table scans, unbounded queries on partitioned tables, and N+1 query patterns.
-intendedAudience:
-  - backend engineers
-  - database reviewers
 interfaces:
   - type: agent_skill
     contractRef: https://github.com/example-org/ai-capabilities/blob/main/skills/sql-review/SKILL.md
@@ -55,9 +59,8 @@ runtime:
   - kind: local_process
     detail: The sql-review CLI.
 setup: []
-platformCompatibility:
+integrations:
   - github-actions
-  - vs-code
 dependencies: []
 limitations:
   - Supports the PostgreSQL and MySQL dialects only.

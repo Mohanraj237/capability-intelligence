@@ -1,0 +1,150 @@
+# Production reference set, need N1 (browser automation).
+# Real public capability: Chrome DevTools for agents (github.com/ChromeDevTools/chrome-devtools-mcp).
+# Values observed on 2026-11-13 from the GitHub repository API, the npm package, and the README.
+# riskTier stays 'unassessed' (Mission 3); maturity (Mission 2) and lifecycleStatus (owner) are
+# not stated by the source and are left out.
+schemaVersion: "0.1"
+id: chromedevtools/chrome-devtools-mcp
+name: Chrome DevTools MCP
+description: >-
+  Lets a coding agent control and inspect a live Chrome browser through Chrome DevTools: automate
+  page actions with Puppeteer, take screenshots, analyse network requests and console messages,
+  and record performance traces with actionable insights. Available as an MCP server and a CLI.
+capabilityType: mcp_server
+capabilityVersion: "1.13.0"
+source:
+  type: repository
+  url: https://github.com/ChromeDevTools/chrome-devtools-mcp
+  repositoryId: "1054793726"
+  status: active
+publications:
+  - kind: package
+    locator: pkg:npm/chrome-devtools-mcp
+    nativeName: chrome-devtools-mcp
+    nativeVersion: "1.13.0"
+    versionScheme: semver
+    updatedAt: "2026-11-11"
+    platformCompatibility:
+      - claude-code
+      - codex
+      - cursor
+      - devin
+      - gemini-cli
+      - github-copilot
+      - windsurf
+  - kind: marketplace_entry
+    locator: chrome-devtools-mcp@chrome-devtools-plugins
+    nativeVersion: latest
+    versionScheme: floating
+    verifiedBy: The README's Claude Code plugin instructions; the plugin installs the MCP server and its skills.
+    platformCompatibility:
+      - claude-code
+owner:
+  name: Google LLC
+  contact: https://github.com/ChromeDevTools/chrome-devtools-mcp/issues
+  affiliation: external
+license:
+  expression: Apache-2.0
+  scope: capability
+documentation: https://developer.chrome.com/docs/devtools/agents
+keywords:
+  - chrome
+  - devtools
+  - browser
+  - puppeteer
+  - mcp
+riskTier: unassessed
+lastUpdated: "2026-11-16"
+supportedUseCases:
+  - title: Drive a real browser from a coding agent
+    description: Navigate, click, fill forms, and take screenshots in Chrome, waiting for each action's result.
+  - title: Debug a web application
+    description: Inspect network requests and console messages with source-mapped stack traces.
+  - title: Analyse page performance
+    description: Record a performance trace and extract insights, optionally with real-user data from CrUX.
+interfaces:
+  - type: mcp
+    transport: stdio
+    description: Local MCP server started by the MCP client with npx; tools are listed in the project's tool reference.
+  - type: cli
+    description: "`chrome-devtools` command, installed with the same npm package, for use without MCP."
+runtime:
+  - kind: local_process
+    detail: Node.js ^20.19.0, ^22.12.0, or >=23.
+  - kind: agent_host
+    detail: Loaded as a plugin that bundles the MCP server and its skills.
+setup:
+  - name: Google Chrome
+    kind: software
+    description: Current stable Chrome (or Chrome for Testing) installed on the machine. Other Chromium browsers are not guaranteed.
+    secret: false
+    required: true
+  - name: CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS
+    kind: env_var
+    description: Set to opt out of Google's usage statistics, which are collected by default (or pass --no-usage-statistics).
+    secret: false
+    required: false
+  - name: CHROME_DEVTOOLS_MCP_NO_UPDATE_CHECKS
+    kind: env_var
+    description: Set to stop the periodic npm update checks.
+    secret: false
+    required: false
+dependencies: []
+limitations:
+  - Exposes the content of the browser to the MCP client, which can inspect and modify any data in it.
+  - Google collects usage statistics by default; opt out with --no-usage-statistics or the environment variable.
+  - Performance tools may send trace URLs to the Google CrUX API unless run with --no-performance-crux.
+  - Officially supports Google Chrome and Chrome for Testing only.
+  - The README's configuration uses the floating @latest version; pin a version for production.
+costInformation:
+  model: free
+  details: Apache-2.0 open source; no charge.
+provenance:
+  - field: /publications/1/platformCompatibility
+    method: native
+    source: README Claude Code plugin instructions for this marketplace entry.
+    observedAt: "2026-11-13"
+  - field: /description
+    method: curated
+    source: Written from the README introduction and Key features.
+    observedAt: "2026-11-13"
+  - field: /capabilityVersion
+    method: native
+    source: npm latest 1.13.0 (2026-11-11); GitHub release chrome-devtools-mcp-v1.13.0.
+    observedAt: "2026-11-13"
+  - field: /source/repositoryId
+    method: linked
+    source: GitHub repository API.
+    observedAt: "2026-11-13"
+  - field: /owner/name
+    method: native
+    source: npm package.json author.
+    observedAt: "2026-11-13"
+  - field: /owner/contact
+    method: native
+    source: npm package.json bugs.url.
+    observedAt: "2026-11-13"
+  - field: /license
+    method: native
+    source: npm package.json license; GitHub detects the same license.
+    observedAt: "2026-11-13"
+  - field: /documentation
+    method: linked
+    source: GitHub repository homepage.
+    observedAt: "2026-11-13"
+  - field: /runtime/0/detail
+    method: native
+    source: npm package.json engines and the README's MCP client configuration.
+    observedAt: "2026-11-13"
+  - field: /setup
+    method: native
+    source: README Requirements, Usage statistics, and Update checks sections.
+    observedAt: "2026-11-13"
+  - field: /limitations
+    method: curated
+    source: README Disclaimers, Usage statistics, and Getting started sections.
+    observedAt: "2026-11-13"
+  - field: /publications/0/platformCompatibility
+    method: native
+    source: "docs/client-configurations.md: npx configuration for Claude Code, Codex, Copilot / VS Code, Cursor, Devin CLI, Gemini CLI, and Windsurf."
+    observedAt: "2026-11-16"

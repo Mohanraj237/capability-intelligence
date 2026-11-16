@@ -19,8 +19,6 @@ riskTier: "unassessed"
 lastUpdated: "2026-10-18"
 interfaces:
   - type: "library"
-platformCompatibility:
-  - "node"
 license:
   expression: "Apache-2.0"
 documentation: "https://github.com/UseJunior/email-agent-mcp#readme"

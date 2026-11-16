@@ -1,0 +1,625 @@
+{
+  "exchangeFormatVersion": "0.1",
+  "generator": {
+    "name": "capability-manifest",
+    "version": "0.1.0"
+  },
+  "schemaVersions": [
+    "0.1"
+  ],
+  "notice": "Structural validity does not establish that a source is reachable, a dependency is available, or a capability is secure or approved for production.",
+  "capabilities": [
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "sooperset/mcp-atlassian",
+        "name": "MCP Atlassian",
+        "description": "Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira), for Cloud and Server/Data Center deployments. Lets an AI assistant search Jira with JQL, read issue details, create and update issues, and change an issue's status through its workflow transitions.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "0.24.3",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/sooperset/mcp-atlassian",
+          "repositoryId": "897809208",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/mcp-atlassian",
+            "nativeName": "mcp-atlassian",
+            "nativeVersion": "0.24.3",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-11-12",
+            "platformCompatibility": [
+              "claude-desktop",
+              "cursor",
+              "github-copilot"
+            ]
+          },
+          {
+            "kind": "container_image",
+            "locator": "ghcr.io/sooperset/mcp-atlassian",
+            "nativeVersion": "latest",
+            "versionScheme": "floating",
+            "verifiedBy": "Image published under the repository owner's GitHub Container Registry namespace and documented in the project's installation guide."
+          }
+        ],
+        "owner": {
+          "name": "sooperset",
+          "contact": "https://github.com/sooperset/mcp-atlassian/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "repository"
+        },
+        "documentation": "https://mcp-atlassian.soomiles.com",
+        "keywords": [
+          "atlassian",
+          "jira",
+          "confluence",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Find and read Jira issues",
+            "description": "Search issues with JQL (jira_search) and read one issue with its comments (jira_get_issue)."
+          },
+          {
+            "title": "Update the status of a Jira issue",
+            "description": "Move an issue through its workflow, for example to Done (jira_transition_issue)."
+          },
+          {
+            "title": "Summarise Jira issues and sprints",
+            "description": "Returns issue, sprint, and search data that the AI assistant summarises. The server supplies the data; the summary is written by the assistant's model."
+          },
+          {
+            "title": "Create and edit Jira issues",
+            "description": "Create issues (jira_create_issue) and update their fields (jira_update_issue)."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local MCP server started by the MCP client (the default). The same server also supports the sse and streamable-http transports for shared or multi-user deployments. Tools are discovered at runtime through tools/list."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "tool",
+            "name": "jira_search",
+            "description": "Search issues with JQL."
+          },
+          {
+            "type": "tool",
+            "name": "jira_get_issue",
+            "description": "Get issue details."
+          },
+          {
+            "type": "tool",
+            "name": "jira_create_issue",
+            "description": "Create an issue. Writes to Jira."
+          },
+          {
+            "type": "tool",
+            "name": "jira_update_issue",
+            "description": "Update an issue's fields. Writes to Jira."
+          },
+          {
+            "type": "tool",
+            "name": "jira_transition_issue",
+            "description": "Change an issue's status. Writes to Jira."
+          },
+          {
+            "type": "tool",
+            "name": "jira_get_sprint_issues",
+            "description": "List the issues in a sprint (agile toolset)."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.10."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "JIRA_URL",
+            "kind": "env_var",
+            "description": "Base URL of the Jira site, for example https://your-company.atlassian.net.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "JIRA_USERNAME",
+            "kind": "env_var",
+            "group": "jira-cloud",
+            "description": "Atlassian account email. Jira Cloud only, together with JIRA_API_TOKEN.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "JIRA_API_TOKEN",
+            "kind": "env_var",
+            "group": "jira-cloud",
+            "description": "Jira Cloud API token, created at id.atlassian.com/manage-profile/security/api-tokens.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "JIRA_PERSONAL_TOKEN",
+            "kind": "env_var",
+            "group": "jira-server-data-center",
+            "description": "Personal Access Token for Jira Server/Data Center, used instead of username and API token.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "READ_ONLY_MODE",
+            "kind": "env_var",
+            "description": "Set to true to disable all write operations (create, update, transition).",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "TOOLSETS",
+            "kind": "env_var",
+            "description": "Restrict the tools offered, for example 'default' (about 35 core tools) or 'default,jira_agile'.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "integrations": [
+          "jira-cloud",
+          "jira-data-center"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Not an official Atlassian product; maintained by an individual open-source maintainer.",
+          "Jira Server/Data Center is supported from version 8.14; Confluence Server/Data Center from 6.0.",
+          "Write tools (create, update, transition) are enabled unless READ_ONLY_MODE=true is set.",
+          "When TOOLSETS is not set, all toolsets are enabled (98 tools in total, Jira and Confluence).",
+          "Acts with the permissions of the Atlassian account whose token it is given.",
+          "The container image is documented with the floating tag 'latest'; pin a version for production."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "MIT-licensed open source. Requires existing Atlassian (Jira) licences."
+        },
+        "provenance": [
+          {
+            "field": "/name",
+            "method": "native",
+            "source": "README title 'MCP Atlassian'.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the GitHub repository description, the README introduction, and its Key Tools table.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "The README and package describe it as a Model Context Protocol (MCP) server.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "Latest GitHub release v0.24.3 (2026-11-12) and PyPI version 0.24.3.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API for sooperset/mcp-atlassian.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub repository API (archived false; last push 2026-11-13).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/locator",
+            "method": "linked",
+            "source": "Documentation, installation and Docker examples (image ghcr.io/sooperset/mcp-atlassian:latest).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub repository owner (user account sooperset); PyPI author email names sooperset.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "linked",
+            "source": "GitHub license detection (MIT) and the README's License section. PyPI states no license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "GitHub repository homepage and the README Documentation section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "GitHub repository topics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "README 'Start Using' examples and Key Tools table; tools reference in the documentation.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/interfaces/0/transport",
+            "method": "native",
+            "source": "README configuration example (command uvx) and the documentation's TRANSPORT setting.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/embeddedComponents",
+            "method": "native",
+            "source": "README Key Tools table; jira_get_sprint_issues from the documentation's agile examples.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "pyproject.toml requires-python and the README's uvx configuration.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Quick Start and the documentation's environment-variable reference.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/integrations",
+            "method": "curated",
+            "source": "README Compatibility table for Jira deployments.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README License and Compatibility sections; documentation on READ_ONLY_MODE and TOOLSETS.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Derived from the MIT license; Atlassian licensing is the adopter's own.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "native",
+            "source": "README Quick Start: uvx configuration for Claude Desktop, Cursor, or GitHub Copilot.",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "the-pr-agent/pr-agent",
+        "name": "PR-Agent",
+        "description": "Open-source, AI-powered code review agent for pull requests. Reviews a pull request's changes and comments on code quality and possible issues (/review), suggests code improvements (/improve), writes a pull request description (/describe), and answers questions about the change (/ask). Works with GitHub, GitLab, Bitbucket, Azure DevOps, and Gitea.",
+        "capabilityType": "tool",
+        "capabilityVersion": "0.50.0",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/The-PR-Agent/pr-agent",
+          "repositoryId": "662766482",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/pr-agent",
+            "nativeName": "pr-agent",
+            "nativeVersion": "0.50.0",
+            "versionScheme": "pep440"
+          },
+          {
+            "kind": "container_image",
+            "locator": "docker.io/pragent/pr-agent",
+            "nativeVersion": "0.50.0",
+            "versionScheme": "semver",
+            "updatedAt": "2026-11-08",
+            "verifiedBy": "The README names pragent/pr-agent as the image namespace for releases 0.34.2 and later."
+          },
+          {
+            "kind": "repository",
+            "locator": "https://github.com/The-PR-Agent/pr-agent",
+            "nativeVersion": "main",
+            "versionScheme": "floating",
+            "verifiedBy": "The README's GitHub Action example uses the-pr-agent/pr-agent@main."
+          }
+        ],
+        "owner": {
+          "name": "The PR Agent",
+          "contact": "https://github.com/the-pr-agent/pr-agent/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://docs.pr-agent.ai",
+        "keywords": [
+          "ai",
+          "code-review",
+          "pull-request",
+          "devtools"
+        ],
+        "relations": [
+          {
+            "type": "distinct_from",
+            "locator": "https://www.qodo.ai",
+            "evidence": "README: 'This repository contains the open-source PR Agent Project. It is not the Qodo offering for open-source projects.'",
+            "verified": true
+          }
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Review the code quality of a pull request",
+            "description": "The /review command comments on the changes, possible issues, and code quality."
+          },
+          {
+            "title": "Suggest code improvements",
+            "description": "The /improve command proposes concrete code changes for the pull request."
+          },
+          {
+            "title": "Describe a pull request",
+            "description": "The /describe command writes the pull request's title and description."
+          },
+          {
+            "title": "Answer questions about a pull request",
+            "description": "The /ask command answers free-text questions about the change."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "cli",
+            "description": "`pr-agent --pr_url <PR_URL> review`, after pip install \"pr-agent[github]\"."
+          },
+          {
+            "type": "ci_action",
+            "description": "GitHub Action the-pr-agent/pr-agent@main, triggered on pull_request opened and synchronize; it reads OPENAI_KEY and GITHUB_TOKEN from the workflow environment."
+          },
+          {
+            "type": "other",
+            "description": "Comment commands on a pull request (/review, /improve, /describe, /ask), run by the GitHub Action, the GitHub App, or a webhook deployment."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "command",
+            "name": "/review",
+            "description": "Review the pull request."
+          },
+          {
+            "type": "command",
+            "name": "/improve",
+            "description": "Suggest code improvements."
+          },
+          {
+            "type": "command",
+            "name": "/describe",
+            "description": "Generate the pull request description."
+          },
+          {
+            "type": "command",
+            "name": "/ask",
+            "description": "Answer a question about the pull request."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "ci_runner",
+            "detail": "A GitHub Actions runner, triggered on pull_request opened and synchronize."
+          },
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.12; the GitHub provider needs the github extra."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "OPENAI_KEY",
+            "kind": "env_var",
+            "description": "API key for the model provider (OpenAI in the default example). Other providers are configured through LiteLLM settings.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "GITHUB_TOKEN",
+            "kind": "env_var",
+            "description": "GitHub token that lets PR-Agent read the pull request and post comments. In GitHub Actions, secrets.GITHUB_TOKEN.",
+            "secret": true,
+            "required": true
+          }
+        ],
+        "integrations": [
+          "github",
+          "github-actions",
+          "gitlab",
+          "bitbucket",
+          "azure-devops",
+          "gitea"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Needs an external large language model; the pull request's code is sent to the configured model provider.",
+          "The README's GitHub Action example pins the floating reference @main; pin a release for production.",
+          "/help_docs is disabled since v0.36.1 pending a fix for a credential-exposure issue (issue 2445).",
+          "Community-maintained legacy project of Qodo; distinct from Qodo's commercial code review product.",
+          "Reviews are AI-generated suggestions and can be wrong; it does not approve or block merges by itself."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The software is free (MIT). Each command makes a model API call, billed by the model provider."
+        },
+        "provenance": [
+          {
+            "field": "/name",
+            "method": "native",
+            "source": "README and GitHub repository description ('PR Agent').",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction, Usage Examples, and the supported git providers list.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "curated",
+            "source": "Chosen by the curator; the project calls itself an agent but publishes no A2A Agent Card.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "Latest GitHub release v0.50.0 (2026-11-07) and PyPI version 0.50.0. pyproject.toml on main still says 0.49.0.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API; the old URL github.com/qodo-ai/pr-agent redirects here.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub repository API (archived false; last push 2026-11-12).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/nativeVersion",
+            "method": "linked",
+            "source": "Docker Hub tags for pragent/pr-agent (0.50.0, updated 2026-11-08).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "native",
+            "source": "LICENSE copyright holder 'The PR Agent'; GitHub organization The-PR-Agent.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "native",
+            "source": "PyPI project URLs (Issues).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "LICENSE file and PyPI license text (MIT); GitHub detects MIT.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "PyPI project URLs (Documentation).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "GitHub repository topics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "README Usage Examples and See It in Action sections.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime",
+            "method": "native",
+            "source": "README Quick Start (GitHub Action, CLI) and pyproject.toml requires-python; Docker Hub namespace.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README GitHub Action example (OPENAI_KEY, GITHUB_TOKEN).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/integrations",
+            "method": "native",
+            "source": "README 'Platform Agnostic' git providers and deployment options.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Features note on /help_docs, Data Privacy section, and project history.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "README ('Each command uses a single LLM call') and the MIT license.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    }
+  ],
+  "rejected": []
+}

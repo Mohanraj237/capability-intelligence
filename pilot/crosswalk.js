@@ -13,6 +13,9 @@
 // the owner's declaration, and records both observations per publication (publications[].updatedAt
 // and .status), as research/spikes-1-3 does. The pilot keeps its mapping so that its results stay
 // comparable with iteration 1 (docs/journey-pilot.md).
+// Since 2026-11-16 two concepts have no top-level field: AI hosts are stated per publication
+// (publications[].platformCompatibility, decision register C14), and intendedAudience was removed
+// as repetitive (C15). The pilot still counts how often native formats state them.
 export const CONCEPTS = [
   { key: 'id', label: 'Stable identifier', field: 'id' },
   { key: 'name', label: 'Display name', field: 'name' },
@@ -29,9 +32,9 @@ export const CONCEPTS = [
   { key: 'assessmentReference', label: 'Risk assessment record', field: 'assessmentReference' },
   { key: 'lastUpdated', label: 'Last updated', field: 'lastUpdated' },
   { key: 'supportedUseCases', label: 'Supported use cases', field: 'supportedUseCases' },
-  { key: 'intendedAudience', label: 'Intended audience', field: 'intendedAudience' },
+  { key: 'intendedAudience', label: 'Intended audience', field: null },
   { key: 'interfaces', label: 'Interfaces and protocols', field: 'interfaces' },
-  { key: 'platformCompatibility', label: 'Platform compatibility', field: 'platformCompatibility' },
+  { key: 'platformCompatibility', label: 'Platform compatibility', field: null },
   { key: 'dependencies', label: 'Capability dependencies', field: 'dependencies' },
   { key: 'limitations', label: 'Known limitations', field: 'limitations' },
   { key: 'costInformation', label: 'Cost', field: 'costInformation' },
@@ -170,7 +173,8 @@ function toManifest(sample, concepts) {
     ...optional('riskTier', 'riskTier'),
     ...optional('lastUpdated', 'lastUpdated'),
     ...optional('interfaces', 'interfaces'),
-    ...optional('platformCompatibility', 'platformCompatibility'),
+    // Not written to the draft: npm engines and MCP package types name runtimes (node, python),
+    // and AI hosts are stated only per publication since 2026-11-16 (decision register C5, C14).
     ...(concepts.license ? { license: licenseOf(value('license')) } : {}),
     ...optional('documentation', 'documentation'),
     ...(concepts.keywords ? { keywords: [...new Set(value('keywords'))].slice(0, 30) } : {}),

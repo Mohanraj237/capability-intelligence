@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.example.com/ai-capability-manifest/contracts/exchange-document-0.1.schema.json",
+  "$id": "https://raw.githubusercontent.com/Mohanraj237/capability-intelligence/main/schema/contracts/exchange-document-0.1.schema.json",
   "title": "Capability Exchange Document",
   "description": "A snapshot of validated capability manifests exchanged between teams, produced by `capability-manifest export`. Each manifest is carried unchanged and must validate against the manifest schema named by its own schemaVersion, so one document can mix schema versions. Mission 4 defines this structure; the inventory content it carries belongs to the capability and inventory owners (Mission 2). The document holds no rankings, approvals, or assessments.",
   "type": "object",

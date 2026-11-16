@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.example.com/ai-capability-manifest/contracts/validation-report-0.1.schema.json",
+  "$id": "https://raw.githubusercontent.com/Mohanraj237/capability-intelligence/main/schema/contracts/validation-report-0.1.schema.json",
   "title": "Manifest Validation Report",
   "description": "Output of `capability-manifest validate --format json`. Contract between the Mission 4 validator and automation that acts on its results, such as the validation step of the contribution workflow (Mission 5). Exit code 0 means no errors, 1 means validation errors, 2 means a usage or I/O error. A valid manifest is not an approved one, and each result reports the completeness level the manifest reaches. Finding codes are listed in docs/manifest-spec.md; new codes may be added in later report format versions.",
   "type": "object",

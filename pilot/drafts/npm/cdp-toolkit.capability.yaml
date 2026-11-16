@@ -21,9 +21,6 @@ interfaces:
   - type: "library"
   - type: "cli"
   - type: "mcp"
-platformCompatibility:
-  - "bun"
-  - "node"
 license:
   expression: "MIT"
 documentation: "https://github.com/sblattj/cdp-toolkit#readme"

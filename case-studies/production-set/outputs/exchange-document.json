@@ -1,0 +1,4769 @@
+{
+  "exchangeFormatVersion": "0.1",
+  "generator": {
+    "name": "capability-manifest",
+    "version": "0.1.0"
+  },
+  "schemaVersions": [
+    "0.1"
+  ],
+  "notice": "Structural validity does not establish that a source is reachable, a dependency is available, or a capability is secure or approved for production.",
+  "capabilities": [
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "anthropics/claude-code-action",
+        "name": "Claude Code Action",
+        "description": "GitHub Action that runs Claude Code on pull requests and issues. It answers questions about the code, reviews pull request changes and suggests improvements, and implements fixes, refactoring, and features, replying through GitHub comments and reviews.",
+        "capabilityType": "workflow",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/anthropics/claude-code-action",
+          "repositoryId": "986421638",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/anthropics/claude-code-action",
+            "nativeName": "anthropics/claude-code-action",
+            "nativeVersion": "v1",
+            "versionScheme": "tag",
+            "verifiedBy": "Used in workflows as anthropics/claude-code-action@v1; the repository's latest release is v1."
+          }
+        ],
+        "owner": {
+          "name": "Anthropic",
+          "contact": "https://github.com/anthropics/claude-code-action/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://github.com/anthropics/claude-code-action#readme",
+        "keywords": [
+          "github-actions",
+          "code-review",
+          "claude-code"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Review pull requests automatically",
+            "description": "Analyses the changes in a pull request and suggests improvements."
+          },
+          {
+            "title": "Answer questions on pull requests and issues",
+            "description": "Replies to comments that mention the trigger phrase."
+          },
+          {
+            "title": "Implement changes from an issue or comment",
+            "description": "Makes simple fixes, refactoring, and new features, and pushes them to a branch."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "ci_action",
+            "contractRef": "https://github.com/anthropics/claude-code-action/blob/main/action.yml",
+            "description": "GitHub Action (composite) with inputs such as prompt, claude_args, trigger_phrase, and the authentication inputs."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "ci_runner",
+            "detail": "Runs on your own GitHub Actions runner; the composite action installs Bun and Claude Code."
+          }
+        ],
+        "setup": [
+          {
+            "name": "anthropic_api_key",
+            "kind": "input",
+            "group": "anthropic-api",
+            "description": "Anthropic API key (action input, from a repository secret).",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "claude_code_oauth_token",
+            "kind": "input",
+            "group": "claude-oauth",
+            "description": "Claude Code OAuth token (action input, from a repository secret), instead of an API key.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "Cloud provider OIDC",
+            "kind": "account",
+            "group": "cloud-provider",
+            "description": "OIDC access to Amazon Bedrock, Google Vertex AI, or Microsoft Foundry, instead of an Anthropic key or token.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "github_token",
+            "kind": "input",
+            "description": "Optional action input. Token with repo and pull request permissions; not needed when the Claude GitHub App is installed.",
+            "secret": true,
+            "required": false
+          },
+          {
+            "name": "Claude GitHub App",
+            "kind": "app",
+            "description": "Installed with /install-github-app in Claude Code; needs a repository admin.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "integrations": [
+          "github-actions"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Can push code changes and comment on pull requests and issues with the permissions it is given.",
+          "Code and prompts go to the chosen model provider (Anthropic API, Bedrock, Vertex AI, or Foundry).",
+          "Installing the GitHub App and adding secrets needs a repository admin.",
+          "The quickstart (/install-github-app) is only for direct Anthropic API users.",
+          "The v1 tag moves with each v1 release; pin a commit for production."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The action is free (MIT). Each run uses the model provider's API and GitHub Actions minutes."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction and Features.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A GitHub Action (action.yml) is a workflow capability.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/nativeVersion",
+            "method": "linked",
+            "source": "GitHub releases (latest v1); package.json version 1.0.0.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub organization anthropics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "linked",
+            "source": "GitHub license detection (MIT).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/interfaces/0",
+            "method": "native",
+            "source": "action.yml inputs and runs.using composite.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "action.yml input descriptions and the README Quickstart.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Features ('Runs on Your Infrastructure') and Quickstart notes.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "anthropics/webapp-testing",
+        "name": "Web Application Testing (skill)",
+        "description": "Agent Skill that teaches an agent to test local web applications with Playwright: verify frontend behaviour, debug the UI, capture screenshots, and read browser logs, by writing native Python Playwright scripts. Includes a helper script that starts and stops the app's servers.",
+        "capabilityType": "skill",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/anthropics/skills",
+          "path": "skills/webapp-testing",
+          "repositoryId": "1061953414",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+            "nativeVersion": "main",
+            "versionScheme": "floating",
+            "verifiedBy": "The skill folder in Anthropic's skills repository; SKILL.md name 'webapp-testing'.",
+            "platformCompatibility": [
+              "claude-code"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "Anthropic",
+          "contact": "https://github.com/anthropics/skills/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "scope": "capability"
+        },
+        "documentation": "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md",
+        "keywords": [
+          "playwright",
+          "testing",
+          "skill"
+        ],
+        "relations": [
+          {
+            "type": "distinct_from",
+            "locator": "https://github.com/github/awesome-copilot",
+            "evidence": "The awesome-copilot collection publishes a different skill with the same name 'webapp-testing'.",
+            "verified": true
+          }
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Test a local web application",
+            "description": "Write and run Python Playwright scripts that check the app's frontend behaviour."
+          },
+          {
+            "title": "Debug a web UI",
+            "description": "Take screenshots, inspect the DOM, and read browser logs."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "agent_skill",
+            "contractRef": "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md",
+            "description": "Agent Skill (SKILL.md with instructions and helper scripts)."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "resource",
+            "name": "scripts/with_server.py",
+            "description": "Helper script that manages the lifecycle of one or more local servers."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Agent hosts that load Agent Skills."
+          }
+        ],
+        "setup": [
+          {
+            "name": "Python Playwright",
+            "kind": "software",
+            "description": "The Playwright Python package and its browsers on the machine where the agent runs the scripts.",
+            "secret": false,
+            "required": true
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "For local web applications; the skill drives Playwright through scripts the agent writes.",
+          "No version of its own; it changes whenever the repository's main branch changes. Pin a commit for production.",
+          "The SKILL.md license field only says 'Complete terms in LICENSE.txt'; the file in the skill folder is Apache-2.0, and the repository as a whole has no detected license."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0; runs inside the agent host, whose model usage is billed separately."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from SKILL.md (description and body).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A folder with a SKILL.md is an Agent Skill.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API, as recorded in the research snapshot.",
+            "observedAt": "2026-10-22"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub repository API for anthropics/skills (archived false; last push 2026-11-06).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub organization anthropics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "linked",
+            "source": "LICENSE.txt in the skill folder (Apache License 2.0), referenced by SKILL.md.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/embeddedComponents",
+            "method": "native",
+            "source": "SKILL.md 'Helper Scripts Available'.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "curated",
+            "source": "SKILL.md instructs the agent to write native Python Playwright scripts.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "derived",
+            "basis": "heuristic",
+            "source": "Agent Skill format, which Claude Code loads; the source names no host. To be confirmed.",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "SKILL.md (scope, license field); LICENSE.txt; research finding on repository license detection.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED",
+          "DERIVED_VALUE_UNCONFIRMED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "brave/brave-search-mcp-server",
+        "name": "Brave Search MCP Server",
+        "description": "MCP server for the Brave Search API. Gives an agent web, news, image, video, local business, and place search, LLM-optimised context, and AI summarisation, with result URLs that can be cited.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "2.1.4",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/brave/brave-search-mcp-server",
+          "repositoryId": "1001041900",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:npm/%40brave/brave-search-mcp-server",
+            "nativeName": "@brave/brave-search-mcp-server",
+            "nativeVersion": "2.1.4",
+            "versionScheme": "semver",
+            "updatedAt": "2026-09-17",
+            "platformCompatibility": [
+              "claude-desktop",
+              "github-copilot"
+            ]
+          },
+          {
+            "kind": "container_image",
+            "locator": "docker.io/mcp/brave-search",
+            "nativeVersion": "latest",
+            "versionScheme": "floating",
+            "updatedAt": "2026-06-25",
+            "verifiedBy": "The README's Docker configuration runs docker.io/mcp/brave-search. The image is in Docker's mcp namespace, not Brave's.",
+            "platformCompatibility": [
+              "claude-desktop",
+              "github-copilot"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "Brave Software, Inc.",
+          "contact": "https://github.com/brave/brave-search-mcp-server/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://brave.com/search/api/",
+        "keywords": [
+          "brave",
+          "search",
+          "mcp",
+          "api"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Live web search with citable result URLs",
+            "description": "brave_web_search returns web results with URLs, with filters for freshness and country."
+          },
+          {
+            "title": "News, image, and video search",
+            "description": "brave_news_search, brave_image_search, and brave_video_search."
+          },
+          {
+            "title": "Grounded answers and context for an LLM",
+            "description": "brave_llm_context and brave_summarizer return content prepared for a model."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local MCP server (stdio is the default since 2.x). Also serves streamable HTTP with --transport http."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "tool",
+            "name": "brave_web_search",
+            "description": "Web search with rich result types and filters."
+          },
+          {
+            "type": "tool",
+            "name": "brave_news_search",
+            "description": "News search."
+          },
+          {
+            "type": "tool",
+            "name": "brave_local_search",
+            "description": "Local business search; needs a Pro plan, otherwise falls back to web search."
+          },
+          {
+            "type": "tool",
+            "name": "brave_llm_context",
+            "description": "Search results prepared as context for a model."
+          },
+          {
+            "type": "tool",
+            "name": "brave_summarizer",
+            "description": "AI summary of search results."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Node.js."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "BRAVE_API_KEY",
+            "kind": "env_var",
+            "description": "Brave Search API key from the developer dashboard (api-dashboard.search.brave.com). Not needed if BRAVE_API_KEY_FILE is set.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "BRAVE_MCP_TRANSPORT",
+            "kind": "env_var",
+            "description": "stdio (default) or http.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "BRAVE_MCP_ENABLED_TOOLS",
+            "kind": "env_var",
+            "description": "Space-separated allow-list of tools to expose.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Requires a Brave Search API account and plan; some features (local search, extra snippets) need a Pro plan.",
+          "The HTTP transport binds to 127.0.0.1 by default; exposing it needs BRAVE_MCP_HOST and origin and host allow-lists.",
+          "The documented Docker image is published in Docker's namespace with the floating tag 'latest' and was last updated 2026-06-25, before the latest npm release.",
+          "Version 2.x changed the default transport and the image search response; clients written for 1.x need updating."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The server is free (MIT). Queries are billed under a Brave Search API plan; the README does not state prices."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction and Tools section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "npm latest 2.1.4 (2026-09-17); GitHub release v2.1.4.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/updatedAt",
+            "method": "linked",
+            "source": "Docker Hub repository mcp/brave-search, last_updated.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner",
+            "method": "native",
+            "source": "npm package.json author and bugs.url.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "npm package.json license; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "curated",
+            "source": "The Brave Search API page linked from the README's Getting an API Key section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/embeddedComponents",
+            "method": "native",
+            "source": "README Tools section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Environment Variables section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Migration, Tools, and Environment Variables sections; Docker Hub last_updated.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "README Getting an API Key section (plans) and the MIT license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "native",
+            "source": "README Installation: Claude Desktop and VS Code (GitHub Copilot) configurations for NPX.",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/publications/1/platformCompatibility",
+            "method": "native",
+            "source": "README Installation: Claude Desktop and VS Code (GitHub Copilot) configurations for Docker.",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "browser-use/browser-use",
+        "name": "browser-use",
+        "description": "Open-source Python library for AI browser agents. An agent is given a task in natural language and controls a real Chrome or Chromium browser to complete it, writing Python against the Chrome DevTools Protocol. Works with OpenAI, Anthropic, Google, and local models.",
+        "capabilityType": "framework",
+        "capabilityVersion": "1.0.3",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/browser-use/browser-use",
+          "repositoryId": "881458615",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/browser-use",
+            "nativeName": "browser-use",
+            "nativeVersion": "1.0.3",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-11-12"
+          },
+          {
+            "kind": "registry_entry",
+            "locator": "com.browser-use/browser-use",
+            "nativeVersion": "0.13.11",
+            "versionScheme": "semver",
+            "status": "active",
+            "updatedAt": "2026-10-21",
+            "verifiedBy": "MCP Registry namespace com.browser-use (domain-verified); the README declares mcp-name com.browser-use/browser-use."
+          }
+        ],
+        "owner": {
+          "name": "Browser Use",
+          "contact": "https://github.com/browser-use/browser-use/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://docs.browser-use.com",
+        "keywords": [
+          "browser-automation",
+          "ai-agents",
+          "python",
+          "cdp"
+        ],
+        "relations": [
+          {
+            "type": "distinct_from",
+            "locator": "https://cloud.browser-use.com",
+            "evidence": "The README separates the free MIT library from Browser Use Cloud, whose hosted browsers and models charge for usage.",
+            "verified": true
+          }
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Automate a web task with an AI agent",
+            "description": "Give the agent a task in natural language; it drives the browser until the task is done."
+          },
+          {
+            "title": "Use a local browser with existing logins",
+            "description": "Drive the Chrome you have open, a copy of a profile, or a fresh temporary profile."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "library",
+            "description": "Python API (Agent, Browser, and model classes such as ChatOpenAI and ChatAnthropic)."
+          },
+          {
+            "type": "cli",
+            "description": "Command-line interface, the README's 'Path 2'."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.11,<4.0."
+          }
+        ],
+        "setup": [
+          {
+            "name": "Model provider API key",
+            "kind": "account",
+            "description": "An API key for the chosen model, for example OPENAI_API_KEY; not needed with a local model such as Ollama.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "BROWSER_USE_API_KEY",
+            "kind": "env_var",
+            "description": "Optional. Key for Browser Use's own model and cloud browsers, from cloud.browser-use.com.",
+            "secret": true,
+            "required": false
+          },
+          {
+            "name": "Chrome or Chromium",
+            "kind": "software",
+            "description": "A local Chrome, Chromium, or Edge browser for Browser('chromium') or Browser('chrome').",
+            "secret": false,
+            "required": true
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "The project says to pin the exact version; releases move fast and can break code.",
+          "Version 1.0 is a rewrite; code written for 0.x needs migrating (MIGRATING.md).",
+          "Passwords passed as sensitive_data are redacted from output but are not sandboxed; model-written Python can read them.",
+          "With Browser('chrome') the agent acts in your own browser with your logins.",
+          "Page content goes to the chosen model provider.",
+          "The MCP Registry entry (0.13.11) lags the PyPI release (1.0.3)."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The library is free (MIT). Model inference and Browser Use Cloud are billed by their providers; a local model can be used instead."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README Path 3 (Python Library) section and the PyPI metadata.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "curated",
+            "source": "Chosen by the curator; a library for building agents, not an agent with an A2A card.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "PyPI version 1.0.3 (2026-11-12) and GitHub release 1.0.3.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1",
+            "method": "linked",
+            "source": "Official MCP Registry API, latest entry for com.browser-use/browser-use.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub organization browser-use; PyPI author Gregor Zunic.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "PyPI license MIT and classifier 'License :: OSI Approved :: MIT License'; README FAQ.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "PyPI project URLs (Documentation).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "PyPI requires_python and the README install commands.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Path 3 example and authentication FAQ.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Path 3 (pinning, migration) and FAQ (authentication, free use); registry and PyPI versions.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "native",
+            "source": "README FAQ 'Can I use this for free?'.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "PUBLICATION_VERSIONS_DIFFER",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "chromedevtools/chrome-devtools-mcp",
+        "name": "Chrome DevTools MCP",
+        "description": "Lets a coding agent control and inspect a live Chrome browser through Chrome DevTools: automate page actions with Puppeteer, take screenshots, analyse network requests and console messages, and record performance traces with actionable insights. Available as an MCP server and a CLI.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "1.13.0",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "repositoryId": "1054793726",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:npm/chrome-devtools-mcp",
+            "nativeName": "chrome-devtools-mcp",
+            "nativeVersion": "1.13.0",
+            "versionScheme": "semver",
+            "updatedAt": "2026-11-11",
+            "platformCompatibility": [
+              "claude-code",
+              "codex",
+              "cursor",
+              "devin",
+              "gemini-cli",
+              "github-copilot",
+              "windsurf"
+            ]
+          },
+          {
+            "kind": "marketplace_entry",
+            "locator": "chrome-devtools-mcp@chrome-devtools-plugins",
+            "nativeVersion": "latest",
+            "versionScheme": "floating",
+            "verifiedBy": "The README's Claude Code plugin instructions; the plugin installs the MCP server and its skills.",
+            "platformCompatibility": [
+              "claude-code"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "Google LLC",
+          "contact": "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "scope": "capability"
+        },
+        "documentation": "https://developer.chrome.com/docs/devtools/agents",
+        "keywords": [
+          "chrome",
+          "devtools",
+          "browser",
+          "puppeteer",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Drive a real browser from a coding agent",
+            "description": "Navigate, click, fill forms, and take screenshots in Chrome, waiting for each action's result."
+          },
+          {
+            "title": "Debug a web application",
+            "description": "Inspect network requests and console messages with source-mapped stack traces."
+          },
+          {
+            "title": "Analyse page performance",
+            "description": "Record a performance trace and extract insights, optionally with real-user data from CrUX."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local MCP server started by the MCP client with npx; tools are listed in the project's tool reference."
+          },
+          {
+            "type": "cli",
+            "description": "`chrome-devtools` command, installed with the same npm package, for use without MCP."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Node.js ^20.19.0, ^22.12.0, or >=23."
+          },
+          {
+            "kind": "agent_host",
+            "detail": "Loaded as a plugin that bundles the MCP server and its skills."
+          }
+        ],
+        "setup": [
+          {
+            "name": "Google Chrome",
+            "kind": "software",
+            "description": "Current stable Chrome (or Chrome for Testing) installed on the machine. Other Chromium browsers are not guaranteed.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS",
+            "kind": "env_var",
+            "description": "Set to opt out of Google's usage statistics, which are collected by default (or pass --no-usage-statistics).",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "CHROME_DEVTOOLS_MCP_NO_UPDATE_CHECKS",
+            "kind": "env_var",
+            "description": "Set to stop the periodic npm update checks.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Exposes the content of the browser to the MCP client, which can inspect and modify any data in it.",
+          "Google collects usage statistics by default; opt out with --no-usage-statistics or the environment variable.",
+          "Performance tools may send trace URLs to the Google CrUX API unless run with --no-performance-crux.",
+          "Officially supports Google Chrome and Chrome for Testing only.",
+          "The README's configuration uses the floating @latest version; pin a version for production."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0 open source; no charge."
+        },
+        "provenance": [
+          {
+            "field": "/publications/1/platformCompatibility",
+            "method": "native",
+            "source": "README Claude Code plugin instructions for this marketplace entry.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction and Key features.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "npm latest 1.13.0 (2026-11-11); GitHub release chrome-devtools-mcp-v1.13.0.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "native",
+            "source": "npm package.json author.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "native",
+            "source": "npm package.json bugs.url.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "npm package.json license; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub repository homepage.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "npm package.json engines and the README's MCP client configuration.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Requirements, Usage statistics, and Update checks sections.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Disclaimers, Usage statistics, and Getting started sections.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "native",
+            "source": "docs/client-configurations.md: npx configuration for Claude Code, Codex, Copilot / VS Code, Cursor, Devin CLI, Gemini CLI, and Windsurf.",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "docling-project/docling",
+        "name": "Docling",
+        "description": "Converts documents for generative AI. Parses PDF with page layout, reading order, table structure, code, and formulas, plus DOCX, PPTX, XLSX, HTML, images, audio, and more, into one document representation that exports to Markdown, HTML, or lossless JSON. Runs locally, including in air-gapped environments, with OCR for scanned PDFs.",
+        "capabilityType": "library",
+        "capabilityVersion": "2.150.0",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/docling-project/docling",
+          "repositoryId": "826168160",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/docling",
+            "nativeName": "docling",
+            "nativeVersion": "2.150.0",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-11-10"
+          }
+        ],
+        "owner": {
+          "name": "Docling Project (LF AI & Data Foundation)",
+          "contact": "https://github.com/docling-project/docling/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://docling-project.github.io/docling",
+        "keywords": [
+          "pdf",
+          "document-parsing",
+          "tables",
+          "markdown"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Extract text and tables from PDFs",
+            "description": "Advanced PDF understanding with layout, reading order, and table structure."
+          },
+          {
+            "title": "Convert documents to Markdown or JSON for an LLM",
+            "description": "One representation for many formats, exported to Markdown, HTML, or lossless JSON."
+          },
+          {
+            "title": "Process sensitive documents locally",
+            "description": "Local execution, including air-gapped environments."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "library",
+            "description": "Python API (DocumentConverter).",
+            "inputs": [
+              {
+                "name": "document",
+                "mediaType": "application/pdf",
+                "description": "A PDF or another supported document."
+              }
+            ],
+            "outputs": [
+              {
+                "name": "markdown",
+                "mediaType": "text/markdown",
+                "description": "The converted document."
+              }
+            ]
+          },
+          {
+            "type": "cli",
+            "description": "`docling <source>` command."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.10,<4.0."
+          }
+        ],
+        "setup": [],
+        "integrations": [
+          "langchain",
+          "llamaindex"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Releases are very frequent (2.150.0 on 2026-11-10); pin a version for production.",
+          "Uses AI models for layout and table structure; optional visual language models need more compute.",
+          "The MCP server and the API server (docling-serve) are separate packages, not part of this library."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "MIT open source; runs locally."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the GitHub repository description and the README Features.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "PyPI version 2.150.0 (2026-11-10) and GitHub release v2.150.0.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "curated",
+            "source": "GitHub organization docling-project; README 'Docling is hosted as a project in the LF AI & Data Foundation'.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "native",
+            "source": "PyPI project URLs (issues).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "PyPI license_expression MIT; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub repository homepage.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "PyPI requires_python and the README installation.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "curated",
+            "source": "The README's installation is pip install docling; no credentials are needed.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/integrations",
+            "method": "curated",
+            "source": "README integrations (LangChain, LlamaIndex).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Features (VLMs, MCP server, API server); PyPI release history.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "exa-labs/exa-mcp-server",
+        "name": "Exa MCP Server",
+        "description": "MCP server for Exa web search. Gives an agent web search that returns clean, ready-to-use content (web_search_exa), reads full pages as Markdown (web_fetch_exa), and optionally runs advanced filtered searches and multi-step research with Exa Agent.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "3.4.3",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/exa-labs/exa-mcp-server",
+          "repositoryId": "895291604",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "hosted_endpoint",
+            "locator": "https://mcp.exa.ai/mcp",
+            "nativeVersion": "3.5.1",
+            "versionScheme": "semver",
+            "verifiedBy": "Listed as a remote in the official MCP Registry entry ai.exa/exa, and documented in the README.",
+            "platformCompatibility": [
+              "claude-code",
+              "codex",
+              "cursor",
+              "gemini-cli",
+              "github-copilot",
+              "windsurf"
+            ]
+          },
+          {
+            "kind": "registry_entry",
+            "locator": "ai.exa/exa",
+            "nativeVersion": "3.4.1",
+            "versionScheme": "semver",
+            "status": "active",
+            "updatedAt": "2026-09-23",
+            "verifiedBy": "MCP Registry namespace ai.exa (domain-verified); the npm package's mcpName points to it."
+          },
+          {
+            "kind": "package",
+            "locator": "pkg:npm/exa-mcp-server",
+            "nativeName": "exa-mcp-server",
+            "nativeVersion": "3.4.3",
+            "versionScheme": "semver",
+            "updatedAt": "2026-11-03"
+          }
+        ],
+        "owner": {
+          "name": "Exa Labs",
+          "contact": "https://github.com/exa-labs/exa-mcp-server/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://exa.ai/docs/reference/exa-mcp",
+        "keywords": [
+          "exa",
+          "web-search",
+          "crawling",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Live web search with citable result URLs",
+            "description": "web_search_exa searches the web and returns content with the source URLs."
+          },
+          {
+            "title": "Read a web page as Markdown",
+            "description": "web_fetch_exa returns the full content of one or more URLs."
+          },
+          {
+            "title": "Multi-step web research",
+            "description": "The optional agent_run tool runs an Exa Agent for research, list-building, and structured output."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "streamable-http",
+            "contractRef": "https://mcp.exa.ai/mcp/server-card",
+            "description": "Hosted server at https://mcp.exa.ai/mcp. Tools are chosen with the tools URL parameter."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "tool",
+            "name": "web_search_exa",
+            "description": "Web search (enabled by default)."
+          },
+          {
+            "type": "tool",
+            "name": "web_fetch_exa",
+            "description": "Read web pages as Markdown (enabled by default)."
+          },
+          {
+            "type": "tool",
+            "name": "web_search_advanced_exa",
+            "description": "Search with filters, domains, dates, and subpage crawling (optional)."
+          },
+          {
+            "type": "tool",
+            "name": "agent_run",
+            "description": "Run an Exa Agent for multi-step research (optional)."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "hosted_service",
+            "detail": "Hosted by Exa."
+          },
+          {
+            "kind": "local_process",
+            "detail": "Node.js >=20."
+          }
+        ],
+        "setup": [
+          {
+            "name": "Exa account (OAuth)",
+            "kind": "account",
+            "group": "oauth",
+            "description": "Optional. The hosted server works anonymously with rate limits; signing in with OAuth gives higher limits and Exa Agent.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "x-api-key",
+            "kind": "header",
+            "group": "api-key",
+            "description": "Optional. HTTP header with an Exa API key from dashboard.exa.ai, instead of OAuth, for higher limits and Exa Agent.",
+            "secret": true,
+            "required": false
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Anonymous use of the hosted server is rate-limited; Exa Agent needs an account.",
+          "Search queries and fetched URLs are sent to Exa's service.",
+          "Setting the tools URL parameter replaces the default tools, so every wanted tool must be listed.",
+          "The MCP Registry entry (3.4.1) lags the npm package (3.4.3); the hosted endpoint has no version."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The server is free (MIT). Anonymous use is rate-limited; higher limits use an Exa account, and the README does not state prices."
+        },
+        "provenance": [
+          {
+            "field": "/interfaces/0/contractRef",
+            "method": "native",
+            "source": "MCP Server Card, linked from Exa's AI Catalog at exa.ai/.well-known/ai-catalog.json.",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/publications/0/nativeVersion",
+            "method": "native",
+            "source": "MCP Server Card version (the hosted server; npm and the MCP Registry still state 3.4.3 and 3.4.1).",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/setup/1",
+            "method": "native",
+            "source": "MCP Server Card remotes[0].headers (x-api-key, optional, secret).",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the npm description and the README's Available Tools section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "npm latest 3.4.3 (2026-11-03).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1",
+            "method": "linked",
+            "source": "Official MCP Registry API, latest entry for ai.exa/exa.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner",
+            "method": "native",
+            "source": "npm package.json author and bugs.url.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "npm package.json license; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub repository homepage.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/1/detail",
+            "method": "native",
+            "source": "npm package.json engines and bin (dist/stdio.cjs).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Authentication section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Authentication and Available Tools sections; registry and npm versions.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "native",
+            "source": "README Installation for https://mcp.exa.ai/mcp: Claude plugin, codex mcp add, Cursor and VS Code install links, and the client table (Gemini CLI, Windsurf).",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "PUBLICATION_VERSIONS_DIFFER",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "github/github-mcp-server",
+        "name": "GitHub MCP Server",
+        "description": "GitHub's official MCP server. Lets AI agents read repositories and code, create and update issues and pull requests, review code changes, monitor GitHub Actions runs, and examine security findings, through natural language.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "2.1.0",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/github/github-mcp-server",
+          "repositoryId": "942771284",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "registry_entry",
+            "locator": "io.github.github/github-mcp-server",
+            "nativeVersion": "2.1.0",
+            "versionScheme": "semver",
+            "status": "active",
+            "updatedAt": "2026-11-03",
+            "verifiedBy": "MCP Registry namespace io.github.github (GitHub account github)."
+          },
+          {
+            "kind": "container_image",
+            "locator": "ghcr.io/github/github-mcp-server",
+            "nativeVersion": "2.1.0",
+            "versionScheme": "semver",
+            "verifiedBy": "The registry entry's OCI package ghcr.io/github/github-mcp-server:2.1.0.",
+            "platformCompatibility": [
+              "claude-code",
+              "claude-desktop",
+              "cursor",
+              "gemini-cli",
+              "github-copilot",
+              "windsurf"
+            ]
+          },
+          {
+            "kind": "hosted_endpoint",
+            "locator": "https://api.githubcopilot.com/mcp/",
+            "versionScheme": "unversioned",
+            "verifiedBy": "The registry entry's streamable-http remote, documented in the README as the remote GitHub MCP Server.",
+            "platformCompatibility": [
+              "claude-code",
+              "claude-desktop",
+              "codex",
+              "cursor",
+              "github-copilot",
+              "windsurf"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "GitHub",
+          "contact": "https://github.com/github/github-mcp-server/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://github.com/github/github-mcp-server#readme",
+        "keywords": [
+          "github",
+          "issues",
+          "pull-requests",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Read and update GitHub issues and pull requests",
+            "description": "Create, update, and manage issues and pull requests; triage bugs and review code changes."
+          },
+          {
+            "title": "Browse and query repositories",
+            "description": "Search code and files, analyse commits, and understand project structure."
+          },
+          {
+            "title": "Investigate CI failures",
+            "description": "Monitor GitHub Actions workflow runs and analyse build failures."
+          },
+          {
+            "title": "Review security findings",
+            "description": "Examine code scanning and Dependabot alerts."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "streamable-http",
+            "contractRef": "https://api.githubcopilot.com/mcp/server-card",
+            "description": "Remote server at https://api.githubcopilot.com/mcp/, authenticated with OAuth or a token."
+          },
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local server from the container image ghcr.io/github/github-mcp-server, or built from source."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "hosted_service",
+            "detail": "Hosted by GitHub."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+            "kind": "env_var",
+            "group": "personal-access-token",
+            "description": "GitHub personal access token for the local server. Grant only the scopes the toolsets need.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "GitHub OAuth",
+            "kind": "account",
+            "group": "oauth",
+            "description": "OAuth sign-in with a GitHub account, instead of a personal access token.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "GITHUB_TOOLSETS",
+            "kind": "env_var",
+            "description": "Optional. Comma-separated toolsets to enable, for example repos,issues,pull_requests; the defaults are used otherwise.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "GITHUB_READ_ONLY",
+            "kind": "env_var",
+            "description": "Optional. Set to 1 to skip all write tools.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "GITHUB_HOST",
+            "kind": "env_var",
+            "description": "Optional. GitHub Enterprise Server or ghe.com host name.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "integrations": [
+          "github-enterprise-server"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Acts with the permissions of the token or OAuth grant, including write access to repositories, issues, and pull requests unless read-only mode is set.",
+          "The remote server needs an MCP host with remote server support (for example VS Code 1.101+), and organisation policies may have to allow it.",
+          "The local server needs Docker (or a build from source).",
+          "The hosted endpoint has no version of its own."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "MIT open source. Use of the hosted endpoint is subject to the user's GitHub plan and organisation policies."
+        },
+        "provenance": [
+          {
+            "field": "/interfaces/0/contractRef",
+            "method": "native",
+            "source": "MCP Server Card, linked from GitHub's AI Catalog at github.com/.well-known/ai-catalog.json; its repository.id 942771284 equals source.repositoryId.",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction and Use Cases.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "MCP Registry latest 2.1.0 (2026-11-03) and GitHub release v2.1.0.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications",
+            "method": "linked",
+            "source": "Official MCP Registry API, io.github.github/github-mcp-server (OCI package and remote).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub organization github; the repository describes itself as GitHub's official MCP Server.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "linked",
+            "source": "GitHub license detection (MIT).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Local GitHub MCP Server, Tool Configuration, read-only, and GitHub Enterprise sections.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/integrations",
+            "method": "native",
+            "source": "README Enterprise section (GitHub Enterprise Server).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Prerequisites, Token Security Best Practices, and read-only mode.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "MIT license; README policies note.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/platformCompatibility",
+            "method": "native",
+            "source": "README Local GitHub MCP Server: VS Code Docker install, claude mcp add with docker run, and the installation guides for other MCP hosts.",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/publications/2/platformCompatibility",
+            "method": "native",
+            "source": "README Remote GitHub MCP Server: Prerequisites (VS Code, Claude Desktop, Cursor, Windsurf) and the installation guides for other MCP hosts.",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "jsvine/pdfplumber",
+        "name": "pdfplumber",
+        "description": "Python library and command-line tool that extracts text and tables from PDF files, with detailed information about every character, line, and rectangle, and visual debugging of the extraction. Built on pdfminer.six.",
+        "capabilityType": "library",
+        "capabilityVersion": "0.11.10",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/jsvine/pdfplumber",
+          "repositoryId": "41279279",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/pdfplumber",
+            "nativeName": "pdfplumber",
+            "nativeVersion": "0.11.10",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-06-15"
+          }
+        ],
+        "owner": {
+          "name": "Jeremy Singer-Vine",
+          "contact": "https://github.com/jsvine/pdfplumber/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://github.com/jsvine/pdfplumber#readme",
+        "keywords": [
+          "pdf",
+          "pdf-parsing",
+          "table-extraction"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Extract text from PDF pages",
+            "description": "Page.extract_text() returns the page's text, optionally preserving the layout."
+          },
+          {
+            "title": "Extract tables from PDFs",
+            "description": "Page.extract_tables() returns the tables on a page as rows of cells."
+          },
+          {
+            "title": "Inspect a PDF's layout",
+            "description": "Lists every character, line, rectangle, and image with its position; renders pages for visual debugging."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "library",
+            "description": "Python API (pdfplumber.open, Page.extract_text, Page.extract_tables).",
+            "inputs": [
+              {
+                "name": "pdf-file",
+                "mediaType": "application/pdf",
+                "description": "The PDF to read."
+              }
+            ]
+          },
+          {
+            "type": "cli",
+            "description": "`pdfplumber file.pdf --format csv|json|text` prints the PDF's objects or text."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python (tested on 3.10 to 3.14; PyPI requires >=3.8)."
+          }
+        ],
+        "setup": [],
+        "dependencies": [],
+        "limitations": [
+          "Works best on machine-generated PDFs, not scanned ones; there is no built-in OCR.",
+          "Maintained by one individual; the last release was 0.11.10 on 2026-06-15."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "MIT open source; runs locally with no service calls."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the GitHub repository description and the README introduction.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "PyPI version 0.11.10 and GitHub release v0.11.10 (2026-06-15).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "native",
+            "source": "PyPI author.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "PyPI classifier 'License :: OSI Approved :: MIT License'; GitHub detects MIT.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "GitHub repository topics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "README (tested Python versions, pip install) and PyPI requires_python.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "curated",
+            "source": "The README's installation is pip install only; no credentials or system packages are named.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README introduction ('Works best on machine-generated, rather than scanned, PDFs'); GitHub owner and releases.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "juliusbrussee/caveman",
+        "name": "Caveman",
+        "description": "Terse caveman voice: answer first, fluff gone, every technical fact kept. Use for /caveman, \"caveman mode\", \"talk like caveman\", \"be brief\", \"less tokens\". Stays on until \"stop caveman\" or \"normal mode\".",
+        "capabilityType": "skill",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "path": "skills/caveman",
+          "repositoryId": "1201173969",
+          "status": "active",
+          "updatedAt": "2026-10-06"
+        },
+        "parent": {
+          "id": "juliusbrussee/caveman-plugin"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman",
+            "nativeVersion": "main",
+            "versionScheme": "floating"
+          }
+        ],
+        "owner": {
+          "name": "Julius Brussee",
+          "contact": "https://github.com/JuliusBrussee/caveman/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSE",
+          "scope": "repository"
+        },
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "interfaces": [
+          {
+            "type": "agent_skill",
+            "contractRef": "https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md"
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Coding agents that load Agent Skills."
+          }
+        ],
+        "documentation": "https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/README.md",
+        "supportedUseCases": [
+          {
+            "title": "Make agent replies terse",
+            "description": "Answer first, no ceremony; code, commands, paths, numbers, and errors kept verbatim."
+          },
+          {
+            "title": "Report the current caveman mode",
+            "description": "`/caveman status` reports the mode and changes nothing."
+          }
+        ],
+        "setup": [],
+        "limitations": [
+          "Stays on for the whole session until \"stop caveman\" or \"normal mode\".",
+          "Switches to plain prose for security warnings, irreversible actions, questions to the user, and anything persisted outside chat (code, comments, commits, docs, issues, tickets).",
+          "Mode status is tracked only on hosts that run the plugin's hooks; elsewhere `/caveman status` answers \"(not tracked by this host)\".",
+          "Median output reduction against an \"Answer concisely.\" control is 3% (n=10, one run, measured on the 3.1.0 skill text). It saves nothing on agents billed per request, and the project lists cases where it is net-negative."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0, in the Caveman repository; the skill needs no account, service, or script."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "native",
+            "source": "skills/caveman/SKILL.md front matter description",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/name",
+            "method": "curated",
+            "source": "Display name written for this record; the native name is 'caveman'",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A SKILL.md is a skill",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/updatedAt",
+            "method": "linked",
+            "source": "git log -1 on skills/caveman, UTC date",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/runtime",
+            "method": "derived",
+            "basis": "convention",
+            "source": "Agent Skills are loaded by an agent host",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/x-invocation",
+            "method": "native",
+            "source": "skills/caveman/SKILL.md front matter has no disable-model-invocation flag",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub contents API: skills/caveman/README.md",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "Written from skills/caveman/SKILL.md (rules and examples)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/setup",
+            "method": "linked",
+            "source": "GitHub contents API: skills/caveman holds only README.md and SKILL.md, so nothing is installed or configured",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "skills/caveman/SKILL.md (Persistence, When to break the rules); output reduction and per-request billing from the project's notes as recorded in juliusbrussee/caveman-plugin",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call",
+            "observedAt": "2026-11-16"
+          }
+        ],
+        "x-invocation": {
+          "disableModelInvocation": false
+        }
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "juliusbrussee/caveman-commit",
+        "name": "Caveman Commit",
+        "description": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
+        "capabilityType": "skill",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "path": "skills/caveman-commit",
+          "repositoryId": "1201173969",
+          "status": "active",
+          "updatedAt": "2026-08-23"
+        },
+        "parent": {
+          "id": "juliusbrussee/caveman-plugin"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-commit",
+            "nativeVersion": "main",
+            "versionScheme": "floating"
+          }
+        ],
+        "owner": {
+          "name": "Julius Brussee",
+          "contact": "https://github.com/JuliusBrussee/caveman/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSE",
+          "scope": "repository"
+        },
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "interfaces": [
+          {
+            "type": "agent_skill",
+            "contractRef": "https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-commit/SKILL.md"
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Coding agents that load Agent Skills."
+          }
+        ],
+        "documentation": "https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-commit/README.md",
+        "supportedUseCases": [
+          {
+            "title": "Write a Conventional Commits message",
+            "description": "Imperative subject of 50 characters where possible (72 at most); a body only for a non-obvious why, breaking changes, migrations, or linked issues."
+          }
+        ],
+        "setup": [],
+        "limitations": [
+          "Only writes the message: it does not stage files, commit, or amend.",
+          "Leaves out AI attribution such as \"Generated with Claude Code\" unless the user's own rule requires an attribution trailer; check this against your organisation's policy.",
+          "Always writes a body for breaking changes, security fixes, data migrations, and reverts."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0, in the Caveman repository; the skill needs no account, service, or script."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "native",
+            "source": "skills/caveman-commit/SKILL.md front matter description",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/name",
+            "method": "curated",
+            "source": "Display name written for this record; the native name is 'caveman-commit'",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A SKILL.md is a skill",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/updatedAt",
+            "method": "linked",
+            "source": "git log -1 on skills/caveman-commit, UTC date",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/runtime",
+            "method": "derived",
+            "basis": "convention",
+            "source": "Agent Skills are loaded by an agent host",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/x-invocation",
+            "method": "native",
+            "source": "skills/caveman-commit/SKILL.md front matter has no disable-model-invocation flag",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub contents API: skills/caveman-commit/README.md",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "Written from skills/caveman-commit/SKILL.md (rules and examples)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/setup",
+            "method": "linked",
+            "source": "GitHub contents API: skills/caveman-commit holds only README.md and SKILL.md, so nothing is installed or configured",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "skills/caveman-commit/SKILL.md (What NEVER goes in, Auto-Clarity, Boundaries)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call",
+            "observedAt": "2026-11-16"
+          }
+        ],
+        "x-invocation": {
+          "disableModelInvocation": false
+        }
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "juliusbrussee/caveman-plugin",
+        "name": "Caveman (Claude Code plugin)",
+        "description": "Ultra-compressed communication mode. Shortens prose while preserving technical terms, code, commands, and exact errors.",
+        "capabilityType": "plugin",
+        "capabilityVersion": "4.1.0",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "repositoryId": "1201173969",
+          "status": "active",
+          "updatedAt": "2026-11-16"
+        },
+        "publications": [
+          {
+            "kind": "marketplace_entry",
+            "locator": "caveman@caveman",
+            "nativeName": "caveman",
+            "nativeVersion": "4.1.0",
+            "versionScheme": "semver",
+            "updatedAt": "2026-11-06",
+            "verifiedBy": "The marketplace \"caveman\" is defined in the same repository by .claude-plugin/marketplace.json (source \"./\"); .claude-plugin/plugin.json names the plugin \"caveman\" at version 4.1.0.",
+            "platformCompatibility": [
+              "claude-code"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "Julius Brussee",
+          "contact": "https://github.com/JuliusBrussee/caveman/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSE",
+          "scope": "repository"
+        },
+        "documentation": "https://docs.caveman.so/caveman",
+        "keywords": [
+          "productivity",
+          "ai",
+          "anthropic",
+          "caveman",
+          "claude",
+          "claude-code",
+          "llm",
+          "meme",
+          "prompt-engineering",
+          "skill",
+          "tokens"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Make agent replies terse",
+            "description": "The caveman, ultracave and megacave skills cut filler and keep technical terms, code, commands and exact errors."
+          },
+          {
+            "title": "Write terse Conventional Commit messages",
+            "description": "The caveman-commit skill compresses a commit message to intent only."
+          },
+          {
+            "title": "Review a diff with one line per finding",
+            "description": "The caveman-review skill gives location, problem and fix for each finding."
+          },
+          {
+            "title": "Compress a memory file such as CLAUDE.md",
+            "description": "The caveman-compress skill rewrites the file in caveman format and keeps a readable backup outside the source tree."
+          },
+          {
+            "title": "Show recorded token usage for the current session",
+            "description": "The caveman-stats skill reports output and cache-read tokens and mode attribution."
+          },
+          {
+            "title": "Delegate code lookup, small edits and review to compressed subagents",
+            "description": "The cavecrew skill and three cavecrew subagents keep the main context small."
+          },
+          {
+            "title": "Apply a task-shaped work pattern",
+            "description": "Six skills shape how the agent investigates, builds, patches, refactors, migrates and verifies."
+          },
+          {
+            "title": "Observe and reduce LLM spend with Caveman Cloud and the Caveman CLI",
+            "description": "The setup, discover, evidence-review, manage, optimize and learn skills drive Caveman Cloud and the CLI."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "other",
+            "contractRef": "https://github.com/JuliusBrussee/caveman/blob/main/.claude-plugin/plugin.json",
+            "description": "Claude Code plugin. plugin.json declares four hooks; skills/, agents/ and commands/ at the plugin root are auto-discovered."
+          },
+          {
+            "type": "agent_skill",
+            "description": "22 Agent Skills under skills/, loaded by name and description. Five have their own manifests (components); 17 are listed in embeddedComponents."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Loaded as a plugin; the plugin root is the repository root."
+          },
+          {
+            "kind": "local_process",
+            "detail": "Node.js on PATH for the four hooks; Python 3 for the scripts of the caveman-compress skill."
+          }
+        ],
+        "setup": [
+          {
+            "name": "CAVEMAN_DEFAULT_MODE",
+            "kind": "env_var",
+            "description": "Optional. Default mode at session start: off, caveman, ultracave, megacave, commit, review, compress, or manual. Without it, a repo-local .caveman/config.json or .caveman.json, then the user config, then caveman.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "CAVEMAN_REINFORCE",
+            "kind": "env_var",
+            "description": "Optional. Per-turn reinforcement switch, on by default. Also settable as \"reinforce\" in the config files.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "CAVE_API_KEY",
+            "kind": "env_var",
+            "description": "Only for the caveman-setup skill. The Caveman Cloud gateway auth secret; keep it in an environment variable and never commit it.",
+            "secret": true,
+            "required": false
+          }
+        ],
+        "limitations": [
+          "Every skills/*/SKILL.md ships to every plugin user with no allowlist, so all 22 skill descriptions compete for activation on ordinary work.",
+          "Saves nothing on agents billed per request, such as GitHub Copilot. The rules add input tokens, and the project's own notes list cases where caveman is net-negative.",
+          "Output reduction against an \"Answer concisely.\" control is 3% (caveman), 35% (ultracave) and 9% (megacave) at the median; n=10, one run, measured on the 3.1.0 skill text.",
+          "The caveman-compress skill sends the full text of the named file to the model provider its script is configured for (claude CLI, Anthropic API or an OpenAI-compatible endpoint) and needs python3.",
+          "The caveman-setup, -discover, -manage, -optimize and -evidence-review skills serve Caveman Cloud, a separate commercial service. Setup needs CAVE_API_KEY; manage, optimize and evidence-review need a Caveman CLI login.",
+          "The caveman-learn skill acts on the output of `caveman learn report --json`, which needs the Caveman CLI.",
+          "The four hooks run node and exit silently when Node.js is not on PATH, so session activation, mode tracking and stats recording do not run without it."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "The repository is Apache-2.0. Caveman Cloud, which several driver skills target, is separate commercial software that this license does not cover.",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSING.md"
+        },
+        "components": [
+          {
+            "id": "juliusbrussee/caveman"
+          },
+          {
+            "id": "juliusbrussee/ultracave"
+          },
+          {
+            "id": "juliusbrussee/megacave"
+          },
+          {
+            "id": "juliusbrussee/caveman-commit"
+          },
+          {
+            "id": "juliusbrussee/caveman-review"
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "name": "cavecrew",
+            "type": "skill",
+            "description": "When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit) or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their output is compressed, so main context lasts longer."
+          },
+          {
+            "name": "caveman-compress",
+            "type": "skill",
+            "description": "Compress a memory file such as CLAUDE.md or a todo list into caveman format to save input tokens, keeping a readable backup. Sends the file's text to the configured model provider. Trigger: /caveman-compress."
+          },
+          {
+            "name": "caveman-help",
+            "type": "skill",
+            "description": "Quick-reference card for the three caveman skills and their commands. Trigger: /caveman-help or \"caveman help\"."
+          },
+          {
+            "name": "caveman-stats",
+            "type": "skill",
+            "description": "Show recorded output and cache-read token usage and mode attribution for the current Claude Code session, or locate the host's native usage report. Trigger: /caveman-stats."
+          },
+          {
+            "name": "caveman-setup",
+            "type": "skill",
+            "description": "Wire a repository through the Caveman Cloud gateway so every LLM request is measured, with no behavior change. Use for \"set up caveman\" or adding LLM spend observability."
+          },
+          {
+            "name": "caveman-discover",
+            "type": "skill",
+            "description": "Find and label every LLM workflow in the repository so Caveman Cloud groups spend by workflow instead of one bucket. Use for \"discover workflows\" or breaking LLM spend down by workflow."
+          },
+          {
+            "name": "caveman-learn",
+            "type": "skill",
+            "description": "Act on a Caveman learn report - review the ranked token sinks, apply cost-lowering fixes with per-edit consent, and report what those fixes returned. Use when asked to lower an agent's token cost, what caveman has saved, to trim a heavy CLAUDE.md, or to offload re-pasted context into cavemem."
+          },
+          {
+            "name": "caveman-manage",
+            "type": "skill",
+            "description": "Inspect Caveman Cloud's experiment lifecycle and block unsafe execution. Use when asked to start, approve, cancel, promote or roll back a Caveman experiment."
+          },
+          {
+            "name": "caveman-optimize",
+            "type": "skill",
+            "description": "Turn a Caveman optimization observation into an operator-chosen candidate with a paired baseline evaluation. Use when asked to inspect or evaluate a Caveman optimization report. Needs explicit approval."
+          },
+          {
+            "name": "caveman-explore",
+            "type": "skill",
+            "description": "Read-only repository explorer for cold-start orientation, broad cross-file localization, or when a direct search failed. Skip it when the exact file or symbol is already named. Returns path:line citations only; its reads stay out of main context."
+          },
+          {
+            "name": "caveman-evidence-review",
+            "type": "skill",
+            "description": "Read-only review of Caveman Cloud evidence: cost, Cave Score, workflows, traces, latency, errors, routing, savings. Use when asked what Caveman found or where LLM spend goes."
+          },
+          {
+            "name": "investigate-first",
+            "type": "skill",
+            "description": "Diagnose ambiguous failures before editing. Use for unknown causes, intermittent behavior, performance regressions, or investigations needing evidence-ranked hypotheses."
+          },
+          {
+            "name": "lean-build",
+            "type": "skill",
+            "description": "Build feature work with high overbuilding risk. Use for new behavior, product slices, or integrations where repository reuse, strict scope, and an explicit stop condition matter."
+          },
+          {
+            "name": "surgical-patch",
+            "type": "skill",
+            "description": "Fix bugs and small behavior changes at the narrowest responsible layer. Use when regression proof, preserved surrounding behavior, and task-relevant tests matter."
+          },
+          {
+            "name": "safe-refactor",
+            "type": "skill",
+            "description": "Restructure code while preserving behavior. Use for extraction, consolidation, ownership moves, or cleanup where verification must bracket structural edits."
+          },
+          {
+            "name": "migration",
+            "type": "skill",
+            "description": "Implement reversible compatibility-safe transitions. Use for schema, data, API, protocol, configuration, or dependency migrations requiring rollback and preservation proof."
+          },
+          {
+            "name": "verify-and-stop",
+            "type": "skill",
+            "description": "Prove existing work meets acceptance conditions without expanding scope. Use for validation-only tasks, completion checks, focused gate runs, and last-mile proof."
+          },
+          {
+            "name": "cavecrew-builder",
+            "type": "agent"
+          },
+          {
+            "name": "cavecrew-investigator",
+            "type": "agent",
+            "description": "Read-only code locator. Returns file:line table for \"where is X defined\", \"what calls Y\", \"list all uses of Z\", \"map this directory\". Output is caveman-compressed, one row per hit, to keep main-thread context small. Refuses to suggest fixes."
+          },
+          {
+            "name": "cavecrew-reviewer",
+            "type": "agent",
+            "description": "Diff/branch/file reviewer. One line per finding, severity-tagged, no praise, no scope creep. Output format `path:line: <emoji> <severity>: <problem>. <fix>.` Use for \"review this PR\", \"review my diff\", \"audit this file\". Skips formatting nits unless they change meaning."
+          },
+          {
+            "name": "caveman-init",
+            "type": "command",
+            "description": "Drop the always-on caveman activation rule into the current repo for every IDE agent"
+          },
+          {
+            "name": "SessionStart",
+            "type": "hook",
+            "description": "Runs src/hooks/caveman-activate.js (timeout 30 s). Status message \"Loading caveman mode...\"."
+          },
+          {
+            "name": "SubagentStart",
+            "type": "hook",
+            "description": "Runs src/hooks/caveman-activate.js --subagent (timeout 30 s). Status message \"Loading caveman mode for subagent...\"."
+          },
+          {
+            "name": "UserPromptSubmit",
+            "type": "hook",
+            "description": "Runs src/hooks/caveman-mode-tracker.js (timeout 30 s). Status message \"Tracking caveman mode...\"."
+          },
+          {
+            "name": "SessionEnd",
+            "type": "hook",
+            "description": "Runs src/hooks/caveman-stats.js --record (timeout 5 s). Status message \"Recording caveman stats...\"."
+          }
+        ],
+        "provenance": [
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": ".claude-plugin/plugin.json marks a Claude Code plugin",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/name",
+            "method": "curated",
+            "source": "Display name written for this record; the native name is 'caveman'",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/description",
+            "method": "native",
+            "source": ".claude-plugin/plugin.json description",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": ".claude-plugin/plugin.json version",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub API repos/JuliusBrussee/caveman, id",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub API: archived is false",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/updatedAt",
+            "method": "linked",
+            "source": "GitHub API pushed_at, UTC date",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/publications/0",
+            "method": "native",
+            "source": ".claude-plugin/marketplace.json and plugin.json; install coordinate in README.md and INSTALL.md",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/owner/name",
+            "method": "native",
+            "source": ".claude-plugin/plugin.json author.name",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "native",
+            "source": "package.json bugs.url",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/license",
+            "method": "linked",
+            "source": "LICENSING.md and root LICENSE; GitHub API license.spdx_id; stated for the repository as a whole",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub API homepage",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "marketplace.json category; GitHub API topics",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "Titles written for this record from the skill descriptions",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/interfaces",
+            "method": "derived",
+            "basis": "convention",
+            "source": "plugin.json; the skills/ directory",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/runtime",
+            "method": "derived",
+            "basis": "heuristic",
+            "source": "Hook commands in plugin.json; python3 invocation in skills/caveman-compress/SKILL.md",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/setup",
+            "method": "linked",
+            "source": "src/hooks/caveman-config.js; skills/caveman-setup/SKILL.md",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/limitations",
+            "method": "linked",
+            "source": "CLAUDE.md; docs/HONEST-NUMBERS.md; SKILL.md files; hook commands in plugin.json",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/costInformation",
+            "method": "linked",
+            "source": "LICENSING.md",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/components",
+            "method": "derived",
+            "basis": "heuristic",
+            "source": "Independence stated in CLAUDE.md ('Fully independent skill', 'self-contained'), judged with the three tests in docs/spikes-1-3-research.md section 9.1",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/embeddedComponents",
+            "method": "linked",
+            "source": "skills/*/SKILL.md and agents/*.md front matter; commands/caveman-init.md; hooks in plugin.json",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/x-modes",
+            "method": "linked",
+            "source": "src/hooks/caveman-config.js: VALID_MODES, VALID_DEFAULT_MODES, LEGACY_MODES",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "derived",
+            "basis": "convention",
+            "source": "An entry in a Claude Code plugin marketplace (.claude-plugin/marketplace.json), installed with /plugin install.",
+            "observedAt": "2026-11-16"
+          }
+        ],
+        "x-modes": {
+          "storedModes": [
+            "off",
+            "caveman",
+            "ultracave",
+            "megacave",
+            "commit",
+            "review",
+            "compress"
+          ],
+          "startupOnly": [
+            "manual"
+          ],
+          "defaultMode": "caveman",
+          "legacyAliases": {
+            "lite": "caveman",
+            "full": "caveman",
+            "ultra": "ultracave",
+            "wenyan": "megacave",
+            "wenyan-lite": "megacave",
+            "wenyan-full": "megacave",
+            "wenyan-ultra": "megacave"
+          }
+        }
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED",
+          "DERIVED_VALUE_UNCONFIRMED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "juliusbrussee/caveman-review",
+        "name": "Caveman Review",
+        "description": "Compressed code review - one line per finding with location, problem and fix. Use for /caveman-review, \"review this PR\", or \"review the diff\".",
+        "capabilityType": "skill",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "path": "skills/caveman-review",
+          "repositoryId": "1201173969",
+          "status": "active",
+          "updatedAt": "2026-08-23"
+        },
+        "parent": {
+          "id": "juliusbrussee/caveman-plugin"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-review",
+            "nativeVersion": "main",
+            "versionScheme": "floating"
+          }
+        ],
+        "owner": {
+          "name": "Julius Brussee",
+          "contact": "https://github.com/JuliusBrussee/caveman/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSE",
+          "scope": "repository"
+        },
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "interfaces": [
+          {
+            "type": "agent_skill",
+            "contractRef": "https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-review/SKILL.md"
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Coding agents that load Agent Skills."
+          }
+        ],
+        "documentation": "https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-review/README.md",
+        "supportedUseCases": [
+          {
+            "title": "Review a pull request or diff, one line per finding",
+            "description": "`L<line>: <problem>. <fix>.`, with optional severity prefixes bug, risk, nit, and q."
+          }
+        ],
+        "setup": [],
+        "limitations": [
+          "Reviews only: it does not write the fix, approve or request changes, or run linters.",
+          "Writes full paragraphs instead of one-liners for security findings, architectural disagreements, and authors new to the code."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0, in the Caveman repository; the skill needs no account, service, or script."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "native",
+            "source": "skills/caveman-review/SKILL.md front matter description",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/name",
+            "method": "curated",
+            "source": "Display name written for this record; the native name is 'caveman-review'",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A SKILL.md is a skill",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/updatedAt",
+            "method": "linked",
+            "source": "git log -1 on skills/caveman-review, UTC date",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/runtime",
+            "method": "derived",
+            "basis": "convention",
+            "source": "Agent Skills are loaded by an agent host",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/x-invocation",
+            "method": "native",
+            "source": "skills/caveman-review/SKILL.md front matter has no disable-model-invocation flag",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub contents API: skills/caveman-review/README.md",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "Written from skills/caveman-review/SKILL.md (rules and examples)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/setup",
+            "method": "linked",
+            "source": "GitHub contents API: skills/caveman-review holds only README.md and SKILL.md, so nothing is installed or configured",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "skills/caveman-review/SKILL.md (Auto-Clarity, Boundaries)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call",
+            "observedAt": "2026-11-16"
+          }
+        ],
+        "x-invocation": {
+          "disableModelInvocation": false
+        }
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "juliusbrussee/megacave",
+        "name": "Megacave",
+        "description": "Caveman in Classical Chinese: 文言文 register, far fewer characters, technical terms verbatim. Invoke only with /megacave or /caveman wenyan. Stays on until \"stop caveman\" or \"normal mode\".",
+        "capabilityType": "skill",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "path": "skills/megacave",
+          "repositoryId": "1201173969",
+          "status": "active",
+          "updatedAt": "2026-10-06"
+        },
+        "parent": {
+          "id": "juliusbrussee/caveman-plugin"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/JuliusBrussee/caveman/tree/main/skills/megacave",
+            "nativeVersion": "main",
+            "versionScheme": "floating"
+          }
+        ],
+        "owner": {
+          "name": "Julius Brussee",
+          "contact": "https://github.com/JuliusBrussee/caveman/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSE",
+          "scope": "repository"
+        },
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "interfaces": [
+          {
+            "type": "agent_skill",
+            "contractRef": "https://github.com/JuliusBrussee/caveman/blob/main/skills/megacave/SKILL.md"
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Coding agents that load Agent Skills."
+          }
+        ],
+        "documentation": "https://github.com/JuliusBrussee/caveman/blob/main/skills/megacave/README.md",
+        "supportedUseCases": [
+          {
+            "title": "Terse replies in Classical Chinese",
+            "description": "文言文 register with fewer characters on screen; technical payload kept in its original script."
+          }
+        ],
+        "setup": [],
+        "limitations": [
+          "Replies in Classical Chinese (文言文), so readers must be able to read it; code, commands, paths, and errors stay in their original script.",
+          "Starts only with /megacave or /caveman wenyan: model invocation is disabled. Stays on for the whole session until \"stop caveman\" or \"normal mode\".",
+          "Token savings are small and noisy, and the skill says never to claim them. Median output reduction against an \"Answer concisely.\" control is 9% (n=10, one run, measured on the 3.1.0 skill text)."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0, in the Caveman repository; the skill needs no account, service, or script."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "native",
+            "source": "skills/megacave/SKILL.md front matter description",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/name",
+            "method": "curated",
+            "source": "Display name written for this record; the native name is 'megacave'",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A SKILL.md is a skill",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/updatedAt",
+            "method": "linked",
+            "source": "git log -1 on skills/megacave, UTC date",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/runtime",
+            "method": "derived",
+            "basis": "convention",
+            "source": "Agent Skills are loaded by an agent host",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/x-invocation",
+            "method": "native",
+            "source": "skills/megacave/SKILL.md front matter: disable-model-invocation: true",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub contents API: skills/megacave/README.md",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "Written from skills/megacave/SKILL.md (rules and examples)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/setup",
+            "method": "linked",
+            "source": "GitHub contents API: skills/megacave holds only README.md and SKILL.md, so nothing is installed or configured",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "skills/megacave/SKILL.md (front matter, introduction, Persistence); output reduction from the project's benchmark as recorded in juliusbrussee/caveman-plugin",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call",
+            "observedAt": "2026-11-16"
+          }
+        ],
+        "x-invocation": {
+          "disableModelInvocation": true
+        }
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "juliusbrussee/ultracave",
+        "name": "Ultracave",
+        "description": "Caveman at maximum compression: fragments, one word when one word is enough, each fact once. Invoke only with /ultracave or /caveman ultra. Stays on until \"stop caveman\" or \"normal mode\".",
+        "capabilityType": "skill",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "path": "skills/ultracave",
+          "repositoryId": "1201173969",
+          "status": "active",
+          "updatedAt": "2026-10-06"
+        },
+        "parent": {
+          "id": "juliusbrussee/caveman-plugin"
+        },
+        "publications": [
+          {
+            "kind": "repository",
+            "locator": "https://github.com/JuliusBrussee/caveman/tree/main/skills/ultracave",
+            "nativeVersion": "main",
+            "versionScheme": "floating"
+          }
+        ],
+        "owner": {
+          "name": "Julius Brussee",
+          "contact": "https://github.com/JuliusBrussee/caveman/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "url": "https://github.com/JuliusBrussee/caveman/blob/main/LICENSE",
+          "scope": "repository"
+        },
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "interfaces": [
+          {
+            "type": "agent_skill",
+            "contractRef": "https://github.com/JuliusBrussee/caveman/blob/main/skills/ultracave/SKILL.md"
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "agent_host",
+            "detail": "Coding agents that load Agent Skills."
+          }
+        ],
+        "documentation": "https://github.com/JuliusBrussee/caveman/blob/main/skills/ultracave/README.md",
+        "supportedUseCases": [
+          {
+            "title": "Maximum-compression replies",
+            "description": "Fragments, one word when one word is enough, each fact once; payload verbatim."
+          }
+        ],
+        "setup": [],
+        "limitations": [
+          "Starts only with /ultracave or /caveman ultra: model invocation is disabled. Stays on for the whole session until \"stop caveman\" or \"normal mode\".",
+          "Switches to plain prose for security warnings, irreversible actions, ambiguous fragments, and anything persisted outside chat.",
+          "Median output reduction against an \"Answer concisely.\" control is 35% (n=10, one run, measured on the 3.1.0 skill text)."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0, in the Caveman repository; the skill needs no account, service, or script."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "native",
+            "source": "skills/ultracave/SKILL.md front matter description",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/name",
+            "method": "curated",
+            "source": "Display name written for this record; the native name is 'ultracave'",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "A SKILL.md is a skill",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/source/updatedAt",
+            "method": "linked",
+            "source": "git log -1 on skills/ultracave, UTC date",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/runtime",
+            "method": "derived",
+            "basis": "convention",
+            "source": "Agent Skills are loaded by an agent host",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/x-invocation",
+            "method": "native",
+            "source": "skills/ultracave/SKILL.md front matter: disable-model-invocation: true",
+            "observedAt": "2026-11-09"
+          },
+          {
+            "field": "/documentation",
+            "method": "linked",
+            "source": "GitHub contents API: skills/ultracave/README.md",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "Written from skills/ultracave/SKILL.md (rules and examples)",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/setup",
+            "method": "linked",
+            "source": "GitHub contents API: skills/ultracave holds only README.md and SKILL.md, so nothing is installed or configured",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "skills/ultracave/SKILL.md (front matter, Persistence, When to break the rules); output reduction from the project's benchmark as recorded in juliusbrussee/caveman-plugin",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Repository LICENSE (Apache-2.0); the skill folder holds no script or service call",
+            "observedAt": "2026-11-16"
+          }
+        ],
+        "x-invocation": {
+          "disableModelInvocation": true
+        }
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "mehmet-kozan/pdf-parse",
+        "name": "pdf-parse",
+        "description": "Pure TypeScript module for extracting text, images, and tables from PDFs, in Node.js or the browser. Also reads document metadata and renders pages as PNG.",
+        "capabilityType": "library",
+        "capabilityVersion": "2.4.5",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/mehmet-kozan/pdf-parse",
+          "repositoryId": "1052760396",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:npm/pdf-parse",
+            "nativeName": "pdf-parse",
+            "nativeVersion": "2.4.5",
+            "versionScheme": "semver",
+            "updatedAt": "2025-10-20"
+          }
+        ],
+        "owner": {
+          "name": "Mehmet Kozan",
+          "contact": "https://github.com/mehmet-kozan/pdf-parse/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "scope": "capability"
+        },
+        "documentation": "https://mehmet-kozan.github.io/pdf-parse/",
+        "keywords": [
+          "pdf",
+          "pdf-parser",
+          "pdf-table",
+          "typescript"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Extract text from PDFs in Node.js",
+            "description": "PDFParse.getText() returns the text of all or selected pages."
+          },
+          {
+            "title": "Extract tables from PDFs",
+            "description": "getTable() detects and extracts tabular data."
+          },
+          {
+            "title": "Render pages and extract images",
+            "description": "getScreenshot() renders pages as PNG; getImage() extracts embedded images."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "library",
+            "description": "JavaScript API (PDFParse with getText, getTable, getImage, getScreenshot, getInfo).",
+            "inputs": [
+              {
+                "name": "pdf",
+                "mediaType": "application/pdf",
+                "description": "A PDF as a buffer or URL."
+              }
+            ]
+          },
+          {
+            "type": "cli",
+            "description": "Command-line interface for quick PDF processing (docs/command-line.md)."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Node.js >=20.16.0 <21 or >=22.3.0; also runs in the browser and serverless platforms."
+          }
+        ],
+        "setup": [],
+        "dependencies": [],
+        "limitations": [
+          "Maintained by one individual; the last npm release was 2.4.5 on 2025-10-20.",
+          "Version 2 changed the API from v1 (require('pdf-parse')(buffer)); getRaw() is kept for v1-compatible output.",
+          "The README describes a 'supportware' model for v3 through sponsorship, with a separate pdf-parse-pro package.",
+          "No OCR is described for scanned PDFs."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0 open source on npm."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README title and Features.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "npm latest 2.4.5 (2025-10-20).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API, as recorded in the research snapshot.",
+            "observedAt": "2026-10-22"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub repository API for mehmet-kozan/pdf-parse (archived false; last push 2026-05-04).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner",
+            "method": "native",
+            "source": "npm package.json author and bugs.url.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "npm package.json license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "npm package.json homepage.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "npm package.json engines and the README Features.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "curated",
+            "source": "Installed with npm; no credentials or system packages are named.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Getting Started (v1 to v2), the v3 supportware note, and npm release date.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "microsoft/playwright-mcp",
+        "name": "Playwright MCP",
+        "description": "MCP server by Microsoft that lets an AI agent automate a browser with Playwright. The agent works from structured accessibility snapshots of the page instead of screenshots, so no vision model is needed: it navigates, clicks, fills forms, and takes screenshots.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "0.0.85",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/microsoft/playwright-mcp",
+          "repositoryId": "952688112",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "registry_entry",
+            "locator": "io.github.microsoft/playwright-mcp",
+            "nativeVersion": "0.0.85",
+            "versionScheme": "semver",
+            "status": "active",
+            "updatedAt": "2026-11-09",
+            "verifiedBy": "MCP Registry namespace io.github.microsoft (GitHub account microsoft); the npm package's mcpName points to it."
+          },
+          {
+            "kind": "package",
+            "locator": "pkg:npm/%40playwright/mcp",
+            "nativeName": "@playwright/mcp",
+            "nativeVersion": "0.0.85",
+            "versionScheme": "semver",
+            "updatedAt": "2026-11-09",
+            "platformCompatibility": [
+              "claude-code",
+              "claude-desktop",
+              "codex",
+              "cursor",
+              "gemini-cli",
+              "github-copilot",
+              "windsurf"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "Microsoft Corporation",
+          "contact": "https://github.com/microsoft/playwright-mcp/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "scope": "capability"
+        },
+        "documentation": "https://playwright.dev",
+        "keywords": [
+          "playwright",
+          "browser-automation",
+          "testing",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Let a coding agent click through a web application",
+            "description": "Navigate, click, type, and fill forms from accessibility snapshots, without a vision model."
+          },
+          {
+            "title": "Exploratory and self-healing browser tests",
+            "description": "Run long agentic loops that keep browser state between steps."
+          },
+          {
+            "title": "Capture screenshots and page state",
+            "description": "Take screenshots and read console messages and network requests."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local MCP server started by the MCP client with npx; can also serve HTTP with --port."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Node.js >=18."
+          }
+        ],
+        "setup": [
+          {
+            "name": "PLAYWRIGHT_MCP_BROWSER",
+            "kind": "env_var",
+            "description": "Optional. Browser to use (chrome, firefox, webkit, msedge); the --browser option.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "PLAYWRIGHT_MCP_HEADLESS",
+            "kind": "env_var",
+            "description": "Optional. Run the browser headless; headed by default.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "PLAYWRIGHT_MCP_ISOLATED",
+            "kind": "env_var",
+            "description": "Optional. Keep the browser profile in memory instead of on disk.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "By default the browser uses a persistent profile on disk, so logins and cookies survive between sessions; use --isolated for tests.",
+          "--allowed-origins is not a security boundary, per the documentation; by default the browser may request any origin.",
+          "For coding agents, Microsoft suggests the separate Playwright CLI with skills, which uses fewer tokens than MCP.",
+          "The README configuration uses the floating @latest version; pin a version for production.",
+          "Still a 0.0.x version series."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0 open source; no charge."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction and Key Features.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "npm latest 0.0.85 (2026-11-09), MCP Registry 0.0.85, and GitHub release v0.0.85.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0",
+            "method": "linked",
+            "source": "Official MCP Registry API, latest entry for io.github.microsoft/playwright-mcp.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner",
+            "method": "native",
+            "source": "npm package.json author and bugs.url.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "npm package.json license; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "npm package.json homepage.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "npm package.json engines and the README Requirements.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Configuration table (options and their environment variables). No credentials are needed.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README sections on the Playwright CLI, Configuration (--allowed-origins), and User profile.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/platformCompatibility",
+            "method": "native",
+            "source": "README Getting started: npx configuration per client (Claude Code, Claude Desktop, Codex, Copilot, Cursor, Gemini CLI, VS Code, Windsurf).",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "sooperset/mcp-atlassian",
+        "name": "MCP Atlassian",
+        "description": "Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira), for Cloud and Server/Data Center deployments. Lets an AI assistant search Jira with JQL, read issue details, create and update issues, and change an issue's status through its workflow transitions.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "0.24.3",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/sooperset/mcp-atlassian",
+          "repositoryId": "897809208",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/mcp-atlassian",
+            "nativeName": "mcp-atlassian",
+            "nativeVersion": "0.24.3",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-11-12",
+            "platformCompatibility": [
+              "claude-desktop",
+              "cursor",
+              "github-copilot"
+            ]
+          },
+          {
+            "kind": "container_image",
+            "locator": "ghcr.io/sooperset/mcp-atlassian",
+            "nativeVersion": "latest",
+            "versionScheme": "floating",
+            "verifiedBy": "Image published under the repository owner's GitHub Container Registry namespace and documented in the project's installation guide."
+          }
+        ],
+        "owner": {
+          "name": "sooperset",
+          "contact": "https://github.com/sooperset/mcp-atlassian/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "repository"
+        },
+        "documentation": "https://mcp-atlassian.soomiles.com",
+        "keywords": [
+          "atlassian",
+          "jira",
+          "confluence",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Find and read Jira issues",
+            "description": "Search issues with JQL (jira_search) and read one issue with its comments (jira_get_issue)."
+          },
+          {
+            "title": "Update the status of a Jira issue",
+            "description": "Move an issue through its workflow, for example to Done (jira_transition_issue)."
+          },
+          {
+            "title": "Summarise Jira issues and sprints",
+            "description": "Returns issue, sprint, and search data that the AI assistant summarises. The server supplies the data; the summary is written by the assistant's model."
+          },
+          {
+            "title": "Create and edit Jira issues",
+            "description": "Create issues (jira_create_issue) and update their fields (jira_update_issue)."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local MCP server started by the MCP client (the default). The same server also supports the sse and streamable-http transports for shared or multi-user deployments. Tools are discovered at runtime through tools/list."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "tool",
+            "name": "jira_search",
+            "description": "Search issues with JQL."
+          },
+          {
+            "type": "tool",
+            "name": "jira_get_issue",
+            "description": "Get issue details."
+          },
+          {
+            "type": "tool",
+            "name": "jira_create_issue",
+            "description": "Create an issue. Writes to Jira."
+          },
+          {
+            "type": "tool",
+            "name": "jira_update_issue",
+            "description": "Update an issue's fields. Writes to Jira."
+          },
+          {
+            "type": "tool",
+            "name": "jira_transition_issue",
+            "description": "Change an issue's status. Writes to Jira."
+          },
+          {
+            "type": "tool",
+            "name": "jira_get_sprint_issues",
+            "description": "List the issues in a sprint (agile toolset)."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.10."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "JIRA_URL",
+            "kind": "env_var",
+            "description": "Base URL of the Jira site, for example https://your-company.atlassian.net.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "JIRA_USERNAME",
+            "kind": "env_var",
+            "group": "jira-cloud",
+            "description": "Atlassian account email. Jira Cloud only, together with JIRA_API_TOKEN.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "JIRA_API_TOKEN",
+            "kind": "env_var",
+            "group": "jira-cloud",
+            "description": "Jira Cloud API token, created at id.atlassian.com/manage-profile/security/api-tokens.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "JIRA_PERSONAL_TOKEN",
+            "kind": "env_var",
+            "group": "jira-server-data-center",
+            "description": "Personal Access Token for Jira Server/Data Center, used instead of username and API token.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "READ_ONLY_MODE",
+            "kind": "env_var",
+            "description": "Set to true to disable all write operations (create, update, transition).",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "TOOLSETS",
+            "kind": "env_var",
+            "description": "Restrict the tools offered, for example 'default' (about 35 core tools) or 'default,jira_agile'.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "integrations": [
+          "jira-cloud",
+          "jira-data-center"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Not an official Atlassian product; maintained by an individual open-source maintainer.",
+          "Jira Server/Data Center is supported from version 8.14; Confluence Server/Data Center from 6.0.",
+          "Write tools (create, update, transition) are enabled unless READ_ONLY_MODE=true is set.",
+          "When TOOLSETS is not set, all toolsets are enabled (98 tools in total, Jira and Confluence).",
+          "Acts with the permissions of the Atlassian account whose token it is given.",
+          "The container image is documented with the floating tag 'latest'; pin a version for production."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "MIT-licensed open source. Requires existing Atlassian (Jira) licences."
+        },
+        "provenance": [
+          {
+            "field": "/name",
+            "method": "native",
+            "source": "README title 'MCP Atlassian'.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the GitHub repository description, the README introduction, and its Key Tools table.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "derived",
+            "basis": "convention",
+            "source": "The README and package describe it as a Model Context Protocol (MCP) server.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "Latest GitHub release v0.24.3 (2026-11-12) and PyPI version 0.24.3.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API for sooperset/mcp-atlassian.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub repository API (archived false; last push 2026-11-13).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/locator",
+            "method": "linked",
+            "source": "Documentation, installation and Docker examples (image ghcr.io/sooperset/mcp-atlassian:latest).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub repository owner (user account sooperset); PyPI author email names sooperset.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "linked",
+            "source": "GitHub license detection (MIT) and the README's License section. PyPI states no license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "GitHub repository homepage and the README Documentation section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "GitHub repository topics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "README 'Start Using' examples and Key Tools table; tools reference in the documentation.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/interfaces/0/transport",
+            "method": "native",
+            "source": "README configuration example (command uvx) and the documentation's TRANSPORT setting.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/embeddedComponents",
+            "method": "native",
+            "source": "README Key Tools table; jira_get_sprint_issues from the documentation's agile examples.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "pyproject.toml requires-python and the README's uvx configuration.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Quick Start and the documentation's environment-variable reference.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/integrations",
+            "method": "curated",
+            "source": "README Compatibility table for Jira deployments.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README License and Compatibility sections; documentation on READ_ONLY_MODE and TOOLSETS.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "Derived from the MIT license; Atlassian licensing is the adopter's own.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "native",
+            "source": "README Quick Start: uvx configuration for Claude Desktop, Cursor, or GitHub Copilot.",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "LICENSE_NEEDS_REVIEW",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "tavily-ai/langchain-tavily",
+        "name": "LangChain Tavily",
+        "description": "Tavily's integration for LangChain. Provides LangChain tools for real-time web search with result URLs (TavilySearch), page content extraction (TavilyExtract), site mapping and crawling (TavilyMap, TavilyCrawl), and research reports (TavilyResearch).",
+        "capabilityType": "library",
+        "capabilityVersion": "0.2.18",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/tavily-ai/langchain-tavily",
+          "repositoryId": "950113961",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/langchain-tavily",
+            "nativeName": "langchain-tavily",
+            "nativeVersion": "0.2.18",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-04-16"
+          }
+        ],
+        "owner": {
+          "name": "Tavily",
+          "contact": "https://github.com/tavily-ai/langchain-tavily/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://github.com/tavily-ai/langchain-tavily#readme",
+        "keywords": [
+          "tavily",
+          "langchain",
+          "web-search"
+        ],
+        "relations": [
+          {
+            "type": "distinct_from",
+            "id": "tavily-ai/tavily-mcp",
+            "evidence": "Both use the Tavily API; this one is a LangChain library, tavily-mcp is an MCP server.",
+            "verified": true
+          }
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Live web search with citable result URLs in a LangChain agent",
+            "description": "TavilySearch returns results with their URLs, as a LangChain tool for agents."
+          },
+          {
+            "title": "Extract, map, and crawl web pages",
+            "description": "TavilyExtract, TavilyMap, and TavilyCrawl."
+          },
+          {
+            "title": "Research reports",
+            "description": "TavilyResearch and TavilyGetResearch."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "library",
+            "description": "Python package langchain_tavily with LangChain tool classes."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "tool",
+            "name": "TavilySearch",
+            "description": "Web search."
+          },
+          {
+            "type": "tool",
+            "name": "TavilyExtract",
+            "description": "Extract page content."
+          },
+          {
+            "type": "tool",
+            "name": "TavilyMap",
+            "description": "Map a website."
+          },
+          {
+            "type": "tool",
+            "name": "TavilyCrawl",
+            "description": "Crawl a website."
+          },
+          {
+            "type": "tool",
+            "name": "TavilyResearch",
+            "description": "Run a research task."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.10,<4.0."
+          }
+        ],
+        "setup": [
+          {
+            "name": "TAVILY_API_KEY",
+            "kind": "env_var",
+            "description": "Tavily API key, from app.tavily.com.",
+            "secret": true,
+            "required": true
+          }
+        ],
+        "integrations": [
+          "langchain"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Requires a Tavily account; searches go to Tavily's API.",
+          "Only for LangChain-based agents.",
+          "The latest PyPI release is from 2026-04-16, although the repository is still updated."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The library is free (MIT). Searches use a Tavily account; the README does not state prices."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README sections and the classes it imports.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "PyPI version 0.2.18 (2026-04-16).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub organization tavily-ai; PyPI names no author.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "PyPI license MIT and classifier 'License :: OSI Approved :: MIT License'.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/embeddedComponents",
+            "method": "native",
+            "source": "README import statements.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "PyPI requires_python and the README Installation.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Credentials section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README; PyPI release date.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "tavily-ai/tavily-mcp",
+        "name": "Tavily MCP Server",
+        "description": "MCP server for the Tavily search API. Gives an agent real-time web search (tavily-search), extraction of page content (tavily-extract), a structured map of a website (tavily-map), and a crawler that explores a site (tavily-crawl). Available as a hosted server or a local one.",
+        "capabilityType": "mcp_server",
+        "capabilityVersion": "0.2.22",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/tavily-ai/tavily-mcp",
+          "repositoryId": "923109265",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:npm/tavily-mcp",
+            "nativeName": "tavily-mcp",
+            "nativeVersion": "0.2.22",
+            "versionScheme": "semver",
+            "updatedAt": "2026-08-05",
+            "platformCompatibility": [
+              "claude-desktop",
+              "cursor"
+            ]
+          },
+          {
+            "kind": "registry_entry",
+            "locator": "io.github.tavily-ai/tavily-mcp",
+            "nativeVersion": "0.2.15",
+            "versionScheme": "semver",
+            "status": "active",
+            "updatedAt": "2026-01-26",
+            "verifiedBy": "MCP Registry namespace io.github.tavily-ai; the npm package's mcpName points to it."
+          },
+          {
+            "kind": "hosted_endpoint",
+            "locator": "https://mcp.tavily.com/mcp",
+            "versionScheme": "unversioned",
+            "verifiedBy": "Documented in the README as Tavily's remote MCP server.",
+            "platformCompatibility": [
+              "claude-code",
+              "cursor"
+            ]
+          }
+        ],
+        "owner": {
+          "name": "Tavily",
+          "contact": "https://github.com/tavily-ai/tavily-mcp/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://github.com/tavily-ai/tavily-mcp#readme",
+        "keywords": [
+          "tavily",
+          "web-search",
+          "web-extraction",
+          "crawl",
+          "mcp"
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Live web search with citable result URLs",
+            "description": "tavily-search runs a real-time web search and returns results with their URLs."
+          },
+          {
+            "title": "Extract the content of web pages",
+            "description": "tavily-extract returns the content of given URLs."
+          },
+          {
+            "title": "Map and crawl a website",
+            "description": "tavily-map builds a structured map of a site; tavily-crawl explores it."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "mcp",
+            "transport": "streamable-http",
+            "description": "Hosted server at https://mcp.tavily.com/mcp, authenticated by OAuth or an API key."
+          },
+          {
+            "type": "mcp",
+            "transport": "stdio",
+            "description": "Local server started with `npx -y tavily-mcp@latest`."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "tool",
+            "name": "tavily-search",
+            "description": "Real-time web search."
+          },
+          {
+            "type": "tool",
+            "name": "tavily-extract",
+            "description": "Extract content from web pages."
+          },
+          {
+            "type": "tool",
+            "name": "tavily-map",
+            "description": "Build a structured map of a website."
+          },
+          {
+            "type": "tool",
+            "name": "tavily-crawl",
+            "description": "Crawl a website."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "hosted_service",
+            "detail": "Hosted by Tavily."
+          },
+          {
+            "kind": "local_process",
+            "detail": "Node.js v20 or higher."
+          }
+        ],
+        "setup": [
+          {
+            "name": "TAVILY_API_KEY",
+            "kind": "env_var",
+            "group": "api-key",
+            "description": "Tavily API key from app.tavily.com.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "Tavily OAuth",
+            "kind": "account",
+            "group": "oauth",
+            "description": "Hosted server only. OAuth sign-in with a Tavily account, instead of an API key.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "DEFAULT_PARAMETERS",
+            "kind": "env_var",
+            "description": "JSON object of default values for tavily-search (for example search depth).",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "TAVILY_HUMAN_ID",
+            "kind": "env_var",
+            "description": "Optional identifier of the end user, forwarded to Tavily as the X-Human-Id header.",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Requires a Tavily account; searches go to Tavily's API.",
+          "The README's hosted-server example puts the API key in the URL query string, where it can end up in logs; prefer OAuth.",
+          "The MCP Registry entry (0.2.15) lags the npm package (0.2.22); the hosted endpoint has no version.",
+          "The repository publishes no GitHub releases; versions come from npm."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The server is free (MIT). Searches use a Tavily account; a free account is available and the README does not state paid pricing."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the GitHub repository description and the README feature list.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "npm latest 0.2.22 (2026-08-05).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1",
+            "method": "linked",
+            "source": "Official MCP Registry API, latest entry for io.github.tavily-ai/tavily-mcp.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner",
+            "method": "native",
+            "source": "npm package.json author and bugs.url.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "npm package.json license; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "native",
+            "source": "npm package.json keywords (a selection).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README Local MCP, Default Parameters, and Identifying the End User sections; registry environmentVariables.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Remote MCP Server section; registry and npm versions; GitHub releases API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "README Prerequisites (free account) and the MIT license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/0/platformCompatibility",
+            "method": "native",
+            "source": "README Local MCP Prerequisites (Claude Desktop or Cursor).",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/publications/2/platformCompatibility",
+            "method": "native",
+            "source": "README Connect to Claude Code (claude mcp add --transport http) and Connect to Cursor, for https://mcp.tavily.com/mcp.",
+            "observedAt": "2026-11-16"
+          },
+          {
+            "field": "/runtime/1/detail",
+            "method": "native",
+            "source": "README Local MCP Prerequisites (Node.js v20 or higher).",
+            "observedAt": "2026-11-16"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "PUBLICATION_VERSIONS_DIFFER",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "the-pr-agent/pr-agent",
+        "name": "PR-Agent",
+        "description": "Open-source, AI-powered code review agent for pull requests. Reviews a pull request's changes and comments on code quality and possible issues (/review), suggests code improvements (/improve), writes a pull request description (/describe), and answers questions about the change (/ask). Works with GitHub, GitLab, Bitbucket, Azure DevOps, and Gitea.",
+        "capabilityType": "tool",
+        "capabilityVersion": "0.50.0",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/The-PR-Agent/pr-agent",
+          "repositoryId": "662766482",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/pr-agent",
+            "nativeName": "pr-agent",
+            "nativeVersion": "0.50.0",
+            "versionScheme": "pep440"
+          },
+          {
+            "kind": "container_image",
+            "locator": "docker.io/pragent/pr-agent",
+            "nativeVersion": "0.50.0",
+            "versionScheme": "semver",
+            "updatedAt": "2026-11-08",
+            "verifiedBy": "The README names pragent/pr-agent as the image namespace for releases 0.34.2 and later."
+          },
+          {
+            "kind": "repository",
+            "locator": "https://github.com/The-PR-Agent/pr-agent",
+            "nativeVersion": "main",
+            "versionScheme": "floating",
+            "verifiedBy": "The README's GitHub Action example uses the-pr-agent/pr-agent@main."
+          }
+        ],
+        "owner": {
+          "name": "The PR Agent",
+          "contact": "https://github.com/the-pr-agent/pr-agent/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "MIT",
+          "scope": "capability"
+        },
+        "documentation": "https://docs.pr-agent.ai",
+        "keywords": [
+          "ai",
+          "code-review",
+          "pull-request",
+          "devtools"
+        ],
+        "relations": [
+          {
+            "type": "distinct_from",
+            "locator": "https://www.qodo.ai",
+            "evidence": "README: 'This repository contains the open-source PR Agent Project. It is not the Qodo offering for open-source projects.'",
+            "verified": true
+          }
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Review the code quality of a pull request",
+            "description": "The /review command comments on the changes, possible issues, and code quality."
+          },
+          {
+            "title": "Suggest code improvements",
+            "description": "The /improve command proposes concrete code changes for the pull request."
+          },
+          {
+            "title": "Describe a pull request",
+            "description": "The /describe command writes the pull request's title and description."
+          },
+          {
+            "title": "Answer questions about a pull request",
+            "description": "The /ask command answers free-text questions about the change."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "cli",
+            "description": "`pr-agent --pr_url <PR_URL> review`, after pip install \"pr-agent[github]\"."
+          },
+          {
+            "type": "ci_action",
+            "description": "GitHub Action the-pr-agent/pr-agent@main, triggered on pull_request opened and synchronize; it reads OPENAI_KEY and GITHUB_TOKEN from the workflow environment."
+          },
+          {
+            "type": "other",
+            "description": "Comment commands on a pull request (/review, /improve, /describe, /ask), run by the GitHub Action, the GitHub App, or a webhook deployment."
+          }
+        ],
+        "embeddedComponents": [
+          {
+            "type": "command",
+            "name": "/review",
+            "description": "Review the pull request."
+          },
+          {
+            "type": "command",
+            "name": "/improve",
+            "description": "Suggest code improvements."
+          },
+          {
+            "type": "command",
+            "name": "/describe",
+            "description": "Generate the pull request description."
+          },
+          {
+            "type": "command",
+            "name": "/ask",
+            "description": "Answer a question about the pull request."
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "ci_runner",
+            "detail": "A GitHub Actions runner, triggered on pull_request opened and synchronize."
+          },
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.12; the GitHub provider needs the github extra."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "OPENAI_KEY",
+            "kind": "env_var",
+            "description": "API key for the model provider (OpenAI in the default example). Other providers are configured through LiteLLM settings.",
+            "secret": true,
+            "required": true
+          },
+          {
+            "name": "GITHUB_TOKEN",
+            "kind": "env_var",
+            "description": "GitHub token that lets PR-Agent read the pull request and post comments. In GitHub Actions, secrets.GITHUB_TOKEN.",
+            "secret": true,
+            "required": true
+          }
+        ],
+        "integrations": [
+          "github",
+          "github-actions",
+          "gitlab",
+          "bitbucket",
+          "azure-devops",
+          "gitea"
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Needs an external large language model; the pull request's code is sent to the configured model provider.",
+          "The README's GitHub Action example pins the floating reference @main; pin a release for production.",
+          "/help_docs is disabled since v0.36.1 pending a fix for a credential-exposure issue (issue 2445).",
+          "Community-maintained legacy project of Qodo; distinct from Qodo's commercial code review product.",
+          "Reviews are AI-generated suggestions and can be wrong; it does not approve or block merges by itself."
+        ],
+        "costInformation": {
+          "model": "provider_billed",
+          "details": "The software is free (MIT). Each command makes a model API call, billed by the model provider."
+        },
+        "provenance": [
+          {
+            "field": "/name",
+            "method": "native",
+            "source": "README and GitHub repository description ('PR Agent').",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the README introduction, Usage Examples, and the supported git providers list.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityType",
+            "method": "curated",
+            "source": "Chosen by the curator; the project calls itself an agent but publishes no A2A Agent Card.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "Latest GitHub release v0.50.0 (2026-11-07) and PyPI version 0.50.0. pyproject.toml on main still says 0.49.0.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API; the old URL github.com/qodo-ai/pr-agent redirects here.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/status",
+            "method": "linked",
+            "source": "GitHub repository API (archived false; last push 2026-11-12).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/publications/1/nativeVersion",
+            "method": "linked",
+            "source": "Docker Hub tags for pragent/pr-agent (0.50.0, updated 2026-11-08).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "native",
+            "source": "LICENSE copyright holder 'The PR Agent'; GitHub organization The-PR-Agent.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "native",
+            "source": "PyPI project URLs (Issues).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "LICENSE file and PyPI license text (MIT); GitHub detects MIT.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "native",
+            "source": "PyPI project URLs (Documentation).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "GitHub repository topics.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/supportedUseCases",
+            "method": "curated",
+            "source": "README Usage Examples and See It in Action sections.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime",
+            "method": "native",
+            "source": "README Quick Start (GitHub Action, CLI) and pyproject.toml requires-python; Docker Hub namespace.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README GitHub Action example (OPENAI_KEY, GITHUB_TOKEN).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/integrations",
+            "method": "native",
+            "source": "README 'Platform Agnostic' git providers and deployment options.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Features note on /help_docs, Data Privacy section, and project history.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/costInformation",
+            "method": "curated",
+            "source": "README ('Each command uses a single LLM call') and the MIT license.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    },
+    {
+      "manifest": {
+        "schemaVersion": "0.1",
+        "id": "unstructured-io/unstructured",
+        "name": "Unstructured",
+        "description": "Open-source Python library that converts PDFs, HTML, Word documents, images, and many other formats into structured elements (titles, text, tables) for language models. Partitions PDFs with layout detection and OCR, including table extraction.",
+        "capabilityType": "library",
+        "capabilityVersion": "0.27.37",
+        "source": {
+          "type": "repository",
+          "url": "https://github.com/Unstructured-IO/unstructured",
+          "repositoryId": "541798154",
+          "status": "active"
+        },
+        "publications": [
+          {
+            "kind": "package",
+            "locator": "pkg:pypi/unstructured",
+            "nativeName": "unstructured",
+            "nativeVersion": "0.27.37",
+            "versionScheme": "pep440",
+            "updatedAt": "2026-11-06"
+          },
+          {
+            "kind": "container_image",
+            "locator": "downloads.unstructured.io/unstructured-io/unstructured",
+            "nativeVersion": "latest",
+            "versionScheme": "floating",
+            "verifiedBy": "Documented in the README's Quick Start; images are built for every push to main."
+          }
+        ],
+        "owner": {
+          "name": "Unstructured",
+          "contact": "https://github.com/Unstructured-IO/unstructured/issues",
+          "affiliation": "external"
+        },
+        "license": {
+          "expression": "Apache-2.0",
+          "scope": "capability"
+        },
+        "documentation": "https://docs.unstructured.io/open-source/introduction/overview",
+        "keywords": [
+          "pdf",
+          "document-parsing",
+          "ocr",
+          "etl"
+        ],
+        "relations": [
+          {
+            "type": "distinct_from",
+            "locator": "https://www.unstructured.io",
+            "evidence": "The README separates the open-source library from Unstructured's enterprise Platform product.",
+            "verified": true
+          }
+        ],
+        "riskTier": "unassessed",
+        "lastUpdated": "2026-11-16",
+        "supportedUseCases": [
+          {
+            "title": "Extract text and tables from PDFs",
+            "description": "partition_pdf returns the document's elements, including tables, using layout detection and OCR."
+          },
+          {
+            "title": "Prepare documents for language models",
+            "description": "Turns many document formats into clean elements for chunking and embedding."
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "library",
+            "description": "Python API, for example unstructured.partition.pdf.partition_pdf.",
+            "inputs": [
+              {
+                "name": "document",
+                "mediaType": "application/pdf",
+                "description": "The PDF to partition; other formats are supported with extras."
+              }
+            ]
+          }
+        ],
+        "runtime": [
+          {
+            "kind": "local_process",
+            "detail": "Python >=3.11,<3.14; PDF support needs the pdf extra (or all-docs)."
+          },
+          {
+            "kind": "container"
+          }
+        ],
+        "setup": [
+          {
+            "name": "poppler-utils",
+            "kind": "system_package",
+            "description": "System package needed to process PDFs and images.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "tesseract-ocr",
+            "kind": "system_package",
+            "description": "System package needed for OCR of PDFs and images.",
+            "secret": false,
+            "required": true
+          },
+          {
+            "name": "libmagic-dev",
+            "kind": "system_package",
+            "description": "System package for file-type detection.",
+            "secret": false,
+            "required": false
+          },
+          {
+            "name": "DO_NOT_TRACK",
+            "kind": "env_var",
+            "description": "Set to any non-empty value to turn off the library's analytics, which are on by default (SCARF_NO_ANALYTICS works too).",
+            "secret": false,
+            "required": false
+          }
+        ],
+        "dependencies": [],
+        "limitations": [
+          "Sends analytics pings to packages.unstructured.io by default (no document content, per the README); set DO_NOT_TRACK to opt out.",
+          "PDF processing needs system packages (poppler, tesseract) as well as the Python extras.",
+          "Supports Python 3.11 to 3.13 only.",
+          "The documented container image uses the floating tag 'latest' and is rebuilt on every push to main; pin a version for production."
+        ],
+        "costInformation": {
+          "model": "free",
+          "details": "Apache-2.0 open source; runs locally. The commercial platform is a separate product."
+        },
+        "provenance": [
+          {
+            "field": "/description",
+            "method": "curated",
+            "source": "Written from the GitHub repository description and the README introduction.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/capabilityVersion",
+            "method": "native",
+            "source": "PyPI version 0.27.37 (2026-11-06) and GitHub release 0.27.37.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/source/repositoryId",
+            "method": "linked",
+            "source": "GitHub repository API.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/name",
+            "method": "linked",
+            "source": "GitHub organization Unstructured-IO; PyPI names no author.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/owner/contact",
+            "method": "curated",
+            "source": "The repository's GitHub issue tracker.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/license",
+            "method": "native",
+            "source": "PyPI license_expression Apache-2.0; GitHub detects the same license.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/documentation",
+            "method": "curated",
+            "source": "Open-source documentation at docs.unstructured.io, linked from the README.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/keywords",
+            "method": "linked",
+            "source": "GitHub repository topics (a selection).",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/runtime/0/detail",
+            "method": "native",
+            "source": "PyPI requires_python and the README's installation section.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/setup",
+            "method": "native",
+            "source": "README installation (system dependencies) and Analytics sections.",
+            "observedAt": "2026-11-13"
+          },
+          {
+            "field": "/limitations",
+            "method": "curated",
+            "source": "README Analytics, installation, and container sections; PyPI requires_python.",
+            "observedAt": "2026-11-13"
+          }
+        ]
+      },
+      "validation": {
+        "warnings": [],
+        "unverified": [
+          "SOURCE_NOT_CHECKED",
+          "RISK_UNASSESSED"
+        ],
+        "completeness": "adoptable"
+      }
+    }
+  ],
+  "rejected": []
+}

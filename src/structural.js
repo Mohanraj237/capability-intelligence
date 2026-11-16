@@ -147,10 +147,12 @@ function translateUnknownField({ error, context, tokens, label, fieldSchema }) {
   const suggestion = closest(field, known);
   const synonymOf = synonymFor(field, fieldSchema);
   const allowsExtensions = Object.keys(fieldSchema?.patternProperties ?? {}).some((pattern) => pattern.startsWith('^x-'));
+  const retired = fieldSchema?.['x-retiredFields']?.[field];
 
   const newer = newerVersions(context, [...tokens, field], () => true);
   let hint = `Remove it. Fields allowed in '${label}': ${known.join(', ')}.`;
-  if (suggestion) hint = `Did you mean '${suggestion}'?`;
+  if (retired) hint = retired;
+  else if (suggestion) hint = `Did you mean '${suggestion}'?`;
   else if (synonymOf) hint = `Use '${synonymOf}': it holds what native formats call '${field}'.`;
   else if (newer.length > 0) hint = useNewerVersionHint(`'${field}'`, newer);
   else if (allowsExtensions) hint = `Remove it, or rename it to an extension field such as 'x-${field}' to keep it as custom metadata.`;
@@ -308,11 +310,15 @@ function conditionalRule(error, context) {
 }
 
 function describeTrigger(ifSchema, instance, tokens) {
-  const values = Object.entries(ifSchema.properties ?? {}).map(([key, sub]) =>
-    sub.properties
-      ? describeTrigger(sub, instance?.[key], [...tokens, key])
-      : `${toLabel(fromTokens([...tokens, key]))} is ${display(instance?.[key])}`,
-  );
+  const values = Object.entries(ifSchema.properties ?? {}).map(([key, sub]) => {
+    if (sub.properties) return describeTrigger(sub, instance?.[key], [...tokens, key]);
+    // "contains": { "required": [...] } - a rule that applies when some list entry has a field.
+    if (sub.contains?.required && Array.isArray(instance?.[key])) {
+      const index = instance[key].findIndex((item) => sub.contains.required.every((name) => item && typeof item === 'object' && name in item));
+      return `${toLabel(fromTokens([...tokens, key, String(index), sub.contains.required[0]]))} is present`;
+    }
+    return `${toLabel(fromTokens([...tokens, key]))} is ${display(instance?.[key])}`;
+  });
   // "if": { "not": { "required": [...] } } - a rule that applies when a field is absent.
   const absent = (ifSchema.not?.required ?? []).map((key) => `${toLabel(fromTokens([...tokens, key]))} is absent`);
   return [...values, ...absent].join(' and ');

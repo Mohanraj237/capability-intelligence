@@ -1,0 +1,173 @@
+{
+  "checkedOn": "2026-11-16",
+  "checks": [
+    {
+      "url": "https://registry.npmjs.org/%40brave/brave-search-mcp-server",
+      "type": "application/vnd.npm.package+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://pypi.org/pypi/browser-use/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers/com.browser-use%2Fbrowser-use/versions/latest",
+      "type": "application/vnd.mcp-registry.server+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman-commit/SKILL.md",
+      "type": "application/agent-skills+md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/.claude-plugin/plugin.json",
+      "type": "application/vnd.claude-code.plugin+json",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman-review/SKILL.md",
+      "type": "application/agent-skills+md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman/SKILL.md",
+      "type": "application/agent-skills+md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/megacave/SKILL.md",
+      "type": "application/agent-skills+md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/ultracave/SKILL.md",
+      "type": "application/agent-skills+md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://registry.npmjs.org/chrome-devtools-mcp",
+      "type": "application/vnd.npm.package+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/main/action.yml",
+      "type": "application/vnd.github.action+yaml",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://pypi.org/pypi/docling/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://mcp.exa.ai/mcp/server-card",
+      "type": "application/mcp-server-card+json",
+      "status": 200,
+      "contentType": "application/mcp-server-card+json"
+    },
+    {
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.exa%2Fexa/versions/latest",
+      "type": "application/vnd.mcp-registry.server+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.npmjs.org/exa-mcp-server",
+      "type": "application/vnd.npm.package+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.githubcopilot.com/mcp/server-card",
+      "type": "application/mcp-server-card+json",
+      "status": 200,
+      "contentType": "application/mcp-server-card+json"
+    },
+    {
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.github%2Fgithub-mcp-server/versions/latest",
+      "type": "application/vnd.mcp-registry.server+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://pypi.org/pypi/langchain-tavily/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://pypi.org/pypi/mcp-atlassian/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.npmjs.org/pdf-parse",
+      "type": "application/vnd.npm.package+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://pypi.org/pypi/pdfplumber/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.microsoft%2Fplaywright-mcp/versions/latest",
+      "type": "application/vnd.mcp-registry.server+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.npmjs.org/%40playwright/mcp",
+      "type": "application/vnd.npm.package+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://pypi.org/pypi/pr-agent/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.npmjs.org/tavily-mcp",
+      "type": "application/vnd.npm.package+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.tavily-ai%2Ftavily-mcp/versions/latest",
+      "type": "application/vnd.mcp-registry.server+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://pypi.org/pypi/unstructured/json",
+      "type": "application/vnd.pypi.project+json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md",
+      "type": "application/agent-skills+md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    }
+  ]
+}

@@ -69,11 +69,13 @@ describe('a next MINOR version', () => {
 
 describe('the 2026-10-23 revision of 0.1 (Spikes 1-3 research)', () => {
   const draft = loadSchemaInput('research/spikes-1-3/reference/capability-0.1-2026-10-22.schema.json', registry);
+  // The revision as it was on 2026-10-23 (the Phase 1 baseline), before the later Phase 1 changes.
+  const revision = loadSchemaInput('research/phase-1/reference/capability-0.1-2026-10-23.schema.json', registry);
   // The manifests that were valid under the 2026-10-22 draft, as they were on that day.
   const before = expandPaths(['research/spikes-1-3/reference/examples-2026-10-22']).map((file) => ({ file, text: readFileSync(file, 'utf8') }));
 
   it('relaxes the requirements and adds optional fields; only the widened id pattern is classified as breaking', () => {
-    const result = checkSchemaCompatibility(draft, v01, { corpus: before });
+    const result = checkSchemaCompatibility(draft, revision, { corpus: before });
     const byImpact = (impact) => result.changes.filter((change) => change.impact === impact);
     // The id pattern is reported wherever a capability id is used.
     assert.deepEqual(new Set(byImpact('breaking').map((change) => change.code)), new Set(['PATTERN_CHANGED']));
@@ -93,10 +95,35 @@ describe('the 2026-10-23 revision of 0.1 (Spikes 1-3 research)', () => {
 
   it('accepts every id the earlier pattern accepted', () => {
     const before = new RegExp(draft.schema.$defs.capabilityId.pattern);
-    const after = new RegExp(v01.schema.$defs.capabilityId.pattern);
+    const after = new RegExp(revision.schema.$defs.capabilityId.pattern);
     for (const id of ['ai-platform/sql-review', 'acme.platform-ai/code-review-2', 'a/b', 'x1.y-2.z/n-3']) {
       assert.ok(before.test(id) && after.test(id), id);
     }
+  });
+});
+
+describe('the 2026-11-16 field changes since the Phase 1 baseline (decision register C5, C14, C15)', () => {
+  const revision = loadSchemaInput('research/phase-1/reference/capability-0.1-2026-10-23.schema.json', registry);
+  const corpus = expandPaths(['case-studies/production-set/manifests']).map((file) => ({ file, text: readFileSync(file, 'utf8') }));
+
+  it('has exactly three breaking changes: two repetitive fields removed and the dated assessment', () => {
+    const result = checkSchemaCompatibility(revision, v01, { corpus });
+    const breaking = result.changes.filter((change) => change.impact === 'breaking');
+    assert.deepEqual(breaking.map((change) => [change.code, change.path]).sort(), [
+      ['FIELD_REMOVED', 'intendedAudience'],
+      ['FIELD_REMOVED', 'platformCompatibility'],
+      ['REQUIREMENT_ADDED', 'assessmentReference.assessedOn'],
+    ]);
+    assert.ok(result.changes.some((change) => change.code === 'FIELD_ADDED' && change.path === 'integrations'));
+    assert.ok(result.changes.some((change) => change.code === 'FIELD_ADDED' && change.path === 'publications[].platformCompatibility'));
+  });
+
+  it('states AI hosts only per publication, from a vocabulary of AI hosts', () => {
+    assert.equal(v01.schema.properties.platformCompatibility, undefined);
+    const hosts = v01.schema.$defs.publication.properties.platformCompatibility.items.enum;
+    for (const token of ['python', 'nodejs', 'linux', 'github-actions', 'langchain']) assert.ok(!hosts.includes(token), token);
+    assert.equal(v01.schema.properties.intendedAudience, undefined);
+    assert.deepEqual(Object.keys(v01.schema['x-retiredFields']).sort(), ['intendedAudience', 'platformCompatibility']);
   });
 });
 
@@ -108,7 +135,7 @@ describe('completeness level changes', () => {
     assert.equal(impactOf(levels((list) => assessable(list).requires.push({ fact: 'keywords', anyOf: ['keywords'] })), 'LEVEL_REQUIREMENT_ADDED'), 'breaking');
     assert.equal(impactOf(levels((list) => { assessable(list).requires[0].anyOf = []; }), 'LEVEL_REQUIREMENT_NARROWED'), 'breaking');
     assert.equal(impactOf(levels((list) => assessable(list).requires.pop()), 'LEVEL_REQUIREMENT_REMOVED'), 'relaxation');
-    assert.equal(impactOf(levels((list) => assessable(list).requires[0].anyOf.push('platformCompatibility')), 'LEVEL_REQUIREMENT_WIDENED'), 'relaxation');
+    assert.equal(impactOf(levels((list) => assessable(list).requires[0].anyOf.push('integrations')), 'LEVEL_REQUIREMENT_WIDENED'), 'relaxation');
     assert.equal(impactOf(levels((list) => list.pop()), 'LEVEL_REMOVED'), 'breaking');
   });
 });

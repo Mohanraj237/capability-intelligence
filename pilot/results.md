@@ -49,9 +49,9 @@ location, format, or namespace), or only as an explicit default. "Available" cou
 | Risk assessment record | conditional | none | none | none | 0 (0%) |
 | Last updated | optional | 4 derived | 4 native | 4 native | 12 (100%) |
 | Supported use cases | optional | none | none | none | 0 (0%) |
-| Intended audience | optional | none | none | none | 0 (0%) |
+| Intended audience | not in schema | none | none | none | 0 (0%) |
 | Interfaces and protocols | conditional; discoverable level | 4 derived | 4 native | 4 derived | 12 (100%) |
-| Platform compatibility | optional | none | 3 derived | 2 native | 5 (42%) |
+| Platform compatibility | not in schema | none | 3 derived | 2 native | 5 (42%) |
 | Capability dependencies | optional | none | none | none | 0 (0%) |
 | Known limitations | optional; adoptable level | none | none | none | 0 (0%) |
 | Cost | optional | none | none | none | 0 (0%) |
@@ -177,9 +177,9 @@ Treatment per concept, from how often it is available (section 2) and how strong
 | Risk assessment record | conditional | required | 0 (0%) | From governance (Mission 3); never in native metadata |
 | Last updated | optional | required | 12 (100%) | Starter core: extract automatically |
 | Supported use cases | optional | required | 0 (0%) | Curate: no native source in the sample |
-| Intended audience | optional | helpful | 0 (0%) | Curate: no native source in the sample |
+| Intended audience | not in schema | helpful | 0 (0%) | Curate: no native source in the sample |
 | Interfaces and protocols | conditional; discoverable level | required | 12 (100%) | Starter core: extract automatically |
-| Platform compatibility | optional | helpful | 5 (42%) | Extract where present; curate the rest |
+| Platform compatibility | not in schema | helpful | 5 (42%) | Extract where present; curate the rest |
 | Capability dependencies | optional | no | 0 (0%) | Not needed by these journeys |
 | Known limitations | optional; adoptable level | helpful | 0 (0%) | Curate: no native source in the sample |
 | Cost | optional | helpful | 0 (0%) | Curate: no native source in the sample |
