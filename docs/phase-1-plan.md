@@ -11,7 +11,7 @@ Capacity is the binding constraint. From Fri Oct 30 to Tue Nov 10 there are 8 wo
 Assumptions to confirm:
 
 - The review is on Wed Nov 11. If it is later in the week, the extra days go to integration, not new scope.
-- You act as lead and integrator, on top of the 4 × 1 hour.
+- The Mission 4 team coordinates and integrates the work, on top of the 4 × 1 hour.
 - Teammates are called A, B, C and D below; replace with names.
 - The schema snapshot (2026-10-23) and the 60-record sample (2026-10-22) are frozen as the Phase 1 baseline.
 
@@ -122,7 +122,7 @@ The review asks for one decision per open question, so the package is the decisi
 
 **Agenda (75 min):**
 
-| Slot | Topic | Lead |
+| Slot | Topic | Owner |
 |---|---|---|
 | 5 min | What Phase 1 set out to settle | You |
 | 15 min | Is the Phase 0 evidence trustworthy? (E2, E5) | D, C |

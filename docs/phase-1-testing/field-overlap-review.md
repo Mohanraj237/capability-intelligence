@@ -6,7 +6,7 @@
 | Question | Which schema 0.1 fields state the same fact, with the same meaning, as another field? A fact stated twice must be kept in sync by hand, and the two copies drift |
 | Corpus | The 22 production manifests, the 8 examples, and the native sources they were curated from (READMEs fetched on 2026-11-16) |
 | Rule applied | A field stays when it carries a fact that no other field carries, or the same value with a different meaning. It goes, or moves, when its value can be rebuilt from other fields of the same manifest |
-| Decisions | **C14** `platformCompatibility` is stated only per publication. **C15** `intendedAudience` is removed. **C16** `runtime[].detail` states requirements only, checked by the new warning `RUNTIME_REPEATS_PUBLICATION`. All three accepted by the Mission 4 lead on 2026-11-16 |
+| Decisions | **C14** `platformCompatibility` is stated only per publication. **C15** `intendedAudience` is removed. **C16** `runtime[].detail` states requirements only, checked by the new warning `RUNTIME_REPEATS_PUBLICATION`. All three accepted by the Mission 4 team on 2026-11-16 |
 
 ## 1. Summary
 

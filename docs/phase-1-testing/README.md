@@ -43,11 +43,11 @@ information; **J5** load and use it from an AI host (new in this phase).
 |---|---|
 | Validity | 22 of 22 valid, **all 22 `adoptable`** (the five Caveman skills were completed from their own sources on 2026-11-16), 0 `governed` (no real assessment) |
 | T3 Removal | Every mandatory field, when removed, makes all 22 invalid. Every completeness fact, when removed, lowers the level exactly as defined. 29 paths change nothing when removed alone; 12 of them prove their value in another test (§4) |
-| T4 Journeys | **440 of 440 required answers (100%)**, every journey complete for every manifest. (First run: 415; the C9 fix added the skills' `main` ref, and completing the Caveman skills closed the rest) |
+| T4 Journeys | **440 of 440 raw checks answered** (20 required questions × 22 manifests; the governance question is excluded): 416 clearly applicable, plus 24 J5 checks for the 5 libraries and the framework that are answered with an applicability caveat. "Answered" means a field that answers the question is stated. (First run: 415; the C9 fix added the skills' `main` ref, and completing the Caveman skills closed the rest) |
 | T5 Search | Name and description alone: recall 0.84, precision 0.92. Adding `supportedUseCases` raises recall to 0.95 (precision 0.86, F1 0.90). `keywords`, `interfaces`, `integrations`, and `embeddedComponents` add nothing. `limitations` lowers precision to 0.73: the completed Caveman limitations mention "issues" and "tickets" |
 | T6 Identity | 66 of 66 synthetic cases correct: 22 re-registrations caught by shared publications, 22 repository renames caught by `source.repositoryId`, 22 namesakes correctly not linked. No false links among the 22. The real earlier Playwright example is linked |
-| T7 Mutation | 102 of 102 testable fields reject a wrong value at that field. 4 fields appear in no manifest and are covered by unit tests |
-| T8 AI host | 22 of 22 yield an install or connection recipe from structured fields. Alternative credentials, first a gap, are now expressed with `setup[].group` in the 5 manifests that have them (C13). Remaining gap: exact launch arguments live only in free text or the native contract |
+| T7 Mutation | 102 of the 106 field paths were mutation-tested (structural stage, one wrong value each, in a manifest or example that states the path), and all 102 reject it at that path. The other 4 (`source.description`, `publications[].statusMessage`, `deprecation.replacedBy`, `provenance[].confirmedBy`) appear in no manifest and no example, so they were not mutated. The cross-manifest checks are covered by the unit tests |
+| T8 AI host | For 22 of 22, install, load, or connection steps are generated from structured fields. They are generated, not executed: nothing was installed or started. Alternative credentials, first a gap, are now expressed with `setup[].group` in the 5 manifests that have them (C13). Remaining gap: exact launch arguments live only in free text or the native contract |
 | T9 Effort | 280 provenance entries: 39% native, 26% linked, 7% derived, 29% curated, 0% owner-confirmed |
 | T12 Governed | Simulated assessments: all 22 `governed`; 22 `ASSESSMENT_EXPIRED` warnings when older than 12 months; 22 invalid with a tier but no reference |
 | T13 AI Catalog | All three projections valid (Level 2). Reference-only keeps 11 of 88 used fields and rebuilds 0 valid manifests; the hybrid (native artifacts plus the manifest in `extensions`) round-trips 22 of 22. 8 of 28 artifacts have a known AI Catalog type. All 28 artifact URLs return 200. exa.ai and github.com publish live catalogs |
@@ -74,7 +74,8 @@ version?" gets "none, pin a commit", not a number. This is documented in the sta
 
 **Which fields does an AI host actually need?** Eight: `interfaces[].type`, `interfaces[].transport`,
 `interfaces[].contractRef`, `publications[].kind` and `.locator`, `setup[].name`, `.kind`, and
-`.secret`, plus `publications[].platformCompatibility`. With them, all 22 yield a recipe. They cannot say "supply
+`.secret`, plus `publications[].platformCompatibility`. With them, steps can be generated for all 22
+(not executed). They cannot say "supply
 one of these credential sets" (MCP Atlassian: a Cloud token or a Data Center token; Exa: OAuth or
 an API key). And the exact launch arguments of an MCP server are only in free text, although
 `server.json` states them. None of the 7 MCP servers sets `contractRef` to point at it.

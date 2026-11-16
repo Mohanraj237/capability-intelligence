@@ -333,7 +333,7 @@ Two notes from testing:
 
 ### 8.1 Identifier rules
 
-1. Every capability has exactly one `id`, **assigned by Mission 5's workflow when a submission is accepted**, never changed and never reused, even after retirement.
+1. Every capability has exactly one `id`, never changed and never reused, even after retirement. Mission 4 has proposed that it is **assigned by Mission 5's workflow when a submission is accepted**, using namespaces maintained by Mission 2; the approach is recorded by Mission 4 but awaits confirmation from both missions (§13).
 2. An id is never built from anything that can change: the URL, owner, display name, version, status, or type.
 3. The namespace is a product, a domain, or a verified publisher, not a team name, taken from a **registered list kept by Mission 2**.
 4. Ids are unique across the catalogue, ignoring case.
@@ -492,11 +492,11 @@ needs of Missions 1, 2, 3, and 5.
 | Validity | 22 of 22 valid, all 22 `adoptable` (the five Caveman skills were completed from their own sources) |
 | Mandatory fields | Each of the six: removed, all 22 become invalid |
 | Completeness levels | Each level fact: removed, the level drops exactly as defined |
-| Journeys | 100% of required questions answered (440 of 440) |
+| Journeys | 440 of 440 raw checks answered (20 required questions × 22 manifests; the one governance question is excluded). 416 are clearly applicable; 24 (the AI-host questions for the 5 libraries and the framework) are answered with an applicability caveat. "Answered" means a field that answers the question is stated, not that its value was checked |
 | Search | Name and description: recall 0.84, precision 0.92; with use cases, recall 0.95, precision 0.86; adding limitations drops precision to 0.73 |
 | Identity | 66 of 66 synthetic cases correct; no false links among the 22 |
-| Wrong values | 102 of 102 testable fields reject a wrong value at that field |
-| AI host recipes | 22 of 22 from structured fields |
+| Wrong values | 102 of the 106 field paths were mutation-tested (structural stage, one wrong value each), and all 102 reject it at that path. The other 4 appear in no manifest or example and were not mutated |
+| AI host recipes | For all 22, install, load, or connection steps were generated from structured fields. Generated, not executed; no recipe exists for `a2a`, `openapi`, or `ui` interfaces |
 | Independent validator | 33 of 33 verdicts agree (Python jsonschema) |
 | Exchange | 22 of 22 carried unchanged with their level |
 | Governed level (simulated Mission 3 assessments) | All 22 reach `governed` with a current assessment; all 22 warn `ASSESSMENT_EXPIRED` when it is older than 12 months; all 22 are invalid with a tier but no reference |
@@ -508,8 +508,10 @@ not yet tested on real data, and the risk assessments of the governed test are s
 
 ## 13. Decided, open, and what Mission 4 needs from each mission
 
-**Decided on 2026-11-16:** ids are assigned by Mission 5 at submission, from namespaces Mission 2
-registers (§8.1); listing requires `adoptable` or `governed` (§6); risk tiers are `unassessed`,
+**Proposed by Mission 4, awaiting confirmation from Missions 5 and 2:** ids are assigned by Mission 5
+at submission, from namespaces Mission 2 maintains (§8.1).
+
+**Decided on 2026-11-16:** listing requires `adoptable` or `governed` (§6); risk tiers are `unassessed`,
 `low`, `medium`, `high`, and an assessment is valid for 12 months (§4.6); `source` is the origin and
 `publications` what adopters obtain (§4.3); alternatives in `setup` use `group` (§4.7); hosts are
 named by agent and stated only per publication, and `intendedAudience` was removed because it

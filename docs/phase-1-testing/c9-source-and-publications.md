@@ -4,7 +4,7 @@
 |---|---|
 | Date | 2026-11-16 |
 | Decision | **Option A, with rules.** `source` is the canonical origin; `publications` are what adopters obtain. A fact is recorded once |
-| Decided by | Mission 4 lead, on the evidence below |
+| Decided by | Mission 4 team, on the evidence below |
 | Affects | Every manifest; how Missions 1, 2, 3, and 5 read "where it lives" and "where to get it" |
 | Schema impact | None to the structure. Clarified descriptions, and one new validator warning (`PUBLICATION_REPEATS_SOURCE`) |
 

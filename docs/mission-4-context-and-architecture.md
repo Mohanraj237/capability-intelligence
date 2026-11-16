@@ -2,10 +2,10 @@
 
 | | |
 |---|---|
-| **What this is** | A guided explanation for readers who are new to the AI mission. It combines three things: the Phase 0 research behind Mission 4's design (the deeper version is [research-explained.md](research-explained.md)); what the other four missions are building, as the Mission 4 lead described it; and the architecture question of how the missions should talk to each other |
+| **What this is** | A guided explanation for readers who are new to the AI mission. It combines three things: the Phase 0 research behind Mission 4's design (the deeper version is [research-explained.md](research-explained.md)); what the other four missions are building, as the Mission 4 team described it; and the architecture question of how the missions should talk to each other |
 | **Written** | 2026-11-11, from work done on 2026-11-06, 2026-11-09 and 2026-11-11 |
 | **Status** | Nothing here is a final decision. Where the sources are silent, this page says so and labels any suggestion as a proposal |
-| **Sources** | The Mission 4 charter (read directly from the `.docx`); [mission-boundaries.md](mission-boundaries.md); [mission-understanding.md](mission-understanding.md); [research-explained.md](research-explained.md); [spikes-1-3-research.md](spikes-1-3-research.md); [poc-report.md](poc-report.md); [phase-1-plan.md](phase-1-plan.md); [skills-and-agents-modelling.md](skills-and-agents-modelling.md); the files in this repository, including [model_capabilities.csv](../research/mission-2/model_capabilities.csv); and statements from the Mission 4 lead that are in no document |
+| **Sources** | The Mission 4 charter (read directly from the `.docx`); [mission-boundaries.md](mission-boundaries.md); [mission-understanding.md](mission-understanding.md); [research-explained.md](research-explained.md); [spikes-1-3-research.md](spikes-1-3-research.md); [poc-report.md](poc-report.md); [phase-1-plan.md](phase-1-plan.md); [skills-and-agents-modelling.md](skills-and-agents-modelling.md); the files in this repository, including [model_capabilities.csv](../research/mission-2/model_capabilities.csv); and statements from the Mission 4 team that are in no document |
 | **Handling** | Derived from documents marked "Confidential – Authorized Use Only". Handle this file the same way |
 
 > **How to read the labels.** Every claim has a tag that says how firm it is.
@@ -13,7 +13,7 @@
 > - 📘 **Mission rule**: stated in the charter or the published team boundaries.
 > - 📏 **Measured**: counted on real data. The Phase 0 numbers come from [research-explained.md](research-explained.md) and [spikes-1-3-research.md](spikes-1-3-research.md); they were **not re-run** when this page was written.
 > - 🧪 **Checked**: I ran it myself between 2026-11-09 and 2026-11-11, with the repository's own tools. The Caveman checks and the CSV profile are in [case-studies/caveman/](../case-studies/caveman/) and [the test results](caveman-manifest-test-results.md). The upload test used scratch files that are **not** in the repository.
-> - 🗣️ **Reported**: told to me by the Mission 4 lead. It is in no document. Please confirm it.
+> - 🗣️ **Reported**: told to me by the Mission 4 team. It is in no document. Please confirm it.
 > - 💡 **Proposal**: a suggestion from the research, the proof of concept, or me. **Not decided.**
 > - ❓ **Open**: nobody has answered this yet.
 > - 🔗 **Connecting the dots**: a short note that links one section to the next.
@@ -83,7 +83,7 @@ recommend books, or stamp them as safe.
 
 ### 1.3 The four departments are now being built, in different ways
 
-🗣️ The Mission 4 lead described the other teams' current state:
+🗣️ The Mission 4 team described the other teams' current state:
 
 | Department | What the team is building |
 |---|---|
@@ -187,7 +187,7 @@ flowchart TB
 ```
 
 ⚠️ Only the arrows that touch Mission 4 are documented. The arrows **between** the other missions are
-my reading of the lead's description.
+my reading of the team's description.
 
 🔗 **Connecting the dots.** This split explains why the rest of this page keeps saying "risk is
 absent by design" (Mission 3's), "matching is only a test instrument" (Mission 1's) and "the database

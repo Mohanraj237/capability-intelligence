@@ -239,7 +239,7 @@ remaining informational fields are cheap (copied or dated automatically).
 | # | Recommendation | Kind | With |
 |---|---|---|---|
 | 1 | C6: resolve by the clarified definition (applied 2026-11-16) | Description only | Mission 4 team |
-| 2 | C9: `source` is the canonical origin; `publications` are channels (**decided** 2026-11-16) | Rules and a warning | Mission 4 lead |
+| 2 | C9: `source` is the canonical origin; `publications` are channels (**decided** 2026-11-16) | Rules and a warning | Mission 4 team |
 | 3 | C13: `setup[].group` for alternative items (**decided and applied** 2026-11-16) | Additive | Mission 5 for its form |
 | 4 | MCP servers set `interfaces[].contractRef` to their `server.json` | Authoring guidance | Mission 2 (curation) |
 | 5 | Index `name`, `description`, `supportedUseCases` for matching; never `limitations` | Consumer guidance | Mission 1 |

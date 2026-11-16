@@ -4,7 +4,7 @@
 **Date:** 13 November 2026  
 **Purpose:** Define the end-to-end business workflows, actors, use cases, mission responsibilities and target logical architecture for the AI Capability Ecosystem across Missions 1–5.
 
-> **Architecture status:** This document combines the mission boundaries provided by the teams with the proposed workflow and architecture interpretation. The four business workflows are the recommended business-level grouping. Mission 4 is a cross-cutting standards capability, not a fifth end-user business workflow. Dashed relationships and items marked as open require confirmation by the relevant mission leads.
+> **Architecture status:** This document combines the mission boundaries provided by the teams with the proposed workflow and architecture interpretation. The four business workflows are the recommended business-level grouping. Mission 4 is a cross-cutting standards capability, not a fifth end-user business workflow. Dashed relationships and items marked as open require confirmation by the relevant mission teams.
 
 ---
 

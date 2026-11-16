@@ -604,7 +604,7 @@ Mission 4 has a working validator that applies all of these rules. Mission 2 can
 - **Maturity and types:** agreed on 2026-11-16: `prototype`, `pilot`, `production` (Section 3.6) and the capability types fit the catalogue.
 - **Minimum completeness for listing:** agreed on 2026-11-16: `adoptable` or `governed` (Section 3.4).
 - **Wrappers:** Mission 4 decided (2026-11-16) that a capability that only adds configuration around another capability is its own catalogue entry, linked to the original with `relations` type `wraps` (4.3). Please confirm that this fits the catalogue.
-- **Ids and namespaces:** agreed on 2026-11-16: Mission 5 assigns ids at submission; Mission 2 keeps the registered list of namespaces (products, domains, verified publishers). Please set up that list.
+- **Ids and namespaces:** proposed by Mission 4 (2026-11-16), awaiting your confirmation and Mission 5's: Mission 5 assigns ids at submission; Mission 2 keeps the registered list of namespaces (products, domains, verified publishers). Please confirm, and if you agree, set up that list.
 - **Pilot data:** Mission 2 to share at least 5 real internal capabilities (Skills, MCP Servers, Agents), so that both teams can test this standard against real records.
 - **AI host names:** hosts are named by agent (4.4). Tell Mission 4 which further hosts the catalogue needs in the fixed list.
 - **Missing fields:** Mission 2 to raise any catalogue fields it needs that this document does not cover, for inclusion in the next version.

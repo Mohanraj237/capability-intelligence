@@ -17,7 +17,7 @@
 | Decided on 2026-11-16 | C9 with U2 ([analysis](phase-1-testing/c9-source-and-publications.md)); C13 `setup[].group`; hosts named by agent; U4 wrappers are separate records (Mission 2 to confirm); U3 ids assigned by Mission 5 from namespaces Mission 2 registers; U9 listing at `adoptable`; risk tiers confirmed with 12-month expiry; C10, C11, U5, U6, U7, U10, R8, R9, and the schema `$id`; C14 to C16 from the [field overlap review](phase-1-testing/field-overlap-review.md). Recorded in the decision log |
 | Still proposed or open | U8 (curation effort, needs real owners); R2, R3, R4, R6, R7, R10. C8 trust fields are deferred to 0.2 with Mission 3 |
 | Open questions U1 to U10 | 9 of 10 decided; U8 open. All tracked in the [decision register](decision-register.md) |
-| Real manifests | **22**: 16 production capabilities and Caveman (plugin and 5 skills), all valid, all sources reachable; all 22 `adoptable` (since 2026-11-16), 0 `governed` (no real assessment; the governed level is tested with simulated assessments, T12) |
+| Real manifests | **22**: 16 production capabilities and Caveman (plugin and 5 skills), all valid; every `source.url` answered the online check (`--check-sources`) on 2026-11-16, a point-in-time result; all 22 `adoptable` (since 2026-11-16), 0 `governed` (no real assessment; the governed level is tested with simulated assessments, T12) |
 | Risk | All 22 `unassessed`; no real Mission 3 assessment exists. The governed level is tested with simulated assessments (T12) |
 | Waiting on other missions | Mission 3: trust fields (C8), lifecycle transitions (U6). Mission 2: maturity definitions, type list, confirm wrappers, the namespace list, 10-20 internal capabilities. Mission 1: a first real consumer, search guidance (R9). Mission 5: where validation sits, the setup-group form |
 | Tests | 225 of 226 pass on Windows. The 1 failure is a test-side Windows issue (path separators in duplicate-id reporting), not a product defect. The Phase 1 field audit (T1-T11) is run separately |
@@ -31,6 +31,7 @@ About three hours for all of it; steps 1 to 4 (about 75 minutes) give the decisi
 | Step | Read | Time | What to check, and decide |
 |---|---|---|---|
 | 1 | **This guide** | 5 min | The status table above |
+| 1a | [phase-1-demo.md](phase-1-demo.md) | 30 min | The Phase 1 demo walk-through for newcomers: scope, Phase 0 and Phase 1, every field, examples for all 11 types, test results with what they do and do not show, and the open ownership questions |
 | 2 | [phase-1-changes-explained.md](phase-1-changes-explained.md) | 25 min | The five schema changes and why. **Decide:** accept C1, C2, C3, C4, C7 into 0.1 |
 | 3 | [reviews/field-review-production-set.md](reviews/field-review-production-set.md) | 20 min | The evidence: all 98 fields against 22 manifests, and the six problems not yet fixed. **Decide:** how to handle C5, C6, and what to send Mission 3 (C8) |
 | 4 | [reviews/phase-1-sample-review.md](reviews/phase-1-sample-review.md) | 15 min | Why these 16 capabilities replace the research's 16. **Decide:** accept the production reference set and the six criteria |
